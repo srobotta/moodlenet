@@ -58,8 +58,8 @@
             box-shadow: none;
             height: 46px;
             border-style: solid;
-            border-width: 0.5px;
-            border-radius: 45px;
+            border-width: 1.65px;
+            border-radius: 0.4rem;
             padding: 0 25px;
 
             > input {
@@ -95,24 +95,18 @@
             border: none;
           }
 
-          > .email {
+          > .email, .password {
             max-width: 335px;
             &:not(.highlight) > .input-container {
-              border-color: var(--primary-color);
+              border-color: #4b647d;
             }
             &:not(.highlight).focused > .input-container {
-              box-shadow: 0 0 5px var(--primary-color);
+              box-shadow: 0 0 5px #3D5165;
             }
           }
 
           > .password {
             max-width: 250px;
-            &:not(.highlight) > .input-container {
-              border-color: #b6bacb;
-            }
-            &:not(.highlight).focused > .input-container {
-              box-shadow: 0 0 5px #b6bacb;
-            }
           }
 
           > .error {

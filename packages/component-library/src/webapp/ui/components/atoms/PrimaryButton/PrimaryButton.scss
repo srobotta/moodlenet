@@ -8,7 +8,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 45px;
+  border-radius: 0.2rem;
   font-weight: bold;
   font-size: 13.5px;
   letter-spacing: 0.4px;
@@ -17,11 +17,11 @@ a {
   width: fit-content;
   color: white;
   border: none;
-  background-color: var(--primary-color);
+  background-color: #4B647D;
   white-space: nowrap;
 
   &.green {
-    background-color: #00bd7e;
+    background-color: #00a45b;
   }
 
   &.red {
@@ -37,7 +37,7 @@ a {
   }
 
   &.blue {
-    background-color: #1a6aff;
+    background-color: #4B647D;
   }
 
   &.card {
@@ -49,12 +49,12 @@ a {
   }
 
   &:hover:not(.disabled):not(:active) {
-    background-color: var(--primary-color-hover);
+    background-color: #3d5165;
     box-shadow: 0 1px 1px rgb(0 0 0 / 35%);
     cursor: pointer;
 
     &.green {
-      background-color: #04ce8a;
+      background-color: #008046;
     }
 
     &.red {
@@ -70,7 +70,8 @@ a {
     }
 
     &.blue {
-      background-color: #2d6de2;
+      background-color: #3d5165;
+      border-color: #3d5165;
     }
 
     &.card {

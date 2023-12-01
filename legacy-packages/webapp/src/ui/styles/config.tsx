@@ -1,6 +1,6 @@
 import { adjustColor, randomColor, setOpacity } from './utilities'
 
-export const baseMoodleColor = '#F88012'
+export const baseMoodleColor = '#4B647D'
 export const primaryColor = 'var(--base-moodle-color)'
 export const primaryBackgroundColor = '#feefe2'
 export const primaryColorHover = '#e2750f'

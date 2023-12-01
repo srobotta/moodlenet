@@ -2,7 +2,7 @@
 
 .header {
   height: 60px;
-  padding: 0 100px;
+  width: 100%;
   flex-shrink: 0;
   width: -webkit-fill-available;
   display: flex;
@@ -38,11 +38,11 @@
         > .add-icon {
           max-height: 36px;
           > g > path {
-            fill: var(--primary-color);
+            fill: #4B647D;
           }
         }
         &:hover > .add-icon > g > path {
-          fill: var(--primary-color-active);
+          fill: #3d5165;
         }
       }
 
