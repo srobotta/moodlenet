@@ -46,7 +46,7 @@
         align-items: center;
         gap: 10px;
         > .type-pill {
-          border-radius: 0.2rem;
+          border-radius: var(--border-radius-button);
           font-size: 13px;
           overflow: hidden;
           text-overflow: ellipsis;
