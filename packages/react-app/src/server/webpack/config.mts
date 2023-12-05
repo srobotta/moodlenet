@@ -199,7 +199,7 @@ export function getWp(
           ],
         },
         {
-          test: /\.(png|jpg|gif)$/i,
+          test: /\.(png|jpg|gif|eot|ttf|otf|woff)$/i,
           use: [
             {
               loader: 'url-loader',
