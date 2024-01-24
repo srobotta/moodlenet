@@ -199,12 +199,68 @@ export function getWp(
           ],
         },
         {
-          test: /\.(png|jpg|gif|eot|ttf|otf|woff)$/i,
+          test: /\.(png|jpg|gif)$/i,
           use: [
             {
               loader: 'url-loader',
               options: {
                 limit: 10000,
+              },
+            },
+          ],
+        },
+        {
+          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                name: '[name].[ext]',
+                outputpath: 'fonts/',
+                limit: 10000,
+              },
+            },
+          ],
+        },
+        {
+          test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                name: '[name].[ext]',
+                outputpath: 'assets/fonts/',
+                limit: 10000,
+                mimetype: 'application/x-font-opentype',
+              },
+            },
+          ],
+        },
+        {
+          test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                name: '[name].[ext]',
+                outputpath: 'fonts/',
+                limit: 10000,
+                mimetype: 'application/font-woff',
+              },
+            },
+          ],
+        },
+        {
+          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                name: '[name].[ext]',
+                //outputpath: 'fonts/',
+                userelativepath: true,
+                limit: 10000,
+                mimetype: 'application/octet-stream',
               },
             },
           ],
