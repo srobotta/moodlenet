@@ -70,7 +70,7 @@
       "patterns": [
         "src/**/*"
       ],
-      "extensions": ".scss,.png,.svg,.json",
+      "extensions": ".scss,.png,.svg,.json,.ttf,.eot,.otf,.woff",
       "ignore": "**/*.*ts*",
       "delay": 300
     }

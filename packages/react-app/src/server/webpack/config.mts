@@ -210,26 +210,26 @@ export function getWp(
           ],
         },
         {
-          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+          test: /\.eot(\?v=[0-9]\.[0-9]\.[0-9])?$/,
           use: [
             {
               loader: 'url-loader',
               options: {
-                name: '[name].[ext]',
-                outputpath: 'fonts/',
+                //name: '[name].[ext]',
+                //outputpath: 'assets/fonts/',
                 limit: 10000,
               },
             },
           ],
         },
         {
-          test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
+          test: /\.otf$/,
           use: [
             {
               loader: 'url-loader',
               options: {
-                name: '[name].[ext]',
-                outputpath: 'assets/fonts/',
+                //name: '[name].[ext]',
+                //outputpath: 'assets/fonts/',
                 limit: 10000,
                 mimetype: 'application/x-font-opentype',
               },
@@ -242,8 +242,8 @@ export function getWp(
             {
               loader: 'url-loader',
               options: {
-                name: '[name].[ext]',
-                outputpath: 'fonts/',
+                //name: '[name].[ext]',
+                //outputpath: 'assets/fonts/',
                 limit: 10000,
                 mimetype: 'application/font-woff',
               },
@@ -256,9 +256,9 @@ export function getWp(
             {
               loader: 'url-loader',
               options: {
-                name: '[name].[ext]',
+                //name: '[name].[ext]',
                 //outputpath: 'fonts/',
-                userelativepath: true,
+                //userelativepath: true,
                 limit: 10000,
                 mimetype: 'application/octet-stream',
               },
