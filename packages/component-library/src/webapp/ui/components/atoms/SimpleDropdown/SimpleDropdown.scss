@@ -65,6 +65,9 @@
               border-radius: 0;
             }
           }
+          &.selected {
+            background-color: var(--primary-background-color);
+          } 
         }
 
         &:hover {

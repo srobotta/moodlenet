@@ -1,15 +1,14 @@
-
 module.exports = {
   rules: [
     {
-      test: /\.(png|jpg|gif)$/i,
+      test: /\.(png|jpg|gif|eot|otf|ttf|woff2?)$/i,
       use: [
-          {
-              loader: 'url-loader',
-              options: {
-                  limit: 10000,
-              },
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
           },
+        },
       ],
     },
     {
@@ -22,14 +21,13 @@ module.exports = {
           },
         },
       ],
-    }
+    },
   ],
   resolve: {
-    alias: {
-    },
+    alias: {},
   },
   watchOptions: {
     aggregateTimeout: 500,
-    poll: 1500
+    poll: 1500,
   },
 }
