@@ -210,60 +210,8 @@ export function getWp(
           ],
         },
         {
-          test: /\.eot(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                //name: '[name].[ext]',
-                //outputpath: 'assets/fonts/',
-                limit: 10000,
-              },
-            },
-          ],
-        },
-        {
-          test: /\.otf$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                //name: '[name].[ext]',
-                //outputpath: 'assets/fonts/',
-                limit: 10000,
-                mimetype: 'application/x-font-opentype',
-              },
-            },
-          ],
-        },
-        {
-          test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                //name: '[name].[ext]',
-                //outputpath: 'assets/fonts/',
-                limit: 10000,
-                mimetype: 'application/font-woff',
-              },
-            },
-          ],
-        },
-        {
-          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                //name: '[name].[ext]',
-                //outputpath: 'fonts/',
-                //userelativepath: true,
-                limit: 10000,
-                mimetype: 'application/octet-stream',
-              },
-            },
-          ],
+          test: /\.(eot|otf|ttf|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          type: 'asset/resource',
         },
         {
           test: /\.svg$/,
