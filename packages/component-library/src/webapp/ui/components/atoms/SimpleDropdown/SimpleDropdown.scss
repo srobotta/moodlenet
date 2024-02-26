@@ -45,7 +45,7 @@
           padding: 0;
 
           &.selected {
-            background-color: var(--primary-background-color);
+            background-color: #eff1f3;
           }
           > .border {
             width: 100%;
@@ -53,7 +53,7 @@
             border-radius: 0 4px 4px 0;
             transition: background-color 150ms ease-in;
             &.selected {
-              background-color: var(--primary-color);
+              background-color: #4b647d;
             }
             &.prev-selected {
               border-radius: 0 0 4px 0;
@@ -65,9 +65,6 @@
               border-radius: 0;
             }
           }
-          &.selected {
-            background-color: var(--primary-background-color);
-          } 
         }
 
         &:hover {
@@ -83,7 +80,7 @@
           padding: 14px 30px;
           transition: background-color 150ms ease-in;
           &.selected {
-            background-color: var(--primary-background-color);
+            background-color: #eff1f3;
           }
         }
       }
