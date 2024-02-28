@@ -19,7 +19,6 @@ export * from '../components/organisms/lists/BrowserProfileList/BrowserProfileLi
 export * from '../components/organisms/lists/LandingProfileList/LandingProfileList.js'
 export * from '../components/organisms/lists/ProfileList/ProfileList.js'
 export * from '../components/organisms/MainProfileCard/MainProfileCard.js'
-export * from '../components/organisms/OverallCard/UserProgressCard.js'
 export * from '../components/organisms/ProfileCard/ProfileCard.js'
 export * from '../components/organisms/ProfileCollectionList/ProfileCollectionList.js'
 export * from '../components/organisms/ProfileResourceList/ProfileResourceList.js'
