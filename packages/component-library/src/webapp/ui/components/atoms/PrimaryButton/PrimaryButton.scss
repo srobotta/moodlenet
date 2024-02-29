@@ -9,7 +9,6 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-button);
-  font-weight: bold;
   font-size: 13.5px;
   letter-spacing: 0.4px;
   height: 32px;
@@ -81,7 +80,7 @@ a {
   }
 
   &:active:not(.disabled) {
-    background-color: var(--primary-color-active);
+    background-color: #005AB3;
 
     &.green {
       background-color: #01c483;
