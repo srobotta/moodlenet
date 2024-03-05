@@ -1,0 +1,41 @@
+export type Translations = {
+  [key: string]: string
+}
+export const translations: Translations = {
+  title_featured_resources: 'Aktuelle Ressourcen',
+  u_title_featured_resources: 'Ausgewählte Ressourcen',
+  subtitle_featured_resources: 'Ausgezeichnete qualitative Inhalte',
+  u_subtitle_featured_resources: 'Ausgewählte Inhalte nach deinen Interessen',
+  see_more_resources: 'Weitere Ressourcen',
+  title_featured_collections: 'Aktuelle Sammlungen',
+  u_title_featured_collections: 'Ausgewählte Sammlungen',
+  subtitle_featured_collections: 'Gute Sammlungen von kuratierten Materialien',
+  u_subtitle_featured_collections: 'Sammlungen von hoher Qualität die Dich interessieren könnten',
+  see_more_collections: 'See more collections',
+  title_featured_authors: 'Aktuelle Autoren',
+  u_title_featured_authors: 'Ausgewählte Autoren',
+  subtitle_featured_authors: 'Autoren mit hervoragenden Beiträgen',
+  u_subtitle_featured_authors: 'Top Autoren, die dich ansprechen könnten',
+  see_more_authors: 'Mehr Autoren',
+  title_leaderboard: 'Leaderboard',
+  subtitle_leaderboard:
+    'Ausgezeichete Personen, die einen wichtigen Beitrag für offene Bildungsresourcen leisten',
+  login: 'Einloggen',
+  logout: 'Ausloggen',
+  signup: 'Registrieren',
+  enter_your_account: 'Zum Nutzerkonto',
+  join_now: 'Jetzt beitreten',
+  create_account: 'Neues Nutzerkonto erstellen',
+  title_create_collection: 'Eine neue Sammlung anlegen',
+  subtitle_create_collection: 'Sammlungen sind gruppierte Materialien',
+  title_create_resource: 'Eine neue Ressource anlegen',
+  subtitle_create_resource:
+    'Eine Ressource ist ein einzelnes Element z.B. Bild, Foliensatz, Dokument',
+  share_content: 'Inhalte teilen',
+  search_placeholder: 'Nach OER Inhalten suchen',
+  new_resource: 'Neue Ressource',
+  new_collection: 'Neue Sammlung',
+  profile: 'Profil',
+  bookmarks: 'Lesezeichen',
+  following: 'Folgend',
+}
