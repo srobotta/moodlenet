@@ -1,6 +1,7 @@
 import type { Href } from '@moodlenet/component-library'
 import { ListCard } from '@moodlenet/component-library'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import type { CollectionCardProps } from '../../CollectionCard/CollectionCard.js'
@@ -20,15 +21,13 @@ export const LandingCollectionList: FC<LandingCollectionListProps> = ({
 }) => {
   const title = (
     <div className="title">
-      {hasSetInterests ? 'Collections selection' : 'Featured collections'}
+      {hasSetInterests ? t('u_title_featured_collections') : t('title_featured_collections')}
     </div>
   )
 
   const subtitle = (
     <div className="subtitle">
-      {hasSetInterests
-        ? 'High quality collections you might enjoy'
-        : 'Great collections of curated resources'}
+      {hasSetInterests ? t('u_subtitle_featured_collections') : t('subtitle_featured_collections')}
     </div>
   )
   return (
