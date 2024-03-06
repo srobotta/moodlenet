@@ -1,6 +1,5 @@
-export type Translations = {
-  [key: string]: string
-}
+import type { Translations } from '../../webapp/types/i18n.mjs'
+
 export const translations: Translations = {
   title_featured_resources: 'Aktuelle Ressourcen',
   u_title_featured_resources: 'Ausgewählte Ressourcen',

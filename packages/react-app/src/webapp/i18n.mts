@@ -1,6 +1,6 @@
-import type { Translations } from '../locales/de/translation.mjs'
 import { translations as tr_de } from '../locales/de/translation.mjs'
 import { translations as tr_en } from '../locales/en/translation.mjs'
+import type { Translations } from './types/i18n.mjs'
 
 const defaultLang = 'de'
 /*
