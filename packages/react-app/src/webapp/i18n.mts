@@ -2,27 +2,34 @@ import { translations as tr_de } from '../locales/de/translation.mjs'
 import { translations as tr_en } from '../locales/en/translation.mjs'
 import type { Translations } from './types/i18n.mjs'
 
-const defaultLang = 'de'
-/*
-if (navigator.language.startsWith('de')) {
+let currentLang: string
 
-*/
-
-export type trans = Translations
-export type key = string
-
-export const t = function (key: string): string | any {
-  let trans
-  if (defaultLang === 'de') {
-    trans = tr_de
-  } else {
-    trans = tr_en
+class i18nHandler {
+  constructor(lang: string) {
+    currentLang = lang
   }
-  console.log(key, defaultLang, trans)
 
-  if (key in trans) {
-    const val = eval(`trans.${key}`)
-    return val
+  t(key: string): string {
+    let trans: Translations
+    if (currentLang === 'de') {
+      trans = tr_de
+    } else {
+      trans = tr_en
+    }
+
+    if (key in trans) {
+      const val = eval(`trans.${key}`)
+      return val
+    }
+    return key
   }
-  return key
+  getLanguagesIso(): string[] {
+    return ['de', 'en']
+  }
+  setLang(lang: string): void {
+    currentLang = lang
+  }
 }
+
+export const i18n = new i18nHandler('de')
+export const t = i18n.t

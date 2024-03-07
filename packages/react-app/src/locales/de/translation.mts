@@ -37,4 +37,5 @@ export const translations: Translations = {
   profile: 'Profil',
   bookmarks: 'Lesezeichen',
   following: 'Folgend',
+  select_language: 'Sprache auswählen',
 }
