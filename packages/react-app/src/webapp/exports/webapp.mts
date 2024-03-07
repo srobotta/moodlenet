@@ -2,7 +2,7 @@ export * from '../app-routes.js'
 export * from '../context/AdminSettingsContext.js'
 export * from '../context/OrganizationCtx.js'
 export { getMyShell } from '../getMyShell.mjs'
-export { t } from '../i18n.mjs'
+export { i18n, t } from '../i18n.mjs'
 export {
   registerMainAppPluginHook,
   type MainAppPluginHook,

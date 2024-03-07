@@ -35,4 +35,5 @@ export const translations: Translations = {
   profile: 'Profile',
   bookmarks: 'Bookmarks',
   following: 'Following',
+  select_language: 'Select language',
 }
