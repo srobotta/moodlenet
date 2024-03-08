@@ -3,7 +3,7 @@ import { FloatingMenu } from '@moodlenet/component-library'
 import { t } from '@moodlenet/react-app/webapp'
 import type { ComponentType, FC } from 'react'
 import { useMemo } from 'react'
-import { ReactComponent as AddIcon } from '../../../assets/icons/add-round.svg'
+import { ReactComponent as GlobeIcon } from '../../../assets/icons/globe.svg'
 
 export type LanguageSelectorItem = {
   Component: ComponentType
@@ -34,7 +34,7 @@ export const LanguageSelector: FC<LanguageSelectorProps> = ({ menuItems }) => {
       key="lang-menu"
       abbr={t('select_language')}
       menuContent={menuContent}
-      hoverElement={<AddIcon className="add-icon" tabIndex={0} />}
+      hoverElement={<GlobeIcon className="globe-icon" tabIndex={0} />}
     />
   )
 }
