@@ -15,7 +15,7 @@ class i18nHandler {
     }
   }
 
-  t(key: string): string {
+  t(key: string, args?: any[]): string {
     let trans: Translations
     if (currentLang === 'de') {
       trans = tr_de
@@ -24,10 +24,18 @@ class i18nHandler {
     }
 
     if (key in trans) {
-      const val = eval(`trans.${key}`)
+      let val = eval(`trans.${key}`)
+      if (args) {
+        args.forEach((arg, i) => {
+          val = val.replace(`{${i + 1}}`, arg)
+        })
+      }
       return val
     }
     return key
+  }
+  tn(singular: string, plural: string, count: number): string {
+    return count === 1 ? t(singular, [count]) : t(plural, [count])
   }
   getLanguagesIso(): string[] {
     return ['de', 'en']
@@ -40,3 +48,4 @@ class i18nHandler {
 
 export const i18n = new i18nHandler()
 export const t = i18n.t
+export const tn = i18n.tn
