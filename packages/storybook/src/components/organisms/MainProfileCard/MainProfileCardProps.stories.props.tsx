@@ -2,6 +2,7 @@
 import { overrideDeep } from '@moodlenet/component-library/common'
 import { href } from '@moodlenet/react-app/common'
 import { fileExceedsMaxUploadSize, randomIntFromInterval } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { getValidationSchemas, type ProfileFormValues } from '@moodlenet/web-user/common'
 import type { MainProfileCardProps } from '@moodlenet/web-user/ui'
 import { people } from '@moodlenet/web-user/ui'
@@ -10,7 +11,6 @@ import { useFormik } from 'formik'
 import type { PartialDeep } from 'type-fest'
 import type { SchemaOf } from 'yup'
 import { mixed, object, string } from 'yup'
-import { t } from '@moodlenet/react-app/webapp'
 // import { people } from '../../../../../helpers/factories'
 // import { fileExceedsMaxUploadSize, people, randomIntFromInterval } from '@moodlenet/component-library/ui.mjs'
 
@@ -20,7 +20,7 @@ export const profileStoriesValidationSchema: SchemaOf<ProfileFormValues> = objec
     .test((v, { createError }) =>
       v instanceof Blob && fileExceedsMaxUploadSize(v.size, maxUploadSize)
         ? createError({
-            message: /* t */ {t('image_too_big')},
+            message: /* t */ t('image_too_big'),
           })
         : true,
     )
@@ -29,12 +29,12 @@ export const profileStoriesValidationSchema: SchemaOf<ProfileFormValues> = objec
     .test((v, { createError }) =>
       v instanceof Blob && fileExceedsMaxUploadSize(v.size, maxUploadSize)
         ? createError({
-            message: /* t */ {t('image_too_big')},
+            message: /* t */ t('image_too_big'),
           })
         : true,
     )
     .optional(),
-  displayName: string().max(160).min(3).required(/* t */ {t('please_provide_displayname')}),
+  displayName: string().max(160).min(3).required(/* t */ t('please_provide_displayname')),
   location: string()
     .transform(value => value || null)
     .nullable(),
@@ -47,7 +47,7 @@ export const profileStoriesValidationSchema: SchemaOf<ProfileFormValues> = objec
     .url()
     .transform(value => value || null)
     .nullable(),
-  aboutMe: string().max(4096).min(3).required(/* t */ {t('please_provide_description')}),
+  aboutMe: string().max(4096).min(3).required(/* t */ t('please_provide_description')),
 })
 
 export default function useMainProfileCardStoryProps(

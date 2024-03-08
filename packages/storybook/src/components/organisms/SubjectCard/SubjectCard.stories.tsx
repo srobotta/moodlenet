@@ -2,11 +2,11 @@ import { overrideDeep } from '@moodlenet/component-library/common'
 import type { SubjectCardProps } from '@moodlenet/ed-meta/ui'
 import { SubjectCard } from '@moodlenet/ed-meta/ui'
 import { href } from '@moodlenet/react-app/common'
+import { t } from '@moodlenet/react-app/webapp'
 import type { BookmarkButtonProps, SmallFollowButtonProps } from '@moodlenet/web-user/ui'
 import { FilterNone, PermIdentity } from '@mui/icons-material'
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 import type { PartialDeep } from 'type-fest'
-import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof SubjectCard> = {
   title: 'Molecules/SubjectCard',
@@ -43,13 +43,13 @@ export const getSubjectCardStoryProps = (
         {
           Icon: <PermIdentity />,
           key: 'followers',
-          name: {t('followers')},
+          name: t('followers'),
           value: Math.floor(Math.random() * Math.random() * 1000),
         },
         {
           Icon: <FilterNone />,
           key: 'resources',
-          name: {t('resources')},
+          name: t('resources'),
           value: Math.floor(Math.random() * Math.random() * 1000),
         },
       ],
