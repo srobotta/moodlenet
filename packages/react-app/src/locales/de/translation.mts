@@ -1,6 +1,8 @@
 import type { Translations } from '../../webapp/types/i18n.mjs'
 
 export const translations: Translations = {
+  add_content: 'Inhalte hinzufügen',
+  admin: 'Admin',
   approve: 'Freigeben',
   approved_badge: 'Freigabe erteilt, dein Inhalt ist jetzt für alle sichtbar.',
   back_soon: 'Wir sind bald wieder da',
@@ -10,6 +12,7 @@ export const translations: Translations = {
   bookmarks: 'Lesezeichen',
   create_account: 'Neues Nutzendenkonto erstellen',
   curated_collections: 'Kuratierte Sammlungen',
+  dont_show_again: 'Nicht mehr anzeigen',
   enter_your_account: 'Zum Nutzendenkonto',
   follow_needs_login: 'Einloggen oder registieren zum Folgen',
   follow_own_content: 'Du kannst nicht deinen eigenen Inhalten folgen',
@@ -18,7 +21,14 @@ export const translations: Translations = {
   followers_cnt_sing: '{1} Person folgt',
   followers_cnt_pl: '{1} Personen folgen',
   following: 'Folgend',
+  goto_settings: 'Gehe zu den Einstellungen',
+  interest_description: 'Wähle deine Interessen aus, um das Beste aus MoodleNet herauszuholen.',
+  interest_title: 'Verbessere deine Erfahrung!',
   join_now: 'Jetzt beitreten',
+  like: 'Gefällt mir',
+  like_needs_login: 'Einloggen oder registieren um zu liken',
+  like_own_content: 'Du kannst nicht deinen eigenen Inhalten liken',
+  like_remove: 'Gefällt mir entfernen',
   load_more: 'Mehr laden',
   login: 'Einloggen',
   logout: 'Ausloggen',
@@ -29,6 +39,7 @@ export const translations: Translations = {
   override_title: 'Die Lehre von morgen gestalten',
   page_not_found_or_access_not_allowed: 'Seite nicht gefunden oder Zugriff nicht erlaubt',
   profile: 'Profil',
+  publish_content: 'Inhalte veröffentlichen',
   scheduled_maintenance:
     'MoodleNet ist für eine geplante Wartung nicht verfügbar und wird in wenigen Minuten wieder online sein',
   search_placeholder: 'Nach OER Inhalten suchen',
@@ -37,9 +48,11 @@ export const translations: Translations = {
   see_more_collections: 'Mehr Sammlungen ansehen',
   see_more_resources: 'Weitere Ressourcen',
   select_language: 'Sprache auswählen',
+  settings: 'Einstellungen',
   share_content: 'Inhalte teilen',
   sort_by: 'Sortieren nach',
   signup: 'Registrieren',
+  start_publishing: 'Einloggen oder registieren um neue Inhalte zu veröffentlichen.',
   subtitle_create_collection: 'Sammlungen sind gruppierte Materialien',
   subtitle_create_resource:
     'Eine Ressource ist ein einzelnes Element z.B. Bild, Foliensatz, Dokument',
@@ -56,6 +69,7 @@ export const translations: Translations = {
   title_featured_resources: 'Aktuelle Ressourcen',
   title_leaderboard: 'Leaderboard',
   unapprove: 'Sperren',
+  user_menu: 'Nutzendenmenü',
   user_subtitle_featured_authors: 'Top Autor*innen, die dich ansprechen könnten',
   user_subtitle_featured_collections:
     'Sammlungen von hoher Qualität die Dich interessieren könnten',
@@ -64,6 +78,7 @@ export const translations: Translations = {
   user_title_featured_collections: 'Ausgewählte Sammlungen',
   user_title_featured_resources: 'Ausgewählte Ressourcen',
   we_love_to_get: 'Wir freuen uns über',
+  what_do_you_want_to_publish: 'Was möchtest du gerne veröffentlichen?',
   you_can_suggest: 'Du kannst neue Funktionen vorschlagen und Fehler melden in der',
   your_feedback: 'Dein Feedback zu MoodleNet',
 }
