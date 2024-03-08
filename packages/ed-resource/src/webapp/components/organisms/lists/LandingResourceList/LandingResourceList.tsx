@@ -21,13 +21,13 @@ export const LandingResourceList: FC<LandingResourceListProps> = ({
 }) => {
   const title = (
     <div className="title">
-      {hasSetInterests ? t('u_title_featured_resources') : t('title_featured_resources')}
+      {hasSetInterests ? t('user_title_featured_resources') : t('title_featured_resources')}
     </div>
   )
 
   const subtitle = (
     <div className="subtitle">
-      {hasSetInterests ? t('u_subtitle_featured_resources') : t('subtitle_featured_resources')}
+      {hasSetInterests ? t('user_subtitle_featured_resources') : t('subtitle_featured_resources')}
     </div>
   )
   return (

@@ -56,10 +56,10 @@ export const BrowserProfileList: FC<BrowserProfileListProps> = ({
       footer={
         showAll ? (
           loadMore ? (
-            <TertiaryButton onClick={loadMore}>Load more</TertiaryButton>
+            <TertiaryButton onClick={loadMore}>{t('load_more')}</TertiaryButton>
           ) : null
         ) : (
-          <TertiaryButton onClick={setShowAll}>See all people results</TertiaryButton>
+          <TertiaryButton onClick={setShowAll}>{t('see_all_people_result')}</TertiaryButton>
         )
       }
       minGrid={170}

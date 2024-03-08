@@ -21,13 +21,13 @@ export const LandingProfileList: FC<LandingProfileListProps> = ({
 }) => {
   const title = (
     <div className="title">
-      {hasSetInterests ? t('u_title_featured_authors') : t('title_featured_authors')}
+      {hasSetInterests ? t('user_title_featured_authors') : t('title_featured_authors')}
     </div>
   )
 
   const subtitle = (
     <div className="subtitle">
-      {hasSetInterests ? t('u_subtitle_featured_authors') : t('subtitle_featured_authors')}
+      {hasSetInterests ? t('user_subtitle_featured_authors') : t('subtitle_featured_authors')}
     </div>
   )
 
