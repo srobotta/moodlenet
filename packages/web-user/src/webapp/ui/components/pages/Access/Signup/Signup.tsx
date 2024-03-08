@@ -2,6 +2,7 @@ import type { Href } from '@moodlenet/component-library'
 import { Card, TertiaryButton } from '@moodlenet/component-library'
 import type { MainFooterProps, MinimalisticHeaderProps } from '@moodlenet/react-app/ui'
 import { Link, SimpleLayout } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { CallMade as CallMadeIcon } from '@mui/icons-material'
 import type { ComponentType, CSSProperties, FC, PropsWithChildren } from 'react'
 import { useEffect, useState } from 'react'
@@ -51,7 +52,7 @@ export const Signup: FC<SignupProps> = ({
           {/* <div className={`signup-content ${requestSent ? 'success' : ''}`}> */}
           <Card className="login-card" hover={true}>
             <Link href={loginHref}>
-            {t('login')}
+              {t('login')}
               <CallMadeIcon />
             </Link>
           </Card>
