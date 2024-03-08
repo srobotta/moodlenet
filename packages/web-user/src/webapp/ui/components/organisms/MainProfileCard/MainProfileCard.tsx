@@ -13,10 +13,10 @@ import {
 import { Edit, Save } from '@mui/icons-material'
 import { useFormik } from 'formik'
 
+import { t } from '@moodlenet/react-app/webapp'
 import { Share } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { t } from '@moodlenet/react-app/webapp'
 import type {
   ProfileAccess,
   ProfileActions,
@@ -508,9 +508,9 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       className={`message`}
       disabled={!isAuthenticated}
       onClick={() => setIsSendingMessage(true)}
-      abbr={!isAuthenticated ? {t('login_or_signup_to_send_messages')} : {t('send_a_message')}}
+      abbr={!isAuthenticated ? t('login_or_signup_to_send_messages') : t('send_a_message')}
     >
-      Message
+      {t('message')}
     </SecondaryButton>
     // <TertiaryButton
     //   className={`message ${isAuthenticated ? '' : 'font-disabled'}`}

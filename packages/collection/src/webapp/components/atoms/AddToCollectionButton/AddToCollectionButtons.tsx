@@ -7,9 +7,9 @@ import {
   SecondaryButton,
 } from '@moodlenet/component-library'
 import type { SelectOptionsMulti } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useMemo, useState } from 'react'
-import { t } from '@moodlenet/react-app/webapp'
 
 export type AddToCollectionButtonProps = {
   collections: SelectOptionsMulti<OptionItemProp>
@@ -51,7 +51,7 @@ export const AddToCollectionButton: FC<AddToCollectionButtonProps> = ({
         value={selectedValues}
       >
         {collections.opts.map(({ label, value }) => (
-          <OptionItem key={value} label={label !== '' ? label : {t('unnamed')}} value={value} />
+          <OptionItem key={value} label={label !== '' ? label : t('unnamed')} value={value} />
         ))}
       </AddToCollectionsCard>
     </Modal>
@@ -61,7 +61,7 @@ export const AddToCollectionButton: FC<AddToCollectionButtonProps> = ({
     <>
       {modal}
       <SecondaryButton onClick={() => setIsAddingToCollection(true)}>
-      {t('add_to_collection')}
+        {t('add_to_collection')}
       </SecondaryButton>
     </>
   )
