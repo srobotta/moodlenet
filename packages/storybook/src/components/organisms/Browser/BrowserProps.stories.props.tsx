@@ -4,6 +4,7 @@ import { FieldsDataStories } from '@moodlenet/ed-meta/stories'
 import { BrowserSubjectList } from '@moodlenet/ed-meta/ui'
 import { BrowserResourceFilters, BrowserResourceList } from '@moodlenet/ed-resource/ui'
 import type { BrowserProps, MainColumItem, SortType } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { BrowserProfileFilters, BrowserProfileList } from '@moodlenet/web-user/ui'
 import { action } from '@storybook/addon-actions'
 import { useMemo, useState } from 'react'
@@ -21,7 +22,7 @@ export const useBrowserResourceList = (): MainColumItem => {
   const [currentResourceSortByLicense, setCurrentResourceSortByLicense] = useState<string[]>([])
 
   return {
-    name: 'Resources',
+    name: t('resources'),
     Item: ({ showAll, setShowAll }) => {
       const list = useMemo(
         () =>
@@ -112,7 +113,7 @@ export const useBrowserResourceList = (): MainColumItem => {
 export const useBrowserCollectionList = (): MainColumItem => {
   const [currentCollectionSortBy, setCurrentCollectionSortBy] = useState<SortType>('Relevant')
   return {
-    name: 'Collections',
+    name: t('collections'),
     Item: ({ showAll, setShowAll }) => {
       const list = useMemo(
         () =>
@@ -152,7 +153,7 @@ export const useBrowserProfileList = (showHeader?: boolean): MainColumItem => {
   const [currentProfileSortBy, setCurrentProfileSortBy] = useState<SortType>('Relevant')
 
   return {
-    name: 'People',
+    name: t('people'),
     Item: ({ showAll, setShowAll }) => {
       const list = useMemo(
         () =>
@@ -192,7 +193,7 @@ export const useBrowserProfileList = (showHeader?: boolean): MainColumItem => {
 
 export const useBrowserSubjectList = (showHeader?: boolean): MainColumItem => {
   return {
-    name: 'Subject',
+    name: t('subject'),
     Item: ({ showAll, setShowAll }) => {
       const list = useMemo(() => getSubjectCardsStoryProps(30, {}), [])
       return (

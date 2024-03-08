@@ -132,6 +132,7 @@ export const translations: Translations = {
   subtitle_featured_resources: 'Ausgezeichnete qualitative Inhalte',
   subtitle_leaderboard:
     'Ausgezeichete Personen, die einen wichtigen Beitrag für offene Bildungsresourcen leisten',
+  subject: 'Fachgebiet',
   subjects: 'Fachgebiete',
   such_great_collection: 'So eine tolle Sammlung',
   title_create_collection: 'Eine neue Sammlung anlegen',

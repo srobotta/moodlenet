@@ -127,6 +127,7 @@ export const translations: Translations = {
   subtitle_featured_collections: 'Great collections of curated resources',
   subtitle_featured_resources: 'Highlights on top quality content',
   subtitle_leaderboard: 'Expectional contributors leading the way',
+  subject: 'Subject',
   subjects: 'Subjects',
   such_great_collection: 'Such a great collection',
   title_create_collection: 'Create a new collection',
