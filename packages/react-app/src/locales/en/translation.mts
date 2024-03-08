@@ -138,6 +138,7 @@ export const translations: Translations = {
   user_title_featured_authors: 'Authors selection',
   user_title_featured_collections: 'Collections selection',
   user_title_featured_resources: 'Resources selection',
+  users_followers: "{1}'s followers",
   versatile_canopy: 'Versatile canopy',
   visibility_required: 'Visibility is required',
   we_love_to_get: "We'd love to get",
