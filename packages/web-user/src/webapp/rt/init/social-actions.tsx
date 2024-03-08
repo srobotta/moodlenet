@@ -2,6 +2,7 @@ import { CollectionCardPlugins, CollectionPagePlugins } from '@moodlenet/collect
 import type { PluginHookResult } from '@moodlenet/core/lib'
 import { SubjectCardPlugins, SubjectPagePlugins } from '@moodlenet/ed-meta/webapp'
 import { ResourceCardPlugins, ResourcePagePlugins } from '@moodlenet/ed-resource/webapp'
+import { t } from '@moodlenet/react-app/webapp'
 import { PermIdentity } from '@mui/icons-material'
 import { useEffect, useMemo, useState } from 'react'
 import { BookmarkButtonContainer, LikeButtonContainer } from '../exports.mjs'
@@ -12,7 +13,6 @@ import { FollowButtonContainer } from '../social-actions/FollowButtonContainer.j
 import { SmallFollowButtonContainer } from '../social-actions/SmallFollowButtonContainer.js'
 import type { SocialActions, SocialActionsConfig } from '../social-actions/SocialActions.js'
 import { getUseComposeSocialActions } from '../social-actions/SocialActions.js'
-import { t } from '@moodlenet/react-app/webapp'
 
 const socialActions: SocialActions = {
   follow: SmallFollowButtonContainer,
@@ -68,7 +68,7 @@ SubjectCardPlugins.register(({ subjectKey }) => {
   const { numFollowers } = useSubjectFollowersCount(subjectKey)
   return {
     overallItems: {
-      numFollowers: { name: {t('followers')}, value: numFollowers, Icon: <PermIdentity /> },
+      numFollowers: { name: t('followers'), value: numFollowers, Icon: <PermIdentity /> },
     },
   }
 })
@@ -92,7 +92,7 @@ SubjectPagePlugins.register(({ subjectKey }) => {
       followBtn: { Item: FollowBtn },
     },
     overallItems: {
-      numFollowers: { name: {t('followers')}, value: numFollowers },
+      numFollowers: { name: t('followers'), value: numFollowers },
     },
   }
   return hookResult

@@ -58,7 +58,7 @@ export const translations: Translations = {
   level_avatar: 'Level-Symbol',
   like: 'Gefällt mir',
   like_needs_login: 'Einloggen oder registieren um zu liken',
-  like_own_content: 'Du kannst nicht deinen eigenen Inhalten liken',
+  like_own_content: 'Du kannst nicht deine eigenen Inhalte liken',
   like_remove: 'Gefällt mir entfernen',
   load_more: 'Mehr laden',
   location: 'Ort',
