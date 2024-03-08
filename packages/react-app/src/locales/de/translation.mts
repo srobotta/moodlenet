@@ -1,6 +1,8 @@
 import type { Translations } from '../../webapp/types/i18n.mjs'
 
 export const translations: Translations = {
+  approve: 'Freigeben',
+  approved_badge: 'Freigabe erteilt, dein Inhalt ist jetzt für alle sichtbar.',
   back_soon: 'Wir sind bald wieder da',
   bookmarks: 'Lesezeichen',
   create_account: 'Neues Nutzendenkonto erstellen',
@@ -41,8 +43,10 @@ export const translations: Translations = {
   title_featured_collections: 'Aktuelle Sammlungen',
   title_featured_resources: 'Aktuelle Ressourcen',
   title_leaderboard: 'Leaderboard',
+  unapprove: 'Sperren',
   user_subtitle_featured_authors: 'Top Autor*innen, die dich ansprechen könnten',
-  user_subtitle_featured_collections: 'Sammlungen von hoher Qualität die Dich interessieren könnten',
+  user_subtitle_featured_collections:
+    'Sammlungen von hoher Qualität die Dich interessieren könnten',
   user_subtitle_featured_resources: 'Ausgewählte Inhalte nach deinen Interessen',
   user_title_featured_authors: 'Ausgewählte Autor*innen',
   user_title_featured_collections: 'Ausgewählte Sammlungen',
