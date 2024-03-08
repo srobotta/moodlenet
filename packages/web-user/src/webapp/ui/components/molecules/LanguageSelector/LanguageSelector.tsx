@@ -22,7 +22,6 @@ export const LanguageSelector: FC<LanguageSelectorProps> = ({ menuItems }) => {
           Element: <Component key={key} />,
           wrapperClassName: `lang-menu-item lang-${key} ${className}`,
         }
-        // reoderedmenuItems.map((menuItem, i) => {
         return floatingMenuContentItem
       }),
     ]
