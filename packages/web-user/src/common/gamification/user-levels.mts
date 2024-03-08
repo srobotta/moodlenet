@@ -9,6 +9,7 @@ import level7Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-7.png
 import level8Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-8.png'
 import level9Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-9.png'
 import { pointSystem as P } from './point-system.mjs'
+import { t } from '@moodlenet/react-app/webapp'
 
 export type UserLevelDetails = {
   minPoints: number
@@ -19,19 +20,19 @@ export type UserLevelDetails = {
 }
 
 export const userLevels: UserLevelDetails[] = [
-  { minPoints: 0, maxPoints: 14, title: 'Ambitious seed', level: 1, avatar: level1Avatar },
-  { minPoints: 15, maxPoints: 74, title: 'Determined sprout', level: 2, avatar: level2Avatar },
-  { minPoints: 75, maxPoints: 249, title: 'Rooted learner', level: 3, avatar: level3Avatar },
-  { minPoints: 250, maxPoints: 499, title: 'Seedling scholar', level: 4, avatar: level4Avatar },
-  { minPoints: 500, maxPoints: 1499, title: 'Steadily grower', level: 5, avatar: level5Avatar },
-  { minPoints: 1500, maxPoints: 4999, title: 'Photosynthesist', level: 6, avatar: level6Avatar },
-  { minPoints: 5000, maxPoints: 14999, title: 'Sky reacher', level: 7, avatar: level7Avatar },
-  { minPoints: 15000, maxPoints: 49999, title: 'Firmly grounded', level: 8, avatar: level8Avatar },
-  { minPoints: 50000, maxPoints: 99999, title: 'Versatile canopy', level: 9, avatar: level9Avatar },
+  { minPoints: 0, maxPoints: 14, title: {t('Ambitious seed')}, level: 1, avatar: level1Avatar },
+  { minPoints: 15, maxPoints: 74, title: {t('Determined sprout')}, level: 2, avatar: level2Avatar },
+  { minPoints: 75, maxPoints: 249, title: {t('Rooted learner')}, level: 3, avatar: level3Avatar },
+  { minPoints: 250, maxPoints: 499, title: {t('Seedling scholar')}, level: 4, avatar: level4Avatar },
+  { minPoints: 500, maxPoints: 1499, title: {t('Steadily grower')}, level: 5, avatar: level5Avatar },
+  { minPoints: 1500, maxPoints: 4999, title: {t('Photosynthesist')}, level: 6, avatar: level6Avatar },
+  { minPoints: 5000, maxPoints: 14999, title: {t('Sky reacher')}, level: 7, avatar: level7Avatar },
+  { minPoints: 15000, maxPoints: 49999, title: {t('Firmly grounded')}, level: 8, avatar: level8Avatar },
+  { minPoints: 50000, maxPoints: 99999, {t('Versatile canopy')}, level: 9, avatar: level9Avatar },
   {
     minPoints: 100000,
     maxPoints: 1000000,
-    title: 'Dazzling biome',
+    title: {t('Dazzling biome')},
     level: 10,
     avatar: level10Avatar,
   },

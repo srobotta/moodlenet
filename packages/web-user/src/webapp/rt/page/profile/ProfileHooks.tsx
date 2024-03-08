@@ -24,6 +24,7 @@ import { AuthCtx } from '../../context/AuthContext.js'
 import { useProfileContext } from '../../context/ProfileContext.js'
 import { useMyFeaturedEntity } from '../../context/useMyFeaturedEntity.js'
 import { shell } from '../../shell.mjs'
+import { t } from '@moodlenet/react-app/webapp'
 
 export type ProfilePagePluginMap = {
   main_mainColumnItems?: AddOnMap<AddonItemNoKey>
@@ -290,7 +291,7 @@ export const useProfileProps = ({
       overallCardItems: [
         {
           Icon: PermIdentity,
-          name: 'Followers',
+          name: {t('followers')},
           className: 'followers',
           value: profileGetRpc.numFollowers,
           href: href(
@@ -302,7 +303,7 @@ export const useProfileProps = ({
         },
         {
           Icon: Grade,
-          name: 'Following',
+          name: {t('following')},
           className: 'following',
           value: profileGetRpc.numFollowing,
           href: href(
@@ -314,7 +315,7 @@ export const useProfileProps = ({
         },
         {
           Icon: FilterNone,
-          name: 'Resources',
+          name: {t('resources')},
           className: 'resources',
           value: profileGetRpc.ownKnownEntities.resources.length,
         },
