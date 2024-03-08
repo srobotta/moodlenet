@@ -7,6 +7,7 @@ import { ReactComponent as LeafIcon } from '../../../assets/icons/leaf.svg'
 import { ReactComponent as PersonIcon } from '../../../assets/icons/profile.svg'
 import type { OverallCardProps } from './OverallCard.js'
 import { OverallCard } from './OverallCard.js'
+import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof OverallCard> = {
   title: 'Molecules/OverallCard',
@@ -37,14 +38,14 @@ export const OverallCardStoryProps: OverallCardProps = {
       Icon: PersonIcon,
       className: 'followers',
       href: href('Pages/Followers'),
-      name: 'Followers',
+      name: {t('followers')},
       value: 25,
     },
     {
       Icon: PersonIcon,
       className: 'following',
       href: href('Pages/Following'),
-      name: 'Following',
+      name:  {t('following')},
       value: 97,
     },
     { Icon: FilterNone, className: 'resources', name: 'Resources', value: 23 },
@@ -57,7 +58,7 @@ export const OverallCardNoCardStoryProps: OverallCardProps = {
       Icon: PersonIcon,
       className: 'followers',
       href: href('Pages/Followers'),
-      name: 'Followers',
+      name: {t('followers')},
       value: 25,
     },
     { Icon: LeafIcon, name: 'Leaves', className: 'leaves', value: 43212 },

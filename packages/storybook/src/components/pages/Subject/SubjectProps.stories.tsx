@@ -13,6 +13,7 @@ import {
   MainLayoutLoggedInStoryProps,
   MainLayoutLoggedOutStoryProps,
 } from '../../layout/MainLayout/MainLayout.stories.js'
+import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof Subject> = {
   title: 'Pages/Subject',
@@ -84,7 +85,7 @@ export const useSubjectStoryProps = (
 
   const overallItems: SubjectOverallProps[] = [
     {
-      name: 'Followers',
+      name: {t('followers')},
       value: 13,
       key: 'followers',
     },
@@ -94,14 +95,14 @@ export const useSubjectStoryProps = (
     //   key: 'collections',
     // },
     {
-      name: 'Resources',
+      name: {t('resources')},
       value: 92,
       key: 'resources',
     },
   ]
 
   const resourceList: SimpleResourceListProps = {
-    title: 'Resources',
+    title: {t('resources')},
     resourceCardPropsList: getResourceCardsStoryProps(6, {
       access: {},
       orientation: 'horizontal',

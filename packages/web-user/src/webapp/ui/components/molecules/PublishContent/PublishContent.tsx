@@ -3,6 +3,7 @@ import { Modal, PrimaryButton } from '@moodlenet/component-library'
 import { t } from '@moodlenet/react-app/webapp'
 import type { ComponentType, FC } from 'react'
 import { useState } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import './PublishContent.scss'
 import {
   CreateCollectionPublishContentItem,
