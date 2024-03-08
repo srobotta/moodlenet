@@ -15,6 +15,6 @@ export const CreateCollectionAddMenuItem: FC<CreateCollectionAddMenuItemProps> =
 }) => (
   <div onClick={createCollection}>
     <LibraryAdd />
-    New collection
+    {t('new_collection')}
   </div>
 )
