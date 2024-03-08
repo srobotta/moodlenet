@@ -1,5 +1,6 @@
 import type { Href } from '@moodlenet/component-library'
 import { Modal, PrimaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/react-app/webapp'
 import type { ComponentType, FC } from 'react'
 import { useState } from 'react'
 import './PublishContent.scss'
@@ -39,7 +40,7 @@ export const PublishContent: FC<PublishContentProps> = ({
     !isAuthenticated && isShowingContentModal && (
       <Modal
         className="create-content-modal"
-        title={`Log in or create an account to start publishing content`}
+        title={t('start_publishing')}
         closeButton={false}
         onClose={() => {
           setIsShowingContentModal(false)
@@ -53,7 +54,7 @@ export const PublishContent: FC<PublishContentProps> = ({
     isAuthenticated && isShowingContentModal && (
       <Modal
         className="create-content-modal"
-        title={`What would you like to publish?`}
+        title={t('what_do_you_want_to_publish')}
         closeButton={false}
         onClose={() => {
           setIsShowingContentModal(false)
@@ -74,7 +75,7 @@ export const PublishContent: FC<PublishContentProps> = ({
         color="blue"
         onClick={() => setIsShowingContentModal(true)}
       >
-        Publish content
+        {t('publish_content')}
       </PrimaryButton>
     </>
   )

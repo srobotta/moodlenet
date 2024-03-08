@@ -6,7 +6,7 @@ export type CreateResourceAddMenuItemProps = { createResource(): void }
 export const CreateResourceAddMenuItem: FC<{ createResource(): void }> = ({ createResource }) => (
   <div onClick={createResource}>
     <NoteAdd />
-    New resource
+    {t('new_resource')}
   </div>
 )
 
