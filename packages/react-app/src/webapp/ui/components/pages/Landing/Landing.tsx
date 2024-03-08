@@ -1,11 +1,11 @@
 import { SnackbarStack, sortAddonItems, type AddonItem } from '@moodlenet/component-library'
+import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useContext } from 'react'
 import { MainHeaderContext } from '../../../../exports/ui.mjs'
 import defaultBackground from '../../../assets/img/default-landing-background.png'
 import { MainSearchBox } from '../../atoms/MainSearchBox/MainSearchBox.js'
 import type { MainLayoutProps } from '../../layout/MainLayout/MainLayout.js'
-import { t } from '@moodlenet/react-app/webapp'
 import MainLayout from '../../layout/MainLayout/MainLayout.js'
 import './Landing.scss'
 
@@ -26,8 +26,10 @@ export const Landing: FC<LandingProps> = ({
   mainLayoutProps,
   mainColumnItems,
   headerCardItems,
+  /*
   title,
   subtitle,
+  */
 }) => {
   const background = {
     backgroundImage: 'url("' + defaultBackground + '")',
