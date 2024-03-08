@@ -16,8 +16,8 @@ export const menuHeaderButtonsItems = {
 }
 const { loginButton, signupButton, avatarMenu, addMenu, languageMenu } = menuHeaderButtonsItems
 export const menuHeaderButtonsAuthAddons: AddonsByUserRule<AddonItemNoKey> = {
-  guest: { loginButton, signupButton, languageMenu },
-  auth: { addMenu, languageMenu, avatarMenu },
+  guest: { languageMenu, loginButton, signupButton },
+  auth: { languageMenu, addMenu, avatarMenu },
   root: { addMenu: undefined, avatarMenu },
 }
 
