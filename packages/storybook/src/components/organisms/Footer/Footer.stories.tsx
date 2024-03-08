@@ -3,6 +3,7 @@ import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storyboo
 import type { MainFooterProps } from '@moodlenet/react-app/ui'
 import { MainFooter } from '@moodlenet/react-app/ui'
 import { Favorite } from '@mui/icons-material'
+import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof MainFooter> = {
   title: 'Organisms/Footer',
@@ -29,14 +30,14 @@ export const FooterStoryProps: MainFooterProps = {
           className="extended"
           style={{ textAlign: 'center', color: '#6b6b6b', fontSize: '14px' }}
         >
-          We&apos;d love to get{' '}
+          {t('we_love_to_get')}{' '}
           <a
             href="https://feedback.moodle.org/index.php?r=survey/index&sid=766627&lang=en"
             target="_blank"
             rel="noreferrer"
             style={{ color: '#0a60ff' }}
           >
-            your feedback on MoodleNet
+            {t('your_feedback')}
           </a>
           <Favorite
             titleAccess="love"
@@ -47,9 +48,9 @@ export const FooterStoryProps: MainFooterProps = {
               color: '#fc0071',
             }}
           />{' '}
-          You can suggest new features and report bugs in the{' '}
+          {t('you_can_suggest')}{' '}
           <a href="https://moodle.org/mod/forum/view.php?id=8806" target="_blank" rel="noreferrer">
-            MoodleNet community
+          {t('moodlenet_community')}
           </a>
           .
         </div>

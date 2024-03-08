@@ -13,6 +13,7 @@ export const translations: Translations = {
   load_more: 'Load more',
   login: 'Log in',
   logout: 'Log out',
+  moodlenet_community: 'MoodleNet Community',
   new_collection: 'New collection',
   new_resource: 'New resource',
   override_subtitle: 'This is the OER Repository of the Bern University of Applied Sciences.',
@@ -35,6 +36,7 @@ export const translations: Translations = {
   subtitle_featured_collections: 'Great collections of curated resources',
   subtitle_featured_resources: 'Highlights on top quality content',
   subtitle_leaderboard: 'Expectional contributors leading the way',
+  such_great_collection: 'Such a great collection',
   title_create_collection: 'Create a new collection',
   title_create_resource: 'Create a new resource',
   title_featured_authors: 'Featured authors',
@@ -48,4 +50,7 @@ export const translations: Translations = {
   user_title_featured_authors: 'Authors selection',
   user_title_featured_collections: 'Collections selection',
   user_title_featured_resources: 'Resources selection',
+  we_love_to_get: 'We\'d love to get',
+  you_can_suggest: 'You can suggest new features and report bugs in the',
+  your_feedback: 'your feedback on MoodleNet',
 }
