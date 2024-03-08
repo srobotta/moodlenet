@@ -1,5 +1,6 @@
 import type { Href } from '@moodlenet/react-app/common'
 import { Link, withProxy } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { Bookmarks, DisplaySettings, ExitToApp, Settings } from '@mui/icons-material'
 import { ReactComponent as ArrowsIcon } from '../../../assets/icons/arrows.svg'
 import defaultAvatar from '../../../assets/img/default-avatar.svg'
@@ -21,7 +22,7 @@ export const ProfileLinkAvatarMenuComponent = withProxy<ProfileLinkAvatarMenuCom
             width: '28px',
           }}
         />
-        Profile
+        {t('profile')}
       </Link>
     )
   },
@@ -31,7 +32,7 @@ export type LogoutAvatarMenuComponentProps = { logout(): void }
 export const LogoutAvatarMenuComponent = withProxy<LogoutAvatarMenuComponentProps>(({ logout }) => {
   return (
     <span onClick={logout}>
-      <ExitToApp /> Logout
+      <ExitToApp /> {t('logout')}
     </span>
   )
 })
@@ -42,7 +43,7 @@ export const UserSettingsLinkAvatarMenuComponent =
     return (
       <Link href={settingsHref}>
         <Settings />
-        Settings
+        {t('settings')}
       </Link>
     )
   })
@@ -53,7 +54,7 @@ export const AdminSettingsLinkAvatarMenuComponent =
     return (
       <Link href={settingsHref}>
         <DisplaySettings />
-        Admin
+        {t('admin')}
       </Link>
     )
   })
@@ -64,7 +65,7 @@ export const BookmarksLinkAvatarMenuComponent = withProxy<BookmarksLinkAvatarMen
     return (
       <Link href={bookmarksHref}>
         <Bookmarks />
-        Bookmarks
+        {t('bookmarks')}
       </Link>
     )
   },
@@ -76,7 +77,7 @@ export const FollowingLinkAvatarMenuComponent = withProxy<FollowingLinkAvatarMen
     return (
       <Link href={followingHref}>
         <ArrowsIcon />
-        Following
+        {t('following')}
       </Link>
     )
   },

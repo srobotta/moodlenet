@@ -1,5 +1,6 @@
 import { ListCard, TertiaryButton } from '@moodlenet/component-library'
 import type { BrowserMainColumnItemBase, ProxyProps } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import type { SubjectCardProps } from '../SubjectCard/SubjectCard.js'
@@ -34,7 +35,7 @@ export const BrowserSubjectList: FC<BrowserSubjectListProps> = ({
       header={
         showHeader && (
           <div className="card-header">
-            <div className="title">Subjects</div>
+            <div className="title">{t('subjects')}</div>
           </div>
         )
       }
@@ -44,7 +45,7 @@ export const BrowserSubjectList: FC<BrowserSubjectListProps> = ({
             <TertiaryButton onClick={loadMore}>Load more</TertiaryButton>
           ) : null
         ) : (
-          <TertiaryButton onClick={setShowAll}>See all subject results</TertiaryButton>
+          <TertiaryButton onClick={setShowAll}>{t('see_all_subject_result')}</TertiaryButton>
         )
       }
       // minGrid={showAll ? 300 : 240}

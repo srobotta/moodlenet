@@ -2,6 +2,7 @@ import { Card } from '@moodlenet/component-library'
 import type { FC } from 'react'
 
 import { Link } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { getUserLevelDetails } from '../../../../../common/gamification/user-levels.mjs'
 import type { LeaderBoardContributor } from '../../../../../common/types.mjs'
 import { ReactComponent as LeafIcon } from '../../../assets/icons/leaf.svg'
@@ -15,8 +16,8 @@ export const Leaderboard: FC<LeaderboardProps> = ({ contributors }) => {
   return (
     <div className="leaderboard-container">
       <div className="leaderboard-header">
-        <div className="title">Leaderboard</div>
-        <div className="subtitle">Expectional contributors leading the way</div>
+        <div className="title">{t('title_leaderboard')}</div>
+        <div className="subtitle">{t('subtitle_leaderboard')}</div>
       </div>
       <Card className="leaderboard">
         {contributors.map((contributor, index) => {

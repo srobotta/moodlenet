@@ -4,6 +4,7 @@ import { Card, Modal } from '@moodlenet/component-library'
 import { useEffect, useRef, useState, type FC } from 'react'
 // import { Href, Link } from '../../../../elements/link'
 import { InfoOutlined } from '@mui/icons-material'
+import { t } from '@moodlenet/react-app/webapp'
 import {
   actionsAndPointsObtained,
   getUserLevelDetails,
@@ -26,7 +27,7 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
   const progressBarWidth = ((points - minPoints) / (maxPoints - minPoints)) * 100
 
   const learnMore = (
-    <abbr className="learn-more" title="Learn more" onClick={() => setShowInfoModal(true)}>
+    <abbr className="learn-more" title="{t('learn_more')}" onClick={() => setShowInfoModal(true)}>
       <InfoOutlined />
     </abbr>
   )
@@ -86,7 +87,7 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
         ))}
       </div>
       <div className="leaves">
-        <div className="title">Leaves</div>
+        <div className="title">{t('leaves')}</div>
         {actionsAndPointsObtained.map((action, index) => (
           <div className="row" key={index}>
             <abbr className={`action`} title={action.abbr ?? ''}>
@@ -108,14 +109,14 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
       {infoModal}
       <Card className="user-progress-card" key="user-progress-card">
         <div className={`level-avatar level-${level}`}>
-          <img className="avatar" src={avatar} alt="level avatar" />
+          <img className="avatar" src={avatar} alt="{t('level_avatar')}" />
         </div>
         <div className="level-title">
           <div className="title">
             {title}
             {learnMore}
           </div>
-          <span className="level">Level {level}</span>
+          <span className="level">{t('level')} {level}</span>
         </div>
         <div className="progress-info">
           <div className="progress-bar">

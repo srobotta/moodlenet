@@ -2,6 +2,7 @@ import { CollectionCardPlugins, CollectionPagePlugins } from '@moodlenet/collect
 import type { PluginHookResult } from '@moodlenet/core/lib'
 import { SubjectCardPlugins, SubjectPagePlugins } from '@moodlenet/ed-meta/webapp'
 import { ResourceCardPlugins, ResourcePagePlugins } from '@moodlenet/ed-resource/webapp'
+import { t } from '@moodlenet/react-app/webapp'
 import { PermIdentity } from '@mui/icons-material'
 import { useEffect, useMemo, useState } from 'react'
 import { BookmarkButtonContainer, LikeButtonContainer } from '../exports.mjs'
@@ -67,7 +68,7 @@ SubjectCardPlugins.register(({ subjectKey }) => {
   const { numFollowers } = useSubjectFollowersCount(subjectKey)
   return {
     overallItems: {
-      numFollowers: { name: 'Followers', value: numFollowers, Icon: <PermIdentity /> },
+      numFollowers: { name: t('followers'), value: numFollowers, Icon: <PermIdentity /> },
     },
   }
 })
@@ -91,7 +92,7 @@ SubjectPagePlugins.register(({ subjectKey }) => {
       followBtn: { Item: FollowBtn },
     },
     overallItems: {
-      numFollowers: { name: 'Followers', value: numFollowers },
+      numFollowers: { name: t('followers'), value: numFollowers },
     },
   }
   return hookResult

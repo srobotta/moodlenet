@@ -10,6 +10,7 @@ import {
   createPlugin,
   createTaskManager,
   silentCatchAbort,
+  t,
   useMainLayoutProps,
 } from '@moodlenet/react-app/webapp'
 import { FilterNone, Grade, PermIdentity } from '@mui/icons-material'
@@ -290,7 +291,7 @@ export const useProfileProps = ({
       overallCardItems: [
         {
           Icon: PermIdentity,
-          name: 'Followers',
+          name: t('followers'),
           className: 'followers',
           value: profileGetRpc.numFollowers,
           href: href(
@@ -302,7 +303,7 @@ export const useProfileProps = ({
         },
         {
           Icon: Grade,
-          name: 'Following',
+          name: t('following'),
           className: 'following',
           value: profileGetRpc.numFollowing,
           href: href(
@@ -314,7 +315,7 @@ export const useProfileProps = ({
         },
         {
           Icon: FilterNone,
-          name: 'Resources',
+          name: t('resources'),
           className: 'resources',
           value: profileGetRpc.ownKnownEntities.resources.length,
         },

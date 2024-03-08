@@ -1,6 +1,7 @@
 import type { Href } from '@moodlenet/component-library'
 import { ListCard, PrimaryButton } from '@moodlenet/component-library'
 import { Link } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { LibraryAdd } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useMemo } from 'react'
@@ -51,7 +52,7 @@ export const CollectionList: FC<CollectionListProps> = ({
                 <Link href={newCollectionHref}>
                   <PrimaryButton className="action">
                     <LibraryAdd />
-                    New collection
+                    {t('new_collection')}
                   </PrimaryButton>
                 </Link>
               ),

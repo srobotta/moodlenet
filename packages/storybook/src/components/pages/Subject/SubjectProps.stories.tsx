@@ -3,6 +3,7 @@ import type { MainSubjectCardSlots, SubjectOverallProps, SubjectProps } from '@m
 import { Subject } from '@moodlenet/ed-meta/ui'
 import type { SimpleResourceListProps } from '@moodlenet/ed-resource/ui'
 import { SimpleResourceList } from '@moodlenet/ed-resource/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import type { BookmarkButtonProps, FollowButtonProps } from '@moodlenet/web-user/ui'
 import { FollowButton } from '@moodlenet/web-user/ui'
 import { action } from '@storybook/addon-actions'
@@ -84,7 +85,7 @@ export const useSubjectStoryProps = (
 
   const overallItems: SubjectOverallProps[] = [
     {
-      name: 'Followers',
+      name: t('followers'),
       value: 13,
       key: 'followers',
     },
@@ -94,14 +95,14 @@ export const useSubjectStoryProps = (
     //   key: 'collections',
     // },
     {
-      name: 'Resources',
+      name: t('resources'),
       value: 92,
       key: 'resources',
     },
   ]
 
   const resourceList: SimpleResourceListProps = {
-    title: 'Resources',
+    title: t('resources'),
     resourceCardPropsList: getResourceCardsStoryProps(6, {
       access: {},
       orientation: 'horizontal',
