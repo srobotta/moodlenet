@@ -6,6 +6,7 @@ export function useLanguageSelectorProps(): LanguageSelectorProps {
   const menuItems = i18n.getLanguagesIso().map((lang): LanguageSelectorItem => {
     const onClick = () => {
       i18n.setLang(lang)
+      window.location.reload()
     }
     const cmp: React.FC = () => {
       return <a onClick={onClick}>{lang}</a>
