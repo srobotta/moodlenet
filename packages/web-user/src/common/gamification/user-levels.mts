@@ -50,20 +50,20 @@ export const actionsAndPointsObtained: { action: string; points: number; abbr?: 
     abbr: 'Get a point for each detail filled, profile and background images, location, website, description',
   },
   {
-    action: 'Set up interests',
+    action: {t('set_up_interests')},
     points: P.engagement.profile.interestsSet.points,
     abbr: 'Get a point when setting the interests type in your settings page',
   },
-  { action: 'Publish collection', points: P.contribution.collection.published.toCreator.points },
+  { action: {t('publish_collection')}, points: P.contribution.collection.published.toCreator.points },
   {
     action: "Add someone else's resource in your published collection",
     points: P.contribution.collection.listCuration.toCollectionCreator.points,
   },
   {
-    action: 'Your resource added in a collection',
+    action: {t('your_resource_added_in_a_collection')},
     points: P.contribution.collection.listCuration.toResourceCreator.points,
   },
-  { action: 'Publish resource', points: P.contribution.resource.published.toCreator.points },
+  { action: {t('publish_resource')}, points: P.contribution.resource.published.toCreator.points },
   {
     action: 'Follow a user a collection or a subject',
     points: P.engagement.follow.followerProfile.points,
