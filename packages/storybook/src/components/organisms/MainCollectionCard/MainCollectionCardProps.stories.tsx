@@ -16,8 +16,8 @@ import type { OptionItemProp } from '@moodlenet/component-library'
 import type { CollectionFormProps } from '@moodlenet/collection/common'
 import type { MainCollectionCardProps } from '@moodlenet/collection/ui'
 import { Collection, MainCollectionCard } from '@moodlenet/collection/ui'
-import { useCollectionForm } from '../../../components/pages/Collection/CollectionProps.stories.js'
 import { t } from '@moodlenet/react-app/webapp'
+import { useCollectionForm } from '../../../components/pages/Collection/CollectionProps.stories.js'
 const maxUploadSize = 1024 * 1024 * 50
 
 const meta: ComponentMeta<typeof Collection> = {
@@ -47,19 +47,19 @@ const meta: ComponentMeta<typeof Collection> = {
 }
 
 export const validationSchema: SchemaOf<CollectionFormProps> = object({
-  category: string().required(/* t */ {t('please_select_subject')}),
-  content: string().required(/* t */ {t('please_upload_content')}),
+  category: string().required(/* t */ t('please_select_subject')),
+  content: string().required(/* t */ t('please_upload_content')),
   license: string().when('isFile', (isFile, schema) => {
-    return isFile ? schema.required(/* t */ {t('select_license')}) : schema.optional()
+    return isFile ? schema.required(/* t */ t('select_license')) : schema.optional()
   }),
   isFile: boolean().required(),
-  description: string().max(4096).min(3).required(/* t */ {t('please_provide_description')}),
-  title: string().max(160).min(3).required(/* t */ {t('please_provide_title')}),
+  description: string().max(4096).min(3).required(/* t */ t('please_provide_description')),
+  title: string().max(160).min(3).required(/* t */ t('please_provide_title')),
   image: mixed()
     .test((v, { createError }) =>
       v instanceof Blob && v.size > maxUploadSize
         ? createError({
-            message: /* t */ {t('file_too_big')},
+            message: /* t */ t('file_too_big'),
           })
         : true,
     )
@@ -68,9 +68,9 @@ export const validationSchema: SchemaOf<CollectionFormProps> = object({
   level: string().optional(),
   month: string().optional(),
   type: string().optional(),
-  visibility: mixed().required(/* t */ {t('visibility_required')}),
+  visibility: mixed().required(/* t */ t('visibility_required')),
   year: string().when('month', (month, schema) => {
-    return month ? schema.required(/* t */ {t('please_select_year')}) : schema.optional()
+    return month ? schema.required(/* t */ t('please_select_year')) : schema.optional()
   }),
 })
 export const collectionFormValues: CollectionFormProps = {
@@ -113,7 +113,7 @@ export const useMainCollectionCardStoryProps = (overrides?: {
     // content: null,
     // isFile: true,
     // visibility: 'Public',
-    title: {t('best_collection_ever')},
+    title: t('best_collection_ever'),
     description:
       'This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us. This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.',
     // 'This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.',

@@ -38,7 +38,7 @@ export const BrowserProfileList: FC<BrowserProfileListProps> = ({
         showHeader && (
           <div className="card-header">
             <div className="title">
-              People
+              {t('people')}
               {/* {peopleTitle ? peopleTitle : People} */}
             </div>
 

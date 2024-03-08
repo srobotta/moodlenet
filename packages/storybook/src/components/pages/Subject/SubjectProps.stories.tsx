@@ -3,6 +3,7 @@ import type { MainSubjectCardSlots, SubjectOverallProps, SubjectProps } from '@m
 import { Subject } from '@moodlenet/ed-meta/ui'
 import type { SimpleResourceListProps } from '@moodlenet/ed-resource/ui'
 import { SimpleResourceList } from '@moodlenet/ed-resource/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import type { BookmarkButtonProps, FollowButtonProps } from '@moodlenet/web-user/ui'
 import { FollowButton } from '@moodlenet/web-user/ui'
 import { action } from '@storybook/addon-actions'
@@ -13,7 +14,6 @@ import {
   MainLayoutLoggedInStoryProps,
   MainLayoutLoggedOutStoryProps,
 } from '../../layout/MainLayout/MainLayout.stories.js'
-import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof Subject> = {
   title: 'Pages/Subject',
@@ -85,7 +85,7 @@ export const useSubjectStoryProps = (
 
   const overallItems: SubjectOverallProps[] = [
     {
-      name: {t('followers')},
+      name: t('followers'),
       value: 13,
       key: 'followers',
     },
@@ -95,14 +95,14 @@ export const useSubjectStoryProps = (
     //   key: 'collections',
     // },
     {
-      name: {t('resources')},
+      name: t('resources'),
       value: 92,
       key: 'resources',
     },
   ]
 
   const resourceList: SimpleResourceListProps = {
-    title: {t('resources')},
+    title: t('resources'),
     resourceCardPropsList: getResourceCardsStoryProps(6, {
       access: {},
       orientation: 'horizontal',
