@@ -2,10 +2,10 @@ import type { CollectionCardProps } from '@moodlenet/collection/ui'
 import { CollectionCard } from '@moodlenet/collection/ui'
 import { ListCard, PrimaryButton } from '@moodlenet/component-library'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { LibraryAdd } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useMemo } from 'react'
-import { t } from '@moodlenet/react-app/webapp'
 import './ProfileCollectionList.scss'
 
 export type ProfileCollectionListProps = {
@@ -35,7 +35,7 @@ export const ProfileCollectionList: FC<ProfileCollectionListProps> = ({
   const listCard = (
     <ListCard
       className="profile-collection-list"
-      header={`t('curated_collections')`}
+      header={t('curated_collections')}
       content={useMemo(
         () =>
           collectionCardPropsList.map(({ props, key }) => ({
@@ -50,7 +50,7 @@ export const ProfileCollectionList: FC<ProfileCollectionListProps> = ({
               element: (
                 <PrimaryButton className="action" onClick={createCollection}>
                   <LibraryAdd />
-                  t('new_collection')
+                  {t('new_collection')}
                 </PrimaryButton>
               ),
               position: 'end',
