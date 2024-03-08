@@ -1,6 +1,6 @@
 import { SimpleDropdown } from '@moodlenet/component-library'
 import type { FC } from 'react'
-
+import { t } from '@moodlenet/react-app/webapp'
 export type SortType = 'Relevant' | 'Popular' | 'Recent'
 export type SortByProps = {
   selected: SortType
@@ -16,7 +16,7 @@ export const SortBy: FC<SortByProps> = ({ selected, setSelected }) => {
     <SimpleDropdown
       options={sortTypesList}
       selected={[selected ?? 'Relevant']}
-      label="Sort by"
+      label="{t('sort_by')}"
       onClick={name => setSelected(name as SortType)}
       notHighlightInitialSelection={true}
       initialSelection="Relevant"

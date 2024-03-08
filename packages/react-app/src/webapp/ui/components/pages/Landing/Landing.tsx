@@ -5,6 +5,7 @@ import { MainHeaderContext } from '../../../../exports/ui.mjs'
 import defaultBackground from '../../../assets/img/default-landing-background.png'
 import { MainSearchBox } from '../../atoms/MainSearchBox/MainSearchBox.js'
 import type { MainLayoutProps } from '../../layout/MainLayout/MainLayout.js'
+import { t } from '@moodlenet/react-app/webapp'
 import MainLayout from '../../layout/MainLayout/MainLayout.js'
 import './Landing.scss'
 
@@ -35,8 +36,8 @@ export const Landing: FC<LandingProps> = ({
 
   const landingTitle = (
     <div className="landing-title">
-      <div className="title">{title}</div>
-      <div className="subtitle">{subtitle}</div>
+      <div className="title">{t('override_title')}</div>
+      <div className="subtitle">{t('override_subtitle')}</div>
     </div>
   )
 
