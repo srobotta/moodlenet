@@ -13,6 +13,7 @@ export const translations: Translations = {
   load_more: 'Mehr laden',
   login: 'Einloggen',
   logout: 'Ausloggen',
+  moodlenet_community: 'MoodleNet Community',
   new_collection: 'Neue Sammlung',
   new_resource: 'Neue Ressource',
   override_subtitle: 'Dies ist das OER-Repository der Berner Fachhochschule.',
@@ -37,6 +38,7 @@ export const translations: Translations = {
   subtitle_featured_resources: 'Ausgezeichnete qualitative Inhalte',
   subtitle_leaderboard:
     'Ausgezeichete Personen, die einen wichtigen Beitrag für offene Bildungsresourcen leisten',
+  such_great_collection: 'So eine tolle Sammlung',
   title_create_collection: 'Eine neue Sammlung anlegen',
   title_create_resource: 'Eine neue Ressource anlegen',
   title_featured_authors: 'Aktuelle Autor*innen',
@@ -51,4 +53,7 @@ export const translations: Translations = {
   user_title_featured_authors: 'Ausgewählte Autor*innen',
   user_title_featured_collections: 'Ausgewählte Sammlungen',
   user_title_featured_resources: 'Ausgewählte Ressourcen',
+  we_love_to_get: 'Wir freuen uns über',
+  you_can_suggest: 'Du kannst neue Funktionen vorschlagen und Fehler melden in der',
+  your_feedback: 'Dein Feedback zu MoodleNet',
 }

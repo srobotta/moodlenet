@@ -15,6 +15,7 @@ import { BookmarkButton, SmallFollowButton } from '@moodlenet/web-user/ui'
 import { action } from '@storybook/addon-actions'
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 import type { PartialDeep } from 'type-fest'
+import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof CollectionCard> = {
   title: 'Molecules/CollectionCard',
@@ -55,7 +56,7 @@ export const getCollectionCardStoryProps = (
 ): CollectionCardProps => {
   const data: CollectionCardData = {
     id: `id-${Math.floor(Math.random() * ContentBackupImages.length)}`,
-    title: 'Such a great collection',
+    title: t('such_great_collection'),
     image: { location: 'https://picsum.photos/300/200', credits: null },
     ...overrides?.data,
     collectionHref: href('Pages/Collection/Logged In'),
