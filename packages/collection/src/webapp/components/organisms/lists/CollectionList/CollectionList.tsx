@@ -51,7 +51,7 @@ export const CollectionList: FC<CollectionListProps> = ({
                 <Link href={newCollectionHref}>
                   <PrimaryButton className="action">
                     <LibraryAdd />
-                    New collection
+                    {t('new_collection')}
                   </PrimaryButton>
                 </Link>
               ),
