@@ -40,23 +40,23 @@ export const userLevels: UserLevelDetails[] = [
 
 export const actionsAndPointsObtained: { action: string; points: number; abbr?: string }[] = [
   {
-    action: 'Create account',
+    action: {t('create_account')},
     points: P.engagement.profile.welcome.points,
-    abbr: 'Congrats! You already did it!',
+    abbr: {t('congrats_you_already_did_it')},
   },
   {
-    action: 'Complete profile',
+    action: {t('complete_profile')},
     points: 5 * P.engagement.profile.perMetaDataField.points,
-    abbr: 'Get a point for each detail filled, profile and background images, location, website, description',
+    abbr: {t('get_a_point_for_each_detail')},
   },
   {
     action: {t('set_up_interests')},
     points: P.engagement.profile.interestsSet.points,
-    abbr: 'Get a point when setting the interests type in your settings page',
+    abbr: {t('get_a_point_interests')},
   },
   { action: {t('publish_collection')}, points: P.contribution.collection.published.toCreator.points },
   {
-    action: "Add someone else's resource in your published collection",
+    action: {t('add_someone_elses_resource_in_published_collection')},
     points: P.contribution.collection.listCuration.toCollectionCreator.points,
   },
   {
@@ -65,22 +65,22 @@ export const actionsAndPointsObtained: { action: string; points: number; abbr?: 
   },
   { action: {t('publish_resource')}, points: P.contribution.resource.published.toCreator.points },
   {
-    action: 'Follow a user a collection or a subject',
+    action: {t('follow_a_user_a_collection_or_a_subject')},
     points: P.engagement.follow.followerProfile.points,
   },
-  { action: 'New follower', points: P.engagement.follow.followedProfile.points },
+  { action: {t('new_follower')}, points: P.engagement.follow.followedProfile.points },
   {
-    action: 'New follower on your collection',
+    action: {t('new_follower_on_your_collection')},
     points: P.engagement.follow.entityCreatorProfile.points,
   },
   { action: 'New like on your resource', points: P.curation.like.toTargetEntityCreator.points },
-  { action: 'Like a resource', points: P.curation.like.toActor.points },
+  { action: {t('like_a_resource')}, points: P.curation.like.toActor.points },
   {
-    action: 'New bookmark on your profile or contribution',
+    action: {t('new_bookmark_on_your_profile_or_contribution')},
     points: P.curation.bookmark.toTargetEntityCreator.points,
   },
-  { action: 'Bookmark a contribution or auser', points: P.curation.bookmark.toActor.points },
-  { action: 'Become a publisher', points: P.engagement.profile.publisher.points },
+  { action: {t('bookmark_a_contribution_or_auser')}, points: P.curation.bookmark.toActor.points },
+  { action: {t('become_a_publisher')}, points: P.engagement.profile.publisher.points },
 ]
 
 export const getUserLevelDetails = (points: number): UserLevelDetails => {
@@ -94,7 +94,7 @@ export const getUserLevelDetails = (points: number): UserLevelDetails => {
     userLevels[userLevels.length - 1] ?? {
       minPoints: 0,
       maxPoints: 14,
-      title: 'Ambitious seed',
+      title: {t('ambitious_seed')},
       level: 1,
       avatar: level1Avatar,
     }
