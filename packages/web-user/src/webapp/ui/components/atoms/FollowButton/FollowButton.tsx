@@ -2,6 +2,7 @@ import { PrimaryButton, SecondaryButton, TertiaryButton } from '@moodlenet/compo
 import { t, tn } from '@moodlenet/react-app/webapp'
 import { PermIdentity, Person } from '@mui/icons-material'
 import type { FC } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import './FollowButton.scss'
 
 export type FollowButtonProps = {
@@ -27,7 +28,7 @@ export const FollowButton: FC<FollowButtonProps> = ({
       key="follow-button"
       color="orange"
     >
-      Following
+      {t('following')}
     </SecondaryButton>
   ) : (
     <PrimaryButton
@@ -45,7 +46,7 @@ export const FollowButton: FC<FollowButtonProps> = ({
           : t('follow_user')
       }
     >
-      Follow
+      {t('follow')}
     </PrimaryButton>
   )
 }
