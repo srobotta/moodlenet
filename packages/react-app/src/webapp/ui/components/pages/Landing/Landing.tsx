@@ -2,7 +2,7 @@ import { SnackbarStack, sortAddonItems, type AddonItem } from '@moodlenet/compon
 import type { FC } from 'react'
 import { useContext } from 'react'
 import { MainHeaderContext } from '../../../../exports/ui.mjs'
-import defaultBackground from '../../../assets/img/default-landing-background.png'
+import defaultBackground from '../../../assets/img/bfh-landing.jpg'
 import { MainSearchBox } from '../../atoms/MainSearchBox/MainSearchBox.js'
 import type { MainLayoutProps } from '../../layout/MainLayout/MainLayout.js'
 import MainLayout from '../../layout/MainLayout/MainLayout.js'
