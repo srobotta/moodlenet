@@ -3,6 +3,7 @@ import type { Translations } from '../../webapp/types/i18n.mjs'
 export const translations: Translations = {
   approve: 'Freigeben',
   approved_badge: 'Freigabe erteilt, dein Inhalt ist jetzt für alle sichtbar.',
+  back_soon: 'Wir sind bald wieder da',
   bookmarks: 'Lesezeichen',
   create_account: 'Neues Nutzendenkonto erstellen',
   curated_collections: 'Kuratierte Sammlungen',
@@ -14,7 +15,11 @@ export const translations: Translations = {
   logout: 'Ausloggen',
   new_collection: 'Neue Sammlung',
   new_resource: 'Neue Ressource',
+  override_subtitle: 'Dies ist das OER-Repository der Berner Fachhochschule.',
+  override_title: 'Die Lehre von morgen gestalten',
+  page_not_found_or_access_not_allowed: 'Seite nicht gefunden oder Zugriff nicht erlaubt',
   profile: 'Profil',
+  scheduled_maintenance: 'MoodleNet ist für eine geplante Wartung nicht verfügbar und wird in wenigen Minuten wieder online sein',
   search_placeholder: 'Nach OER Inhalten suchen',
   see_all_people_result: 'Zeige Resultate von allen Personen an',
   see_more_authors: 'Mehr Autor*innen',
@@ -22,6 +27,7 @@ export const translations: Translations = {
   see_more_resources: 'Weitere Ressourcen',
   select_language: 'Sprache auswählen',
   share_content: 'Inhalte teilen',
+  sort_by: 'Sortieren nach',
   signup: 'Registrieren',
   subtitle_create_collection: 'Sammlungen sind gruppierte Materialien',
   subtitle_create_resource:
