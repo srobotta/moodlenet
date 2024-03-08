@@ -97,11 +97,10 @@ export const translations: Translations = {
   user_title_featured_authors: 'Authors selection',
   user_title_featured_collections: 'Collections selection',
   user_title_featured_resources: 'Resources selection',
-  we_love_to_get: "We'd love to get",
   what_do_you_want_to_publish: 'What would you like to publish?',
   versatile_canopy: 'Versatile canopy',
   visibility_required: 'Visibility is required',
-  we_love_to_get: 'We\'d love to get',
+  we_love_to_get: "We'd love to get",
   you_can_suggest: 'You can suggest new features and report bugs in the',
   your_feedback: 'your feedback on MoodleNet',
 }
