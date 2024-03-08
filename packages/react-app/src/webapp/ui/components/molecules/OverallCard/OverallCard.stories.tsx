@@ -1,13 +1,13 @@
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 // import { href } from '../../../../elements/link'
 // import { Grade, LibraryBooks, PermIdentity } from '@mui/icons-material'
+import { t } from '@moodlenet/react-app/webapp'
 import { FilterNone } from '@mui/icons-material'
 import { href } from '../../../../../common/lib.mjs'
 import { ReactComponent as LeafIcon } from '../../../assets/icons/leaf.svg'
 import { ReactComponent as PersonIcon } from '../../../assets/icons/profile.svg'
 import type { OverallCardProps } from './OverallCard.js'
 import { OverallCard } from './OverallCard.js'
-import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof OverallCard> = {
   title: 'Molecules/OverallCard',
@@ -38,14 +38,14 @@ export const OverallCardStoryProps: OverallCardProps = {
       Icon: PersonIcon,
       className: 'followers',
       href: href('Pages/Followers'),
-      name: {t('followers')},
+      name: t('followers'),
       value: 25,
     },
     {
       Icon: PersonIcon,
       className: 'following',
       href: href('Pages/Following'),
-      name:  {t('following')},
+      name: t('following'),
       value: 97,
     },
     { Icon: FilterNone, className: 'resources', name: 'Resources', value: 23 },
@@ -58,7 +58,7 @@ export const OverallCardNoCardStoryProps: OverallCardProps = {
       Icon: PersonIcon,
       className: 'followers',
       href: href('Pages/Followers'),
-      name: {t('followers')},
+      name: t('followers'),
       value: 25,
     },
     { Icon: LeafIcon, name: 'Leaves', className: 'leaves', value: 43212 },
