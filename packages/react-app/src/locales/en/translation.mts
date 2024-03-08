@@ -1,6 +1,8 @@
 import type { Translations } from '../../webapp/types/i18n.mjs'
 
 export const translations: Translations = {
+  approve: 'Approve',
+  approve_badge: 'Approved, your published content is visible to all',
   bookmarks: 'Bookmarks',
   create_account: 'Create a new account',
   curated_collections: 'Curated collections',
@@ -33,6 +35,7 @@ export const translations: Translations = {
   title_featured_collections: 'Featured collections',
   title_featured_resources: 'Featured resources',
   title_leaderboard: 'Leaderboard',
+  unapprove: 'Unapprove',
   user_subtitle_featured_authors: 'Top contributors you might appreciate',
   user_subtitle_featured_collections: 'High quality collections you might enjoy',
   user_subtitle_featured_resources: 'Top resource aligned with your interests',
