@@ -16,6 +16,7 @@ import { useFormik } from 'formik'
 import { Share } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import type {
   ProfileAccess,
   ProfileActions,
@@ -227,7 +228,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
   const title = isEditing ? (
     <InputTextField
       className="display-name underline"
-      placeholder={`Display name`}
+      placeholder={t('display_name')}
       value={form.values.displayName}
       onChange={form.handleChange}
       name="displayName"
@@ -252,7 +253,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       textAreaAutoSize
       noBorder
       edit={isEditing}
-      placeholder={`What should others know about you?`}
+      placeholder={t('what_should_others_know_about_you')}
       value={form.values.aboutMe}
       error={isEditing && shouldShowErrors && form.errors.aboutMe}
     />
@@ -292,7 +293,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
     <span key="edit-location">
       <InputTextField
         className="underline"
-        placeholder="Location"
+        placeholder={t('location')}
         value={form.values.location ?? undefined}
         onChange={form.handleChange}
         noBorder
@@ -313,7 +314,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
         value={form.values.siteUrl ?? undefined}
         onChange={form.handleChange}
         noBorder
-        placeholder="Website"
+        placeholder={t('website')}
         name="siteUrl"
         edit={isEditing}
         error={isEditing && shouldShowErrors && form.errors.siteUrl}
@@ -358,7 +359,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
     <RoundButton
       className="change-avatar-button"
       type="edit"
-      abbrTitle={`Edit profile picture`}
+      abbrTitle={t('edit_profile_picture')}
       onClick={selectAvatar}
       key="edit-avatar-btn"
     />,
@@ -376,7 +377,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
     <RoundButton
       className="change-background-button"
       type="edit"
-      abbrTitle={`Edit background`}
+      abbrTitle={t('edit_background')}
       key="edit-background-btn"
       onClick={selectBackground}
     />,
@@ -423,7 +424,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
           style={{ maxWidth: '90%', maxHeight: '90%' }}
           key="background-modal"
         >
-          <img src={backgroundImageUrl} alt="Background" />
+          <img src={backgroundImageUrl} alt="{t('background')}" />
         </Modal>
       )}
       {isShowingAvatar && avatarImageUrl && (
@@ -434,7 +435,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
           style={{ maxWidth: '90%', maxHeight: '90%' }}
           key="avatar-modal"
         >
-          <img src={avatarImageUrl} alt="Avatar" />
+          <img src={avatarImageUrl} alt="{t('avatar')}" />
         </Modal>
       )}
       {isSendingMessage && (
@@ -535,7 +536,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       className={`message`}
       disabled={!isAuthenticated}
       onClick={() => setIsSendingMessage(true)}
-      abbr={!isAuthenticated ? 'Login or signup to send messages' : 'Send a message'}
+      abbr={!isAuthenticated ? {t('login_or_signup_to_send_messages')} : {t('send_a_message')}}
     >
       Message
     </SecondaryButton>
@@ -581,11 +582,11 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       ]}
       hoverElement={
         isShowingSmallCard ? (
-          <SecondaryButton color="grey" className={`more small`} abbr="More actions">
+          <SecondaryButton color="grey" className={`more small`} abbr="{t('more_actions')}">
             <div className="three-dots">...</div>
           </SecondaryButton>
         ) : (
-          <SecondaryButton color="grey" className={`more big`} abbr="More actions">
+          <SecondaryButton color="grey" className={`more big`} abbr="{t('more_actions')}">
             <div className="text">More</div>
           </SecondaryButton>
         )

@@ -51,17 +51,17 @@ export const Signup: FC<SignupProps> = ({
           {/* <div className={`signup-content ${requestSent ? 'success' : ''}`}> */}
           <Card className="login-card" hover={true}>
             <Link href={loginHref}>
-              Log in
+            {t('login')}
               <CallMadeIcon />
             </Link>
           </Card>
           <Card className="signup-card">
             <div className="content">
-              <div className="title">Sign up</div>
+              <div className="title">{t('signup')}</div>
               {currSignupEntry ? (
                 <currSignupEntry.Panel key={currSignupEntry.key}>
                   <Link href={userAgreementHref} target="__blank">
-                    <TertiaryButton>You agree to our Terms &amp; Conditions</TertiaryButton>
+                    <TertiaryButton>{t('agree_terms_conditions')}</TertiaryButton>
                   </Link>
                 </currSignupEntry.Panel>
               ) : (
