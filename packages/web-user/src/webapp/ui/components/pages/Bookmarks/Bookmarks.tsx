@@ -1,5 +1,6 @@
 import type { BrowserPropsData, MainLayoutProps } from '@moodlenet/react-app/ui'
 import { Browser, MainLayout } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 
 export type BookmarksProps = {
@@ -10,7 +11,7 @@ export const Bookmarks: FC<BookmarksProps> = ({ mainLayoutProps, browserProps })
   return (
     <MainLayout {...mainLayoutProps}>
       <div className="bookmarks">
-        <Browser {...browserProps} title="{t('bookmarks')}" />
+        <Browser {...browserProps} title={t('bookmarks')} />
       </div>
     </MainLayout>
   )
