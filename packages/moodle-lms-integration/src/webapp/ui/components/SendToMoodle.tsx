@@ -11,6 +11,7 @@ import type { FC } from 'react'
 import { useState } from 'react'
 import type { SchemaOf } from 'yup'
 import { object, string } from 'yup'
+import { t } from '@moodlenet/react-app/webapp'
 import './SendToMoodle.scss'
 
 export type SendToMoodleForm = { site: string | undefined }
@@ -138,7 +139,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
         onClick={() => canSendToMoodle && setIsAddingToMoodleLms(true)}
         disabled={!canSendToMoodle}
       >
-        Send to Moodle
+        {t('send_to_moodle')}
       </PrimaryButton>
     </>
   )

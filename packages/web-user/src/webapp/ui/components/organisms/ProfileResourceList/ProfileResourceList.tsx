@@ -5,6 +5,7 @@ import type { ProxyProps } from '@moodlenet/react-app/ui'
 import { NoteAdd } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useMemo } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import './ProfileResourceList.scss'
 
 export type ProfileResourceListProps = {
@@ -28,14 +29,14 @@ export const ProfileResourceList: FC<ProfileResourceListProps> = ({
           }),
         [resourceCardPropsList],
       )}
-      header={`Latest resources`}
+      header={t('latest_resources')}
       actions={
         canEdit
           ? {
               element: (
                 <PrimaryButton className="action" onClick={createResource}>
                   <NoteAdd />
-                  New resource
+                  {t('new_resource')}
                 </PrimaryButton>
               ),
               position: 'end',

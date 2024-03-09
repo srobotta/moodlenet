@@ -85,7 +85,7 @@ export const actionsAndPointsObtained: { action: string; points: number; abbr?: 
     action: t('new_follower_on_your_collection'),
     points: P.engagement.follow.entityCreatorProfile.points,
   },
-  { action: 'New like on your resource', points: P.curation.like.toTargetEntityCreator.points },
+  { action: t('new_like_on_your_resource'), points: P.curation.like.toTargetEntityCreator.points },
   { action: t('like_a_resource'), points: P.curation.like.toActor.points },
   {
     action: t('new_bookmark_on_your_profile_or_contribution'),
