@@ -22,6 +22,7 @@ import type {
 //import { ReactComponent as ExtractInfoIcon } from '../../../assets/icons/extract-info.svg'
 import { ReactComponent as UploadFileIcon } from '../../../assets/icons/upload-file.svg'
 import { ReactComponent as UploadImageIcon } from '../../../assets/icons/upload-image.svg'
+import { t } from '@moodlenet/react-app/webapp'
 import autofillingImg from '../../../assets/img/autofilling.png'
 import uploadingFileImg from '../../../assets/img/uploading-file.png'
 import './UploadResource.scss'
@@ -350,7 +351,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
       />
       <UploadFileIcon />
       <span>
-        <span>Drop or click to upload a file!</span>
+        <span>{t('drop_or_click_to_upload_a_file')}</span>
         <br />
         {fileMaxSize && (
           <span style={{ fontSize: '12px' }}>{/* Max size {prettyBytes(fileMaxSize)} */}</span>
@@ -502,7 +503,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
             <InputTextField
               className="link"
               name="content"
-              placeholder={`Paste or type a link`}
+              placeholder={t('paste_or_type_a_link')}
               ref={addLinkFieldRef}
               edit
               defaultValue={
@@ -510,7 +511,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
               }
               onChange={shouldShowErrors ? () => contentForm.validateField('content') : undefined}
               onKeyDown={e => e.key === 'Enter' && addLink()}
-              rightSlot={<PrimaryButton onClick={addLink}>Add</PrimaryButton>}
+              rightSlot={<PrimaryButton onClick={addLink}>{t('add')}</PrimaryButton>}
               error={
                 (shouldShowErrors || showContentErrors || showLinkErrors) &&
                 contentForm.errors.content

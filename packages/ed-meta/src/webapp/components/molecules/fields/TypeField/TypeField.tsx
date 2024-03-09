@@ -2,6 +2,7 @@ import type { TextOptionProps } from '@moodlenet/component-library'
 import { Dropdown, SimplePill, TextOption } from '@moodlenet/component-library'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 
 export type TypeFieldProps = {
   type: string | undefined
@@ -50,8 +51,8 @@ export const TypeField: FC<TypeFieldProps> = ({
       onChange={e => {
         e.currentTarget.value !== type && editType(e.currentTarget.value)
       }}
-      label="Type"
-      placeholder="Content type"
+      label="{t('type')}"
+      placeholder="{t('content_type')}"
       edit
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}
@@ -83,7 +84,7 @@ export const TypeField: FC<TypeFieldProps> = ({
     </Dropdown>
   ) : type ? (
     <div className="detail type">
-      <div className="title">Type</div>
+      <div className="title">{t('type')}</div>
       <abbr className="value" title={types.selected?.value}>
         {types.selected?.label}
       </abbr>

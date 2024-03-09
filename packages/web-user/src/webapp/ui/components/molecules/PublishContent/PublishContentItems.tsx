@@ -1,6 +1,7 @@
 import type { Href } from '@moodlenet/component-library'
 import { PrimaryButton } from '@moodlenet/component-library'
 import { Link } from '@moodlenet/react-app/ui'
+import { t } from '@moodlenet/react-app/webapp'
 import { ArrowForward, LibraryAdd, NoteAdd, StreamOutlined } from '@mui/icons-material'
 import type { FC } from 'react'
 
@@ -12,8 +13,8 @@ export const CreateResourcePublishContentItem: FC<CreateResourcePublishContentIt
     <PrimaryButton className="" color="card">
       <NoteAdd />
       <div className="content">
-        <div className="title">Publish a new resource</div>
-        <div className="subtitle">A resource is a single item of content</div>
+        <div className="title">{t('publish_a_new_resource')}</div>
+        <div className="subtitle">{t('subtitle_create_resource')}</div>
       </div>
     </PrimaryButton>
   </div>
@@ -27,8 +28,8 @@ export const CreateCollectionPublishContentItem: FC<CreateCollectionPublishConte
     <PrimaryButton className="" color="card">
       <LibraryAdd />
       <div className="content">
-        <div className="title">Publish a new collection</div>
-        <div className="subtitle">Collections are groups of resources</div>
+        <div className="title">{t('publish_a_new_collection')}</div>
+        <div className="subtitle">{t('subtitle_create_collection')}</div>
       </div>
     </PrimaryButton>
   </div>
@@ -40,8 +41,8 @@ export const LoginPublishContentItem: FC<LoginPublishContentItemProps> = ({ logi
     <PrimaryButton className="" color="card">
       <ArrowForward />
       <div className="content">
-        <div className="title">Log in</div>
-        <div className="subtitle">Enter to your account</div>
+        <div className="title">{t('login')}</div>
+        <div className="subtitle">{t('enter_your_account')}</div>
       </div>
     </PrimaryButton>
   </Link>
@@ -53,8 +54,8 @@ export const SignUpPublishContentItem: FC<SignUpPublishContentItemProps> = ({ si
     <PrimaryButton className="" color="card">
       <StreamOutlined />
       <div className="content">
-        <div className="title">Join now</div>
-        <div className="subtitle">Create a new account</div>
+        <div className="title">{t('join_noe')}</div>
+        <div className="subtitle">{t('create_account')}</div>
       </div>
     </PrimaryButton>
   </Link>

@@ -4,6 +4,8 @@ import type { Credits } from '../../../../../common.mjs'
 import { useForwardedRef } from '../../../lib/useForwardedRef.mjs'
 import Modal from '../../atoms/Modal/Modal.js'
 import RoundButton from '../../atoms/RoundButton/RoundButton.js'
+import { t } from '@moodlenet/react-app/webapp'
+
 import './ImageContainer.scss'
 
 export type ImageContainerProps = {
@@ -48,7 +50,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
       <img
         className="image"
         src={imageUrl}
-        alt="Background"
+        alt="{t('background')}"
         onClick={() => (link ? undefined : setIsShowingImage(true))}
         style={{ maxHeight: 'fit-content', pointerEvents: displayOnly ? 'auto' : 'none' }}
       />
@@ -56,11 +58,11 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
 
     const imageCredits = credits && (
       <div className={`image-credits ${overlayCredits ? 'overlay' : ''}`}>
-        Photo by
+        {t('photo_by')}
         <a href={credits.owner.url} target="_blank" rel="noreferrer">
           {credits.owner.name}
         </a>
-        on
+        {t('photo_on')}
         {
           <a href={credits.provider?.url} target="_blank" rel="noreferrer">
             {credits.provider?.name}
@@ -88,7 +90,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
           }}
           key="image-modal"
         >
-          <img src={imageUrl} alt="Resource" />
+          <img src={imageUrl} alt="{t('resource')}" />
           {imageCredits}
         </Modal>
       ),
@@ -142,7 +144,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
             <RoundButton
               className={`delete-image`}
               type="cross"
-              abbrTitle={`Delete image`}
+              abbrTitle={t('delete_image')}
               onClick={deleteImage}
             />
           )}
