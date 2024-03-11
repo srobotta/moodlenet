@@ -20,6 +20,7 @@ import { Card, getThumbnailFromUrl, isEllipsisActive } from '@moodlenet/componen
 import { getBackupImage, Link, withProxy } from '@moodlenet/react-app/ui'
 import { Bolt, Public, PublicOff } from '@mui/icons-material'
 import { useEffect, useRef, useState } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import type {
   ResourceCardAccess,
   ResourceCardActions,
@@ -180,7 +181,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
           <ExtractInfoIcon />
         </abbr>
       ) :  */ autofillState === 'ai-generation' ? (
-        <abbr className="ai-generation" title={`Autofilling with AI`}>
+        <abbr className="ai-generation" title="{t('autofilling_with_ai')}">
           <Bolt />
         </abbr>
       ) : null
@@ -188,7 +189,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
     const publishState = canPublish ? (
       isPublished ? (
         <abbr
-          title="Published"
+          title="{t('published')}"
           key="publish-state"
           style={{ cursor: 'initial' }}
           className="publish-state"
@@ -197,7 +198,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
         </abbr>
       ) : (
         <abbr
-          title="Unpublished"
+          title="{t('unpublished')}"
           key="publish-state"
           style={{ cursor: 'initial' }}
           className="publish-state"

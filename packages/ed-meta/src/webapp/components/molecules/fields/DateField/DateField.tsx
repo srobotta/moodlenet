@@ -77,7 +77,7 @@ export const DateField: FC<DateFieldProps> = ({
   const monthLabel = monthOptions.find(({ value }) => value === month)?.label
   return canEdit ? (
     <div className={`date-field ${disabled ? 'disabled' : ''}`}>
-      <label>Original creation date</label>
+      <label>{t('original_creation_date')}</label>
       <div className="fields date-field">
         <Dropdown
           name="month"
@@ -85,7 +85,7 @@ export const DateField: FC<DateFieldProps> = ({
           onChange={e => {
             e.currentTarget.value !== month && editMonth(e.currentTarget.value)
           }}
-          placeholder="Month"
+          placeholder="{t('month')}"
           edit
           noBorder
           disabled={disabled}
@@ -123,7 +123,7 @@ export const DateField: FC<DateFieldProps> = ({
           onChange={e => {
             e.currentTarget.value !== year && editYear(e.currentTarget.value)
           }}
-          placeholder="Year"
+          placeholder="{t('year')}"
           edit
           noBorder
           disabled={disabled}
@@ -153,7 +153,7 @@ export const DateField: FC<DateFieldProps> = ({
     </div>
   ) : month || year ? (
     <div className={`date-field-read-mode detail ${disabled ? 'disabled' : ''}`}>
-      <div className="title">Original creation date</div>
+      <div className="title">{t('original_creation_date')}</div>
       <abbr className={`value date`} title={`${monthLabel ?? ''} ${year ?? ''}`}>
         {monthLabel && <span>{monthLabel}</span>}
         {year && <span>{year}</span>}

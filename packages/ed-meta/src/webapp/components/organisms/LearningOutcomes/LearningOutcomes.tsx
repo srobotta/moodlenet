@@ -8,6 +8,7 @@ import {
 import { Circle, HelpOutline } from '@mui/icons-material'
 import type { RefObject } from 'react'
 import { createRef, useEffect, useState, type FC } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import type { LearningOutcome, LearningOutcomeOption } from '../../../../common/types.mjs'
 import './LearningOutcomes.scss'
 
@@ -58,7 +59,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             className="learning-outcome"
             key={`${code}-${verb}-${i}`}
             name="content"
-            placeholder={`the necessary facts...`}
+            placeholder={t('the_necessary_facts')}
             edit
             disabled={disabled}
             value={sentence}
@@ -85,7 +86,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
                 onClick={() => deleteOutcome(i)}
                 tabIndex={0}
                 disabled={disabled}
-                abbrTitle={'Remove learning outcome'}
+                abbrTitle={t('remove_learning_outcome')}
                 onKeyUp={e => e.key === 'enter' && deleteOutcome(i)}
               />
             }
@@ -138,7 +139,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             pills={false}
             disabled={maxLearningOutcomesReached || disabled}
             abbr={
-              maxLearningOutcomesReached ? 'Max learning outcomes reached' : 'Add learning outcome'
+              maxLearningOutcomesReached ? {t('max_learning_outcomes_reached')} : {t('add_learning_outcome')}
             }
             placeholder={learningOutcomeOption.name}
             searchByText={setSearchText}
@@ -173,7 +174,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
   }, [learningOutcomeCategoriesRefs])
 
   const findOutMore = (
-    <abbr className="find-out-more" title="Find out more">
+    <abbr className="find-out-more" title="{t('find_out_more')}">
       <a
         href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy"
         target="_blank"
@@ -186,7 +187,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
 
   const title = (
     <div className="title">
-      Learning outcomes
+      {t('learning_outcomes')}
       {findOutMore}
     </div>
   )
@@ -194,8 +195,8 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
   const subtitle = (
     <div className="subtitle">
       {isEditing
-        ? 'Write 1 to 5 learning outcomes, selecting the right category and action verb:'
-        : 'By reviewing this resource, learners will be able to:'}
+        ? {t('learning_outcomes_sub_line1')}
+        : {t('learning_outcomes_sub_line2')}}
     </div>
   )
 

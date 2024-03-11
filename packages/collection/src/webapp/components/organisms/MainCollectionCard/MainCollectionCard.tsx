@@ -14,6 +14,7 @@ import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { Check, Delete, Edit, MoreVert, Public, PublicOff, Save, Share } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { t } from '@moodlenet/react-app/webapp'
 import type {
   CollectionAccessProps,
   CollectionActions,
@@ -202,7 +203,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
       className="title"
       isTextarea
       value={form.values.title}
-      placeholder="Title"
+      placeholder="{t('title')}"
       edit={isEditing}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.title}
@@ -217,7 +218,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
 
   const collectionLabel = (
     <div className="collection-label" key="collection-label">
-      Collection
+      {t('collection')}
     </div>
   )
 
@@ -232,7 +233,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
         Element: (
           <div key="share-button" onClick={copyUrl}>
             <Share />
-            Share
+            {t('share')}
           </div>
         ),
       }
@@ -246,7 +247,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
             key="delete-button"
             onClick={() => !emptyOnStart && setIsToDelete(true)}
           >
-            <Delete /> Delete
+            <Delete /> {t('delete')}
           </div>
         ),
       }
@@ -264,7 +265,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
               }}
             >
               <PublicOff />
-              Unpublish
+              {t('unpublish')}
             </div>
           ),
         }
@@ -276,7 +277,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
           Element: (
             <div key="publish-button" onClick={publish}>
               <Public style={{ fill: '#00bd7e' }} />
-              Publish
+              {t('publish')}
             </div>
           ),
         }
@@ -288,7 +289,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
           Element: (
             <div key="publish-button" onClick={publishCheck}>
               <Check style={{ fill: '#00bd7e' }} />
-              Publish check
+              {t('publish_check')}
             </div>
           ),
         }
@@ -296,14 +297,14 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
 
   const publishedButton =
     canEdit && isPublished ? (
-      <abbr title="Published" key="publishing-button" style={{ cursor: 'initial' }}>
+      <abbr title="{t('published')}" key="publishing-button" style={{ cursor: 'initial' }}>
         <Public style={{ fill: '#00bd7e' }} />
       </abbr>
     ) : null
 
   const unpublishedButton =
     canEdit && !isPublished ? (
-      <abbr title="Unpublished" key="unpublished-button" style={{ cursor: 'initial' }}>
+      <abbr title="{t('unpublished')}" key="unpublished-button" style={{ cursor: 'initial' }}>
         <PublicOff style={{ fill: '#a7a7a7' }} />
       </abbr>
     ) : null
@@ -324,7 +325,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
         key="more-button"
         menuContent={updatedMoreButtonItems}
         hoverElement={
-          <TertiaryButton className={`more`} abbr="More options">
+          <TertiaryButton className={`more`} abbr="{t('more_options')}">
             <MoreVert />
           </TertiaryButton>
         }
@@ -462,7 +463,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
           noBorder
           edit={isEditing}
           key="description"
-          placeholder="Description"
+          placeholder="{t('description')}"
           value={form.values.description}
           onChange={form.handleChange}
           error={shouldShowErrors && isEditing && form.errors.description}
@@ -504,7 +505,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
     <>
       {showUrlCopiedAlert && (
         <Snackbar type="success" position="bottom" autoHideDuration={3000} showCloseButton={false}>
-          Copied to clipoard
+          {t('copied_to_clipboard')}
         </Snackbar>
       )}
     </>
@@ -522,14 +523,14 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
             }}
             color="red"
           >
-            Delete
+            {t('delete')}
           </PrimaryButton>
         }
         onClose={() => setIsToDelete(false)}
         style={{ maxWidth: '400px' }}
         className="delete-message"
       >
-        The collection will be deleted
+        {t('the_collection_will_be_deleted')}
       </Modal>
     ),
   ]

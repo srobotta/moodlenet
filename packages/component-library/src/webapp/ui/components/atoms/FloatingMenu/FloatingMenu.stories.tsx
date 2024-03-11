@@ -3,6 +3,7 @@ import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storyboo
 import addIcon from '../../../assets/icons/add-round.svg'
 import type { FloatingMenuProps } from './FloatingMenu.js'
 import { FloatingMenu } from './FloatingMenu.js'
+import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof FloatingMenu> = {
   title: 'Atoms/FloatingMenu',
@@ -24,18 +25,18 @@ const meta: ComponentMeta<typeof FloatingMenu> = {
 }
 
 export const FloatingMenuStoryProps: FloatingMenuProps = {
-  hoverElement: <img className="add-icon" src={addIcon} alt="Add" />,
+  hoverElement: <img className="add-icon" src={addIcon} alt="{t('add')}" />,
   menuContent: [
     {
       Element: (
         <div key="__">
           <div>
             <NoteAddIcon />
-            New Resource
+            {t('new_resource')}
           </div>
           <div>
             <LibraryAddIcon />
-            New Collection
+            {t('new_collection')}
           </div>
         </div>
       ),
