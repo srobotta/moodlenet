@@ -77,8 +77,10 @@ export const translations: Translations = {
   latest_resources: 'Neueste Resourcen',
   learn_more: 'Mehr erfahren',
   learning_outcomes: 'Lernziele',
-  learning_outcomes_sub_line1: 'Schreibe 1 bis 5 Lernziele, indem du die richtige Kategorie und das richtige Aktionsverb auswählst:',
-  learning_outcomes_sub_line2: 'Durch das Studieren dieser Ressource werden die Lernenden in der Lage sein:',
+  learning_outcomes_sub_line1:
+    'Schreibe 1 bis 5 Lernziele, indem du die richtige Kategorie und das richtige Aktionsverb auswählst:',
+  learning_outcomes_sub_line2:
+    'Durch das Studieren dieser Ressource werden die Lernenden in der Lage sein:',
   leaves: 'Blätter',
   level: 'Level',
   levels: 'Levels',
@@ -167,7 +169,7 @@ export const translations: Translations = {
   sky_reacher: 'Himmelstürmer*in',
   sort_by: 'Sortieren nach',
   start_publishing: 'Einloggen oder registieren um neue Inhalte zu veröffentlichen.',
-  start_type_to_search: 'Fange an zu tippen um zu suchen',
+  start_typing_to_search: 'Fange an zu tippen um zu suchen',
   start_typing_textarea: 'Fange an zu tippen um es zu füllen',
   steadily_grower: 'Stetig Wachsende*r',
   subtitle_create_collection: 'Sammlungen sind gruppierte Materialien',
@@ -182,7 +184,7 @@ export const translations: Translations = {
   subjects: 'Fachgebiete',
   such_great_collection: 'So eine tolle Sammlung',
   text_area_value:
-    'Das ist die Beschreibung, die dir sagt, dass dies nicht nur der beste Inhalt ist, sondern auch der dynamischste und angenehmste, den du jemals finden wirst. Vertrau uns.',  
+    'Das ist die Beschreibung, die dir sagt, dass dies nicht nur der beste Inhalt ist, sondern auch der dynamischste und angenehmste, den du jemals finden wirst. Vertrau uns.',
   the_collection_will_be_deleted: 'Die Sammlung wird gelöscht',
   the_resource_will_be_deleted: 'Die Ressource wird gelöscht',
   the_necessary_facts: 'die notwendigen Fakten...',
