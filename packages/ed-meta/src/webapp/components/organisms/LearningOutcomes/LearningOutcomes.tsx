@@ -5,10 +5,10 @@ import {
   RoundButton,
   SimpleTextOption,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/react-app/webapp'
 import { Circle, HelpOutline } from '@mui/icons-material'
 import type { RefObject } from 'react'
 import { createRef, useEffect, useState, type FC } from 'react'
-import { t } from '@moodlenet/react-app/webapp'
 import type { LearningOutcome, LearningOutcomeOption } from '../../../../common/types.mjs'
 import './LearningOutcomes.scss'
 
@@ -139,7 +139,9 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             pills={false}
             disabled={maxLearningOutcomesReached || disabled}
             abbr={
-              maxLearningOutcomesReached ? {t('max_learning_outcomes_reached')} : {t('add_learning_outcome')}
+              maxLearningOutcomesReached
+                ? t('max_learning_outcomes_reached')
+                : t('add_learning_outcome')
             }
             placeholder={learningOutcomeOption.name}
             searchByText={setSearchText}
@@ -194,9 +196,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
 
   const subtitle = (
     <div className="subtitle">
-      {isEditing
-        ? {t('learning_outcomes_sub_line1')}
-        : {t('learning_outcomes_sub_line2')}}
+      {isEditing ? t('learning_outcomes_sub_line1') : t('learning_outcomes_sub_line2')}
     </div>
   )
 
