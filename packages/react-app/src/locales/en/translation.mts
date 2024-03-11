@@ -74,7 +74,8 @@ export const translations: Translations = {
   latest_resources: 'Latest resources',
   learn_more: 'Learn more',
   learning_outcomes: 'Learning outcomes',
-  learning_outcomes_sub_line1: 'Write 1 to 5 learning outcomes, selecting the right category and action verb:',
+  learning_outcomes_sub_line1:
+    'Write 1 to 5 learning outcomes, selecting the right category and action verb:',
   learning_outcomes_sub_line2: 'By reviewing this resource, learners will be able to:',
   leaves: 'Leaves',
   level: 'Level',
@@ -163,7 +164,7 @@ export const translations: Translations = {
   sky_reacher: 'Sky reacher',
   sort_by: 'Sort by',
   start_publishing: 'Log in or create an account to start publishing content',
-  start_type_to_search: 'Start typing to search',
+  start_typing_to_search: 'Start typing to search',
   start_typing_textarea: 'Start typing to fill it',
   steadily_grower: 'Steadily grower',
   subject: 'Subject',
@@ -174,8 +175,6 @@ export const translations: Translations = {
   subtitle_featured_collections: 'Great collections of curated resources',
   subtitle_featured_resources: 'Highlights on top quality content',
   subtitle_leaderboard: 'Expectional contributors leading the way',
-  subject: 'Subject',
-  subjects: 'Subjects',
   such_great_collection: 'Such a great collection',
   text_area_value:
     'This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.',
