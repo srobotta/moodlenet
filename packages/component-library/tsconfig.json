@@ -4,5 +4,9 @@
     "rootDir": "./src",
     "outDir": "./dist"
   },
-  "references": []
+  "references": [
+    {
+      "path": "../react-app"
+    }
+  ]
 }
