@@ -1,5 +1,7 @@
 import { translations as tr_de } from '../locales/de/translation.mjs'
 import { translations as tr_en } from '../locales/en/translation.mjs'
+import { translations as tr_fr } from '../locales/fr/translation.mjs'
+
 import type { Translations } from './types/i18n.mjs'
 
 let currentLang: string
@@ -8,7 +10,7 @@ class i18nHandler {
   constructor() {
     const lang =
       localStorage.getItem('mnet-i18n-lang') ?? navigator.language.toString().split('-')[0]
-    if (lang === 'de' || lang === 'en') {
+    if (lang === 'de' || lang === 'en' || lang === 'fr') {
       currentLang = lang
     } else {
       currentLang = 'de'
@@ -19,6 +21,8 @@ class i18nHandler {
     let trans: Translations
     if (currentLang === 'de') {
       trans = tr_de
+    } else if (currentLang === 'fr') {
+      trans = tr_fr
     } else {
       trans = tr_en
     }
@@ -38,7 +42,7 @@ class i18nHandler {
     return count === 1 ? t(singular, [count]) : t(plural, [count])
   }
   getLanguagesIso(): string[] {
-    return ['de', 'en']
+    return ['de', 'en', 'fr']
   }
   setLang(lang: string): void {
     currentLang = lang
