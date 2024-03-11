@@ -8,7 +8,7 @@ export const translations: Translations = {
     "Add someone else's resource in your published collection",
   add_to_collection: 'Add to collection',
   admin: 'Admin',
-  agree_terms_conditions: 'You agree to our Terms &amp; Conditions',
+  agree_terms_conditions: 'You agree to our Terms & Conditions',
   ambitious_seed: 'Ambitious seed',
   approve: 'Approve',
   approve_badge: 'Approved, your published content is visible to all',
