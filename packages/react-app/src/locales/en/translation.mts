@@ -174,7 +174,7 @@ export const translations: Translations = {
   subtitle_featured_authors: 'Authors with outstanding contributions',
   subtitle_featured_collections: 'Great collections of curated resources',
   subtitle_featured_resources: 'Highlights on top quality content',
-  subtitle_leaderboard: 'Expectional contributors leading the way',
+  subtitle_leaderboard: 'Exceptional contributors leading the way',
   such_great_collection: 'Such a great collection',
   text_area_value:
     'This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.',
