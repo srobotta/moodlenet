@@ -16,7 +16,7 @@ import type { OptionItemProp } from '@moodlenet/component-library'
 import type { CollectionFormProps } from '@moodlenet/collection/common'
 import type { MainCollectionCardProps } from '@moodlenet/collection/ui'
 import { Collection, MainCollectionCard } from '@moodlenet/collection/ui'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import { useCollectionForm } from '../../../components/pages/Collection/CollectionProps.stories.js'
 const maxUploadSize = 1024 * 1024 * 50
 

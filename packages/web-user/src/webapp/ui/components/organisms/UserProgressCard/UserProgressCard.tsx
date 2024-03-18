@@ -3,8 +3,8 @@ import { Card, Modal } from '@moodlenet/component-library'
 // import { Card } from '@moodlenet/react-app'
 import { useEffect, useRef, useState, type FC } from 'react'
 // import { Href, Link } from '../../../../elements/link'
+import { t } from '@moodlenet/core/i18n'
 import { InfoOutlined } from '@mui/icons-material'
-import { t } from '@moodlenet/react-app/webapp'
 import {
   actionsAndPointsObtained,
   getUserLevelDetails,
@@ -119,7 +119,9 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
             {title}
             {learnMore}
           </div>
-          <span className="level">{t('level')} {level}</span>
+          <span className="level">
+            {t('level')} {level}
+          </span>
         </div>
         <div className="progress-info">
           <div className="progress-bar">

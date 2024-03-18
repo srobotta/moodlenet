@@ -1,4 +1,4 @@
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import level1Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-1.png'
 import level10Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-10.png'
 import level2Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-2.png'

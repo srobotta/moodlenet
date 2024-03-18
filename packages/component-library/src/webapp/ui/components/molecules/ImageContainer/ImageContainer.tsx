@@ -4,7 +4,7 @@ import type { Credits } from '../../../../../common.mjs'
 import { useForwardedRef } from '../../../lib/useForwardedRef.mjs'
 import Modal from '../../atoms/Modal/Modal.js'
 import RoundButton from '../../atoms/RoundButton/RoundButton.js'
-//import { t } from '@moodlenet/react-app/webapp'
+//import { t } from '@moodlenet/core/i18n'
 const t = (s: string) => {
   return s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g, ' ')
 }

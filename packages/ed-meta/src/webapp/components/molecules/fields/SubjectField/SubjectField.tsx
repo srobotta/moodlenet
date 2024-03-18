@@ -1,8 +1,8 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { Dropdown, SimplePill, TextOption } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
-import { t } from '@moodlenet/react-app/webapp'
 
 export type SubjectFieldProps = {
   subject: string

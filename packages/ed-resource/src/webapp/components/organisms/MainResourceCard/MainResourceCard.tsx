@@ -12,11 +12,11 @@ import {
   useWindowDimensions,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import type { LearningOutcomeOption } from '@moodlenet/ed-meta/common'
 import { LearningOutcomes } from '@moodlenet/ed-meta/ui'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { downloadOrOpenURL, getTagList } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import {
   Check,
   Delete,

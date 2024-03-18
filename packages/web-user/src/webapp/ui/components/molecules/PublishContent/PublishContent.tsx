@@ -1,6 +1,6 @@
 import type { Href } from '@moodlenet/component-library'
 import { Modal, PrimaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import type { ComponentType, FC } from 'react'
 import { useState } from 'react'
 import './PublishContent.scss'

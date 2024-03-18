@@ -1,7 +1,7 @@
 import type { Href } from '@moodlenet/component-library'
 import { ListCard } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import type { ResourceCardPropsData } from '../../ResourceCard/ResourceCard.js'

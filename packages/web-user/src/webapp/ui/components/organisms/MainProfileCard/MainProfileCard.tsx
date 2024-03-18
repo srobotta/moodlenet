@@ -13,7 +13,7 @@ import {
 import { Edit, Flag, Save } from '@mui/icons-material'
 import { useFormik } from 'formik'
 
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import { Share } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'

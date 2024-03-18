@@ -6,8 +6,8 @@ import {
   PrimaryButton,
   SecondaryButton,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { SelectOptionsMulti } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useMemo, useState } from 'react'
 

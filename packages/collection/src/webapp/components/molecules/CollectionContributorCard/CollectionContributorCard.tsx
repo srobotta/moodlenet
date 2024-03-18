@@ -1,8 +1,8 @@
 import { Card } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { Href } from '@moodlenet/react-app/common'
 import { Link } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
-import { t } from '@moodlenet/react-app/webapp'
 import defaultAvatar from '../../../assets/img/default-avatar.svg'
 import './CollectionContributorCard.scss'
 
@@ -23,7 +23,7 @@ export const CollectionContributorCard: FC<CollectionContributorCardProps> = ({
         <img className="avatar" src={avatarUrl || defaultAvatar} alt="Avatar" />
       </Link>
       <div className="description">
-      {t('collection_curated_by')} <Link href={creatorProfileHref}>{displayName}</Link>
+        {t('collection_curated_by')} <Link href={creatorProfileHref}>{displayName}</Link>
       </div>
     </Card>
   )

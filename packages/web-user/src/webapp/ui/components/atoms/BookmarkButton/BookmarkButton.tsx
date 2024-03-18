@@ -1,5 +1,5 @@
 import { TertiaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import { Bookmark, BookmarkBorder } from '@mui/icons-material'
 import type { FC } from 'react'
 import './BookmarkButton.scss'

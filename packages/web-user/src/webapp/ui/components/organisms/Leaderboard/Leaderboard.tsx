@@ -1,10 +1,10 @@
 import { Card } from '@moodlenet/component-library'
 import type { FC } from 'react'
 
+import { t } from '@moodlenet/core/i18n'
 import { Link } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
+import { getUserLevelDetails } from '../../../../../common/gamification/user-levels.mjs'
 import type { LeaderBoardContributor } from '../../../../../common/types.mjs'
-import { getUserLevelDetails } from '../../../../gamification/user-levels.mjs'
 import { ReactComponent as LeafIcon } from '../../../assets/icons/leaf.svg'
 import defaultAvatar from '../../../assets/img/default-avatar.svg'
 import './Leaderboard.scss'

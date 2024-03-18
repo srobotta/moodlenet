@@ -1,6 +1,6 @@
+import { t } from '@moodlenet/core/i18n'
 import type { Href } from '@moodlenet/react-app/common'
 import { Link, withProxy } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import { Bookmarks, DisplaySettings, ExitToApp, Settings } from '@mui/icons-material'
 import { ReactComponent as ArrowsIcon } from '../../../assets/icons/arrows.svg'
 import defaultAvatar from '../../../assets/img/default-avatar.svg'

@@ -6,12 +6,12 @@ import {
   TertiaryButton,
   useSnackbar,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { useFormik } from 'formik'
 import type { FC } from 'react'
 import { useState } from 'react'
 import type { SchemaOf } from 'yup'
 import { object, string } from 'yup'
-import { t } from '@moodlenet/react-app/webapp'
 import './SendToMoodle.scss'
 
 export type SendToMoodleForm = { site: string | undefined }
@@ -139,7 +139,6 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
         onClick={() => canSendToMoodle && setIsAddingToMoodleLms(true)}
         disabled={!canSendToMoodle}
       >
-        {t('send_to_moodle')}
       </PrimaryButton>
     </>
   )

@@ -5,8 +5,8 @@ import {
   SnackbarStack,
   TertiaryButton,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { Link } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import { useState, type FC } from 'react'
 import './InterestInfo.scss'
 
