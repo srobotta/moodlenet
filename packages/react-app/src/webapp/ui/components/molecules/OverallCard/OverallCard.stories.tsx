@@ -1,7 +1,7 @@
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 // import { href } from '../../../../elements/link'
 // import { Grade, LibraryBooks, PermIdentity } from '@mui/icons-material'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import { FilterNone } from '@mui/icons-material'
 import { href } from '../../../../../common/lib.mjs'
 import { ReactComponent as LeafIcon } from '../../../assets/icons/leaf.svg'

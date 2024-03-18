@@ -1,6 +1,6 @@
 import type { IconTextOptionProps } from '@moodlenet/component-library'
 import { Dropdown, IconPill, IconTextOption } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 import './LicenseField.scss'

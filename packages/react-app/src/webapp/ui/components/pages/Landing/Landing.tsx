@@ -1,5 +1,5 @@
 import { SnackbarStack, sortAddonItems, type AddonItem } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useContext } from 'react'
 import { MainHeaderContext } from '../../../../exports/ui.mjs'

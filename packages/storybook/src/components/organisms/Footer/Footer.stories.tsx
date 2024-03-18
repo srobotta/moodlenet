@@ -1,9 +1,9 @@
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 // import { href } from '../../../../elements/link'
+import { t } from '@moodlenet/core/i18n'
 import type { MainFooterProps } from '@moodlenet/react-app/ui'
 import { MainFooter } from '@moodlenet/react-app/ui'
 import { Favorite } from '@mui/icons-material'
-import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof MainFooter> = {
   title: 'Organisms/Footer',
@@ -50,7 +50,7 @@ export const FooterStoryProps: MainFooterProps = {
           />{' '}
           {t('you_can_suggest')}{' '}
           <a href="https://moodle.org/mod/forum/view.php?id=8726" target="_blank" rel="noreferrer">
-          {t('moodlenet_community')}
+            {t('moodlenet_community')}
           </a>
           .
         </div>

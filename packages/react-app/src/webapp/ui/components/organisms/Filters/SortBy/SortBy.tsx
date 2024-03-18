@@ -1,5 +1,5 @@
 import { SimpleDropdown } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 export type SortType = 'Relevant' | 'Popular' | 'Recent'
 export type SortByProps = {

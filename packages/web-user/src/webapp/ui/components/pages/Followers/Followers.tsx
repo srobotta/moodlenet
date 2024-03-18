@@ -1,6 +1,6 @@
+import { t } from '@moodlenet/core/i18n'
 import type { BrowserPropsData, MainLayoutProps } from '@moodlenet/react-app/ui'
 import { Browser, MainLayout } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 
 export type FollowersProps = {

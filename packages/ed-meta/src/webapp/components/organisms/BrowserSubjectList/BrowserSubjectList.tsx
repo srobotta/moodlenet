@@ -1,6 +1,6 @@
 import { ListCard, TertiaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { BrowserMainColumnItemBase, ProxyProps } from '@moodlenet/react-app/ui'
-import { t } from '@moodlenet/react-app/webapp'
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import type { SubjectCardProps } from '../SubjectCard/SubjectCard.js'

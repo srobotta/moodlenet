@@ -1,5 +1,5 @@
 import { PrimaryButton, SecondaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import type { ProfileAccess, ProfileActions, ProfileState } from '../../../../../common/types.mjs'
 import { ReactComponent as ApprovedIcon } from '../../../assets/icons/approved.svg'

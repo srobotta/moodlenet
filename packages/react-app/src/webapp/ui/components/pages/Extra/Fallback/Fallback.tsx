@@ -1,9 +1,9 @@
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { ReactComponent as HatLogo } from '../../../../assets/icons/hat-moodle.svg'
 import type { MainLayoutProps } from '../../../layout/MainLayout/MainLayout.js'
 import MainLayout from '../../../layout/MainLayout/MainLayout.js'
 import './Fallback.scss'
-import { t } from '@moodlenet/react-app/webapp'
 
 export type FallbackProps = {
   mainLayoutProps: MainLayoutProps

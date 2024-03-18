@@ -1,5 +1,5 @@
 import { PrimaryButton, SecondaryButton, TertiaryButton } from '@moodlenet/component-library'
-import { t, tn } from '@moodlenet/react-app/webapp'
+import { t, tn } from '@moodlenet/core/i18n'
 import { PermIdentity, Person } from '@mui/icons-material'
 import type { FC } from 'react'
 import './FollowButton.scss'

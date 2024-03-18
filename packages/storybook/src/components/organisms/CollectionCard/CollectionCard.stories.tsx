@@ -9,13 +9,13 @@ import { CollectionCard } from '@moodlenet/collection/ui'
 import { ContentBackupImages } from '@moodlenet/component-library'
 import type { AssetInfo } from '@moodlenet/component-library/common'
 import { overrideDeep } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import { href } from '@moodlenet/react-app/common'
 import type { BookmarkButtonProps, SmallFollowButtonProps } from '@moodlenet/web-user/ui'
 import { BookmarkButton, SmallFollowButton } from '@moodlenet/web-user/ui'
 import { action } from '@storybook/addon-actions'
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 import type { PartialDeep } from 'type-fest'
-import { t } from '@moodlenet/react-app/webapp'
 
 const meta: ComponentMeta<typeof CollectionCard> = {
   title: 'Molecules/CollectionCard',

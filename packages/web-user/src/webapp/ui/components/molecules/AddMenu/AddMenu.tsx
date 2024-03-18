@@ -1,6 +1,6 @@
 import type { FloatingMenuContentItem } from '@moodlenet/component-library'
 import { FloatingMenu } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/webapp'
+import { t } from '@moodlenet/core/i18n'
 import type { ComponentType, FC } from 'react'
 import { useMemo } from 'react'
 import { ReactComponent as AddIcon } from '../../../assets/icons/add-round.svg'
