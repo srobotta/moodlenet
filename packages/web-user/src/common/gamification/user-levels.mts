@@ -44,7 +44,7 @@ export const userLevels: UserLevelDetails[] = [
   {
     minPoints: 100000,
     maxPoints: 1000000,
-    title: t('Dazzling biome'),
+    title: t('dazzling biome'),
     level: 10,
     avatar: level10Avatar,
   },
