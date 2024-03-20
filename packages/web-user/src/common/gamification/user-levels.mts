@@ -77,7 +77,7 @@ export const actionsAndPointsObtained: { action: string; points: number; abbr?: 
   },
   { action: t('publish_resource'), points: P.contribution.resource.published.toCreator.points },
   {
-    action: t('follow_a_user_a_collection_or_a_subject'),
+    action: t('follow_user_collection_subject'),
     points: P.engagement.follow.followerProfile.points,
   },
   { action: t('new_follower'), points: P.engagement.follow.followedProfile.points },

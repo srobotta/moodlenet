@@ -319,7 +319,7 @@ export const expose = await shell.expose<FullResourceExposeType>({
     'basic/v1/create': {
       guard: async body => {
         const { draftResourceValidationSchema, contentValidationSchema } = await getValidations()
-        await contentValidationSchema.validate({ content: body?.resource })
+        await contentValidationSchema.validate({ content: [body?.resource].flat()[0] })
         await draftResourceValidationSchema.validate(body, {
           stripUnknown: true,
         })
@@ -424,7 +424,7 @@ export const expose = await shell.expose<FullResourceExposeType>({
 
         const [interpreter] = await stdEdResourceMachine({ by: 'create' })
         let snap = interpreter.getSnapshot()
-        console.log({ resourceContent })
+        // console.log({ resourceContent })
         const provideNewResourceEvent: Event = {
           type: 'provide-new-resource',
           content:

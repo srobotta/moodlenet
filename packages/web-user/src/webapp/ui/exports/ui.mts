@@ -12,6 +12,7 @@ export * from '../components/molecules/AvatarMenu/webUserAvatarMenuComponents.js
 export * from '../components/molecules/InterestInfoDialog/InterestInfo.js'
 export * from '../components/molecules/LanguageSelector/LanguageSelector.js'
 export * from '../components/molecules/MinimalisticAccessButtons/MinimalisticAccessButtons.js'
+export * from '../components/molecules/MinimalisticAccessButtons/MinimalisticHeaderAccessMiniItems.js'
 export * from '../components/molecules/PublishContent/PublishContent.js'
 export * from '../components/molecules/PublishContent/PublishContentItems.js'
 export * from '../components/organisms/Leaderboard/Leaderboard.js'

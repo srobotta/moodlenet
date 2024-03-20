@@ -132,14 +132,17 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
     </Modal>
   )
 
-  return canSendToMoodle ? (
+  return (
     <>
-      {modal}
-      <PrimaryButton onClick={() => setIsAddingToMoodleLms(true)}>
+      {canSendToMoodle ? modal : null}
+      <PrimaryButton
+        onClick={() => canSendToMoodle && setIsAddingToMoodleLms(true)}
+        disabled={!canSendToMoodle}
+      >
         {t('send_to_moodle')}
       </PrimaryButton>
     </>
-  ) : null
+  )
 }
 
 SendToMoodle.defaultProps = {}
