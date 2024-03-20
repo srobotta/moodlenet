@@ -22,7 +22,7 @@ export const translations: Translations = {
   best_collection_ever: 'Beste Sammlung überhaupt',
   blooms_category: 'Blooms Kategorie {1}',
   bookmark: 'Lesezeichen',
-  bookmark_a_contribution_or_auser: 'Ein Lesezeichen für einen Beitrag oder eine Person setzen',
+  bookmark_contribution_user: 'Ein Lesezeichen für einen Beitrag oder eine Person setzen',
   bookmark_needs_login: 'Einloggen oder registieren um ein Lesezeichen zu setzen',
   bookmark_remove: 'Lesezeichen entfernen',
   bookmarks: 'Lesezeichen',
@@ -58,8 +58,7 @@ export const translations: Translations = {
   find_out_more: 'Mehr erfahren',
   firmly_grounded: 'Fest verwurzelt',
   follow: 'Folgen',
-  follow_a_user_a_collection_or_a_subject:
-    'Einer Person, einer Sammlung oder einem Fachgebiet folgen',
+  follow_user_collection_subject: 'Einer Person, einer Sammlung oder einem Fachgebiet folgen',
   follow_me: 'Folgen mir',
   follows_me: 'Folgt mir',
   follow_needs_login: 'Einloggen oder registieren zum Folgen',
