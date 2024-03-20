@@ -29,7 +29,7 @@
     }
 
     * {
-      border-radius: 16px;
+      border-radius: 0;
       font-size: 13px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -37,6 +37,7 @@
     }
 
     > .header-left {
+      width: 6rem;
       > .type {
         pointer-events: none;
         padding: 4px 10px;
@@ -148,7 +149,6 @@
     z-index: 1;
     display: flex;
     gap: 10px;
-    font-size: 13px;
     font-family: 'Lato';
     font-size: 12px;
     letter-spacing: 0.2px;
@@ -209,7 +209,6 @@
           width: calc(100% - 34px);
           overflow: hidden;
           text-overflow: ellipsis;
-          word-wrap: normal;
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
@@ -292,7 +291,6 @@
 
       > .image {
         object-fit: cover;
-        border-radius: 9px 0 0 9px;
         background-position: center center;
 
         &.micro {
@@ -321,7 +319,6 @@
         overflow: hidden;
         flex-direction: column;
         display: flex;
-        gap: 4px;
         height: 100%;
         gap: 8px;
 
@@ -330,7 +327,6 @@
           overflow: hidden;
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          font-family: 'Lato';
           line-height: 145%;
           letter-spacing: 0.2px;
           overflow-wrap: break-word;
@@ -397,7 +393,7 @@
   > .round-button {
     position: absolute;
     right: 0;
-    bottom: 0px;
+    bottom: 0;
     z-index: 2;
     padding: 2px 2px 6px 6px;
     background: white;
@@ -426,7 +422,7 @@
 
     &.vertical {
       // width: calc(100% - 6px);
-      left: 0px;
+      left: 0;
       right: 20px;
       margin-left: 25px;
       bottom: 132px;
