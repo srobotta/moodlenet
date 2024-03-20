@@ -111,8 +111,4 @@ export const getUserLevelDetails = (points: number): UserLevelDetails => {
       avatar: level1Avatar,
     }
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c01322079 (Adding my latestes update to new architecture and squashing previous commits)
