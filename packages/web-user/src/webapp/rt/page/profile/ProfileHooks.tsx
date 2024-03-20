@@ -1,6 +1,7 @@
 import { CollectionContext, useCollectionCardProps } from '@moodlenet/collection/webapp'
 import type { AddonItemNoKey } from '@moodlenet/component-library'
 import { useImageUrl } from '@moodlenet/component-library'
+import { t, tn } from '@moodlenet/core/i18n'
 import type { AddOnMap } from '@moodlenet/core/lib'
 import { ResourceContext, useResourceCardProps } from '@moodlenet/ed-resource/webapp'
 import { href } from '@moodlenet/react-app/common'
@@ -10,7 +11,6 @@ import {
   createPlugin,
   createTaskManager,
   silentCatchAbort,
-  t,
   useMainLayoutProps,
 } from '@moodlenet/react-app/webapp'
 import { FilterNone, Grade, PermIdentity } from '@mui/icons-material'
@@ -291,7 +291,7 @@ export const useProfileProps = ({
       overallCardItems: [
         {
           Icon: PermIdentity,
-          name: t('followers'),
+          name: tn('follows_me', 'follow_me', profileGetRpc.numFollowers),
           className: 'followers',
           value: profileGetRpc.numFollowers,
           href: href(
@@ -303,7 +303,7 @@ export const useProfileProps = ({
         },
         {
           Icon: Grade,
-          name: t('following'),
+          name: t('i_follow'),
           className: 'following',
           value: profileGetRpc.numFollowing,
           href: href(
@@ -315,7 +315,7 @@ export const useProfileProps = ({
         },
         {
           Icon: FilterNone,
-          name: t('resources'),
+          name: tn('resource', 'resources', profileGetRpc.ownKnownEntities.resources.length),
           className: 'resources',
           value: profileGetRpc.ownKnownEntities.resources.length,
         },

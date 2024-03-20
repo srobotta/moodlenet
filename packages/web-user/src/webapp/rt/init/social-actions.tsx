@@ -68,7 +68,7 @@ SubjectCardPlugins.register(({ subjectKey }) => {
   const { numFollowers } = useSubjectFollowersCount(subjectKey)
   return {
     overallItems: {
-      numFollowers: { name: t('followers'), value: numFollowers, Icon: <PermIdentity /> },
+      numFollowers: { name: t('follow_me'), value: numFollowers, Icon: <PermIdentity /> },
     },
   }
 })
@@ -92,7 +92,7 @@ SubjectPagePlugins.register(({ subjectKey }) => {
       followBtn: { Item: FollowBtn },
     },
     overallItems: {
-      numFollowers: { name: t('followers'), value: numFollowers },
+      numFollowers: { name: t('follow_me'), value: numFollowers },
     },
   }
   return hookResult

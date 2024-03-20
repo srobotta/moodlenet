@@ -1,11 +1,11 @@
 import type { SearchboxProps } from '@moodlenet/component-library'
 import { Searchbox } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC, PropsWithChildren } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { href } from '../../../../../common/lib.mjs'
 import { searchPagePath } from '../../../../../common/webapp-paths.mjs'
-import { t } from '../../../../i18n.mjs'
 
 export type MainSearchBoxProps = Partial<
   Pick<SearchboxProps, 'setIsSearchboxInViewport' | 'placeholder' | 'size' | 'marginTop'>

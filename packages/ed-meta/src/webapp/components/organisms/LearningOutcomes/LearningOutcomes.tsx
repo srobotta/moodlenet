@@ -76,7 +76,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             leftSlot={
               <abbr
                 className={`verb-pill ${bloomUIClassName}`}
-                title={`${learningOutcomeName} Bloom's category`}
+                title={t('blooms_category', [learningOutcomeName])}
               >
                 {verb}
               </abbr>
@@ -102,7 +102,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
               <Circle />
               <abbr
                 className={`verb ${bloomUIClassName}`}
-                title={`${learningOutcomeName} Bloom's category`}
+                title={t('blooms_category', [learningOutcomeName])}
               >
                 {verb}
               </abbr>{' '}
@@ -176,12 +176,8 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
   }, [learningOutcomeCategoriesRefs])
 
   const findOutMore = (
-    <abbr className="find-out-more" title="{t('find_out_more')}">
-      <a
-        href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <abbr className="find-out-more" title={t('find_out_more')}>
+      <a href={t('wikipedia_blooms_taxonomy')} target="_blank" rel="noopener noreferrer">
         <HelpOutline />
       </a>
     </abbr>

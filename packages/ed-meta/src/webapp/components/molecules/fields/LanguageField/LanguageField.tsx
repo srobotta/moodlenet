@@ -51,8 +51,8 @@ export const LanguageField: FC<LanguageFieldProps> = ({
       onChange={e => {
         e.currentTarget.value !== language && editLanguage(e.currentTarget.value)
       }}
-      label="{t('language')}"
-      placeholder="{t('content_language')}"
+      label={t('language')}
+      placeholder={t('content_language')}
       edit
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}

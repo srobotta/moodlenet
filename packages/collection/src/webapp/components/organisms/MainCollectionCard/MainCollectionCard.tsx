@@ -297,14 +297,14 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
 
   const publishedButton =
     canEdit && isPublished ? (
-      <abbr title="{t('published')}" key="publishing-button" style={{ cursor: 'initial' }}>
+      <abbr title={t('published')} key="publishing-button" style={{ cursor: 'initial' }}>
         <Public style={{ fill: '#00bd7e' }} />
       </abbr>
     ) : null
 
   const unpublishedButton =
     canEdit && !isPublished ? (
-      <abbr title="{t('unpublished')}" key="unpublished-button" style={{ cursor: 'initial' }}>
+      <abbr title={t('unpublished')} key="unpublished-button" style={{ cursor: 'initial' }}>
         <PublicOff style={{ fill: '#a7a7a7' }} />
       </abbr>
     ) : null
@@ -325,7 +325,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
         key="more-button"
         menuContent={updatedMoreButtonItems}
         hoverElement={
-          <TertiaryButton className={`more`} abbr="{t('more_options')}">
+          <TertiaryButton className={`more`} abbr={t('more_options')}>
             <MoreVert />
           </TertiaryButton>
         }

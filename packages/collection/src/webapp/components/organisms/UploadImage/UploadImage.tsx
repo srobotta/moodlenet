@@ -18,6 +18,7 @@ import { ReactComponent as UploadImageIcon } from '../../../assets/icons/upload-
 // import { useNewCollectionPageCtx } from '../NewCollection'
 // import { NewCollectionFormValues } from '../types'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import './UploadImage.scss'
 
 // type SubStep = 'AddFileOrLink' | 'AddImage'
@@ -165,7 +166,7 @@ export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, disp
               hidden
             />
             <UploadImageIcon />
-            <span>Drop or click to upload an image!</span>
+            <span>{t('drop_or_click_to_upload_an_image')}</span>
           </div>
         </div>
       ) : (

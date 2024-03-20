@@ -405,7 +405,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
         hidden
       />
       <UploadImageIcon />
-      <span>Drop or click to upload an image!</span>
+      <span>{t('drop_or_click_to_upload_an_image')}</span>
     </div>
   )
 
@@ -534,13 +534,13 @@ export const UploadResource: FC<UploadResourceProps> = ({
               </div>
               <abbr className="scroll" title={contentName}>
                 {uploadProgress
-                  ? `Uploading ${contentName}`
+                  ? t('uploading_item', [contentName])
                   : /* : autofillState === 'extracting-info'
                   ? `Extracting info from ${
                       contentType === 'file' ? contentName.split('.').pop() : 'link'
                     }` */
                   autofillState === 'ai-generation'
-                  ? `Autofilling with AI`
+                  ? t('autofilling_with_ai')
                   : contentName}
               </abbr>
               {uploadBeats}
@@ -550,7 +550,9 @@ export const UploadResource: FC<UploadResourceProps> = ({
                   onClick={autofillState === 'ai-generation' ? stopAutofill : stopUpload}
                   tabIndex={0}
                   abbrTitle={
-                    autofillState === 'ai-generation' ? 'Cancel autofill' : 'Cancel upload'
+                    autofillState === 'ai-generation'
+                      ? t('autofilling_with_ai_cancel')
+                      : t('upload_cancel')
                   }
                   onKeyUp={e =>
                     e.key === 'Enter' && autofillState === 'ai-generation'

@@ -55,8 +55,8 @@ export const SubjectField: FC<SubjectFieldProps> = ({
       onChange={e => {
         e.currentTarget.value !== subject && editSubject(e.currentTarget.value)
       }}
-      label="{t('subject')}"
-      placeholder="{t('content_category')}"
+      label={t('subject')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}
