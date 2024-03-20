@@ -1,3 +1,4 @@
+import { t } from '@moodlenet/core/i18n'
 import type { FC, PropsWithChildren, ReactNode } from 'react'
 import type { SelectorProps } from '../../../../lib/selector.js'
 import { Selector, useSelectorOption } from '../../../../lib/selector.js'
@@ -36,7 +37,7 @@ export const AddToCollectionsCard: FC<PropsWithChildren<AddToCollectionsCardProp
           <Card noCard={noCard}>
             {header && (
               <div className="collections-header">
-                Select collections
+                {t('select collections')}
                 {/*<Searchbox setSearchText={setSearchText} searchText="" placeholder={t`Find more collections`} />*/}
               </div>
             )}

@@ -1,5 +1,6 @@
 import type { SearchboxProps } from '@moodlenet/component-library'
 import { Searchbox } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC, PropsWithChildren } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -33,7 +34,7 @@ export const ProvideMainSearchBoxCtx: FC<PropsWithChildren<MainSearchBoxCtxValue
   return <MainSearchBoxCtx.Provider value={ctxValue}>{children}</MainSearchBoxCtx.Provider>
 }
 
-const defaultPlaceholder = 'Search for open education content'
+const defaultPlaceholder = t('search_placeholder')
 export type MainSearchBoxCtxValueDeps = {
   search(text: string, defaultQuery: Record<string, string | undefined>): void
   initSearchText: string

@@ -1,5 +1,6 @@
 // import { t } from '@lingui/macro'
 import { overrideDeep } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import { href } from '@moodlenet/react-app/common'
 import { fileExceedsMaxUploadSize, randomIntFromInterval } from '@moodlenet/react-app/ui'
 import { getValidationSchemas, type ProfileFormValues } from '@moodlenet/web-user/common'
@@ -19,7 +20,7 @@ export const profileStoriesValidationSchema: SchemaOf<ProfileFormValues> = objec
     .test((v, { createError }) =>
       v instanceof Blob && fileExceedsMaxUploadSize(v.size, maxUploadSize)
         ? createError({
-            message: /* t */ `The image is too big, reduce the size or use another image`,
+            message: /* t */ t('image_too_big'),
           })
         : true,
     )
@@ -28,12 +29,12 @@ export const profileStoriesValidationSchema: SchemaOf<ProfileFormValues> = objec
     .test((v, { createError }) =>
       v instanceof Blob && fileExceedsMaxUploadSize(v.size, maxUploadSize)
         ? createError({
-            message: /* t */ `The image is too big, reduce the size or use another image`,
+            message: /* t */ t('image_too_big'),
           })
         : true,
     )
     .optional(),
-  displayName: string().max(160).min(3).required(/* t */ `Please provide a display name`),
+  displayName: string().max(160).min(3).required(/* t */ t('please_provide_displayname')),
   location: string()
     .transform(value => value || null)
     .nullable(),
@@ -46,7 +47,7 @@ export const profileStoriesValidationSchema: SchemaOf<ProfileFormValues> = objec
     .url()
     .transform(value => value || null)
     .nullable(),
-  aboutMe: string().max(4096).min(3).required(/* t */ `Please provide a description`),
+  aboutMe: string().max(4096).min(3).required(/* t */ t('please_provide_description')),
 })
 
 export default function useMainProfileCardStoryProps(

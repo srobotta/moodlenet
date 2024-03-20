@@ -13,7 +13,7 @@ import { urlToRpcFile } from '../resource-extract/util.mjs'
 import { shell } from '../shell.mjs'
 import getPromptsAndData from './get-prompts-and-data.mjs'
 import type { BloomsCognitiveElem, ClassifyPars } from './types.mjs'
-import { FN_NAME, bcAttr, par } from './types.mjs'
+import { bcAttr, FN_NAME, par } from './types.mjs'
 
 interface OpenAiResponse {
   data: null | Partial<ClassifyPars>

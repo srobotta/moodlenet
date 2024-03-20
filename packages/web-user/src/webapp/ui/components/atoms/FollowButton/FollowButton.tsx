@@ -1,4 +1,5 @@
 import { PrimaryButton, SecondaryButton, TertiaryButton } from '@moodlenet/component-library'
+import { t, tn } from '@moodlenet/core/i18n'
 import { PermIdentity, Person } from '@mui/icons-material'
 import type { FC } from 'react'
 import './FollowButton.scss'
@@ -25,8 +26,9 @@ export const FollowButton: FC<FollowButtonProps> = ({
       className="following-button"
       key="follow-button"
       color="orange"
+      abbr={t('follow_remove_user')}
     >
-      Following
+      {t('i_follow')}
     </SecondaryButton>
   ) : (
     <PrimaryButton
@@ -36,15 +38,15 @@ export const FollowButton: FC<FollowButtonProps> = ({
       className="follow-button"
       abbr={
         isCreator
-          ? 'Creators cannot follow their own content'
+          ? t('follow_own_content')
           : !isAuthenticated
-          ? 'Login or signup to follow'
+          ? t('follow_needs_login')
           : followed
-          ? 'Unfollow user'
-          : 'Follow user'
+          ? t('follow_remove_user')
+          : t('follow_user')
       }
     >
-      Follow
+      {t('follow')}
     </PrimaryButton>
   )
 }
@@ -64,12 +66,12 @@ export const SmallFollowButton: FC<SmallFollowButtonProps> = ({
       onClick={canFollow ? toggleFollow : () => undefined}
       abbr={
         isCreator
-          ? `${numFollowers} follower${numFollowers === 1 ? '' : 's'}`
+          ? tn('followers_cnt_sing', 'followers_cnt_pl', numFollowers)
           : !isAuthenticated
-          ? 'Login or signup to follow'
+          ? t('follow_needs_login')
           : followed
-          ? 'Unfollow'
-          : 'Follow'
+          ? t('follow_remove_user')
+          : t('follow_user')
       }
       key="followers-button"
     >

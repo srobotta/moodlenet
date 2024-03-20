@@ -1,5 +1,6 @@
 import type { Href } from '@moodlenet/component-library'
 import { ListCard } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
 import { useMemo } from 'react'
@@ -19,14 +20,14 @@ export const LandingResourceList: FC<LandingResourceListProps> = ({
   // searchResourcesHref,
 }) => {
   const title = (
-    <div className="title">{hasSetInterests ? 'Resources selection' : 'Featured resources'}</div>
+    <div className="title">
+      {hasSetInterests ? t('user_title_featured_resources') : t('title_featured_resources')}
+    </div>
   )
 
   const subtitle = (
     <div className="subtitle">
-      {hasSetInterests
-        ? 'Top resources aligned with your interests'
-        : 'Highlights on top quality content'}
+      {hasSetInterests ? t('user_subtitle_featured_resources') : t('subtitle_featured_resources')}
     </div>
   )
   return (

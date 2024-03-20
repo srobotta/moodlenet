@@ -1,4 +1,5 @@
 import { ListCard, TertiaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { BrowserMainColumnItemBase, ProxyProps } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
 import { useMemo } from 'react'
@@ -37,7 +38,7 @@ export const BrowserProfileList: FC<BrowserProfileListProps> = ({
         showHeader && (
           <div className="card-header">
             <div className="title">
-              People
+              {t('people')}
               {/* {peopleTitle ? peopleTitle : People} */}
             </div>
 
@@ -56,10 +57,10 @@ export const BrowserProfileList: FC<BrowserProfileListProps> = ({
       footer={
         showAll ? (
           loadMore ? (
-            <TertiaryButton onClick={loadMore}>Load more</TertiaryButton>
+            <TertiaryButton onClick={loadMore}>{t('load_more')}</TertiaryButton>
           ) : null
         ) : (
-          <TertiaryButton onClick={setShowAll}>See all people results</TertiaryButton>
+          <TertiaryButton onClick={setShowAll}>{t('see_all_people_result')}</TertiaryButton>
         )
       }
       minGrid={170}

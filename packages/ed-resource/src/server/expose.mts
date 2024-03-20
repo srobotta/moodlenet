@@ -1,8 +1,8 @@
 import type { PkgExposeDef, RpcFile } from '@moodlenet/core'
 import {
-  RpcStatus,
   assertRpcFileReadable,
   readableRpcFile,
+  RpcStatus,
   setRpcStatusCode,
 } from '@moodlenet/core'
 import { getWebappUrl } from '@moodlenet/react-app/server'
@@ -29,13 +29,13 @@ import { getResourceHomePageRoutePath } from '../common/webapp-routes.mjs'
 import { canPublish } from './aql.mjs'
 import { getImageAssetInfo } from './lib.mjs'
 import {
-  RESOURCE_DOWNLOAD_ENDPOINT,
   getResource,
   getResourceFile,
   getResourceFileUrl,
   getResourcesCountInSubject,
   getValidations,
   incrementResourceDownloads,
+  RESOURCE_DOWNLOAD_ENDPOINT,
   searchResources,
   validationsConfigs,
 } from './services.mjs'

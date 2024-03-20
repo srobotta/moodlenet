@@ -2,8 +2,8 @@ import { addMiddlewares } from '@moodlenet/http-server/server'
 import type { EntityUser } from '@moodlenet/system-entities/server'
 import { setCurrentUserFetch } from '@moodlenet/system-entities/server'
 import {
-  Profile,
   getWebUserByProfileKey,
+  Profile,
   setCurrentUnverifiedJwtToken,
   signWebUserJwtToken,
 } from '@moodlenet/web-user/server'
