@@ -1,0 +1,16 @@
+type Created implements IEdge {
+  id: ID!
+  _created: Timestamp!
+}
+
+## integrations
+union Edge = Created
+enum EdgeType {
+  Created
+}
+input CreateEdgeInput {
+  Created: Empty
+}
+input EditEdgeInput {
+  Created: Empty
+}
