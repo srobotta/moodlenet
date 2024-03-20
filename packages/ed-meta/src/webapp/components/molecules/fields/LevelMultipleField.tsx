@@ -70,8 +70,8 @@ export const LevelMultipleField: FC<LevelMultipleFieldProps> = ({
       multilines={true}
       value={selections}
       onChange={e => updateLevels(e.target.value)}
-      label="{t('levels')}"
-      placeholder="{t('cotent_category')}"
+      label={t('levels')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!errors}
       error={shouldShowErrors && errors}

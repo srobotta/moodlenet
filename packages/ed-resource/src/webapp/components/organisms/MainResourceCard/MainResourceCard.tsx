@@ -393,14 +393,14 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
 
   const publishedButton =
     canPublish && isPublished ? (
-      <abbr title="{t('published')}" key="publishing-button" style={{ cursor: 'initial' }}>
+      <abbr title={t('published')} key="publishing-button" style={{ cursor: 'initial' }}>
         <Public style={{ fill: '#00bd7e' }} />
       </abbr>
     ) : null
 
   const unpublishedButton =
     canPublish && !isPublished ? (
-      <abbr title="{t('unpublished')}" key="unpublished-button" style={{ cursor: 'initial' }}>
+      <abbr title={t('unpublished')} key="unpublished-button" style={{ cursor: 'initial' }}>
         <PublicOff style={{ fill: '#a7a7a7' }} />
       </abbr>
     ) : null
@@ -460,7 +460,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         key="more-button"
         menuContent={updatedMoreButtonItems}
         hoverElement={
-          <TertiaryButton className={`more`} abbr="{t('more_options')}">
+          <TertiaryButton className={`more`} abbr={t('more_options')}>
             <MoreVert />
           </TertiaryButton>
         }
@@ -577,7 +577,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
       textAreaAutoSize
       noBorder
       edit={isEditing}
-      placeholder="{t('description')}"
+      placeholder={t('description')}
       value={form.values.description}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.description}

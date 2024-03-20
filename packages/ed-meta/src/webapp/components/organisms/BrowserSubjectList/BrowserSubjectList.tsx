@@ -42,7 +42,7 @@ export const BrowserSubjectList: FC<BrowserSubjectListProps> = ({
       footer={
         showAll ? (
           loadMore ? (
-            <TertiaryButton onClick={loadMore}>Load more</TertiaryButton>
+            <TertiaryButton onClick={loadMore}>{t('load_more')}</TertiaryButton>
           ) : null
         ) : (
           <TertiaryButton onClick={setShowAll}>{t('see_all_subject_result')}</TertiaryButton>

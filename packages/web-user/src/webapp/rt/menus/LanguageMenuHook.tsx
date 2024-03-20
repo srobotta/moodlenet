@@ -1,4 +1,4 @@
-import { i18n } from '@moodlenet/react-app/webapp'
+import { i18n } from '@moodlenet/core/i18n'
 import { useMemo } from 'react'
 import type { LanguageSelectorItem, LanguageSelectorProps } from '../../ui/exports/ui.mjs'
 

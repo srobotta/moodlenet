@@ -51,8 +51,8 @@ export const TypeField: FC<TypeFieldProps> = ({
       onChange={e => {
         e.currentTarget.value !== type && editType(e.currentTarget.value)
       }}
-      label="{t('type')}"
-      placeholder="{t('content_type')}"
+      label={t('type')}
+      placeholder={t('content_type')}
       edit
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}

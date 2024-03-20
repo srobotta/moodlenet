@@ -70,8 +70,8 @@ export const SubjectMultipleField: FC<SubjectMultipleFieldProps> = ({
       multilines={true}
       value={selections}
       onChange={e => updateSubjects(e.target.value)}
-      label="{t('subjects')}"
-      placeholder="{t('content_category')}"
+      label={t('subjects')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!errors}
       error={shouldShowErrors && errors}

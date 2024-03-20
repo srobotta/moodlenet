@@ -86,7 +86,7 @@ export const DateField: FC<DateFieldProps> = ({
           onChange={e => {
             e.currentTarget.value !== month && editMonth(e.currentTarget.value)
           }}
-          placeholder="{t('month')}"
+          placeholder={t('month')}
           edit
           noBorder
           disabled={disabled}
@@ -124,7 +124,7 @@ export const DateField: FC<DateFieldProps> = ({
           onChange={e => {
             e.currentTarget.value !== year && editYear(e.currentTarget.value)
           }}
-          placeholder="{t('year')}"
+          placeholder={t('year')}
           edit
           noBorder
           disabled={disabled}

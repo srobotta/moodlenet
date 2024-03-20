@@ -26,8 +26,9 @@ export const FollowButton: FC<FollowButtonProps> = ({
       className="following-button"
       key="follow-button"
       color="orange"
+      abbr={t('follow_remove_user')}
     >
-      {t('following')}
+      {t('i_follow')}
     </SecondaryButton>
   ) : (
     <PrimaryButton
