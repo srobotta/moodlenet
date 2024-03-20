@@ -1,5 +1,6 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { CheckmarkOption, Dropdown, SimplePill } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -69,8 +70,8 @@ export const LanguageMultipleField: FC<LanguageMultipleFieldProps> = ({
       multilines={true}
       value={selections}
       onChange={e => updateLanguages(e.target.value)}
-      label="Languages"
-      placeholder="Content category"
+      label={t('languages')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!errors}
       error={shouldShowErrors && errors}
@@ -100,7 +101,7 @@ export const LanguageMultipleField: FC<LanguageMultipleFieldProps> = ({
     </Dropdown>
   ) : selections ? (
     <div className="detail language">
-      <div className="title">Language</div>
+      <div className="title">{t('language')}</div>
       <abbr className="value" title={updatedLanguages.selected[0]?.label}>
         {updatedLanguages.selected[0]?.label}
       </abbr>

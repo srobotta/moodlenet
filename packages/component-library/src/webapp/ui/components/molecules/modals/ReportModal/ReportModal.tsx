@@ -1,4 +1,4 @@
-// import { t, Trans } from '@lingui/macro'
+import { t } from '@moodlenet/core/i18n'
 import type { FC, SetStateAction } from 'react'
 // import { FormikHandle } from '../../../../lib/formik'
 import InputTextField from '../../../atoms/InputTextField/InputTextField.js'
@@ -39,9 +39,7 @@ export const ReportModal: FC<ReportModalProps> = ({
               setIsReporting(false)
             }}
           >
-            {/* <Trans> */}
-            Cancel
-            {/* </Trans> */}
+            {t('cancel')}
           </SecondaryButton>
           <PrimaryButton
             onClick={() => {
@@ -54,9 +52,7 @@ export const ReportModal: FC<ReportModalProps> = ({
             }}
             // disabled={!!reportForm.errors.comment}
           >
-            {/* <Trans> */}
-            Report
-            {/* </Trans> */}
+            {t('report')}
           </PrimaryButton>
         </>
       }
@@ -67,16 +63,10 @@ export const ReportModal: FC<ReportModalProps> = ({
         isTextarea={true}
         name="comment"
         edit
-        placeholder={
-          /* t */ `This is spam / commercial / not educational / fraud / copyrighted / other reason.`
-        }
+        placeholder={t('report_comment_placeholder')}
         // onChange={reportForm.handleChange}
       />
-      <div className="required">
-        {/* <Trans> */}
-        Required field
-        {/* </Trans> */}
-      </div>
+      <div className="required">{t('required_field')}</div>
     </Modal>
   )
 }

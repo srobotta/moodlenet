@@ -1,5 +1,6 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { CheckmarkOption, Dropdown, SimplePill } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -69,8 +70,8 @@ export const SubjectMultipleField: FC<SubjectMultipleFieldProps> = ({
       multilines={true}
       value={selections}
       onChange={e => updateSubjects(e.target.value)}
-      label="Subjects"
-      placeholder="Content category"
+      label={t('subjects')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!errors}
       error={shouldShowErrors && errors}
@@ -95,7 +96,7 @@ export const SubjectMultipleField: FC<SubjectMultipleFieldProps> = ({
     </Dropdown>
   ) : selections ? (
     <div className="detail subject">
-      <div className="title">Subject</div>
+      <div className="title">{t('subject')}</div>
       <abbr className="value" title={updatedSubjects.selected[0]?.label}>
         {updatedSubjects.selected[0]?.label}
       </abbr>

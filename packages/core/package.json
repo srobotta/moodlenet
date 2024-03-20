@@ -25,6 +25,7 @@
   ],
   "exports": {
     ".": "./dist/exports.mjs",
+    "./i18n": "./dist/i18n/i18n.mjs",
     "./ignite": "./dist/ignite.mjs",
     "./lib": "./dist/exports/lib.mjs"
   },

@@ -1,5 +1,6 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { CheckmarkOption, Dropdown, SimplePill } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -69,8 +70,8 @@ export const LevelMultipleField: FC<LevelMultipleFieldProps> = ({
       multilines={true}
       value={selections}
       onChange={e => updateLevels(e.target.value)}
-      label="Levels"
-      placeholder="Content category"
+      label={t('levels')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!errors}
       error={shouldShowErrors && errors}
@@ -100,7 +101,7 @@ export const LevelMultipleField: FC<LevelMultipleFieldProps> = ({
     </Dropdown>
   ) : selections ? (
     <div className="detail level">
-      <div className="title">Level</div>
+      <div className="title">{t('level')}</div>
       <abbr className="value" title={updatedLevels.selected[0]?.label}>
         {updatedLevels.selected[0]?.label}
       </abbr>

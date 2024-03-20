@@ -1,4 +1,5 @@
 // import { Trans } from '@lingui/macro'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { ReactComponent as UploadFileIcon } from '../../../../static/icons/upload-file.svg'
 import { ReactComponent as UploadImageIcon } from '../../../../static/icons/upload-image.svg'
@@ -47,10 +48,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
           />
           <UploadFileIcon />
           <span>
-            <span>
-              Drop or click to upload a file!
-              {/* <Trans>Drop or click to upload a file!</Trans> */}
-            </span>
+            <span>{t('drop_or_click_to_upload_a_file')}</span>
             <br />
             {/* {fileMaxSize && (
       <span style={{ fontSize: '12px' }}>
@@ -78,10 +76,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
             hidden
           />
           <UploadImageIcon />
-          <span>
-            Drop or click to upload an image!
-            {/* <Trans>Drop or click to upload an image!</Trans> */}
-          </span>
+          <span>{t('drop_or_click_to_upload_an_image')}</span>
         </div>
       )}
     </div>

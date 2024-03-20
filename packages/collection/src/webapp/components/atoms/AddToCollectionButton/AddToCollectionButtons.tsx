@@ -6,6 +6,7 @@ import {
   PrimaryButton,
   SecondaryButton,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { SelectOptionsMulti } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
 import { useMemo, useState } from 'react'
@@ -29,14 +30,14 @@ export const AddToCollectionButton: FC<AddToCollectionButtonProps> = ({
 
   const modal = isAddingToCollection && collections && (
     <Modal
-      title={`Select collections`}
+      title={t('select_collections')}
       actions={
         <PrimaryButton
           onClick={() => {
             setIsAddingToCollection(false)
           }}
         >
-          Done
+          {t('done')}
         </PrimaryButton>
       }
       onClose={() => setIsAddingToCollection(false)}
@@ -50,7 +51,7 @@ export const AddToCollectionButton: FC<AddToCollectionButtonProps> = ({
         value={selectedValues}
       >
         {collections.opts.map(({ label, value }) => (
-          <OptionItem key={value} label={label !== '' ? label : 'Unnamed'} value={value} />
+          <OptionItem key={value} label={label !== '' ? label : t('unnamed')} value={value} />
         ))}
       </AddToCollectionsCard>
     </Modal>
@@ -60,7 +61,7 @@ export const AddToCollectionButton: FC<AddToCollectionButtonProps> = ({
     <>
       {modal}
       <SecondaryButton onClick={() => setIsAddingToCollection(true)}>
-        Add to collection
+        {t('add_to_collection')}
       </SecondaryButton>
     </>
   )

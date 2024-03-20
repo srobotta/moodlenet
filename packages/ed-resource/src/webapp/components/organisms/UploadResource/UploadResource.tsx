@@ -12,7 +12,7 @@ import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { useImageUrl } from '@moodlenet/react-app/ui'
 import { Bolt, InsertDriveFile, Link as LinkIcon, Upload as UploadIcon } from '@mui/icons-material'
 // import prettyBytes from 'pretty-bytes'
-import type { default as React, FC } from 'react'
+import type { FC, default as React } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type {
   ResourceActions,
@@ -20,6 +20,7 @@ import type {
   ResourceStateProps,
 } from '../../../../common/types.mjs'
 //import { ReactComponent as ExtractInfoIcon } from '../../../assets/icons/extract-info.svg'
+import { t } from '@moodlenet/core/i18n'
 import { ReactComponent as UploadFileIcon } from '../../../assets/icons/upload-file.svg'
 import { ReactComponent as UploadImageIcon } from '../../../assets/icons/upload-image.svg'
 import autofillingImg from '../../../assets/img/autofilling.png'
@@ -350,7 +351,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
       />
       <UploadFileIcon />
       <span>
-        <span>Drop or click to upload a file!</span>
+        <span>{t('drop_or_click_to_upload_a_file')}</span>
         <br />
         {fileMaxSize && (
           <span style={{ fontSize: '12px' }}>{/* Max size {prettyBytes(fileMaxSize)} */}</span>
@@ -404,7 +405,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
         hidden
       />
       <UploadImageIcon />
-      <span>Drop or click to upload an image!</span>
+      <span>{t('drop_or_click_to_upload_an_image')}</span>
     </div>
   )
 
@@ -502,7 +503,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
             <InputTextField
               className="link"
               name="content"
-              placeholder={`Paste or type a link`}
+              placeholder={t('paste_or_type_a_link')}
               ref={addLinkFieldRef}
               edit
               defaultValue={
@@ -510,7 +511,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
               }
               onChange={shouldShowErrors ? () => contentForm.validateField('content') : undefined}
               onKeyDown={e => e.key === 'Enter' && addLink()}
-              rightSlot={<PrimaryButton onClick={addLink}>Add</PrimaryButton>}
+              rightSlot={<PrimaryButton onClick={addLink}>{t('add')}</PrimaryButton>}
               error={
                 (shouldShowErrors || showContentErrors || showLinkErrors) &&
                 contentForm.errors.content
@@ -533,13 +534,13 @@ export const UploadResource: FC<UploadResourceProps> = ({
               </div>
               <abbr className="scroll" title={contentName}>
                 {uploadProgress
-                  ? `Uploading ${contentName}`
+                  ? t('uploading_item', [contentName])
                   : /* : autofillState === 'extracting-info'
                   ? `Extracting info from ${
                       contentType === 'file' ? contentName.split('.').pop() : 'link'
                     }` */
                   autofillState === 'ai-generation'
-                  ? `Autofilling with AI`
+                  ? t('autofilling_with_ai')
                   : contentName}
               </abbr>
               {uploadBeats}
@@ -549,7 +550,9 @@ export const UploadResource: FC<UploadResourceProps> = ({
                   onClick={autofillState === 'ai-generation' ? stopAutofill : stopUpload}
                   tabIndex={0}
                   abbrTitle={
-                    autofillState === 'ai-generation' ? 'Cancel autofill' : 'Cancel upload'
+                    autofillState === 'ai-generation'
+                      ? t('autofilling_with_ai_cancel')
+                      : t('upload_cancel')
                   }
                   onKeyUp={e =>
                     e.key === 'Enter' && autofillState === 'ai-generation'
