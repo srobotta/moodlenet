@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 45px;
+  border-radius: var(--border-radius-button);
   font-weight: bold;
   font-size: 13.5px;
   letter-spacing: 0.4px;
