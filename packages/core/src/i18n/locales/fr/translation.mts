@@ -115,7 +115,7 @@ export const translations: Translations = {
   new_resource:'Nouvelle ressource',
   open_link:'Ouvrir le lien',
   original_creation_date:'Date initiale de création',
-  override_subtitle:'Le référentiel de Ressource Éducatives Libres de la Haute école spécialisée bernoise.',
+  override_subtitle:'Le référentiel de Ressources Éducatives Libres de la Haute école spécialisée bernoise.',
   override_title:'Façonner l’enseignement de demain',
   page_not_found_or_access_not_allowed:'Page introuvable ou accès non autorisé',
   paste_or_type_a_link:'Coller ou saisir un lien',
