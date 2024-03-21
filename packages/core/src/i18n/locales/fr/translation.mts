@@ -5,6 +5,11 @@ export const translations: Translations = {
   add_someone_elses_resource_in_published_collection:"Ajouter à sa collection publiée la ressource de quelqu'un d'autre",
   add_to_collection:'Ajouter à la collection',
   admin:'Admin',
+  advanced : "Avancé",//@todo check BB_2024-03-21
+  advanced_leave: "Désinscription de",//@todo check BB_2024-03-21
+  advanced_delete_account: "Supprimer le compte",//@todo check BB_2024-03-21
+  advanced_check_email: "Vérifiez vos e-mails pour confirmer la résiliation.",//@todo check BB_2024-03-21
+  advanced_email_be_sent:"Un e-mail vous sera envoyé pour confirmer la suppression de votre compte.",//@todo check BB_2024-03-21
   agree_terms_conditions:'Vous acceptez nos conditions générales',
   ambitious_seed:'Graine pleine de potentiel',
   approve:'Approuver',
@@ -19,32 +24,36 @@ export const translations: Translations = {
   best_collection_ever:'La meilleure collection qui soit',
   blooms_category:'{1} Catégorie de Bloom',
   bookmark:'Favori',
-  bookmark_a_contribution_or_auser:'Ajouter une contribution ou un auteur comme favori',// FOUND MISSING
+  bookmark_a_contribution_or_auser:'Ajouter une contribution ou un auteur comme favori',// FOUND MISSING @todo check BB_2024-03-21
   bookmark_contribution_user:'Ajouter un favori à une contribution ou à un•e utilisateur•trice',
   bookmark_needs_login:'Connectez-vous ou inscrivez-vous pour ajouter un favori',
   bookmark_remove:'Supprimer le favori',
   bookmarks:'Favoris',
   cancel:'Annuler',
+  change_password:"Modifier le mot de passe",//@todo check BB_2024-03-21
   collection:'Collection',
   collection_curated_by:'Collection élaborée par',
   collections:'Collections',
-  complete_profile:'Complétez son profil',
+  complete_profile:'Compléter son profil',
   congrats_you_already_did_it:'Félicitations, vous l’avez déjà fait !',
-  content_category:'Catégorie de contenu',
+  content_category:'Catégorie(s) du contenu',
   content_language:'Langue du contenu',
+  content_level: 'Niveau du contenu',//@todo check BB_2024-03-21
+  content_licence: 'Licence du contenu',//@todo check BB_2024-03-21
   content_type:'Type de contenu',
   copied_to_clipboard:'Copié dans le presse-papiers',
   create_account:'Créer un nouveau compte',
   curated_collections:'Collections confectionnées',
-  dazzling_biome:'Biome éblouissant',// @todo double check context
+  dazzling_biome:'Biome éblouissant',
   delete:'Supprimer',
   delete_image:'Effacer une image',
   description:'Description',
-  determined_sprout:'Semis déterminé',// @todo double check context
+  determined_sprout:'Semis déterminé',
   display_name:'Nom à afficher',
   done:'Terminé',
-  dont_show_again:'Ne plus demander',// @todo double check context
-  download:'Télécharger',// @todo double check context
+  dont_show_again:'Ne plus demander',
+  download:'Télécharger',
+  download_file: 'Télécharger le fichier',//@todo check BB_2024-03-21 
   drop_or_click_to_upload_a_file:'Glissez un fichier ou cliquer ici pour en charger !',
   drop_or_click_to_upload_an_image:'Glissez un image ou cliquer dessus pour en charger !',
   edit_background:'Modifier l’arrière-plan',
@@ -69,7 +78,7 @@ export const translations: Translations = {
   get_a_point_for_each_detail:'Obtenez un point pour chaque détail renseigné, images de profil et d’arrière-plan, localisation, site web, description.',
   get_a_point_interests:'Obtenez un point lorsque vous définissez vos centres d’intérêt dans votre page de configuration.',
   goto_settings:'Accéder aux réglages',
-  i_follow:'Je suis',
+  i_follow:'Suivi•e',
   image_too_big:'Image trop grande, réduisez la taille ou utilisez une autre image.',
   interest_description:'Sélectionnez vos centres d’intérêt pour tirer le meilleur parti de MoodleNet',
   interest_title:'Enrichissez votre expérience !',
@@ -83,18 +92,19 @@ export const translations: Translations = {
   learning_outcomes:'Objectifs éducationnels',
   learning_outcomes_sub_line1:'Saisir 1 to 5 objectifs pédagogiques, en choisissant la bonne catégorie et le bon verbe d’action',
   learning_outcomes_sub_line2:'En consultant cette ressource, les apprenants seront capables de :',
-  leaves:'Morphogenèse',// @todo double check context
+  leaves:'Feuillage',
   level:'Niveau',
   level_avatar:'Avatar de niveau',
   levels:'Niveaux',
   license:'Licence',
+  licenses: 'Licenses',//@todo check BB_2024-03-21
   license_type:'Type de licence',
   like:'Liker',
   like_a_resource:'Liker une ressource',
   like_needs_login:'Se connecter ou s’inscrire pour liker',
   like_own_content:'Les créateurs ne peuvent pas liker leur propre contenu',
   like_remove:'Supprimer le like',
-  load_more:'Chargez plus',// @todo double check context
+  load_more:'Chargez plus',
   location:'Lieu',
   log_in_desc:'Se connecter ou créer un compte pour commencer à publier du contenu',
   login:'S’identifier',
@@ -121,7 +131,7 @@ export const translations: Translations = {
   paste_or_type_a_link:'Coller ou saisir un lien',
   people:'Personnes',
   photo_by:'Photo de',
-  photo_on:'sur',// @todo double check context
+  photo_on:'sur',
   photosynthesist:'Photosynthésiste',
   please_provide_description:'Veuillez fournir une description',
   please_provide_displayname:'Veuillez fournir un nom d’affichage',
@@ -165,21 +175,24 @@ export const translations: Translations = {
   send_to_moodle:'Envoyer à Moodle',
   set_up_interests:'Définir ses centres d’intérêts',
   settings:'Réglages',
+  setting_general: 'Généraux',//@todo check BB_2024-03-21
+  setting_interests: 'Intérêts',//@todo check BB_2024-03-21
+  settings_use_interests_as_default:'Utiliser les centres d’intérêt comme filtres par défaut lors des recherches',//@todo check BB_2024-03-21
   share:'Partager',
   share_content:'Partager le contenu',
   signup:'S’inscrire',
-  sky_reacher:'Près des cîmes',// @todo double check context
+  sky_reacher:'Près des cîmes',
   sort_by:'Trier par',
   start_publishing:'Se connecter ou créer un compte pour commencer à publier du contenu',
   start_type_to_search:'Commencez à saisir pour effectuer une recherche',
-  start_typing_textarea:'Commencez à saisir pour le remplir',// @todo double check context
-  steadily_grower:'Gaulis assidu',// @todo double check context
+  start_typing_textarea:'Commencez à saisir pour le remplir',
+  steadily_grower:'Gaulis assidu',
   subject:'Sujet',
   subjects:'Sujets',
   subtitle_create_collection:'Les collections sont des groupes de ressources',
   subtitle_create_resource:'Une ressource est un élément de contenu unique',
   subtitle_featured_authors:'Personnes ayant apporté une contribution exceptionnelle',
-  subtitle_featured_collections:'Selection de ressources compilées',// @todo double check context
+  subtitle_featured_collections:'Selection de ressources compilées',
   subtitle_featured_resources:'Sélection de contenus de qualité exceptionelle',
   subtitle_leaderboard:'Contributeurs qui montrent la voie',
   such_great_collection:'Une si belle collection',

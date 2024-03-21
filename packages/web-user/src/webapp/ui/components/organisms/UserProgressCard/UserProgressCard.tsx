@@ -63,7 +63,7 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
       }
     }
   }, [])
-
+//@todo check BB_2024-03-21
   const infoModal = showInfoModal && (
     <Modal
       className="user-progress-info-modal"
@@ -76,7 +76,10 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
         <div className="rows">
           {userLevels.map((level, index) => (
             <div className="row" key={index}>
-              <div className={`level`}>Level {level.level}</div>
+              <div className={`level`}>
+                <div className="level-title">{level.title}</div>
+                <span className="level">Level {level.level}</span>
+              </div>
               <div className="points">
                 <span className="min">{level.minPoints.toLocaleString()}</span>
                 <LeafIcon />

@@ -584,7 +584,7 @@ export const Resource: FC<ResourceProps> = ({
       {updatedExtraDetailsItems.map(i => ('Item' in i ? <i.Item key={i.key} /> : i))}
     </Card>
   ) : null
-
+//@todo check BB_2024-03-21
   const downloadButton =
     contentType === 'file' && contentUrl && contentForm.values.content ? (
       <a
@@ -595,11 +595,11 @@ export const Resource: FC<ResourceProps> = ({
       >
         <SecondaryButton key="download-or-open-link-button" disabled={disableFields}>
           <InsertDriveFile />
-          Download file
+          {t('download_file')}
         </SecondaryButton>
       </a>
     ) : null
-
+//@todo check BB_2024-03-21
   const openLinkButton =
     contentType === 'link' && contentUrl && contentForm.values.content ? (
       <a
@@ -609,7 +609,7 @@ export const Resource: FC<ResourceProps> = ({
       >
         <SecondaryButton key="download-or-open-link-button" disabled={disableFields}>
           <Link />
-          Open link
+          {t('open_link')}
         </SecondaryButton>
       </a>
     ) : null
@@ -729,7 +729,7 @@ export const Resource: FC<ResourceProps> = ({
       })
     }
   }, [addSnackbar, showUnpublishSuccess])
-
+//@todo check BB_2024-03-21 
   const modals = (
     <>
       {isToDelete && deleteResource && (
@@ -743,7 +743,7 @@ export const Resource: FC<ResourceProps> = ({
               }}
               color="red"
             >
-              Delete
+              {t('delete')}
             </PrimaryButton>
           }
           onClose={() => setIsToDelete(false)}

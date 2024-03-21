@@ -12,6 +12,11 @@ export const translations: Translations = {
   ambitious_seed: 'Ambitious seed',
   approve: 'Approve',
   approve_badge: 'Approved, your published content is visible to all',
+  advanced:"Advanced",//@todo check BB_2024-03-21
+  advanced_leave:"Leave",//@todo check BB_2024-03-21
+  advanced_delete_account:"Delete account",//@todo check BB_2024-03-21
+  advanced_check_email:"Check your email to confirm the deletion",//@todo check BB_2024-03-21
+  advanced_email_be_sent:" An email will be send to confirm the deletion of your account.",//@todo check BB_2024-03-21
   autofill_missing_fields: 'Autofill missing fields',
   autofilling_with_ai: 'Autofilling with AI',
   autofilling_with_ai_cancel: 'Cancel autofilling',
@@ -22,17 +27,21 @@ export const translations: Translations = {
   best_collection_ever: 'Best collection ever',
   blooms_category: '{1} Blooms category',
   bookmark: 'Bookmark',
+  bookmark_a_contribution_or_auser:'Add a contribution or an author as a favourite',// FOUND MISSING @todo check BB_2024-03-21
   bookmark_contribution_user: 'Bookmark a contribution or user',
   bookmark_needs_login: 'Login or signup to bookmark',
   bookmark_remove: 'Remove bookmark',
   bookmarks: 'Bookmarks',
   cancel: 'Cancel',
+  change_password:"Change password",//@todo check BB_2024-03-21
   collection_curated_by: 'Collection curated by',
   collection: 'Collection',
   collections: 'Collections',
   content_category: 'Content category',
   content_language: 'Content language',
   content_type: 'Content type',
+  content_level: 'Content level',//@todo check BB_2024-03-21
+  content_licence: 'Content licence',//@todo check BB_2024-03-21
   complete_profile: 'Complete profile',
   congrats_you_already_did_it: 'Congrats! You already did it!',
   copied_to_clipboard: 'Copied to clipboard',
@@ -47,6 +56,7 @@ export const translations: Translations = {
   done: 'Done',
   dont_show_again: 'Do not show again',
   download: 'Download',
+  download_file: 'Download file',//@todo check BB_2024-03-21 
   drop_or_click_to_upload_a_file: 'Drop or click to upload a file!',
   drop_or_click_to_upload_an_image: 'Drop or click to upload an image!',
   edit_background: 'Edit background',
@@ -92,6 +102,7 @@ export const translations: Translations = {
   levels: 'Levels',
   level_avatar: 'Level avatar',
   license: 'License',
+  licenses: 'Licenses',//@todo check BB_2024-03-21
   license_type: 'License type',
   like: 'Like',
   like_a_resource: 'Like a resource',
@@ -166,6 +177,9 @@ export const translations: Translations = {
   seedling_scholar: 'Seedling scholar',
   select_language: 'Select language',
   settings: 'Settings',
+  setting_general: 'General',//@todo check BB_2024-03-21
+  setting_interests: 'Interests',//@todo check BB_2024-03-21
+  settings_use_interests_as_default:'Use interests as default filters when searching',//@todo check BB_2024-03-21
   select_collections: 'Select collections',
   select_license: 'Select a license',
   send_a_message: 'Send a message',
@@ -182,6 +196,7 @@ export const translations: Translations = {
   start_typing_to_search: 'Start typing to search',
   start_typing_textarea: 'Start typing to fill it',
   steadily_grower: 'Steadily grower',
+
   subject: 'Subject',
   subjects: 'Subjects',
   subtitle_create_collection: 'Collections are groups of resources',

@@ -278,7 +278,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
       disabled={disableFields}
       edit={isEditing}
       value={form.values.title}
-      placeholder="Title"
+      placeholder={t('title')}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.title}
       textAreaAutoSize
@@ -346,14 +346,14 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         ),
       }
     : null
-
+//@todo check BB_2024-03-21 
   const publishButton: FloatingMenuContentItem | null =
     !isEditing && canPublish && !isPublished
       ? {
           Element: (
             <div key="publish-button" onClick={publish}>
               <Public style={{ fill: '#00bd7e' }} />
-              Publish
+              {t('publish')}
             </div>
           ),
 
