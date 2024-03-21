@@ -1,3 +1,5 @@
+import type { Translations } from '../../types.mjs'
+
 export const translations: Translations = {
   add: 'Ajouter',
   add_content: 'Ajouter du contenu content',
