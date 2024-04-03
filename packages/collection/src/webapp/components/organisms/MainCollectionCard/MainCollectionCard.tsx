@@ -203,7 +203,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
       className="title"
       isTextarea
       value={form.values.title}
-      placeholder="{t('title')}"
+      placeholder={t('title')}
       edit={isEditing}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.title}
@@ -463,7 +463,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
           noBorder
           edit={isEditing}
           key="description"
-          placeholder="{t('description')}"
+          placeholder={t('description')}
           value={form.values.description}
           onChange={form.handleChange}
           error={shouldShowErrors && isEditing && form.errors.description}
