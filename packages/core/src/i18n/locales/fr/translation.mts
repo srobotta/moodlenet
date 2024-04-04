@@ -36,6 +36,8 @@ export const translations: Translations = {
   content_category: 'Catégorie de contenu',
   content_language: 'Langue du contenu',
   content_type: 'Type de contenu',
+  contains_num_resource: 'Contains {1} resource',
+  contains_num_resources: 'Contains {1} resources',
   copied_to_clipboard: 'Copié dans le presse-papiers',
   create_account: 'Créer un nouveau compte',
   curated_collections: 'Collections confectionnées',

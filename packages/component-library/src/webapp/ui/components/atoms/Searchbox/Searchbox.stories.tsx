@@ -2,10 +2,6 @@ import { action } from '@storybook/addon-actions'
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 import type { SearchboxProps } from './Searchbox.js'
 import { Searchbox } from './Searchbox.js'
-//import { t } from '@moodlenet/core/i18n'
-const t = (s: string) => {
-  return s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g, ' ')
-}
 
 const meta: ComponentMeta<typeof Searchbox> = {
   title: 'Atoms/Searchbox',
@@ -17,7 +13,7 @@ const meta: ComponentMeta<typeof Searchbox> = {
 }
 
 export const SearchboxStoryProps: SearchboxProps = {
-  placeholder: t('start_typing_to_search'),
+  placeholder: 'Start typing to search',
   searchText: '',
   setSearchText: action('Search text'),
   search: action('Search'),

@@ -5,7 +5,7 @@ import {
   RoundButton,
   SimpleTextOption,
 } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t, tm } from '@moodlenet/core/i18n'
 import { Circle, HelpOutline } from '@mui/icons-material'
 import type { RefObject } from 'react'
 import { createRef, useEffect, useState, type FC } from 'react'
@@ -128,6 +128,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
         )
         const dropdownRef = learningOutcomeCategoriesRefs && learningOutcomeCategoriesRefs[i]
         const maxLearningOutcomesReached = learningOutcomes.length > MAX_LEARNING_OUTCOME_ITEMS
+        console.log('maxLearningOutcomesReached', learningOutcomeOption)
         return (
           <Dropdown
             key={learningOutcomeOption.code}
@@ -143,7 +144,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
                 ? t('max_learning_outcomes_reached')
                 : t('add_learning_outcome')
             }
-            placeholder={learningOutcomeOption.name}
+            placeholder={tm('bloom_taxonomy_category', learningOutcomeOption.name.toLowerCase())}
             searchByText={setSearchText}
             onChange={changeEvent => {
               edit([
@@ -160,7 +161,12 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             {learningOutcomeOption.verbs
               .filter(verb => verb.toUpperCase().includes(searchText.toUpperCase()))
               .map(verb => {
-                return <SimpleTextOption key={verb} value={verb} />
+                return (
+                  <SimpleTextOption
+                    key={verb}
+                    value={tm('bloom_taxonomy_verb', verb.toLowerCase())}
+                  />
+                )
               })}
           </Dropdown>
         )

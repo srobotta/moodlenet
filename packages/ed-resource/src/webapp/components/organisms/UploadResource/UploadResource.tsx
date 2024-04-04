@@ -12,7 +12,7 @@ import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { useImageUrl } from '@moodlenet/react-app/ui'
 import { Bolt, InsertDriveFile, Link as LinkIcon, Upload as UploadIcon } from '@mui/icons-material'
 // import prettyBytes from 'pretty-bytes'
-import type { default as React, FC } from 'react'
+import type { FC, default as React } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type {
   ResourceActions,
@@ -260,6 +260,13 @@ export const UploadResource: FC<UploadResourceProps> = ({
 
   const imageRef = useRef<HTMLDivElement>(null)
 
+  const imageUploaderLabels = {
+    background_image: t('background'),
+    photo_by: t('photo_by'),
+    photo_on: t('photo_on'),
+    delete_image: t('delete_image'),
+  }
+
   // const shouldOpenImage =
   //   contentForm.values.content === imageForm.values.image || contentType === 'file'
 
@@ -276,6 +283,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
           ? contentForm.values.content
           : undefined
       }
+      labels={imageUploaderLabels}
     />
   )
 
@@ -286,6 +294,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
       ref={imageRef}
       displayOnly={displayOnly}
       style={{ maxHeight: backupImage ? '200px' : 'initial', overflow: 'hidden' }}
+      labels={imageUploaderLabels}
     />
   )
 

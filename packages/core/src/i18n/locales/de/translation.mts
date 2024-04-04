@@ -36,6 +36,8 @@ export const translations: Translations = {
   complete_profile: 'Profil vervollständigen',
   copied_to_clipboard: 'In die Zwischenablage kopiert',
   congrats_you_already_did_it: 'Glückwunsch, das hast du bereits erreicht!',
+  contains_num_resource: 'Enthält 1 Ressource',
+  contains_num_resources: 'Enthält {1} Ressourcen',
   create_account: 'Neues Nutzendenkonto erstellen',
   curated_collections: 'Kuratierte Sammlungen',
   dazzling_biome: 'Faszinierendes Biotop',
@@ -151,7 +153,7 @@ export const translations: Translations = {
   report_comment_placeholder:
     'Spam / kommerziell/ nicht bildungsrelevant / Betrug / Copyright Material / anderer Grund.',
   required_field: 'Erforderliches Feld',
-  resourse: 'Ressource',
+  resource: 'Ressource',
   resources: 'Ressourcen',
   rooted_learner: 'Verwurzelte*r Lernende*r',
   scheduled_maintenance:
@@ -210,6 +212,7 @@ export const translations: Translations = {
   title_featured_resources: 'Aktuelle Ressourcen',
   title_leaderboard: 'Leaderboard',
   type: 'Typ',
+  type_image: 'Bild',
   unapprove: 'Sperren',
   unpublish: 'Depublizieren',
   unpublished: 'Unveröffentlicht',

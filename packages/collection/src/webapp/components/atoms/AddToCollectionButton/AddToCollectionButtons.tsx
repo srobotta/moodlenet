@@ -46,6 +46,7 @@ export const AddToCollectionButton: FC<AddToCollectionButtonProps> = ({
       <AddToCollectionsCard
         header={false}
         noCard={true}
+        headerTitle={t('select_collections')}
         onItemSelect={add}
         onItemDeselect={remove}
         value={selectedValues}

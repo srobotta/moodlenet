@@ -4,10 +4,6 @@ import type { Credits } from '../../../../../common.mjs'
 import { useForwardedRef } from '../../../lib/useForwardedRef.mjs'
 import Modal from '../../atoms/Modal/Modal.js'
 import RoundButton from '../../atoms/RoundButton/RoundButton.js'
-//import { t } from '@moodlenet/core/i18n'
-const t = (s: string) => {
-  return s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g, ' ')
-}
 
 import './ImageContainer.scss'
 
@@ -20,6 +16,7 @@ export type ImageContainerProps = {
   link?: string
   displayOnly?: boolean
   overlayCredits?: boolean
+  labels: { [key: string]: string }
   // isUploading?: boolean
 }
 
@@ -34,6 +31,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
       displayOnly,
       credits,
       overlayCredits,
+      labels,
       // isUploading
     } = props
 
@@ -53,7 +51,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
       <img
         className="image"
         src={imageUrl}
-        alt="{t('background')}"
+        alt={labels.background_image || 'Background'}
         onClick={() => (link ? undefined : setIsShowingImage(true))}
         style={{ maxHeight: 'fit-content', pointerEvents: displayOnly ? 'auto' : 'none' }}
       />
@@ -61,11 +59,11 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
 
     const imageCredits = credits && (
       <div className={`image-credits ${overlayCredits ? 'overlay' : ''}`}>
-        {t('photo_by')}
+        photo by
         <a href={credits.owner.url} target="_blank" rel="noreferrer">
           {credits.owner.name}
         </a>
-        {t('photo_on')}
+        photo on
         {
           <a href={credits.provider?.url} target="_blank" rel="noreferrer">
             {credits.provider?.name}
@@ -93,7 +91,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
           }}
           key="image-modal"
         >
-          <img src={imageUrl} alt="{t('resource')}" />
+          <img src={imageUrl} alt={labels.resource ? labels.resource : 'resource'} />
           {imageCredits}
         </Modal>
       ),
@@ -147,7 +145,7 @@ export const ImageContainer = forwardRef<HTMLDivElement | null | undefined, Imag
             <RoundButton
               className={`delete-image`}
               type="cross"
-              abbrTitle={t('delete_image')}
+              abbrTitle={labels.delete_image ? labels.delete_image : 'Delete image'}
               onClick={deleteImage}
             />
           )}

@@ -121,6 +121,7 @@ export const useSubjectStoryProps = (
       ],
 
       title: 'Engineering, manufacturing and construction',
+      value: 'F07',
       overallItems: overallItems,
       isIsced: true,
       iscedUrl:

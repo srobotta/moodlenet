@@ -1,5 +1,6 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, isEllipsisActive, TertiaryButton } from '@moodlenet/component-library'
+import { t, tn } from '@moodlenet/core/i18n'
 import { getBackupImage, Link, withProxy } from '@moodlenet/react-app/ui'
 import { FilterNone, Public, PublicOff } from '@mui/icons-material'
 import { useEffect, useRef, useState } from 'react'
@@ -57,7 +58,7 @@ export const CollectionCard = withProxy<CollectionCardProps>(
       <TertiaryButton
         className="num-resources"
         key="num-resources"
-        abbr={`Contains ${numResources} resource${numResources === 1 ? '' : 's'}`}
+        abbr={tn('contains_num_resource', 'contains_num_resources', numResources)}
         disabled
       >
         <FilterNone />
@@ -68,7 +69,7 @@ export const CollectionCard = withProxy<CollectionCardProps>(
     const publishState = canPublish ? (
       isPublished ? (
         <abbr
-          title="Published"
+          title={t('published')}
           key="publish-stat"
           style={{ cursor: 'initial' }}
           className="publish-state"
@@ -77,7 +78,7 @@ export const CollectionCard = withProxy<CollectionCardProps>(
         </abbr>
       ) : (
         <abbr
-          title="Unpublished"
+          title={t('unpublished')}
           key="publish-stat"
           style={{ cursor: 'initial' }}
           className="publish-state"

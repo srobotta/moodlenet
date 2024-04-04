@@ -17,6 +17,7 @@ export type SubjectProps = {
   mainSubjectCardSlots: MainSubjectCardSlots
   mainColumnItems: AddonItem[]
   title: string
+  value: string
   overallItems: SubjectOverallProps[]
   isIsced: boolean
   iscedUrl: string | null
@@ -27,6 +28,7 @@ export const Subject: FC<SubjectProps> = ({
   mainSubjectCardSlots,
   mainColumnItems,
   title,
+  value,
   overallItems,
   isIsced,
   iscedUrl,
@@ -36,6 +38,7 @@ export const Subject: FC<SubjectProps> = ({
       key="main-subject-card"
       slots={mainSubjectCardSlots}
       title={title}
+      value={value}
       isIsced={isIsced}
       iscedUrl={iscedUrl}
       overallItems={overallItems}
