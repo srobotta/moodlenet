@@ -1,4 +1,3 @@
-import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 import type { EmbedType, ThumbnailType } from '../../../../helpers/utilities.js'
@@ -48,7 +47,7 @@ export const YouTubeEmbed: FC<{ id: string }> = ({ id }) => {
       className="youtube-embed"
       src={`https://www.youtube.com/embed/${id}`}
       style={{ aspectRatio: `${data?.width ?? 16}/${data?.height ?? 9}` }}
-      title={t('video_player_youtube')}
+      title="YouTube video player"
       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
       allowFullScreen
     />

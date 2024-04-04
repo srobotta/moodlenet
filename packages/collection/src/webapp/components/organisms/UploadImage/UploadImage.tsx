@@ -2,7 +2,7 @@ import { ImageContainer, Modal, Snackbar } from '@moodlenet/component-library'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { useImageUrl } from '@moodlenet/react-app/ui'
 // import prettyBytes from 'pretty-bytes'
-import type { default as React, FC } from 'react'
+import type { FC, default as React } from 'react'
 import { useCallback, useRef, useState } from 'react'
 // import { withCtrl } from '../../../../lib/ctrl'
 // import { SelectOptions } from '../../../../lib/types'
@@ -27,6 +27,7 @@ export type UploadImageProps = {
   backupImage?: AssetInfoForm
   displayOnly?: boolean
   OnClick?: () => void
+  labels: { [key: string]: string }
 }
 
 export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, displayOnly }) => {
@@ -98,6 +99,13 @@ export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, disp
     e.preventDefault()
   }, [])
 
+  const imageUploaderLabels = {
+    background_image: t('background'),
+    photo_by: t('photo_by'),
+    photo_on: t('photo_on'),
+    delete_image: t('delete_image'),
+  }
+
   const imageContainer = (
     <ImageContainer
       imageUrl={imageUrl}
@@ -106,6 +114,7 @@ export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, disp
       uploadImage={f => setImage({ location: f, credits: null })}
       displayOnly={displayOnly}
       overlayCredits={true}
+      labels={imageUploaderLabels}
     />
   )
   const modals = [

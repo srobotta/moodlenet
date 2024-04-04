@@ -38,6 +38,7 @@ export const useImageContainerProps = (): ImageContainerProps => {
     deleteImage: action('deleteImage'),
     uploadImage: action('uploadImage'),
     imageUrl: imageUrl,
+    labels: {},
   }
 }
 

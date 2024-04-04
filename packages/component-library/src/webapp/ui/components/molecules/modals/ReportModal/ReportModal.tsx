@@ -1,4 +1,3 @@
-import { t } from '@moodlenet/core/i18n'
 import type { FC, SetStateAction } from 'react'
 // import { FormikHandle } from '../../../../lib/formik'
 import InputTextField from '../../../atoms/InputTextField/InputTextField.js'
@@ -17,6 +16,10 @@ export type ReportModalProps = {
   setIsReporting: (value: SetStateAction<boolean>) => void
   setShowReportedAlert: (value: SetStateAction<boolean>) => void
   className?: string
+  btnAction?: string
+  btnCancel?: string
+  placeholderComment?: string
+  labelRequired?: string
 }
 
 export const ReportModal: FC<ReportModalProps> = ({
@@ -25,6 +28,10 @@ export const ReportModal: FC<ReportModalProps> = ({
   // reportForm,
   setIsReporting,
   setShowReportedAlert,
+  btnAction,
+  btnCancel,
+  placeholderComment,
+  labelRequired,
 }) => {
   return (
     <Modal
@@ -39,7 +46,7 @@ export const ReportModal: FC<ReportModalProps> = ({
               setIsReporting(false)
             }}
           >
-            {t('cancel')}
+            {btnCancel ? btnCancel : 'Cancel'}
           </SecondaryButton>
           <PrimaryButton
             onClick={() => {
@@ -52,7 +59,7 @@ export const ReportModal: FC<ReportModalProps> = ({
             }}
             // disabled={!!reportForm.errors.comment}
           >
-            {t('report')}
+            {btnAction ? btnAction : 'Report'}
           </PrimaryButton>
         </>
       }
@@ -63,10 +70,14 @@ export const ReportModal: FC<ReportModalProps> = ({
         isTextarea={true}
         name="comment"
         edit
-        placeholder={t('report_comment_placeholder')}
+        placeholder={
+          placeholderComment
+            ? placeholderComment
+            : 'This is spam / commercial / not educational / fraud / copyrighted / other reason.'
+        }
         // onChange={reportForm.handleChange}
       />
-      <div className="required">{t('required_field')}</div>
+      <div className="required">{labelRequired ? labelRequired : 'Required field'}</div>
     </Modal>
   )
 }

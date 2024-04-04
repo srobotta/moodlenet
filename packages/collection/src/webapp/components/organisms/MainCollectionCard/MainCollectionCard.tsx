@@ -398,6 +398,13 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
     </div>
   )
 
+  const imageUploaderLabels = {
+    background_image: t('background'),
+    photo_by: t('photo_by'),
+    photo_on: t('photo_on'),
+    delete_image: t('delete_image'),
+  }
+
   const collectionUploader =
     isEditing || imageForm.values.image ? (
       <UploadImage
@@ -405,6 +412,7 @@ export const MainCollectionCard: FC<MainCollectionCardProps> = ({
         imageForm={imageForm}
         // backupImage={backupImage}
         key="collection-uploader"
+        labels={imageUploaderLabels}
       />
     ) : null
 

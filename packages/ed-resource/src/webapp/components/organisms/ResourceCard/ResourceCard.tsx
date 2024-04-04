@@ -17,8 +17,8 @@ import defaultAvatar from '../../../assets/img/default-avatar.svg'
 // import { Visibility } from '../../../atoms/VisibilityDropdown/VisibilityDropdown'
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, getThumbnailFromUrl, isEllipsisActive } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
-import { getBackupImage, Link, withProxy } from '@moodlenet/react-app/ui'
+import { t, typeLabel as typeTrLabel } from '@moodlenet/core/i18n'
+import { Link, getBackupImage, withProxy } from '@moodlenet/react-app/ui'
 import { Bolt, Public, PublicOff } from '@mui/icons-material'
 import { useEffect, useRef, useState } from 'react'
 import type {
@@ -158,7 +158,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
     const typeLabel =
       typeName && typeColor ? (
         <div className="type" key="type-label" style={{ background: typeColor }}>
-          {typeName}
+          {typeTrLabel(typeName)}
         </div>
       ) : null
 

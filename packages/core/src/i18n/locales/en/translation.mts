@@ -35,6 +35,8 @@ export const translations: Translations = {
   content_type: 'Content type',
   complete_profile: 'Complete profile',
   congrats_you_already_did_it: 'Congrats! You already did it!',
+  contains_num_resource: 'Contains {1} resource',
+  contains_num_resources: 'Contains {1} resources',
   copied_to_clipboard: 'Copied to clipboard',
   create_account: 'Create a new account',
   curated_collections: 'Curated collections',

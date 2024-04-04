@@ -3,10 +3,6 @@ import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storyboo
 import addIcon from '../../../assets/icons/add-round.svg'
 import type { FloatingMenuProps } from './FloatingMenu.js'
 import { FloatingMenu } from './FloatingMenu.js'
-//import { t } from '@moodlenet/core/i18n'
-const t = (s: string) => {
-  return s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g, ' ')
-}
 const meta: ComponentMeta<typeof FloatingMenu> = {
   title: 'Atoms/FloatingMenu',
   component: FloatingMenu,
@@ -34,11 +30,11 @@ export const FloatingMenuStoryProps: FloatingMenuProps = {
         <div key="__">
           <div>
             <NoteAddIcon />
-            {t('new_resource')}
+            New resource
           </div>
           <div>
             <LibraryAddIcon />
-            {t('new_collection')}
+            New collection
           </div>
         </div>
       ),

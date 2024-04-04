@@ -12,7 +12,7 @@ import {
   useWindowDimensions,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
-import { t } from '@moodlenet/core/i18n'
+import { t, typeLabel } from '@moodlenet/core/i18n'
 import type { LearningOutcomeOption } from '@moodlenet/ed-meta/common'
 import { LearningOutcomes } from '@moodlenet/ed-meta/ui'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
@@ -278,7 +278,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
       disabled={disableFields}
       edit={isEditing}
       value={form.values.title}
-      placeholder="Title"
+      placeholder={t('title')}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.title}
       textAreaAutoSize
@@ -292,7 +292,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
 
   const resourceLabel = (
     <div className="resource-label" key="resource-label">
-      Resource
+      {t('resource')}
     </div>
   )
 
@@ -305,7 +305,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
           background: typeColor,
         }}
       >
-        {typeName}
+        {typeLabel(typeName)}
       </div>
     ) : null
 
