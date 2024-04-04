@@ -1,24 +1,28 @@
-import { edMetaOptions as options_de } from './locales/de/ed-meta-options.mjs'
-import { translations as tr_de } from './locales/de/translation.mjs'
-import { edMetaOptions as options_en } from './locales/en/ed-meta-options.mjs'
-import { translations as tr_en } from './locales/en/translation.mjs'
-import { edMetaOptions as options_fr } from './locales/fr/ed-meta-options.mjs'
-import { translations as tr_fr } from './locales/fr/translation.mjs'
-
 import type { Translations } from './types.mjs'
 
 let currentLang: string
 let listMap: Record<string, Translations> = {}
+let trans: Translations = {}
+
+const getAvailableLanguages = (): string[] => {
+  return ['de', 'fr', 'en']
+}
 
 class i18nHandler {
   constructor() {
     const lang =
-      localStorage.getItem('mnet-i18n-lang') ?? navigator.language.toString().split('-')[0]
-    if (lang === 'de' || lang === 'en' || lang === 'fr') {
+      localStorage.getItem('mnet-i18n-lang') ?? navigator.language.toString().split('-')[0] ?? ''
+    if (getAvailableLanguages().includes(lang)) {
       currentLang = lang
     } else {
       currentLang = 'de'
     }
+    import(`./locales/${currentLang}/ed-meta-options.mjs`).then(module => {
+      listMap = module.edMetaOptions
+    })
+    import(`./locales/${currentLang}/translation.mjs`).then(module => {
+      trans = module.translations
+    })
   }
 
   /**
@@ -30,18 +34,6 @@ class i18nHandler {
    * @returns string
    */
   t(key: string, args?: unknown[]): string {
-    let trans: Translations
-    if (currentLang === 'de') {
-      trans = tr_de
-      listMap = options_de
-    } else if (currentLang === 'fr') {
-      trans = tr_fr
-      listMap = options_fr
-    } else {
-      trans = tr_en
-      listMap = options_en
-    }
-
     if (key in trans) {
       let val = eval(`trans.${key}`)
       if (args) {
@@ -74,6 +66,7 @@ class i18nHandler {
       return { value: option.value, label: l[option.value] ?? option.label }
     })
   }
+
   /**
    * Return the label of a list value.
    * @param list
@@ -87,17 +80,6 @@ class i18nHandler {
     const l = eval(`listMap.${list}`)
     return l[value] ?? value
   }
-  /*
-  async tl(list: keyof typeof listMap, options: Array<{ value: string; label: string }>): Promise<{ value: string; label: string }[]> {
-    if (!(list in listMap)) {
-      const module = await import(`./locales/${currentLang}/${list}.mjs`)
-      listMap[list] = module.default
-    }
-    return options.map((option) => {
-      const l = eval(`listMap.${list}`)
-      return { value: option.value, label: l[option.value] ?? option.label }
-    })
-  }*/
 
   /**
    * Same as t() except that it uses the singular or plural form of the string, depending on the count.
@@ -130,7 +112,7 @@ class i18nHandler {
    * @returns array of language iso codes
    */
   getLanguagesIso(): string[] {
-    return ['de', 'en', 'fr']
+    return getAvailableLanguages()
   }
 
   /**
