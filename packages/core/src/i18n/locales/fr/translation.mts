@@ -22,7 +22,6 @@ export const translations: Translations = {
   best_collection_ever: 'La meilleure collection qui soit',
   blooms_category: '{1} Catégorie de Bloom',
   bookmark: 'Favori',
-  bookmark_a_contribution_or_auser: 'Ajouter une contribution ou un auteur comme favori', // FOUND MISSING
   bookmark_contribution_user: 'Ajouter un favori à une contribution ou à un•e utilisateur•trice',
   bookmark_needs_login: 'Connectez-vous ou inscrivez-vous pour ajouter un favori',
   bookmark_remove: 'Supprimer le favori',
