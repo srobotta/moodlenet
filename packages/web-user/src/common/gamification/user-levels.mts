@@ -91,7 +91,7 @@ export const actionsAndPointsObtained: { action: string; points: number; abbr?: 
     action: t('new_bookmark_on_your_profile_or_contribution'),
     points: P.curation.bookmark.toTargetEntityCreator.points,
   },
-  { action: t('bookmark_a_contribution_or_auser'), points: P.curation.bookmark.toActor.points },
+  { action: t('bookmark_contribution_user'), points: P.curation.bookmark.toActor.points },
   { action: t('become_a_publisher'), points: P.engagement.profile.publisher.points },
 ]
 
