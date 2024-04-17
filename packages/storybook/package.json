@@ -22,6 +22,7 @@
     "@emotion/styled": "11.11.0",
     "@moodlenet/core": "*",
     "@moodlenet/collection": "*",
+    "@moodlenet/core": "*",
     "@moodlenet/component-library": "*",
     "@moodlenet/ed-meta": "*",
     "@moodlenet/ed-resource": "*",
