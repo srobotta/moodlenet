@@ -5,7 +5,6 @@
   "type": "module",
   "engines": {
     "node": "20",
-    "node": "20",
     "npm": "10",
     "yarn": "please-use-npm"
   },
@@ -22,6 +21,7 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@moodlenet/collection": "*",
+    "@moodlenet/core": "*",
     "@moodlenet/component-library": "*",
     "@moodlenet/ed-meta": "*",
     "@moodlenet/ed-resource": "*",
