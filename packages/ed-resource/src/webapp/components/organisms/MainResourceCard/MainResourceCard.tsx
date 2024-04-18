@@ -353,7 +353,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
           Element: (
             <div key="publish-button" onClick={publish}>
               <Public style={{ fill: '#00bd7e' }} />
-              Publish
+              {t('publish')}
             </div>
           ),
 

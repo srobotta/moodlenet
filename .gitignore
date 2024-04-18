@@ -21,4 +21,3 @@ tsconfig.tsbuildinfo
 /.husky
 /packages/*/dist
 package.json.lerna_backup
-config.json.patch
