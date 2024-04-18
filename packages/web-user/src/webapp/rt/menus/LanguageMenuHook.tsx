@@ -1,11 +1,11 @@
-import { i18n } from '@moodlenet/core/i18n'
+import { getLanguagesIso, setLang } from '@moodlenet/core/i18n'
 import { useMemo } from 'react'
 import type { LanguageSelectorItem, LanguageSelectorProps } from '../../ui/exports/ui.mjs'
 
 export function useLanguageSelectorProps(): LanguageSelectorProps {
-  const menuItems = i18n.getLanguagesIso().map((lang): LanguageSelectorItem => {
+  const menuItems = getLanguagesIso().map((lang): LanguageSelectorItem => {
     const onClick = () => {
-      i18n.setLang(lang)
+      setLang(lang)
       window.location.reload()
     }
     const cmp: React.FC = () => {
