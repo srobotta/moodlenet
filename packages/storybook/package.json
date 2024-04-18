@@ -20,6 +20,7 @@
     "@babel/core": "7.19.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
+    "@moodlenet/core": "*",
     "@moodlenet/collection": "*",
     "@moodlenet/component-library": "*",
     "@moodlenet/ed-meta": "*",
