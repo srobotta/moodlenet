@@ -8,6 +8,11 @@ export const translations: Translations = {
     "Add someone else's resource in your published collection",
   add_to_collection: 'Add to collection',
   admin: 'Admin',
+  advanced: 'Advanced',
+  advanced_leave: 'Leave',
+  advanced_delete_account: 'Delete account',
+  advanced_check_email: 'Check your email to confirm the deletion',
+  advanced_email_be_sent: ' An email will be send to confirm the deletion of your account.',
   agree_terms_conditions: 'You agree to our Terms & Conditions',
   ambitious_seed: 'Ambitious seed',
   approve: 'Approve',
@@ -22,16 +27,20 @@ export const translations: Translations = {
   best_collection_ever: 'Best collection ever',
   blooms_category: '{1} Blooms category',
   bookmark: 'Bookmark',
+  bookmark_a_contribution_or_auser: 'Add a contribution or an author as a favourite',
   bookmark_contribution_user: 'Bookmark a contribution or user',
   bookmark_needs_login: 'Login or signup to bookmark',
   bookmark_remove: 'Remove bookmark',
   bookmarks: 'Bookmarks',
   cancel: 'Cancel',
+  change_password: 'Change password',
   collection_curated_by: 'Collection curated by',
   collection: 'Collection',
   collections: 'Collections',
   content_category: 'Content category',
   content_language: 'Content language',
+  content_level: 'Content level', //@todo check BB_2024-03-21
+  content_licence: 'Content licence', //@todo check BB_2024-03-21
   content_type: 'Content type',
   complete_profile: 'Complete profile',
   congrats_you_already_did_it: 'Congrats! You already did it!',
@@ -49,6 +58,7 @@ export const translations: Translations = {
   done: 'Done',
   dont_show_again: 'Do not show again',
   download: 'Download',
+  download_file: 'Download file', //@todo check BB_2024-03-21
   drop_or_click_to_upload_a_file: 'Drop or click to upload a file!',
   drop_or_click_to_upload_an_image: 'Drop or click to upload an image!',
   edit_background: 'Edit background',
@@ -94,6 +104,7 @@ export const translations: Translations = {
   levels: 'Levels',
   level_avatar: 'Level avatar',
   license: 'License',
+  licenses: 'Licenses', //@todo check BB_2024-03-21
   license_type: 'License type',
   like: 'Like',
   like_a_resource: 'Like a resource',
@@ -168,6 +179,9 @@ export const translations: Translations = {
   seedling_scholar: 'Seedling scholar',
   select_language: 'Select language',
   settings: 'Settings',
+  setting_general: 'General', //@todo check BB_2024-03-21
+  setting_interests: 'Interests', //@todo check BB_2024-03-21
+  settings_use_interests_as_default: 'Use interests as default filters when searching', //@todo check BB_2024-03-21
   select_collections: 'Select collections',
   select_license: 'Select a license',
   send_a_message: 'Send a message',
