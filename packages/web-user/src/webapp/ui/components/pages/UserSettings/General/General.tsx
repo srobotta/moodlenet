@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, MultipeSelectDropdown, PrimaryButton, Switch } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t, tl } from '@moodlenet/core/i18n'
 import type { EdMetaOptionsProps } from '@moodlenet/ed-resource/common'
 import { useFormik } from 'formik'
 import { /* useState, */ type FC } from 'react'
@@ -82,11 +82,12 @@ export const General: FC<GeneralProps> = ({
       canEdit={true}
       key="subject-field"
       value={form.values.subjects}
-      options={subjectOptions}
+      options={tl('subject', subjectOptions)}
       errors={form.errors.subjects}
       shouldShowErrors={true}
     />
   )
+
   const levelsField = (
     <MultipeSelectDropdown
       name="levels"
@@ -96,7 +97,7 @@ export const General: FC<GeneralProps> = ({
       canEdit={true}
       key="level-field"
       value={form.values.levels}
-      options={levelOptions}
+      options={tl('education_level', levelOptions)}
       errors={form.errors.levels}
       shouldShowErrors={true}
     />
