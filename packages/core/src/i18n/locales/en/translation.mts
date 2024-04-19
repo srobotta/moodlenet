@@ -39,8 +39,8 @@ export const translations: Translations = {
   collections: 'Collections',
   content_category: 'Content category',
   content_language: 'Content language',
-  content_level: 'Content level', //@todo check BB_2024-03-21
-  content_licence: 'Content licence', //@todo check BB_2024-03-21
+  content_level: 'Content level', //@todo check BB_2024-04-17
+  content_licence: 'Content licence', //@todo check BB_2024-04-17
   content_type: 'Content type',
   complete_profile: 'Complete profile',
   congrats_you_already_did_it: 'Congrats! You already did it!',
@@ -58,7 +58,7 @@ export const translations: Translations = {
   done: 'Done',
   dont_show_again: 'Do not show again',
   download: 'Download',
-  download_file: 'Download file', //@todo check BB_2024-03-21
+  download_file: 'Download file', //@todo check BB_2024-04-17
   drop_or_click_to_upload_a_file: 'Drop or click to upload a file!',
   drop_or_click_to_upload_an_image: 'Drop or click to upload an image!',
   edit_background: 'Edit background',
@@ -82,6 +82,7 @@ export const translations: Translations = {
   followers_cnt_sing: '{1} follower',
   followers_cnt_pl: '{1} followers',
   following: 'Following',
+  general: 'General',
   get_a_point_for_each_detail:
     'Get a point for each detail filled, profile and background images, location, website, description',
   get_a_point_interests: 'Get a point when setting the interests type in your settings page',
@@ -106,7 +107,7 @@ export const translations: Translations = {
   levels: 'Levels',
   level_avatar: 'Level avatar',
   license: 'License',
-  licenses: 'Licenses', //@todo check BB_2024-03-21
+  licenses: 'Licenses', //@todo check BB_2024-04-17
   license_type: 'License type',
   like: 'Like',
   like_a_resource: 'Like a resource',
@@ -137,6 +138,7 @@ export const translations: Translations = {
   override_subtitle: 'This is the OER Repository of the Bern University of Applied Sciences.',
   override_title: 'Shaping the teaching of tomorrow',
   page_not_found_or_access_not_allowed: 'Page not found or access not allowed',
+  password_changed: 'Password changed',
   paste_or_type_a_link: 'Paste or type a link',
   people: 'People',
   photo_by: 'Photo by',
@@ -165,6 +167,7 @@ export const translations: Translations = {
   resource: 'Resource',
   resources: 'Resources',
   rooted_learner: 'Rooted learner',
+  save: 'Save', //@todo check BB_2024-04-17
   scheduled_maintenance:
     'MoodleNet is down for a scheduled maintenance and expect to be online in a few minutes',
   search: 'Search',
@@ -181,9 +184,9 @@ export const translations: Translations = {
   seedling_scholar: 'Seedling scholar',
   select_language: 'Select language',
   settings: 'Settings',
-  setting_general: 'General', //@todo check BB_2024-03-21
-  setting_interests: 'Interests', //@todo check BB_2024-03-21
-  settings_use_interests_as_default: 'Use interests as default filters when searching', //@todo check BB_2024-03-21
+  setting_general: 'General', //@todo check BB_2024-04-17
+  setting_interests: 'Interests', //@todo check BB_2024-04-17
+  settings_use_interests_as_default: 'Use interests as default filters when searching', //@todo check BB_2024-04-17
   select_collections: 'Select collections',
   select_license: 'Select a license',
   send_a_message: 'Send a message',

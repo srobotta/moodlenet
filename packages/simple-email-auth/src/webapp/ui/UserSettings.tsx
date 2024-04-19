@@ -16,7 +16,7 @@ export type SimpleEmailUserSettingsProps = {
   setPassword: (values: SetPasswordData) => void
 }
 
-export const GeneralMenu = () => <abbr title="General">General</abbr>
+export const GeneralMenu = () => <abbr title="General">{t('general')}</abbr>
 
 export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
   // data,
@@ -45,7 +45,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
       // emailChangedSuccess ? (
       //   <Snackbar type="success">Check your old email inbox to continue</Snackbar>
       // ) : null,
-      passwordChangedSuccess ? <Snackbar type="success">Password changed</Snackbar> : null,
+      passwordChangedSuccess ? <Snackbar type="success">{t('password_changed')}</Snackbar> : null,
     ]
   // }
   // ></SnackbarStack>
@@ -83,7 +83,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
         </div>
       </div>
       <PrimaryButton onClick={() => form.submitForm()} disabled={!canSubmit} className="save-btn">
-        Save
+        {t('save')}
       </PrimaryButton>
     </Card>
   )
