@@ -164,7 +164,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
                 return (
                   <SimpleTextOption
                     key={verb}
-                    value={tm('bloom_taxonomy_verb', verb.toLowerCase())}
+                    value={tm('bloom_taxonomy_verb', verb.toLowerCase().replace(/ /g, '_'))}
                   />
                 )
               })}
