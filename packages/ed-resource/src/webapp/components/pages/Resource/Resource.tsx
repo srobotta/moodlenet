@@ -595,7 +595,7 @@ export const Resource: FC<ResourceProps> = ({
       >
         <SecondaryButton key="download-or-open-link-button" disabled={disableFields}>
           <InsertDriveFile />
-          Download file
+          {t('download_file')}
         </SecondaryButton>
       </a>
     ) : null
@@ -609,7 +609,7 @@ export const Resource: FC<ResourceProps> = ({
       >
         <SecondaryButton key="download-or-open-link-button" disabled={disableFields}>
           <Link />
-          Open link
+          {t('open_link')}
         </SecondaryButton>
       </a>
     ) : null
@@ -743,14 +743,14 @@ export const Resource: FC<ResourceProps> = ({
               }}
               color="red"
             >
-              Delete
+              {t('delete')}
             </PrimaryButton>
           }
           onClose={() => setIsToDelete(false)}
           style={{ maxWidth: '400px' }}
           className="delete-message"
         >
-          The resource will be deleted
+          {t('the_resource_will_be_deleted')}
         </Modal>
       )}
     </>

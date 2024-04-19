@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, MultipeSelectDropdown, PrimaryButton, Switch } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { EdMetaOptionsProps } from '@moodlenet/ed-resource/common'
 import { useFormik } from 'formik'
 import { /* useState, */ type FC } from 'react'
@@ -21,7 +22,7 @@ export type GeneralProps = {
   // userId: string
 }
 
-export const GeneralMenu = () => <abbr title="General">General</abbr>
+export const GeneralMenu = () => <abbr title="General">{t('setting_general')}</abbr>
 
 export const General: FC<GeneralProps> = ({
   mainColumnItems,
@@ -76,8 +77,8 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="subjects"
       onChange={form.handleChange}
-      label="Subjects"
-      placeholder="Content category"
+      label={t('subjects')}
+      placeholder={t('content_category')}
       canEdit={true}
       key="subject-field"
       value={form.values.subjects}
@@ -90,8 +91,8 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="levels"
       onChange={form.handleChange}
-      label="Levels"
-      placeholder="Content level"
+      label={t('levels')}
+      placeholder={t('content_level')}
       canEdit={true}
       key="level-field"
       value={form.values.levels}
@@ -105,8 +106,8 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="languages"
       onChange={form.handleChange}
-      label="Languages"
-      placeholder="Content language"
+      label={t('languages')}
+      placeholder={t('content_language')}
       canEdit={true}
       key="language-field"
       value={form.values.languages}
@@ -120,8 +121,8 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="licenses"
       onChange={form.handleChange}
-      label="Licences"
-      placeholder="Content license"
+      label={t('licenses')}
+      placeholder={t('content_licence')}
       canEdit={true}
       key="license-field"
       value={form.values.licenses}
@@ -133,7 +134,7 @@ export const General: FC<GeneralProps> = ({
 
   const setAsDefaultFilters = (
     <div className="set-as-default-filters">
-      <div className="title">Use interests as default filters when searching</div>
+      <div className="title">{t('settings_use_interests_as_default')}</div>
       <Switch
         enabled={form.values.useInterestsAsDefaultFilters}
         toggleSwitch={() =>
@@ -157,7 +158,7 @@ export const General: FC<GeneralProps> = ({
   const interestsSection = (
     <Card className="column interests-section">
       <div className="parameter">
-        <div className="name">Interests</div>
+        <div className="name">{t('setting_interests')}</div>
         {interestsFields}
       </div>
       <PrimaryButton
@@ -166,7 +167,7 @@ export const General: FC<GeneralProps> = ({
           form.submitForm()
         }}
       >
-        Save
+        {t('save')}
       </PrimaryButton>
     </Card>
   )
@@ -220,7 +221,7 @@ export const General: FC<GeneralProps> = ({
       {modals}
       {snackbars}
       <Card className="column">
-        <div className="title">General</div>
+        <div className="title">{t('setting_general')}</div>
       </Card>
       {updatedMainColumnItems.map(i => ('Item' in i ? <i.Item key={i.key} /> : i))}
     </div>

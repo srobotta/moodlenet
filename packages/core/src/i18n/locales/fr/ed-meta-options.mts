@@ -1,5 +1,4 @@
 import type { Translations } from '../../types.mjs'
-
 export const edMetaOptions: Record<string, Translations> = {
   content_type: {
     'assessment': 'Évaluation',
@@ -184,7 +183,7 @@ export const edMetaOptions: Record<string, Translations> = {
   bloom_taxonomy_verb: {
     analyze: 'Analyser',
     apply: 'Appliquer',
-    appraise: 'Éstimer',
+    appraise: 'Apprécier',
     argue: 'Argumenter',
     arrange: 'Arranger',
     assemble: 'Assembler',
@@ -211,13 +210,13 @@ export const edMetaOptions: Record<string, Translations> = {
     debate: 'Debatre',
     decide: 'Décider',
     deduce: 'Déduire',
-    defend: 'Defendre',
+    defend: 'Défendre',
     define: 'Définir',
     describe: 'Décrire',
     design: 'Concevoir',
-    determine: 'Determiner',
+    determine: 'Déterminer',
     develop: 'Développer',
-    devise: 'Deviser',
+    devise: 'Inventer',
     diagram: 'Schématiser',
     differentiate: 'Différencier',
     discover: 'Découvrir',
@@ -270,10 +269,10 @@ export const edMetaOptions: Record<string, Translations> = {
     produce: 'Produire',
     propose: 'Proposer',
     prove: 'Prouver',
-    question: 'S’enquérir',
+    question: 'Questionner',
     rank: 'Ordonner',
     rate: 'Noter',
-    rearrange: 'Arranger',
+    rearrange: 'Rérranger',
     recall: 'Rappeler',
     recognize: 'Reconnaître',
     recommend: 'Recommander',

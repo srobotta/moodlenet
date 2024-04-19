@@ -8,6 +8,11 @@ export const translations: Translations = {
     'Den Inhalt einer anderen Person zu deiner veröffentlichten Sammlung hinzufügen',
   add_to_collection: 'Zur Sammlung hinzufügen',
   admin: 'Admin',
+  advanced: 'Erweitert', //@todo check BB_2024-04-17
+  advanced_leave: 'Abmelden von', //@todo check BB_2024-04-17
+  advanced_delete_account: 'Konto löschen', //@todo check BB_2024-04-17
+  advanced_check_email: 'Überprüfen Sie Ihre E-Mails, um die Kündigung zu bestätigen.', //@todo check BB_2024-04-17
+  advanced_email_be_sent: 'Sie erhalten eine E-Mail, um die Löschung Ihres Kontos zu bestätigen.', //@todo check BB_2024-04-17
   agree_terms_conditions: 'Du stimmst den Nutzungsbedingungen zu',
   ambitious_seed: 'Ehrgeiziger Samen',
   approve: 'Freigeben',
@@ -22,17 +27,21 @@ export const translations: Translations = {
   best_collection_ever: 'Beste Sammlung überhaupt',
   blooms_category: 'Blooms Kategorie {1}',
   bookmark: 'Lesezeichen',
+  bookmark_a_contribution_or_auser: 'Einen Beitrag oder Autor als Favoriten hinzufügen', //@todo check BB_2024-04-17
   bookmark_contribution_user: 'Ein Lesezeichen für einen Beitrag oder eine Person setzen',
   bookmark_needs_login: 'Einloggen oder registieren um ein Lesezeichen zu setzen',
   bookmark_remove: 'Lesezeichen entfernen',
   bookmarks: 'Lesezeichen',
   cancel: 'Abbrechen',
+  change_password: 'Passwort ändern', //@todo check BB_2024-04-17
   collection_curated_by: 'Sammlung kuratiert von',
   collection: 'Sammlung',
   collections: 'Sammlungen',
   content_category: 'Kategorie des Inhalts',
   content_language: 'Sprache des Inhalts',
   content_type: 'Inhaltstyp',
+  content_level: 'Ebene des Inhalts', //@todo check BB_2024-04-17
+  content_licence: 'Lizenz des Inhalts', //@todo check BB_2024-04-17
   complete_profile: 'Profil vervollständigen',
   copied_to_clipboard: 'In die Zwischenablage kopiert',
   congrats_you_already_did_it: 'Glückwunsch, das hast du bereits erreicht!',
@@ -49,6 +58,7 @@ export const translations: Translations = {
   done: 'Fertig',
   dont_show_again: 'Nicht mehr anzeigen',
   download: 'Herunterladen',
+  download_file: 'Datei herunterladen', //@todo check BB_2024-04-17
   drop_or_click_to_upload_a_file: 'Datei hier ablegen oder klicken um sie hochzuladen!',
   drop_or_click_to_upload_an_image: 'Bild hier ablegen oder klicken um es hochzuladen!',
   edit_background: 'Hintergrund bearbeiten',
@@ -73,6 +83,7 @@ export const translations: Translations = {
   followers_cnt_sing: '{1} Person folgt',
   followers_cnt_pl: '{1} Personen folgen',
   following: 'Folgt',
+  general: 'Allgemein', //@todo check BB_2024-04-17
   get_a_point_for_each_detail:
     'Erhalte einen Punkt für jedes ausgefüllte Detail, Profil- und Hintergrundbild, Ort, Webseite, Beschreibung',
   get_a_point_interests:
@@ -99,6 +110,7 @@ export const translations: Translations = {
   levels: 'Levels',
   level_avatar: 'Level-Symbol',
   license: 'Lizenz',
+  licenses: 'Lizenzen', //@todo check BB_2024-04-17
   license_type: 'Lizenztyp',
   like: 'Gefällt mir',
   like_needs_login: 'Einloggen oder registieren um zu liken',
@@ -130,6 +142,7 @@ export const translations: Translations = {
   override_subtitle: 'Dies ist das OER-Repository der Berner Fachhochschule.',
   override_title: 'Die Lehre von morgen gestalten',
   page_not_found_or_access_not_allowed: 'Seite nicht gefunden oder Zugriff nicht erlaubt',
+  password_changed: 'Passwort geändert', //@todo check BB_2024-04-17
   paste_or_type_a_link: 'Paste or type a link',
   people: 'Personen',
   photo_by: 'Foto von',
@@ -158,6 +171,7 @@ export const translations: Translations = {
   resource: 'Ressource',
   resources: 'Ressourcen',
   rooted_learner: 'Verwurzelte*r Lernende*r',
+  save: 'Speichern', //@todo check BB_2024-04-17
   scheduled_maintenance:
     'MoodleNet ist für eine geplante Wartung nicht verfügbar und wird in wenigen Minuten wieder online sein',
   search: 'Suche',
@@ -179,6 +193,9 @@ export const translations: Translations = {
   send_to_moodle: 'Zu Moodle senden',
   set_up_interests: 'Interessen einrichten',
   settings: 'Einstellungen',
+  setting_general: 'Allgemein', //@todo check BB_2024-04-17
+  setting_interests: 'Interessen', //@todo check BB_2024-04-17
+  settings_use_interests_as_default: 'Interessen als Standardfilter bei der Suche verwenden', //@todo check BB_2024-04-17
   sfollowers: "'s Folgende",
   sfollowing: ' folgt',
   share: 'Teilen',

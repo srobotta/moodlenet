@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Card, InputTextField, PrimaryButton, Snackbar } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { useFormik } from 'formik'
 import type { FC } from 'react'
 
@@ -15,7 +16,7 @@ export type SimpleEmailUserSettingsProps = {
   setPassword: (values: SetPasswordData) => void
 }
 
-export const GeneralMenu = () => <abbr title="General">General</abbr>
+export const GeneralMenu = () => <abbr title="General">{t('general')}</abbr>
 
 export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
   // data,
@@ -44,7 +45,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
       // emailChangedSuccess ? (
       //   <Snackbar type="success">Check your old email inbox to continue</Snackbar>
       // ) : null,
-      passwordChangedSuccess ? <Snackbar type="success">Password changed</Snackbar> : null,
+      passwordChangedSuccess ? <Snackbar type="success">{t('password_changed')}</Snackbar> : null,
     ]
   // }
   // ></SnackbarStack>
@@ -67,7 +68,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
         </div>
       </div> */}
       <div className="parameter">
-        <div className="name">Change password</div>
+        <div className="name">{t('change_password')}</div>
         <div className="actions">
           <InputTextField
             className="password"
@@ -82,7 +83,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
         </div>
       </div>
       <PrimaryButton onClick={() => form.submitForm()} disabled={!canSubmit} className="save-btn">
-        Save
+        {t('save')}
       </PrimaryButton>
     </Card>
   )
