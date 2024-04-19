@@ -205,8 +205,6 @@ export const translations: Translations = {
   set_up_interests: 'Interessen einrichten',
   settings: 'Einstellungen',
   settings_use_interests_as_default: 'Interessen als Standardfilter bei der Suche verwenden', //@todo check BB_2024-04-17
-  sfollowers: "'s Folgende",
-  sfollowing: ' folgt',
   share: 'Teilen',
   share_content: 'Inhalte teilen',
   signup: 'Registrieren',
