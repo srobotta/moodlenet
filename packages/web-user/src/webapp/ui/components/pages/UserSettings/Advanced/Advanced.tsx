@@ -25,7 +25,9 @@ export const Advanced: FC<AdvancedProps> = ({
   const leaveSection = (
     <Card className="column">
       <div className="parameter">
-        <div className="name">Leave {instanceName}</div>
+        <div className="name">
+          {t('advanced_leave')} {instanceName}
+        </div>
         <div className="actions">
           <SecondaryButton onClick={() => setShowDeleteAccountModal(true)}>
             {t('advanced_delete_account')}
