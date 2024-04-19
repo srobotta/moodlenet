@@ -20,6 +20,7 @@ export type MainSearchBoxCtxT = {
   qText: string
   setDefaultQuery: React.Dispatch<React.SetStateAction<Record<string, string | undefined>>>
   resetFilters(): void
+  searchLabel: string
 } & Pick<SearchboxProps, 'search' | 'placeholder' | 'searchText' | 'setSearchText'>
 
 export const MainSearchBoxCtx = createContext<MainSearchBoxCtxT>(null as any)
@@ -35,6 +36,7 @@ export const ProvideMainSearchBoxCtx: FC<PropsWithChildren<MainSearchBoxCtxValue
 }
 
 const defaultPlaceholder = t('search_placeholder')
+const searchLabel = t('search')
 export type MainSearchBoxCtxValueDeps = {
   search(text: string, defaultQuery: Record<string, string | undefined>): void
   initSearchText: string
@@ -67,6 +69,7 @@ export function useMainSearchBoxCtxValue({
       setSearchText,
       qText,
       setDefaultQuery,
+      searchLabel: searchLabel,
     }
     return ctx
   }, [qText, search, searchText, defaultQuery, setDefaultQuery, defaultSearchHref.url, nav])
