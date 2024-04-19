@@ -147,6 +147,7 @@
       > .leaves {
         display: flex;
         flex-direction: column;
+      
         > .title {
           padding-bottom: 14px;
           font-weight: bold;
@@ -166,6 +167,9 @@
             width: 300px;
             > .level {
               min-width: 62px;
+              > .level-data{
+                font-size: 12px;
+              }
             }
             > .points {
               width: 75px;

@@ -1,5 +1,4 @@
 import type { Translations } from '../../types.mjs'
-
 export const edMetaOptions: Record<string, Translations> = {
   content_type: {
     'assessment': 'Évaluation',

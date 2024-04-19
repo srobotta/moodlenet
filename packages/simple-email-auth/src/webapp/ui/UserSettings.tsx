@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Card, InputTextField, PrimaryButton, Snackbar } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { useFormik } from 'formik'
 import type { FC } from 'react'
 
@@ -67,7 +68,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
         </div>
       </div> */}
       <div className="parameter">
-        <div className="name">Change password</div>
+        <div className="name">{t('change_password')}</div>
         <div className="actions">
           <InputTextField
             className="password"
