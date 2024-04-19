@@ -14,12 +14,19 @@ export const translations: Translations = {
   advanced_check_email: 'Überprüfen Sie Ihre E-Mails, um die Kündigung zu bestätigen.', //@todo check BB_2024-04-17
   advanced_email_be_sent: 'Sie erhalten eine E-Mail, um die Löschung Ihres Kontos zu bestätigen.', //@todo check BB_2024-04-17
   agree_terms_conditions: 'Du stimmst den Nutzungsbedingungen zu',
+  alert: 'Warnung',
   ambitious_seed: 'Ehrgeiziger Samen',
   approve: 'Freigeben',
   approved_badge: 'Freigabe erteilt, dein Inhalt ist jetzt für alle sichtbar.',
   autofill_missing_fields: 'Fehlende Felder ausfüllen',
-  autofilling_with_ai: 'Mit KI ausfüllen',
-  autofilling_with_ai_cancel: 'ausfüllen abbrechen',
+  autofill_with_ai: 'Mit KI ausfüllen',
+  autofill_with_ai_cancel: 'ausfüllen abbrechen',
+  autofill_with_ai_resource:
+    'Die Ressourcendetails mit KI auszufüllen dauert gewöhnlich ein paar Minuten',
+  autofill_with_ai_resource_error:
+    'Leider konnten die Ressourcendetails nicht mit der KI ausgefüllt werden.',
+  autofill_with_ai_resource_success:
+    'Die Ressource ist fertig! Überprüfe und korrigiere die benötigten Daten.',
   avatar: 'Profilbild',
   background: 'Hintergrund',
   back_soon: 'Wir sind bald wieder da',
@@ -33,15 +40,15 @@ export const translations: Translations = {
   bookmark_remove: 'Lesezeichen entfernen',
   bookmarks: 'Lesezeichen',
   cancel: 'Abbrechen',
-  change_password: 'Passwort ändern', //@todo check BB_2024-04-17
+  change_password: 'Passwort ändern',
   collection_curated_by: 'Sammlung kuratiert von',
   collection: 'Sammlung',
   collections: 'Sammlungen',
   content_category: 'Kategorie des Inhalts',
   content_language: 'Sprache des Inhalts',
+  content_level: 'Bildungslevel',
+  content_license: 'Lizenz des Inhalts',
   content_type: 'Inhaltstyp',
-  content_level: 'Ebene des Inhalts', //@todo check BB_2024-04-17
-  content_licence: 'Lizenz des Inhalts', //@todo check BB_2024-04-17
   complete_profile: 'Profil vervollständigen',
   copied_to_clipboard: 'In die Zwischenablage kopiert',
   congrats_you_already_did_it: 'Glückwunsch, das hast du bereits erreicht!',
@@ -58,14 +65,15 @@ export const translations: Translations = {
   done: 'Fertig',
   dont_show_again: 'Nicht mehr anzeigen',
   download: 'Herunterladen',
-  download_file: 'Datei herunterladen', //@todo check BB_2024-04-17
+  download_file: 'Datei herunterladen',
   drop_or_click_to_upload_a_file: 'Datei hier ablegen oder klicken um sie hochzuladen!',
   drop_or_click_to_upload_an_image: 'Bild hier ablegen oder klicken um es hochzuladen!',
   edit_background: 'Hintergrund bearbeiten',
   edit_profile_picture: 'Profilbild bearbeiten',
   education_level: 'Bildungsstufe',
+  enter_new_password: 'Neues Passwort eingeben',
   enter_your_account: 'Zum Nutzendenkonto',
-  failed_fix_the_errors_and_try_again: 'Fehlgeschlagen, behebe die Fehler und versuche es erneut',
+  failed_fix_errors_and_try_again: 'Fehlgeschlagen, behebe die Fehler und versuche es erneut',
   file_too_big: 'Die Datei ist zu gross, reduziere die Grösse oder gib eine URL an',
   filter_all: 'Alle',
   filter_reset: 'Filter zurücksetzen',
@@ -83,7 +91,7 @@ export const translations: Translations = {
   followers_cnt_sing: '{1} Person folgt',
   followers_cnt_pl: '{1} Personen folgen',
   following: 'Folgt',
-  general: 'Allgemein', //@todo check BB_2024-04-17
+  general: 'Allgemein',
   get_a_point_for_each_detail:
     'Erhalte einen Punkt für jedes ausgefüllte Detail, Profil- und Hintergrundbild, Ort, Webseite, Beschreibung',
   get_a_point_interests:
@@ -92,6 +100,7 @@ export const translations: Translations = {
   i_follow: 'Folge ich',
   interest_description: 'Wähle deine Interessen aus, um das Beste aus MoodleNet herauszuholen.',
   interest_title: 'Verbessere deine Erfahrung!',
+  interests: 'Interessen',
   image_too_big: 'Das Bild ist zu gross, reduziere die Grösse oder verwende ein anderes Bild',
   join_now: 'Jetzt beitreten',
   just_a_text_area: 'Nur ein Textbereich',
@@ -110,8 +119,8 @@ export const translations: Translations = {
   levels: 'Levels',
   level_avatar: 'Level-Symbol',
   license: 'Lizenz',
-  licenses: 'Lizenzen', //@todo check BB_2024-04-17
   license_type: 'Lizenztyp',
+  licenses: 'Lizenzen',
   like: 'Gefällt mir',
   like_needs_login: 'Einloggen oder registieren um zu liken',
   like_own_content: 'Du kannst nicht deine eigenen Inhalte liken',
@@ -142,7 +151,7 @@ export const translations: Translations = {
   override_subtitle: 'Dies ist das OER-Repository der Berner Fachhochschule.',
   override_title: 'Die Lehre von morgen gestalten',
   page_not_found_or_access_not_allowed: 'Seite nicht gefunden oder Zugriff nicht erlaubt',
-  password_changed: 'Passwort geändert', //@todo check BB_2024-04-17
+  password_changed: 'Passwort geändert',
   paste_or_type_a_link: 'Paste or type a link',
   people: 'Personen',
   photo_by: 'Foto von',
@@ -169,9 +178,11 @@ export const translations: Translations = {
     'Spam / kommerziell/ nicht bildungsrelevant / Betrug / Copyright Material / anderer Grund.',
   required_field: 'Erforderliches Feld',
   resource: 'Ressource',
+  resource_published: 'Ressource veröffentlicht',
+  resource_unpublished: 'Ressource unveröffentlicht',
   resources: 'Ressourcen',
   rooted_learner: 'Verwurzelte*r Lernende*r',
-  save: 'Speichern', //@todo check BB_2024-04-17
+  save: 'Speichern',
   scheduled_maintenance:
     'MoodleNet ist für eine geplante Wartung nicht verfügbar und wird in wenigen Minuten wieder online sein',
   search: 'Suche',
@@ -193,8 +204,6 @@ export const translations: Translations = {
   send_to_moodle: 'Zu Moodle senden',
   set_up_interests: 'Interessen einrichten',
   settings: 'Einstellungen',
-  setting_general: 'Allgemein', //@todo check BB_2024-04-17
-  setting_interests: 'Interessen', //@todo check BB_2024-04-17
   settings_use_interests_as_default: 'Interessen als Standardfilter bei der Suche verwenden', //@todo check BB_2024-04-17
   sfollowers: "'s Folgende",
   sfollowing: ' folgt',
@@ -210,6 +219,8 @@ export const translations: Translations = {
   start_typing_to_search: 'Fange an zu tippen um zu suchen',
   start_typing_textarea: 'Fange an zu tippen um es zu füllen',
   steadily_grower: 'Stetig Wachsende*r',
+  subject: 'Fachgebiet',
+  subjects: 'Fachgebiete',
   subtitle_create_collection: 'Sammlungen sind gruppierte Materialien',
   subtitle_create_resource:
     'Eine Ressource ist ein einzelnes Element z.B. Bild, Foliensatz, Dokument',
@@ -218,8 +229,7 @@ export const translations: Translations = {
   subtitle_featured_resources: 'Ausgezeichnete qualitative Inhalte',
   subtitle_leaderboard:
     'Ausgezeichete Personen, die einen wichtigen Beitrag für offene Bildungsresourcen leisten',
-  subject: 'Fachgebiet',
-  subjects: 'Fachgebiete',
+  success_save_before_publish: 'Erfolgreich, vor dem Veröffentlichen speichern',
   such_great_collection: 'So eine tolle Sammlung',
   text_area_value:
     'Das ist die Beschreibung, die dir sagt, dass dies nicht nur der beste Inhalt ist, sondern auch der dynamischste und angenehmste, den du jemals finden wirst. Vertrau uns.',
@@ -240,7 +250,9 @@ export const translations: Translations = {
   unpublished: 'Unveröffentlicht',
   unnamed: 'Unbenannt',
   upload_cancel: 'Hochladen abbrechen',
+  upload_file_dont_close_tab: 'Datei wird hochladen, Tab bitte nicht schliessen',
   uploading_item: 'Lade {1} hoch',
+  use_interests_as_default_filters: 'Verwende deine Interessen als Standardfilter',
   user_menu: 'Nutzendenmenü',
   user_subtitle_featured_authors: 'Top Autor*innen, die dich ansprechen könnten',
   user_subtitle_featured_collections:

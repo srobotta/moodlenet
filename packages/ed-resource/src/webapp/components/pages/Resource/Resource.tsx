@@ -663,8 +663,7 @@ export const Resource: FC<ResourceProps> = ({
         addSnackbar({
           position: 'bottom',
           autoHideDuration: 6000,
-          children:
-            "Uploading file, feel free to move around the platform, just don't close this tab",
+          children: t('uploading_file_dont_close_tab'),
         })
       }, 4000)
     }
@@ -677,18 +676,18 @@ export const Resource: FC<ResourceProps> = ({
     if (autofillState === 'ai-generation') {
       addSnackbar({
         autoHideDuration: 6000,
-        children: `Using AI to autofill the resource details, it usually takes a couple of minutes`,
+        children: t('autofill_with_ai_resource'),
       })
     } else if (autofillState === 'ai-completed') {
       addSnackbar({
         autoHideDuration: 6000,
         type: 'success',
-        children: `Resource ready! Verify and edit any required details`,
+        children: t('autofill_with_ai_resource_success'),
       })
     } else if (autofillState === 'ai-error') {
       addSnackbar({
         autoHideDuration: 6000,
-        children: `Unfortunatelly we couldn't complete AI autofill`,
+        children: t('autofill_with_ai_resource_error'),
       })
     }
   }, [addSnackbar, autofillState])
@@ -700,8 +699,8 @@ export const Resource: FC<ResourceProps> = ({
         type: showCheckPublishSuccess === 'success' ? 'success' : 'error',
         children:
           showCheckPublishSuccess === 'success'
-            ? `Success, save before publishing`
-            : `Failed, fix the errors and try again`,
+            ? t('success_save_before_publish')
+            : t('failed_fix_errors_and_try_again'),
         onClose: () => setShowCheckPublishSuccess('idle'),
       })
     }
@@ -714,8 +713,8 @@ export const Resource: FC<ResourceProps> = ({
         autoHideDuration: 4000,
         children:
           showPublishSuccess === 'success'
-            ? `Resource published`
-            : `Failed, fix the errors and try again`,
+            ? t('resource_published')
+            : t('failed_fix_errors_and_try_again'),
         onClose: () => setShowPublishSuccess('idle'),
       })
     }
@@ -726,7 +725,7 @@ export const Resource: FC<ResourceProps> = ({
       addSnackbar({
         type: 'success',
         autoHideDuration: 4000,
-        children: 'Resource unpublished',
+        children: t('resource_unpublished'),
         onClose: () => setShowUnpublishSuccess(false),
       })
     }
@@ -736,7 +735,7 @@ export const Resource: FC<ResourceProps> = ({
     <>
       {isToDelete && deleteResource && (
         <Modal
-          title={`Alert`}
+          title={t('alert')}
           actions={
             <PrimaryButton
               onClick={() => {

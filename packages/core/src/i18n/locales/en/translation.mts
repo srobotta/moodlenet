@@ -14,12 +14,17 @@ export const translations: Translations = {
   advanced_check_email: 'Check your email to confirm the deletion',
   advanced_email_be_sent: ' An email will be send to confirm the deletion of your account.',
   agree_terms_conditions: 'You agree to our Terms & Conditions',
+  alert: 'Alert',
   ambitious_seed: 'Ambitious seed',
   approve: 'Approve',
   approve_badge: 'Approved, your published content is visible to all',
   autofill_missing_fields: 'Autofill missing fields',
-  autofilling_with_ai: 'Autofilling with AI',
-  autofilling_with_ai_cancel: 'Cancel autofilling',
+  autofill_with_ai: 'Autofilling with AI',
+  autofill_with_ai_cancel: 'Cancel autofilling',
+  autofill_with_ai_resource:
+    'Using AI to autofill the resource details, it usually takes a couple of minutes',
+  autofill_with_ai_resource_error: "Unfortunatelly we couldn't complete AI autofill",
+  autofill_with_ai_resource_success: 'Resource ready! Verify and edit any required details',
   avatar: 'Avatar',
   background: 'Background',
   back_soon: "We'll be back soon",
@@ -39,8 +44,8 @@ export const translations: Translations = {
   collections: 'Collections',
   content_category: 'Content category',
   content_language: 'Content language',
-  content_level: 'Content level', //@todo check BB_2024-04-17
-  content_licence: 'Content licence', //@todo check BB_2024-04-17
+  content_level: 'Content level',
+  content_license: 'Content license',
   content_type: 'Content type',
   complete_profile: 'Complete profile',
   congrats_you_already_did_it: 'Congrats! You already did it!',
@@ -58,13 +63,15 @@ export const translations: Translations = {
   done: 'Done',
   dont_show_again: 'Do not show again',
   download: 'Download',
-  download_file: 'Download file', //@todo check BB_2024-04-17
+  download_file: 'Download file',
   drop_or_click_to_upload_a_file: 'Drop or click to upload a file!',
   drop_or_click_to_upload_an_image: 'Drop or click to upload an image!',
   edit_background: 'Edit background',
   edit_profile_picture: 'Edit profile picture',
   education_level: 'Education level',
+  enter_new_password: 'Enter your new password',
   enter_your_account: 'Enter to your account',
+  failed_fix_errors_and_try_again: 'Failed, fix the errors and try again',
   file_too_big: 'The file is too big, reduce the size or provide a url',
   filter_all: 'All',
   filter_reset: 'Reset filters',
@@ -90,6 +97,7 @@ export const translations: Translations = {
   i_follow: 'Following',
   interest_description: 'Select your interests to get the most out of MoodleNet',
   interest_title: 'Enhance your experience!',
+  interests: 'Interests',
   image_too_big: 'The image is too big, reduce the size or use another image',
   join_now: 'Join now',
   just_a_text_area: 'Just a text area',
@@ -107,8 +115,8 @@ export const translations: Translations = {
   levels: 'Levels',
   level_avatar: 'Level avatar',
   license: 'License',
-  licenses: 'Licenses', //@todo check BB_2024-04-17
   license_type: 'License type',
+  licenses: 'Licenses',
   like: 'Like',
   like_a_resource: 'Like a resource',
   like_needs_login: 'Login or signup to like',
@@ -165,9 +173,11 @@ export const translations: Translations = {
     'This is spam / commercial / not educational / fraud / copyrighted / other reason.',
   required_field: 'Required field',
   resource: 'Resource',
+  resource_published: 'Resource published',
+  resource_unpublished: 'Resource unpublished',
   resources: 'Resources',
   rooted_learner: 'Rooted learner',
-  save: 'Save', //@todo check BB_2024-04-17
+  save: 'Save',
   scheduled_maintenance:
     'MoodleNet is down for a scheduled maintenance and expect to be online in a few minutes',
   search: 'Search',
@@ -184,9 +194,6 @@ export const translations: Translations = {
   seedling_scholar: 'Seedling scholar',
   select_language: 'Select language',
   settings: 'Settings',
-  setting_general: 'General', //@todo check BB_2024-04-17
-  setting_interests: 'Interests', //@todo check BB_2024-04-17
-  settings_use_interests_as_default: 'Use interests as default filters when searching', //@todo check BB_2024-04-17
   select_collections: 'Select collections',
   select_license: 'Select a license',
   send_a_message: 'Send a message',
@@ -214,6 +221,7 @@ export const translations: Translations = {
   subtitle_featured_collections: 'Great collections of curated resources',
   subtitle_featured_resources: 'Highlights on top quality content',
   subtitle_leaderboard: 'Expectional contributors leading the way',
+  success_save_before_publish: 'Success, save before publishing',
   such_great_collection: 'Such a great collection',
   text_area_value:
     'This is the description that tells you that this is not only the best content ever, but also the most dynamic and enjoyable you will never ever find. Trust us.',
@@ -233,7 +241,10 @@ export const translations: Translations = {
   unpublished: 'Unpublished',
   unnamed: 'Unnamed',
   upload_cancel: 'Cancel upload',
+  uploading_file_dont_close_tab:
+    "Uploading file, feel free to move around the platform, just don't close this tab",
   uploading_item: 'Uploading {1}',
+  use_interests_as_default_filters: 'Use interests as default filters when searching',
   user_menu: 'User menu',
   user_subtitle_featured_authors: 'Top contributors you might appreciate',
   user_subtitle_featured_collections: 'High quality collections you might enjoy',

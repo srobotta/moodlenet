@@ -72,7 +72,7 @@ export const SimpleEmailUserSettings: FC<SimpleEmailUserSettingsProps> = ({
         <div className="actions">
           <InputTextField
             className="password"
-            placeholder="Enter your new password"
+            placeholder={t('enter_new_password')}
             defaultValue={form.values.password}
             onChange={form.handleChange}
             type="password"
