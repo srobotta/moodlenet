@@ -19,7 +19,7 @@ export const translations: Translations = {
   ambitious_seed: 'Graine pleine de potentiel',
   approve: 'Approuver',
   approve_badge: 'Approuvé, votre contenu publié est visible de tous',
-  autofill_missing_fields: 'Remplir les champs manquants',
+  autofill_missing_fields: 'Remplir ce qui manque',
   autofill_with_ai: 'Remplissage automatique avec l’IA',
   autofill_with_ai_cancel: 'Annuler le remplissage automatique',
   autofill_with_ai_resource:
