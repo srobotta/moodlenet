@@ -83,6 +83,7 @@ export const translations: Translations = {
   followers_cnt_sing: '{1} Person folgt',
   followers_cnt_pl: '{1} Personen folgen',
   following: 'Folgt',
+  general: 'Allgemein', //@todo check BB_2024-04-17
   get_a_point_for_each_detail:
     'Erhalte einen Punkt für jedes ausgefüllte Detail, Profil- und Hintergrundbild, Ort, Webseite, Beschreibung',
   get_a_point_interests:
@@ -141,6 +142,7 @@ export const translations: Translations = {
   override_subtitle: 'Dies ist das OER-Repository der Berner Fachhochschule.',
   override_title: 'Die Lehre von morgen gestalten',
   page_not_found_or_access_not_allowed: 'Seite nicht gefunden oder Zugriff nicht erlaubt',
+  password_changed: 'Passwort geändert', //@todo check BB_2024-04-17
   paste_or_type_a_link: 'Paste or type a link',
   people: 'Personen',
   photo_by: 'Foto von',
@@ -169,6 +171,7 @@ export const translations: Translations = {
   resource: 'Ressource',
   resources: 'Ressourcen',
   rooted_learner: 'Verwurzelte*r Lernende*r',
+  save: 'Speichern', //@todo check BB_2024-04-17
   scheduled_maintenance:
     'MoodleNet ist für eine geplante Wartung nicht verfügbar und wird in wenigen Minuten wieder online sein',
   search: 'Suche',

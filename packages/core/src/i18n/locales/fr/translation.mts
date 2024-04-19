@@ -81,6 +81,7 @@ export const translations: Translations = {
   followers_cnt_sing: '{1} abonné•e',
   following: 'Suivi•e•s',
   follows_me: 'Me suit',
+  general: 'Général',
   get_a_point_for_each_detail:
     'Obtenez un point pour chaque détail renseigné, images de profil et d’arrière-plan, localisation, site web, description.',
   get_a_point_interests:
@@ -140,6 +141,7 @@ export const translations: Translations = {
     'Le référentiel de Ressources Éducatives Libres de la Haute école spécialisée bernoise.',
   override_title: 'Façonner l’enseignement de demain',
   page_not_found_or_access_not_allowed: 'Page introuvable ou accès non autorisé',
+  password_changed: 'Mot de passe modifié', //@todo check BB_2024-04-17
   paste_or_type_a_link: 'Coller ou saisir un lien',
   people: 'Personnes',
   photo_by: 'Photo de',
@@ -168,6 +170,7 @@ export const translations: Translations = {
   resource: 'Ressource',
   resources: 'Ressources',
   rooted_learner: 'Plantule enracinée',
+  save: 'Sauvegarder',
   scheduled_maintenance:
     'MoodleNet est indisponible pour une maintenance programmée et devrait être en ligne sous peu.',
   search: 'Rechercher',

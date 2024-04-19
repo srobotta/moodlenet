@@ -167,7 +167,7 @@ export const General: FC<GeneralProps> = ({
           form.submitForm()
         }}
       >
-        Save
+        {t('save')}
       </PrimaryButton>
     </Card>
   )
