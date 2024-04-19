@@ -8,7 +8,7 @@ export type SortByProps = {
 }
 const sortTypes: SortType[] = ['Relevant', 'Popular', 'Recent']
 const sortTypesList = sortTypes.map(name => ({
-  label: name,
+  label: t(`sort_by_${name.toLowerCase()}`),
   value: name,
 }))
 export const SortBy: FC<SortByProps> = ({ selected, setSelected }) => {

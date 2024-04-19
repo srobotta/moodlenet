@@ -56,6 +56,8 @@ export const translations: Translations = {
   education_level: 'Niveau d’éducation',
   enter_your_account: 'Accéder à votre compte',
   file_too_big: 'Le fichier est trop volumineux, réduisez la taille ou fournissez une adresse URL.',
+  filter_all: 'Tout',
+  filter_reset: 'Réinitialiser les filtres',
   find_out_more: 'En savoir plus',
   firmly_grounded: 'Solidement peuplé',
   follow: 'Suivre',
@@ -182,6 +184,9 @@ export const translations: Translations = {
   signup: 'S’inscrire',
   sky_reacher: 'Près des cîmes', // @todo double check context
   sort_by: 'Trier par',
+  sort_by_popular: 'Populaire',
+  sort_by_relevant: 'Relavant',
+  sort_by_recent: 'Recent',
   start_publishing: 'Se connecter ou créer un compte pour commencer à publier du contenu',
   start_type_to_search: 'Commencez à saisir pour effectuer une recherche',
   start_typing_textarea: 'Commencez à saisir pour le remplir', // @todo double check context
