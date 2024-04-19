@@ -22,7 +22,7 @@ export type GeneralProps = {
   // userId: string
 }
 
-export const GeneralMenu = () => <abbr title="General">{t('setting_general')}</abbr>
+export const GeneralMenu = () => <abbr title="General">{t('general')}</abbr>
 
 export const General: FC<GeneralProps> = ({
   mainColumnItems,
@@ -122,7 +122,7 @@ export const General: FC<GeneralProps> = ({
       name="licenses"
       onChange={form.handleChange}
       label={t('licenses')}
-      placeholder={t('content_licence')}
+      placeholder={t('content_license')}
       canEdit={true}
       key="license-field"
       value={form.values.licenses}
@@ -134,7 +134,7 @@ export const General: FC<GeneralProps> = ({
 
   const setAsDefaultFilters = (
     <div className="set-as-default-filters">
-      <div className="title">{t('settings_use_interests_as_default')}</div>
+      <div className="title">{t('use_interests_as_default_filters')}</div>
       <Switch
         enabled={form.values.useInterestsAsDefaultFilters}
         toggleSwitch={() =>
@@ -158,7 +158,7 @@ export const General: FC<GeneralProps> = ({
   const interestsSection = (
     <Card className="column interests-section">
       <div className="parameter">
-        <div className="name">{t('setting_interests')}</div>
+        <div className="name">{t('interests')}</div>
         {interestsFields}
       </div>
       <PrimaryButton
@@ -221,7 +221,7 @@ export const General: FC<GeneralProps> = ({
       {modals}
       {snackbars}
       <Card className="column">
-        <div className="title">{t('setting_general')}</div>
+        <div className="title">{t('general')}</div>
       </Card>
       {updatedMainColumnItems.map(i => ('Item' in i ? <i.Item key={i.key} /> : i))}
     </div>

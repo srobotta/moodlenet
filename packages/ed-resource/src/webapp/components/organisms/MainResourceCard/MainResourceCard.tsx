@@ -671,7 +671,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         showCloseButton={false}
         onClose={() => setShowSaveError(false)}
       >
-        {t('failed_fix_the_errors_and_try_again')}
+        {t('failed_fix_errors_and_try_again')}
       </Snackbar>,
     )
   }

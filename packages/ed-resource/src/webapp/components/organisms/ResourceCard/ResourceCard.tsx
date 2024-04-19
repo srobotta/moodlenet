@@ -181,7 +181,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
           <ExtractInfoIcon />
         </abbr>
       ) :  */ autofillState === 'ai-generation' ? (
-        <abbr className="ai-generation" title={t('autofilling_with_ai')}>
+        <abbr className="ai-generation" title={t('autofill_with_ai')}>
           <Bolt />
         </abbr>
       ) : null

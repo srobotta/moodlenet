@@ -549,7 +549,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
                       contentType === 'file' ? contentName.split('.').pop() : 'link'
                     }` */
                   autofillState === 'ai-generation'
-                  ? t('autofilling_with_ai')
+                  ? t('autofill_with_ai')
                   : contentName}
               </abbr>
               {uploadBeats}
@@ -560,7 +560,7 @@ export const UploadResource: FC<UploadResourceProps> = ({
                   tabIndex={0}
                   abbrTitle={
                     autofillState === 'ai-generation'
-                      ? t('autofilling_with_ai_cancel')
+                      ? t('autofill_with_ai_cancel')
                       : t('upload_cancel')
                   }
                   onKeyUp={e =>
