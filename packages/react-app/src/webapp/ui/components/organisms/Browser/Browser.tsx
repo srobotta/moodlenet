@@ -1,5 +1,6 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { SecondaryButton, SimpleDropdown, sortAddonItems } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { ComponentType, FC } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './Browser.scss'
@@ -43,9 +44,9 @@ export const Browser: FC<BrowserProps> = ({ mainColumnItems, title, showFilters 
               const isCurrent = e.key === currentMainFilter
 
               const options = mainColumnItems.map(i => {
-                return { label: i.name, value: i.key.toString() }
+                return { label: t(i.name.toLowerCase()), value: i.key.toString() }
               })
-              options.push({ label: 'All', value: 'all' })
+              options.push({ label: t('filter_all'), value: 'all' })
 
               return isCurrent || !currentMainFilter ? (
                 isCurrent ? (
@@ -67,7 +68,7 @@ export const Browser: FC<BrowserProps> = ({ mainColumnItems, title, showFilters 
                     }}
                     color="grey"
                   >
-                    <span>{e.name}</span>
+                    <span>{t(e.name.toLowerCase())}</span>
                   </SecondaryButton>
                 )
               ) : null
