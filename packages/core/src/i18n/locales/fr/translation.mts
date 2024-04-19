@@ -50,7 +50,7 @@ export const translations: Translations = {
   content_category: 'Catégorie(s) du contenu',
   content_language: 'Langue du contenu',
   content_level: 'Niveau du contenu',
-  content_licence: 'Licence du contenu',
+  content_license: 'Licence du contenu',
   content_type: 'Type de contenu',
   copied_to_clipboard: 'Copié dans le presse-papiers',
   create_account: 'Créer un nouveau compte',
