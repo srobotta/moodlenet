@@ -199,8 +199,6 @@ export const translations: Translations = {
   send_a_message: 'Send a message',
   send_to_moodle: 'Send to Moodle',
   set_up_interests: 'Set up interests',
-  sfollowers: "'s followers",
-  sfollowing: "'s following",
   share: 'Share',
   share_content: 'Share content',
   signup: 'Sign up',
