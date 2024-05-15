@@ -256,7 +256,7 @@ export const translations: Translations = {
   user_title_featured_authors: 'Sélection d’auteurs',
   user_title_featured_collections: 'Sélection de collections',
   user_title_featured_resources: 'Sélection de ressources',
-  users_followers: 'abonné•es de {1}',
+  users_followers: 'Abonné•es de {1}',
   versatile_canopy: 'Canopée florissante',
   video_player_youtube: 'Lecteur de video youtube',
   visibility_required: 'Visibilité requise',
