@@ -1,4 +1,6 @@
 import type { Translations } from './types.mjs'
+//import { coreConfigs } from '../main/env.mjs'
+const coreConfigs = { languages: { default: 'en', available: ['de', 'en', 'fr'] } }
 
 /**
  * The current language that is used at the moment.
@@ -35,7 +37,7 @@ const init = async function () {
   if (getLanguagesIso().includes(lang)) {
     currentLang = lang
   } else {
-    currentLang = 'de'
+    currentLang = coreConfigs.languages?.default || 'en'
   }
   await loadTranslations(currentLang)
 }
@@ -127,7 +129,7 @@ export const typeLabel = function (type: string): string {
  * @returns array of language iso codes
  */
 export const getLanguagesIso = function (): string[] {
-  return ['de', 'fr', 'en']
+  return coreConfigs.languages?.available || ['en']
 }
 
 /**
