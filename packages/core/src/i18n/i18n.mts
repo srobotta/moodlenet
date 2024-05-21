@@ -1,6 +1,8 @@
 import type { Translations } from './types.mjs'
 //import { coreConfigs } from '../main/env.mjs'
-const coreConfigs = { languages: { default: 'en', available: ['de', 'en', 'fr'] } }
+import { getLanguageConfig } from './config.mjs'
+const coreConfigs = getLanguageConfig()
+//const coreConfigs = { languages: { default: 'en', available: ['de', 'en', 'fr'] } }
 
 /**
  * The current language that is used at the moment.
