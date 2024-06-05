@@ -2,3 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@200&family=Press+Start+2P&display=swap');
+@font-face {
+     font-family: 'UnitRoundedPro';
+     font-weight: 500;
+     font-style: normal;
+     src:
+       url('../../../assets/fonts/UnitRoundedPro.eot') format('embedded-opentype'),
+       url('../../../assets/fonts/UnitRoundedPro.otf') format('opentype'),
+       url('../../../assets/fonts/UnitRoundedPro.svg') format('svg'),
+       url('../../../assets/fonts/UnitRoundedPro.ttf') format('truetype'),
+       url('../../../assets/fonts/UnitRoundedPro.woff') format('woff');
+}

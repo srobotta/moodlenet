@@ -28,7 +28,7 @@
     min-height: 44px;
     background: #ffffff;
     border: none;
-    border-radius: 7px;
+    border-radius: var(--border-radius-input);
     display: flex;
     justify-content: space-between;
     align-items: center;

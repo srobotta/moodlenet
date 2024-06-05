@@ -46,7 +46,7 @@
         align-items: center;
         gap: 10px;
         > .type-pill {
-          border-radius: 16px;
+          border-radius: var(--border-radius-button);
           font-size: 13px;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -111,11 +111,11 @@
 
         > .publish-button {
           padding: 0px 6px;
-          border-radius: 45px;
+          border-radius: 0.2rem;
           color: white;
-          background-color: #00bd7e;
+          background-color: #4B647D;
           &:hover {
-            background-color: #009966;
+            background-color: #3d5165;
           }
         }
 
