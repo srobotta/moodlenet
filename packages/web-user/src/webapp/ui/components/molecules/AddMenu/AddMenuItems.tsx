@@ -1,3 +1,4 @@
+import { t } from '@moodlenet/core/i18n'
 import { LibraryAdd, NoteAdd } from '@mui/icons-material'
 import type { FC } from 'react'
 
@@ -5,7 +6,7 @@ export type CreateResourceAddMenuItemProps = { createResource(): void }
 export const CreateResourceAddMenuItem: FC<{ createResource(): void }> = ({ createResource }) => (
   <div onClick={createResource}>
     <NoteAdd />
-    New resource
+    {t('new_resource')}
   </div>
 )
 
@@ -15,6 +16,6 @@ export const CreateCollectionAddMenuItem: FC<CreateCollectionAddMenuItemProps> =
 }) => (
   <div onClick={createCollection}>
     <LibraryAdd />
-    New collection
+    {t('new_collection')}
   </div>
 )

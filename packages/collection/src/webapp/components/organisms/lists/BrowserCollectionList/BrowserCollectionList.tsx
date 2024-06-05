@@ -1,4 +1,5 @@
 import { ListCard, TertiaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { BrowserMainColumnItemBase, ProxyProps } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
 import { useMemo } from 'react'
@@ -35,7 +36,7 @@ export const BrowserCollectionList: FC<BrowserCollectionListProps> = ({
       header={
         showHeader && (
           <div className="card-header">
-            <div className="title">Collections</div>
+            <div className="title">{t('collections')}</div>
           </div>
         )
       }
@@ -45,7 +46,7 @@ export const BrowserCollectionList: FC<BrowserCollectionListProps> = ({
             <TertiaryButton onClick={loadMore}>Load more</TertiaryButton>
           ) : null
         ) : (
-          <TertiaryButton onClick={setShowAll}>See all collection results</TertiaryButton>
+          <TertiaryButton onClick={setShowAll}>{t('see_all_collection_result')}</TertiaryButton>
         )
       }
       minGrid={showAll ? 300 : 240}

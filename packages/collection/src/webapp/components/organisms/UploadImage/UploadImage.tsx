@@ -2,7 +2,7 @@ import { ImageContainer, Modal, Snackbar } from '@moodlenet/component-library'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { useImageUrl } from '@moodlenet/react-app/ui'
 // import prettyBytes from 'pretty-bytes'
-import type { default as React, FC } from 'react'
+import type { FC, default as React } from 'react'
 import { useCallback, useRef, useState } from 'react'
 // import { withCtrl } from '../../../../lib/ctrl'
 // import { SelectOptions } from '../../../../lib/types'
@@ -18,6 +18,7 @@ import { ReactComponent as UploadImageIcon } from '../../../assets/icons/upload-
 // import { useNewCollectionPageCtx } from '../NewCollection'
 // import { NewCollectionFormValues } from '../types'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import './UploadImage.scss'
 
 // type SubStep = 'AddFileOrLink' | 'AddImage'
@@ -26,6 +27,7 @@ export type UploadImageProps = {
   backupImage?: AssetInfoForm
   displayOnly?: boolean
   OnClick?: () => void
+  labels: { [key: string]: string }
 }
 
 export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, displayOnly }) => {
@@ -97,6 +99,13 @@ export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, disp
     e.preventDefault()
   }, [])
 
+  const imageUploaderLabels = {
+    background_image: t('background'),
+    photo_by: t('photo_by'),
+    photo_on: t('photo_on'),
+    delete_image: t('delete_image'),
+  }
+
   const imageContainer = (
     <ImageContainer
       imageUrl={imageUrl}
@@ -105,6 +114,7 @@ export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, disp
       uploadImage={f => setImage({ location: f, credits: null })}
       displayOnly={displayOnly}
       overlayCredits={true}
+      labels={imageUploaderLabels}
     />
   )
   const modals = [
@@ -165,7 +175,7 @@ export const UploadImage: FC<UploadImageProps> = ({ imageForm, backupImage, disp
               hidden
             />
             <UploadImageIcon />
-            <span>Drop or click to upload an image!</span>
+            <span>{t('drop_or_click_to_upload_an_image')}</span>
           </div>
         </div>
       ) : (

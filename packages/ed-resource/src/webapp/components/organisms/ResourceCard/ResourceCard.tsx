@@ -17,7 +17,8 @@ import defaultAvatar from '../../../assets/img/default-avatar.svg'
 // import { Visibility } from '../../../atoms/VisibilityDropdown/VisibilityDropdown'
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, getThumbnailFromUrl, isEllipsisActive } from '@moodlenet/component-library'
-import { getBackupImage, Link, withProxy } from '@moodlenet/react-app/ui'
+import { t, typeLabel as typeTrLabel } from '@moodlenet/core/i18n'
+import { Link, getBackupImage, withProxy } from '@moodlenet/react-app/ui'
 import { Bolt, Public, PublicOff } from '@mui/icons-material'
 import { useEffect, useRef, useState } from 'react'
 import type {
@@ -157,7 +158,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
     const typeLabel =
       typeName && typeColor ? (
         <div className="type" key="type-label" style={{ background: typeColor }}>
-          {typeName}
+          {typeTrLabel(typeName)}
         </div>
       ) : null
 
@@ -180,7 +181,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
           <ExtractInfoIcon />
         </abbr>
       ) :  */ autofillState === 'ai-generation' ? (
-        <abbr className="ai-generation" title={`Autofilling with AI`}>
+        <abbr className="ai-generation" title={t('autofill_with_ai')}>
           <Bolt />
         </abbr>
       ) : null
@@ -188,7 +189,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
     const publishState = canPublish ? (
       isPublished ? (
         <abbr
-          title="Published"
+          title={t('published')}
           key="publish-state"
           style={{ cursor: 'initial' }}
           className="publish-state"
@@ -197,7 +198,7 @@ export const ResourceCard = withProxy<ResourceCardProps>(
         </abbr>
       ) : (
         <abbr
-          title="Unpublished"
+          title={t('unpublished')}
           key="publish-state"
           style={{ cursor: 'initial' }}
           className="publish-state"

@@ -1,4 +1,5 @@
 import { SnackbarStack, sortAddonItems, type AddonItem } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useContext } from 'react'
 import { MainHeaderContext } from '../../../../exports/ui.mjs'
@@ -25,8 +26,10 @@ export const Landing: FC<LandingProps> = ({
   mainLayoutProps,
   mainColumnItems,
   headerCardItems,
+  /*
   title,
   subtitle,
+  */
 }) => {
   const background = {
     backgroundImage: 'url("' + defaultBackground + '")',
@@ -35,8 +38,8 @@ export const Landing: FC<LandingProps> = ({
 
   const landingTitle = (
     <div className="landing-title">
-      <div className="title">{title}</div>
-      <div className="subtitle">{subtitle}</div>
+      <div className="title">{t('override_title')}</div>
+      <div className="subtitle">{t('override_subtitle')}</div>
     </div>
   )
 

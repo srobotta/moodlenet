@@ -1,5 +1,6 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, PrimaryButton } from '@moodlenet/component-library'
+import { tm } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import type { SubjectOverallProps } from '../../pages/Subject/Subject.js'
 
@@ -12,6 +13,7 @@ export type MainSubjectCardSlots = {
 export type MainSubjectCardProps = {
   slots: MainSubjectCardSlots
   title: string
+  value: string
   overallItems: SubjectOverallProps[]
   isIsced: boolean
   iscedUrl: string | null
@@ -20,6 +22,7 @@ export type MainSubjectCardProps = {
 export const MainSubjectCard: FC<MainSubjectCardProps> = ({
   slots,
   title,
+  value,
   overallItems,
   isIsced,
   iscedUrl,
@@ -38,9 +41,14 @@ export const MainSubjectCard: FC<MainSubjectCardProps> = ({
     </a>
   ) : null
 
+  let label = tm('subject', value)
+  if (label === value) {
+    label = title
+  }
+
   const titleDiv = (
     <div className="title" key="title">
-      <div className="name">{title}</div>
+      <div className="name">{label}</div>
       {isced}
     </div>
   )

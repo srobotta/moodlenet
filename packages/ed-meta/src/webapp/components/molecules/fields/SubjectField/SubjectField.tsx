@@ -1,5 +1,6 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { Dropdown, SimplePill, TextOption } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -54,8 +55,8 @@ export const SubjectField: FC<SubjectFieldProps> = ({
       onChange={e => {
         e.currentTarget.value !== subject && editSubject(e.currentTarget.value)
       }}
-      label="Subject"
-      placeholder="Content category"
+      label={t('subject')}
+      placeholder={t('content_category')}
       edit
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}
@@ -87,7 +88,7 @@ export const SubjectField: FC<SubjectFieldProps> = ({
     </Dropdown>
   ) : subject ? (
     <div className="detail subject">
-      <div className="title">Subject</div>
+      <div className="title">{t('subject')}</div>
       <abbr className="value" title={subjects.selected?.label}>
         {subjects.selected?.label}
       </abbr>

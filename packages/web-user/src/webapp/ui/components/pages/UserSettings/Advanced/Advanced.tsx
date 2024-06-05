@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, Modal, PrimaryButton, SecondaryButton, Snackbar } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { useState, type FC } from 'react'
 import './Advanced.scss'
 
@@ -11,7 +12,7 @@ export type AdvancedProps = {
   instanceName: string
 }
 
-export const AdvancedMenu = () => <abbr title="Advanced">Advanced</abbr>
+export const AdvancedMenu = () => <abbr title="Advanced">{t('advanced')}</abbr>
 
 export const Advanced: FC<AdvancedProps> = ({
   mainColumnItems,
@@ -24,10 +25,12 @@ export const Advanced: FC<AdvancedProps> = ({
   const leaveSection = (
     <Card className="column">
       <div className="parameter">
-        <div className="name">Leave {instanceName}</div>
+        <div className="name">
+          {t('advanced_leave')} {instanceName}
+        </div>
         <div className="actions">
           <SecondaryButton onClick={() => setShowDeleteAccountModal(true)}>
-            Delete account
+            {t('advanced_delete_account')}
           </SecondaryButton>
         </div>
       </div>
@@ -41,13 +44,9 @@ export const Advanced: FC<AdvancedProps> = ({
   const snackbars =
     // <SnackbarStack
     // snackbarList={
-    [
-      deleteAccountSuccess ? (
-        <Snackbar type="success">Check your email to confirm the deletion</Snackbar>
-      ) : null,
-    ]
-    // }
-    // ></SnackbarStack>
+    [deleteAccountSuccess ? <Snackbar type="success">{t('advanced_check_email')}</Snackbar> : null]
+  // }
+  // ></SnackbarStack>
 
   const modals = (
     <>
@@ -62,14 +61,14 @@ export const Advanced: FC<AdvancedProps> = ({
               }}
               color="red"
             >
-              Delete account
+              {t('advanced_delete_account')}
             </PrimaryButton>
           }
           onClose={() => setShowDeleteAccountModal(false)}
           style={{ maxWidth: '400px' }}
           className="delete-message"
         >
-          An email will be send to confirm the deletion of your account.
+          {t('advanced_email_be_sent')}
         </Modal>
       )}
     </>
@@ -81,7 +80,7 @@ export const Advanced: FC<AdvancedProps> = ({
       {snackbars}
       <Card className="column">
         <div className="title">
-          Advanced
+          {t('advanced')}
           {/* <PrimaryButton onClick={form.submitForm} disabled={!canSubmit} className="save-btn">
             Save
           </PrimaryButton> */}

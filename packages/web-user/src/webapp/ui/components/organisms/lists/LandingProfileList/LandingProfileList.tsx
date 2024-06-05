@@ -1,5 +1,6 @@
 import type { Href } from '@moodlenet/component-library'
 import { ListCard } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
 import { useMemo } from 'react'
@@ -19,14 +20,14 @@ export const LandingProfileList: FC<LandingProfileListProps> = ({
   // searchAuthorsHref,
 }) => {
   const title = (
-    <div className="title">{hasSetInterests ? 'Authors selection' : 'Featured authors'}</div>
+    <div className="title">
+      {hasSetInterests ? t('user_title_featured_authors') : t('title_featured_authors')}
+    </div>
   )
 
   const subtitle = (
     <div className="subtitle">
-      {hasSetInterests
-        ? 'Top contributors you might appreciate'
-        : 'Authors with outstanding contributions'}
+      {hasSetInterests ? t('user_subtitle_featured_authors') : t('subtitle_featured_authors')}
     </div>
   )
 

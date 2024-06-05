@@ -1,5 +1,6 @@
 import type { IconTextOptionProps } from '@moodlenet/component-library'
 import { Dropdown, IconPill, IconTextOption } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 import './LicenseField.scss'
@@ -61,8 +62,8 @@ export const LicenseField: FC<LicenseFieldProps> = ({
       noBorder
       disabled={disabled}
       value={license}
-      label={`License`}
-      placeholder="License type"
+      label={t('license')}
+      placeholder={t('license_type')}
       searchByText={setSearchText}
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}
@@ -83,7 +84,7 @@ export const LicenseField: FC<LicenseFieldProps> = ({
     </Dropdown>
   ) : license ? (
     <div className="detail license">
-      <div className="title">License</div>
+      <div className="title">{t('license')}</div>
       {licenses.selected && (
         <abbr className="value icons" title={licenses.selected.label}>
           {licenses.selected.icon}

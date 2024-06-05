@@ -1,4 +1,5 @@
 import { overrideDeep } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import type { SubjectCardProps } from '@moodlenet/ed-meta/ui'
 import { SubjectCard } from '@moodlenet/ed-meta/ui'
 import { href } from '@moodlenet/react-app/common'
@@ -42,13 +43,13 @@ export const getSubjectCardStoryProps = (
         {
           Icon: <PermIdentity />,
           key: 'followers',
-          name: 'Followers',
+          name: t('followers'),
           value: Math.floor(Math.random() * Math.random() * 1000),
         },
         {
           Icon: <FilterNone />,
           key: 'resources',
-          name: 'Resources',
+          name: t('resources'),
           value: Math.floor(Math.random() * Math.random() * 1000),
         },
       ],

@@ -1,5 +1,6 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { Dropdown, SimplePill, TextOption } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -50,8 +51,8 @@ export const LanguageField: FC<LanguageFieldProps> = ({
       onChange={e => {
         e.currentTarget.value !== language && editLanguage(e.currentTarget.value)
       }}
-      label="Language"
-      placeholder="Content language"
+      label={t('language')}
+      placeholder={t('content_language')}
       edit
       highlight={shouldShowErrors && !!error}
       error={shouldShowErrors && error}
@@ -83,7 +84,7 @@ export const LanguageField: FC<LanguageFieldProps> = ({
     </Dropdown>
   ) : language ? (
     <div className="detail language">
-      <div className="title">Language</div>
+      <div className="title">{t('language')}</div>
       <abbr className="value" title={languages.selected?.label}>
         {languages.selected?.label}
       </abbr>

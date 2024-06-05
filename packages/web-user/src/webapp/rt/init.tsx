@@ -22,8 +22,8 @@ import {
   SIGNUP_PAGE_ROUTE_BASE_PATH,
 } from '../../common/webapp-routes.mjs'
 import { getMiniAccessButtonsHeaderItems } from '../ui/exports/ui.mjs'
-import MainWrapper from './MainWrapper.js'
 import { useSwichAddonsByAuth } from './lib/AddonsByUserRule.js'
+import MainWrapper from './MainWrapper.js'
 import { menuAddonsDefaultSetting, menuHeaderButtonsAuthAddons } from './menus/menuAddons.js'
 import { pkgRoutes } from './routes.js'
 

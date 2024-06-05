@@ -1,6 +1,7 @@
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 // import { href } from '../../../../elements/link'
 // import { Grade, LibraryBooks, PermIdentity } from '@mui/icons-material'
+import { t } from '@moodlenet/core/i18n'
 import { FilterNone } from '@mui/icons-material'
 import { href } from '../../../../../common/lib.mjs'
 import { ReactComponent as LeafIcon } from '../../../assets/icons/leaf.svg'
@@ -37,14 +38,14 @@ export const OverallCardStoryProps: OverallCardProps = {
       Icon: PersonIcon,
       className: 'followers',
       href: href('Pages/Followers'),
-      name: 'Followers',
+      name: t('follow_me'),
       value: 25,
     },
     {
       Icon: PersonIcon,
       className: 'following',
       href: href('Pages/Following'),
-      name: 'Following',
+      name: t('i_follow'),
       value: 97,
     },
     { Icon: FilterNone, className: 'resources', name: 'Resources', value: 23 },
@@ -57,7 +58,7 @@ export const OverallCardNoCardStoryProps: OverallCardProps = {
       Icon: PersonIcon,
       className: 'followers',
       href: href('Pages/Followers'),
-      name: 'Followers',
+      name: t('follow_me'),
       value: 25,
     },
     { Icon: LeafIcon, name: 'Leaves', className: 'leaves', value: 43212 },

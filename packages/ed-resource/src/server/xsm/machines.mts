@@ -18,9 +18,9 @@ import { Resource } from '../exports.mjs'
 import { env } from '../init/env.mjs'
 import {
   createResource,
+  deleteImageFile,
   delResource,
   delResourceFile,
-  deleteImageFile,
   getResource,
   patchResource,
   storeResourceFile,

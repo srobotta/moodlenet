@@ -1,5 +1,6 @@
 import type { SearchboxProps } from '@moodlenet/component-library'
 import { Searchbox } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC, PropsWithChildren } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -19,6 +20,7 @@ export type MainSearchBoxCtxT = {
   qText: string
   setDefaultQuery: React.Dispatch<React.SetStateAction<Record<string, string | undefined>>>
   resetFilters(): void
+  searchLabel: string
 } & Pick<SearchboxProps, 'search' | 'placeholder' | 'searchText' | 'setSearchText'>
 
 export const MainSearchBoxCtx = createContext<MainSearchBoxCtxT>(null as any)
@@ -33,7 +35,8 @@ export const ProvideMainSearchBoxCtx: FC<PropsWithChildren<MainSearchBoxCtxValue
   return <MainSearchBoxCtx.Provider value={ctxValue}>{children}</MainSearchBoxCtx.Provider>
 }
 
-const defaultPlaceholder = 'Search for open education content'
+const defaultPlaceholder = t('search_placeholder')
+const searchLabel = t('search')
 export type MainSearchBoxCtxValueDeps = {
   search(text: string, defaultQuery: Record<string, string | undefined>): void
   initSearchText: string
@@ -66,6 +69,7 @@ export function useMainSearchBoxCtxValue({
       setSearchText,
       qText,
       setDefaultQuery,
+      searchLabel: searchLabel,
     }
     return ctx
   }, [qText, search, searchText, defaultQuery, setDefaultQuery, defaultSearchHref.url, nav])

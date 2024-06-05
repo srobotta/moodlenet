@@ -1,3 +1,4 @@
+import { t } from '@moodlenet/core/i18n'
 import level1Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-1.png'
 import level10Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-10.png'
 import level2Avatar from '../../webapp/ui/assets/img/userLevelAvatar/level-2.png'
@@ -19,19 +20,31 @@ export type UserLevelDetails = {
 }
 
 export const userLevels: UserLevelDetails[] = [
-  { minPoints: 0, maxPoints: 14, title: 'Ambitious seed', level: 1, avatar: level1Avatar },
-  { minPoints: 15, maxPoints: 74, title: 'Determined sprout', level: 2, avatar: level2Avatar },
-  { minPoints: 75, maxPoints: 249, title: 'Rooted learner', level: 3, avatar: level3Avatar },
-  { minPoints: 250, maxPoints: 499, title: 'Seedling scholar', level: 4, avatar: level4Avatar },
-  { minPoints: 500, maxPoints: 1499, title: 'Steady grower', level: 5, avatar: level5Avatar },
-  { minPoints: 1500, maxPoints: 4999, title: 'Photosynthesizer', level: 6, avatar: level6Avatar },
-  { minPoints: 5000, maxPoints: 14999, title: 'Sky reacher', level: 7, avatar: level7Avatar },
-  { minPoints: 15000, maxPoints: 49999, title: 'Firmly grounded', level: 8, avatar: level8Avatar },
-  { minPoints: 50000, maxPoints: 99999, title: 'Versatile canopy', level: 9, avatar: level9Avatar },
+  { minPoints: 0, maxPoints: 14, title: t('ambitious_seed'), level: 1, avatar: level1Avatar },
+  { minPoints: 15, maxPoints: 74, title: t('determined_sprout'), level: 2, avatar: level2Avatar },
+  { minPoints: 75, maxPoints: 249, title: t('rooted_learner'), level: 3, avatar: level3Avatar },
+  { minPoints: 250, maxPoints: 499, title: t('seedling_scholar'), level: 4, avatar: level4Avatar },
+  { minPoints: 500, maxPoints: 1499, title: t('steadily_grower'), level: 5, avatar: level5Avatar },
+  { minPoints: 1500, maxPoints: 4999, title: t('photosynthesist'), level: 6, avatar: level6Avatar },
+  { minPoints: 5000, maxPoints: 14999, title: t('sky_reacher'), level: 7, avatar: level7Avatar },
+  {
+    minPoints: 15000,
+    maxPoints: 49999,
+    title: t('firmly_grounded'),
+    level: 8,
+    avatar: level8Avatar,
+  },
+  {
+    minPoints: 50000,
+    maxPoints: 99999,
+    title: t('versatile_canopy'),
+    level: 9,
+    avatar: level9Avatar,
+  },
   {
     minPoints: 100000,
     maxPoints: 1000000,
-    title: 'Dazzling biome',
+    title: t('dazzling biome'),
     level: 10,
     avatar: level10Avatar,
   },
@@ -39,47 +52,47 @@ export const userLevels: UserLevelDetails[] = [
 
 export const actionsAndPointsObtained: { action: string; points: number; abbr?: string }[] = [
   {
-    action: 'Create account',
+    action: t('create_account'),
     points: P.engagement.profile.welcome.points,
-    abbr: 'Congrats! You already did it!',
+    abbr: t('congrats_you_already_did_it'),
   },
   {
-    action: 'Complete profile',
+    action: t('complete_profile'),
     points: 5 * P.engagement.profile.perMetaDataField.points,
-    abbr: 'Get a point for each detail filled, profile and background images, location, website, description',
+    abbr: t('get_a_point_for_each_detail'),
   },
   {
-    action: 'Set up interests',
+    action: t('set_up_interests'),
     points: P.engagement.profile.interestsSet.points,
-    abbr: 'Get a point when setting the interests type in your settings page',
+    abbr: t('get_a_point_interests'),
   },
-  { action: 'Publish collection', points: P.contribution.collection.published.toCreator.points },
+  { action: t('publish_collection'), points: P.contribution.collection.published.toCreator.points },
   {
-    action: "Add someone else's resource in your published collection",
+    action: t('add_someone_elses_resource_in_published_collection'),
     points: P.contribution.collection.listCuration.toCollectionCreator.points,
   },
   {
-    action: 'Your resource added in a collection',
+    action: t('your_resource_added_in_a_collection'),
     points: P.contribution.collection.listCuration.toResourceCreator.points,
   },
-  { action: 'Publish resource', points: P.contribution.resource.published.toCreator.points },
+  { action: t('publish_resource'), points: P.contribution.resource.published.toCreator.points },
   {
-    action: 'Follow a user, collection or subject',
+    action: t('follow_user_collection_subject'),
     points: P.engagement.follow.followerProfile.points,
   },
-  { action: 'New follower', points: P.engagement.follow.followedProfile.points },
+  { action: t('new_follower'), points: P.engagement.follow.followedProfile.points },
   {
-    action: 'New follower on your collection',
+    action: t('new_follower_on_your_collection'),
     points: P.engagement.follow.entityCreatorProfile.points,
   },
-  { action: 'New like on your resource', points: P.curation.like.toTargetEntityCreator.points },
-  { action: 'Like a resource', points: P.curation.like.toActor.points },
+  { action: t('new_like_on_your_resource'), points: P.curation.like.toTargetEntityCreator.points },
+  { action: t('like_a_resource'), points: P.curation.like.toActor.points },
   {
-    action: 'New bookmark on your profile or contribution',
+    action: t('new_bookmark_on_your_profile_or_contribution'),
     points: P.curation.bookmark.toTargetEntityCreator.points,
   },
-  { action: 'Bookmark a contribution or user', points: P.curation.bookmark.toActor.points },
-  { action: 'Become a publisher', points: P.engagement.profile.publisher.points },
+  { action: t('bookmark_contribution_user'), points: P.curation.bookmark.toActor.points },
+  { action: t('become_a_publisher'), points: P.engagement.profile.publisher.points },
 ]
 
 export const getUserLevelDetails = (points: number): UserLevelDetails => {
@@ -93,7 +106,7 @@ export const getUserLevelDetails = (points: number): UserLevelDetails => {
     userLevels[userLevels.length - 1] ?? {
       minPoints: 0,
       maxPoints: 14,
-      title: 'Ambitious seed',
+      title: t('ambitious_seed'),
       level: 1,
       avatar: level1Avatar,
     }

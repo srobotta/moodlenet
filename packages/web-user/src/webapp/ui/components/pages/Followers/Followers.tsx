@@ -1,3 +1,4 @@
+import { t } from '@moodlenet/core/i18n'
 import type { BrowserPropsData, MainLayoutProps } from '@moodlenet/react-app/ui'
 import { Browser, MainLayout } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
@@ -19,7 +20,7 @@ export const Followers: FC<FollowersProps> = ({
       <div className="followers">
         <Browser
           {...browserProps}
-          title={isCreator ? `My followers` : `${profileName}${`'s followers`}`}
+          title={isCreator ? t('my_followers') : t('users_followers', [profileName])}
           showFilters={false}
         />
       </div>
