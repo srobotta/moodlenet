@@ -1,5 +1,7 @@
+import { instanceDomain } from '@moodlenet/core'
 import { getCoreConfigs } from '@moodlenet/core/ignite'
 import { mountApp } from '@moodlenet/http-server/server'
+import { getProfileHomePageRoutePath } from '@moodlenet/web-user/common'
 import session from 'express-session'
 import passport from 'passport'
 import { Strategy as SamlStrategy } from 'passport-saml'
@@ -26,15 +28,6 @@ shell.call(mountApp)({
         // TODO - type done and maybe profile
       },
       (profile: any, done: any) => {
-        // Process user profile and extract necessary information.
-        const attributes = extractAttributesFromSamlProfile(config.attributeMap, profile)
-        // TODO - at some point we will want to support a displayName attribute along side firstName, lastName
-        // so that we don't end up concatenating firstName and lastName which could be totally wrong for some
-        // locales.
-        const { uuid, email, firstName, lastName } = attributes
-
-        upsertSamlUser({ uuid, email, displayName: `${firstName} ${lastName}` })
-
         return done(null, profile)
       },
     )
@@ -59,8 +52,8 @@ shell.call(mountApp)({
     })
 
     app.get('/login-failed', (req, res) => {
-      console.log('Saml login failed for request', req)
       res.send('Saml login failed')
+      console.log('Saml login failed', req)
     })
 
     app.get(
@@ -77,13 +70,33 @@ shell.call(mountApp)({
         failureRedirect: '/login',
         failureFlash: true,
       }),
-      (req, res) => {
-        res.send(`WHAT DO WE DO NOW? ${JSON.stringify(req.user)}`)
+      async (req, res) => {
+        const profile = req.user
+        // Process user profile and extract necessary information.
+        const attributes = extractAttributesFromSamlProfile(config.attributeMap, profile)
+        // TODO - at some point we will want to support a displayName attribute along side firstName, lastName
+        // so that we don't end up concatenating firstName and lastName which could be totally wrong for some
+        // locales.
+        const { uuid, email, firstName, lastName } = attributes
+        const displayName = `${firstName} ${lastName}`
+
+        const { sendHttpJwtToken, webUser } = await upsertSamlUser({ uuid, email, displayName })
+
+        sendHttpJwtToken()
+
+        res.redirect(
+          getProfileHomePageRoutePath({
+            _key: webUser.profileKey,
+            displayName,
+          }),
+        )
       },
     )
 
     app.get('/logout', (req, res) => {
-      req.logout({}, () => res.redirect('/'))
+      req.logout({}, () => {
+        res.redirect(instanceDomain)
+      })
     })
 
     app.post('/success', (req, res) => {
