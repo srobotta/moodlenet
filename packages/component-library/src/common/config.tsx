@@ -1,6 +1,6 @@
 import { setOpacity } from './utilities.js'
 
-export const baseMoodleColor = '#f88012'
+export const baseMoodleColor = '#4b647d'
 
 export const baseLightGreenColor = '#00bd7e'
 export const baseLightRedColor = '#ff3131'
