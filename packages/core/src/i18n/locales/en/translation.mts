@@ -51,7 +51,7 @@ export const translations: Translations = {
   congrats_you_already_did_it: 'Congrats! You already did it!',
   contains_num_resource: 'Contains {1} resource',
   contains_num_resources: 'Contains {1} resources',
-  copied_to_clipboard: 'Copied to clipboard',
+  copied_to_clipboard: 'Link copied to clipboard',
   create_account: 'Create a new account',
   curated_collections: 'Curated collections',
   dazzling_biome: 'Dazzling biome',
