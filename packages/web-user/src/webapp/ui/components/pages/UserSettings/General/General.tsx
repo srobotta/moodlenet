@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, MultipeSelectDropdown, PrimaryButton, Switch } from '@moodlenet/component-library'
+import { t, tl } from '@moodlenet/core/i18n'
 import type { EdMetaOptionsProps } from '@moodlenet/ed-resource/common'
 import { useFormik } from 'formik'
 import { /* useState, */ type FC } from 'react'
@@ -21,7 +22,7 @@ export type GeneralProps = {
   // userId: string
 }
 
-export const GeneralMenu = () => <abbr title="General">General</abbr>
+export const GeneralMenu = () => <abbr title="General">{t('general')}</abbr>
 
 export const General: FC<GeneralProps> = ({
   mainColumnItems,
@@ -76,26 +77,27 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="subjects"
       onChange={form.handleChange}
-      label="Subjects"
-      placeholder="Content category"
+      label={t('subjects')}
+      placeholder={t('content_category')}
       canEdit={true}
       key="subject-field"
       value={form.values.subjects}
-      options={subjectOptions}
+      options={tl('subject', subjectOptions)}
       errors={form.errors.subjects}
       shouldShowErrors={true}
     />
   )
+
   const levelsField = (
     <MultipeSelectDropdown
       name="levels"
       onChange={form.handleChange}
-      label="Levels"
-      placeholder="Content level"
+      label={t('levels')}
+      placeholder={t('content_level')}
       canEdit={true}
       key="level-field"
       value={form.values.levels}
-      options={levelOptions}
+      options={tl('education_level', levelOptions)}
       errors={form.errors.levels}
       shouldShowErrors={true}
     />
@@ -105,8 +107,8 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="languages"
       onChange={form.handleChange}
-      label="Languages"
-      placeholder="Content language"
+      label={t('languages')}
+      placeholder={t('content_language')}
       canEdit={true}
       key="language-field"
       value={form.values.languages}
@@ -120,8 +122,8 @@ export const General: FC<GeneralProps> = ({
     <MultipeSelectDropdown
       name="licenses"
       onChange={form.handleChange}
-      label="Licences"
-      placeholder="Content license"
+      label={t('licenses')}
+      placeholder={t('content_license')}
       canEdit={true}
       key="license-field"
       value={form.values.licenses}
@@ -133,7 +135,7 @@ export const General: FC<GeneralProps> = ({
 
   const setAsDefaultFilters = (
     <div className="set-as-default-filters">
-      <div className="title">Use interests as default filters when searching</div>
+      <div className="title">{t('use_interests_as_default_filters')}</div>
       <Switch
         enabled={form.values.useInterestsAsDefaultFilters}
         toggleSwitch={() =>
@@ -157,7 +159,7 @@ export const General: FC<GeneralProps> = ({
   const interestsSection = (
     <Card className="column interests-section">
       <div className="parameter">
-        <div className="name">Interests</div>
+        <div className="name">{t('interests')}</div>
         {interestsFields}
       </div>
       <PrimaryButton
@@ -166,7 +168,7 @@ export const General: FC<GeneralProps> = ({
           form.submitForm()
         }}
       >
-        Save
+        {t('save')}
       </PrimaryButton>
     </Card>
   )
@@ -220,7 +222,7 @@ export const General: FC<GeneralProps> = ({
       {modals}
       {snackbars}
       <Card className="column">
-        <div className="title">General</div>
+        <div className="title">{t('general')}</div>
       </Card>
       {updatedMainColumnItems.map(i => ('Item' in i ? <i.Item key={i.key} /> : i))}
     </div>

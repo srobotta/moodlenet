@@ -1,5 +1,6 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { SecondaryButton } from '@moodlenet/component-library'
+import { t, tm } from '@moodlenet/core/i18n'
 import { DropdownFilterField } from '@moodlenet/ed-meta/ui'
 import type { SortType } from '@moodlenet/react-app/ui'
 import { SortBy } from '@moodlenet/react-app/ui'
@@ -28,7 +29,7 @@ export const SortByLanguageItem = ({
   options: TextOptionProps[]
 }) => (
   <DropdownFilterField
-    title={'Language'}
+    title={t('language')}
     selected={selected}
     setSelected={setSelected}
     options={options}
@@ -45,7 +46,7 @@ export const SortByLicenseItem = ({
   options: TextOptionProps[]
 }) => (
   <DropdownFilterField
-    title={'License'}
+    title={t('license')}
     selected={selected}
     setSelected={setSelected}
     options={options}
@@ -62,10 +63,10 @@ export const SortByLevelItem = ({
   options: TextOptionProps[]
 }) => (
   <DropdownFilterField
-    title={'Level'}
+    title={t('education_level')}
     selected={selected}
     setSelected={setSelected}
-    options={options}
+    options={options.map(e => ({ ...e, label: tm('education_level', e.value) }))}
   />
 )
 
@@ -79,10 +80,10 @@ export const SortByTypeItem = ({
   options: TextOptionProps[]
 }) => (
   <DropdownFilterField
-    title={'Type'}
+    title={t('type')}
     selected={selected}
     setSelected={setSelected}
-    options={options}
+    options={options.map(e => ({ ...e, label: tm('content_type', e.value) }))}
   />
 )
 
@@ -96,15 +97,15 @@ export const SortBySubjectItem = ({
   options: TextOptionProps[]
 }) => (
   <DropdownFilterField
-    title={'Subject'}
+    title={t('subject')}
     selected={selected}
     setSelected={setSelected}
-    options={options}
+    options={options.map(e => ({ ...e, label: tm('subject', e.value) }))}
   />
 )
 
 export const ResetFiltersButton = ({ resetFilters }: { resetFilters(): void }) => (
-  <SecondaryButton className="reset-filters-button" abbr="Reset filters" onClick={resetFilters}>
+  <SecondaryButton className="reset-filters-button" abbr={t('filter_reset')} onClick={resetFilters}>
     <FilterAltOff />
   </SecondaryButton>
 )

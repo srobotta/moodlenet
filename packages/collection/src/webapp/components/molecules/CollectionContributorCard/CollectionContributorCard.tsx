@@ -1,4 +1,5 @@
 import { Card } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { Href } from '@moodlenet/react-app/common'
 import { Link } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
@@ -22,7 +23,7 @@ export const CollectionContributorCard: FC<CollectionContributorCardProps> = ({
         <img className="avatar" src={avatarUrl || defaultAvatar} alt="Avatar" />
       </Link>
       <div className="description">
-        Collection curated by <Link href={creatorProfileHref}>{displayName}</Link>
+        {t('collection_curated_by')} <Link href={creatorProfileHref}>{displayName}</Link>
       </div>
     </Card>
   )

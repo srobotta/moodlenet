@@ -19,4 +19,8 @@ export type CoreConfigs = {
       level: string
     }
   }
+  languages?: {
+    default: string
+    available: string[]
+  }
 }

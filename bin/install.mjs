@@ -79,6 +79,10 @@ async function defaultConfigJson() {
             level: 'debug',
           },
         },
+        languages: {
+          default: 'en',
+          available: ['en', 'de', 'fr'],
+        },
       },
       '@moodlenet/crypto': {
         keys: {

@@ -25,6 +25,7 @@
   "references": [
     { "path": "../collection" },
     { "path": "../component-library" },
+    { "path": "../core" },
     { "path": "../ed-meta" },
     { "path": "../ed-resource" },
     { "path": "../extensions-manager" },

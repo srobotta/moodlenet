@@ -12,6 +12,7 @@ import {
   useWindowDimensions,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
+import { t, typeLabel } from '@moodlenet/core/i18n'
 import type { LearningOutcomeOption } from '@moodlenet/ed-meta/common'
 import { LearningOutcomes } from '@moodlenet/ed-meta/ui'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
@@ -277,7 +278,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
       disabled={disableFields}
       edit={isEditing}
       value={form.values.title}
-      placeholder="Title"
+      placeholder={t('title')}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.title}
       textAreaAutoSize
@@ -291,7 +292,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
 
   const resourceLabel = (
     <div className="resource-label" key="resource-label">
-      Resource
+      {t('resource')}
     </div>
   )
 
@@ -304,7 +305,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
           background: typeColor,
         }}
       >
-        {typeName}
+        {typeLabel(typeName)}
       </div>
     ) : null
 
@@ -326,7 +327,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
     ? {
         Element: (
           <div key="share-button" onClick={copyUrl}>
-            <Share /> Share
+            <Share /> {t('share')}
           </div>
         ),
       }
@@ -340,7 +341,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
             key="delete-button"
             onClick={() => !emptyOnStart && setIsToDelete(true)}
           >
-            <Delete /> Delete
+            <Delete /> {t('delete')}
           </div>
         ),
       }
@@ -352,7 +353,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
           Element: (
             <div key="publish-button" onClick={publish}>
               <Public style={{ fill: '#00bd7e' }} />
-              Publish
+              {t('publish')}
             </div>
           ),
 
@@ -371,7 +372,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
               onClick={publishCheck}
             >
               <Check />
-              Publish check
+              {t('publish_check')}
             </div>
           ),
         }
@@ -383,7 +384,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
           Element: (
             <div key="unpublish-button" onClick={unpublish}>
               <PublicOff />
-              Unpublish
+              {t('unpublish')}
             </div>
           ),
           wrapperClassName: 'unpublish-button',
@@ -392,14 +393,14 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
 
   const publishedButton =
     canPublish && isPublished ? (
-      <abbr title="Published" key="publishing-button" style={{ cursor: 'initial' }}>
+      <abbr title={t('published')} key="publishing-button" style={{ cursor: 'initial' }}>
         <Public style={{ fill: '#00bd7e' }} />
       </abbr>
     ) : null
 
   const unpublishedButton =
     canPublish && !isPublished ? (
-      <abbr title="Unpublished" key="unpublished-button" style={{ cursor: 'initial' }}>
+      <abbr title={t('unpublished')} key="unpublished-button" style={{ cursor: 'initial' }}>
         <PublicOff style={{ fill: '#a7a7a7' }} />
       </abbr>
     ) : null
@@ -414,7 +415,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
                 onClick={() => downloadOrOpenURL(contentUrl, downloadFilename)}
               >
                 <InsertDriveFile />
-                Download
+                {t('download')}
               </div>
             ) : (
               <div
@@ -422,7 +423,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
                 onClick={() => downloadOrOpenURL(contentUrl, downloadFilename)}
               >
                 <LinkIcon />
-                Open link
+                {t('open_link')}
               </div>
             ),
         }
@@ -459,7 +460,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         key="more-button"
         menuContent={updatedMoreButtonItems}
         hoverElement={
-          <TertiaryButton className={`more`} abbr="More options">
+          <TertiaryButton className={`more`} abbr={t('more_options')}>
             <MoreVert />
           </TertiaryButton>
         }
@@ -576,7 +577,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
       textAreaAutoSize
       noBorder
       edit={isEditing}
-      placeholder="Description"
+      placeholder={t('description')}
       value={form.values.description}
       onChange={form.handleChange}
       error={shouldShowErrors && isEditing && form.errors.description}
@@ -595,7 +596,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
       </div>
       {!showFullDescription && (
         <div className="see-more" onClick={() => setShowFullDescription(true)}>
-          ...see more
+          {t('see_more')}
         </div>
       )}
     </div>
@@ -656,7 +657,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         showCloseButton={false}
         key="url-copy-snackbar"
       >
-        Link copied to clipoard
+        {t('copied_to_clipboard')}
       </Snackbar>,
     )
   }
@@ -670,7 +671,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         showCloseButton={false}
         onClose={() => setShowSaveError(false)}
       >
-        Failed, fix the errors and try again
+        {t('failed_fix_errors_and_try_again')}
       </Snackbar>,
     )
   }
@@ -687,7 +688,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
             }}
             color="red"
           >
-            Delete
+            {t('delete')}
           </PrimaryButton>
         }
         onClose={() => setIsToDelete(false)}
@@ -699,7 +700,7 @@ export const MainResourceCard: FC<MainResourceCardProps> = ({
         className="delete-message"
         key="delete-message-modal"
       >
-        The resource will be deleted
+        {t('the_resource_will_be_deleted')}
       </Modal>
     ),
   ]

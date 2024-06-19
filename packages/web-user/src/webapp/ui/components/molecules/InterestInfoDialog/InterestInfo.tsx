@@ -5,6 +5,7 @@ import {
   SnackbarStack,
   TertiaryButton,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { Link } from '@moodlenet/react-app/ui'
 import { useState, type FC } from 'react'
 import './InterestInfo.scss'
@@ -36,14 +37,14 @@ export const InterestInfo: FC<InterestInfoProps> = ({ userSettingHref, doNotShow
       {showDialog && (
         <div className="interest-info">
           <div className="content">
-            <div className="title">Enhance your experience!</div>
+            <div className="title">{t('interest_title')}</div>
             <div className="description">
-              Select your interests to get the most out of MoodleNet.
+              {t('interest_description')}
               <br />
             </div>
             <div className="actions">
               <Link href={userSettingHref}>
-                <PrimaryButton>Go to settings</PrimaryButton>
+                <PrimaryButton>{t('goto_settings')}</PrimaryButton>
               </Link>
               <TertiaryButton
                 onClick={() => {
@@ -52,7 +53,7 @@ export const InterestInfo: FC<InterestInfoProps> = ({ userSettingHref, doNotShow
                   doNotShowAgain()
                 }}
               >
-                Do not show again
+                {t('dont_show_again')}
               </TertiaryButton>
             </div>
           </div>

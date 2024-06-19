@@ -8,6 +8,7 @@ import {
   useSnackbar,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
+import { t, tl } from '@moodlenet/core/i18n'
 import { DateField, DropdownField, LicenseField } from '@moodlenet/ed-meta/ui'
 import type { MainLayoutProps } from '@moodlenet/react-app/ui'
 import { MainLayout, useViewport } from '@moodlenet/react-app/ui'
@@ -407,7 +408,7 @@ export const Resource: FC<ResourceProps> = ({
       ? {
           Item: () => (
             <PrimaryButton onClick={checkFormsAndPublish} color="green" key="publish-button">
-              Publish
+              {t('publish')}
             </PrimaryButton>
           ),
           key: 'publish-button',
@@ -420,7 +421,7 @@ export const Resource: FC<ResourceProps> = ({
       ? {
           Item: () => (
             <PrimaryButton onClick={startAutofill} color="green">
-              Autofill missing fields
+              {t('autofill_missing_fields')}
             </PrimaryButton>
           ),
           key: 'autofill-button',
@@ -433,7 +434,7 @@ export const Resource: FC<ResourceProps> = ({
       ? {
           Item: () => (
             <PrimaryButton onClick={publishCheck} color="green" disabled={disableFields}>
-              Publish check
+              {t('publish_check')}
             </PrimaryButton>
           ),
           key: 'publish-check-button',
@@ -446,7 +447,7 @@ export const Resource: FC<ResourceProps> = ({
       ? {
           Item: () => (
             <SecondaryButton onClick={unpublish} key="unpublish-button">
-              Unpublish
+              {t('unpublish')}
             </SecondaryButton>
           ),
           key: 'unpublish-button',
@@ -458,11 +459,11 @@ export const Resource: FC<ResourceProps> = ({
     <DropdownField
       key="subject-field"
       disabled={disableFields}
-      title="Subject"
-      placeholder="Content category"
+      title={t('subject')}
+      placeholder={t('content_category')}
       canEdit={canEdit && isEditing}
       selection={form.values.subject}
-      options={subjectOptions}
+      options={tl('subject', subjectOptions)}
       error={form.errors.subject}
       edit={e => form.setFieldValue('subject', e)}
       shouldShowErrors={shouldShowErrors}
@@ -488,11 +489,11 @@ export const Resource: FC<ResourceProps> = ({
     <DropdownField
       key="type-field"
       disabled={disableFields}
-      title="Type"
-      placeholder="Content type"
+      title={t('type')}
+      placeholder={t('content_type')}
       canEdit={canEdit && isEditing}
       selection={form.values.type}
-      options={typeOptions}
+      options={tl('content_type', typeOptions)}
       edit={e => {
         form.setFieldValue('type', e)
       }}
@@ -505,11 +506,11 @@ export const Resource: FC<ResourceProps> = ({
     <DropdownField
       key="level-field"
       disabled={disableFields}
-      title="Level"
-      placeholder="Education level"
+      title={t('level')}
+      placeholder={t('education_level')}
       canEdit={canEdit && isEditing}
       selection={form.values.level}
-      options={levelOptions}
+      options={tl('education_level', levelOptions)}
       edit={e => {
         form.setFieldValue('level', e)
       }}
@@ -524,7 +525,7 @@ export const Resource: FC<ResourceProps> = ({
       disabled={disableFields}
       canEdit={canEdit && isEditing}
       month={form.values.month}
-      monthOptions={monthOptions}
+      monthOptions={tl('month', monthOptions)}
       year={form.values.year}
       yearOptions={yearOptions}
       editMonth={e => {
@@ -543,8 +544,8 @@ export const Resource: FC<ResourceProps> = ({
     <DropdownField
       key="language-field"
       disabled={disableFields}
-      title="Language"
-      placeholder="Content language"
+      title={t('language')}
+      placeholder={t('content_language')}
       canEdit={canEdit && isEditing}
       selection={form.values.language}
       options={languageOptions}
@@ -594,7 +595,7 @@ export const Resource: FC<ResourceProps> = ({
       >
         <SecondaryButton key="download-or-open-link-button" disabled={disableFields}>
           <InsertDriveFile />
-          Download file
+          {t('download_file')}
         </SecondaryButton>
       </a>
     ) : null
@@ -608,7 +609,7 @@ export const Resource: FC<ResourceProps> = ({
       >
         <SecondaryButton key="download-or-open-link-button" disabled={disableFields}>
           <Link />
-          Open link
+          {t('open_link')}
         </SecondaryButton>
       </a>
     ) : null
@@ -660,8 +661,7 @@ export const Resource: FC<ResourceProps> = ({
         addSnackbar({
           position: 'bottom',
           autoHideDuration: 6000,
-          children:
-            "Uploading file, feel free to move around the platform, just don't close this tab",
+          children: t('uploading_file_dont_close_tab'),
         })
       }, 4000)
     }
@@ -674,18 +674,18 @@ export const Resource: FC<ResourceProps> = ({
     if (autofillState === 'ai-generation') {
       addSnackbar({
         autoHideDuration: 6000,
-        children: `Using AI to autofill the resource details, it usually takes a couple of minutes`,
+        children: t('autofill_with_ai_resource'),
       })
     } else if (autofillState === 'ai-completed') {
       addSnackbar({
         autoHideDuration: 6000,
         type: 'success',
-        children: `Resource ready! Verify and edit any required details`,
+        children: t('autofill_with_ai_resource_success'),
       })
     } else if (autofillState === 'ai-error') {
       addSnackbar({
         autoHideDuration: 6000,
-        children: `Unfortunatelly we couldn't complete AI autofill`,
+        children: t('autofill_with_ai_resource_error'),
       })
     }
   }, [addSnackbar, autofillState])
@@ -697,8 +697,8 @@ export const Resource: FC<ResourceProps> = ({
         type: showCheckPublishSuccess === 'success' ? 'success' : 'error',
         children:
           showCheckPublishSuccess === 'success'
-            ? `Success, save before publishing`
-            : `Failed, fix the errors and try again`,
+            ? t('success_save_before_publish')
+            : t('failed_fix_errors_and_try_again'),
         onClose: () => setShowCheckPublishSuccess('idle'),
       })
     }
@@ -711,8 +711,8 @@ export const Resource: FC<ResourceProps> = ({
         autoHideDuration: 4000,
         children:
           showPublishSuccess === 'success'
-            ? `Resource published`
-            : `Failed, fix the errors and try again`,
+            ? t('resource_published')
+            : t('failed_fix_errors_and_try_again'),
         onClose: () => setShowPublishSuccess('idle'),
       })
     }
@@ -723,7 +723,7 @@ export const Resource: FC<ResourceProps> = ({
       addSnackbar({
         type: 'success',
         autoHideDuration: 4000,
-        children: 'Resource unpublished',
+        children: t('resource_unpublished'),
         onClose: () => setShowUnpublishSuccess(false),
       })
     }
@@ -733,7 +733,7 @@ export const Resource: FC<ResourceProps> = ({
     <>
       {isToDelete && deleteResource && (
         <Modal
-          title={`Alert`}
+          title={t('alert')}
           actions={
             <PrimaryButton
               onClick={() => {
@@ -742,14 +742,14 @@ export const Resource: FC<ResourceProps> = ({
               }}
               color="red"
             >
-              Delete
+              {t('delete')}
             </PrimaryButton>
           }
           onClose={() => setIsToDelete(false)}
           style={{ maxWidth: '400px' }}
           className="delete-message"
         >
-          The resource will be deleted
+          {t('the_resource_will_be_deleted')}
         </Modal>
       )}
     </>
