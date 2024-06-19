@@ -12,7 +12,7 @@ import { SamlUserCollection } from './init/arangodb.mjs'
 import { shell } from './shell.mjs'
 import * as store from './store.mjs'
 import type { SamlUser } from './store/types.mjs'
-import { type LocalSamlConfig } from './types.mjs'
+import type { LocalSamlConfig } from './types.mjs'
 
 export async function login({ uuid }: { uuid: string }) {
   const user = await store.getByUuid(uuid)

@@ -4,7 +4,7 @@ import { mountApp } from '@moodlenet/http-server/server'
 import { getProfileHomePageRoutePath } from '@moodlenet/web-user/common'
 import session from 'express-session'
 import passport from 'passport'
-import { Strategy as SamlStrategy } from 'passport-saml'
+import { Strategy as SamlStrategy, type SamlConfig } from 'passport-saml'
 import { extractAttributesFromSamlProfile, upsertSamlUser } from '../lib.mjs'
 import { shell } from '../shell.mjs'
 import { validateConfigAndGetCert } from './configtools.mjs'
@@ -19,18 +19,25 @@ shell.call(mountApp)({
     const coreConfigs = getCoreConfigs()
     const callbackUrl = `${coreConfigs.instanceDomain}/.pkg/@citricity/saml-auth/callback`
 
-    const samlStrategy = new SamlStrategy(
-      {
-        entryPoint,
-        issuer,
-        callbackUrl,
-        cert,
-        // TODO - type done and maybe profile
-      },
-      (profile: any, done: any) => {
-        return done(null, profile)
-      },
-    )
+    // Setup mandatory saml config options.
+    const samlConfig: SamlConfig = {
+      entryPoint,
+      issuer,
+      callbackUrl,
+      cert,
+    }
+
+    // Add optional saml config options if available.
+    if (config.privateKey) {
+      samlConfig.privateKey = config.privateKey
+    }
+    if (config.decryptionPvk) {
+      samlConfig.decryptionPvk = config.decryptionPvk
+    }
+
+    const samlStrategy = new SamlStrategy(samlConfig, (profile: any, done: any) => {
+      return done(null, profile)
+    })
 
     passport.use(samlStrategy)
 
@@ -52,8 +59,8 @@ shell.call(mountApp)({
     })
 
     app.get('/login-failed', (req, res) => {
+      shell.log('debug', 'Saml login failed for request', req)
       res.send('Saml login failed')
-      console.log('Saml login failed', req)
     })
 
     app.get(
