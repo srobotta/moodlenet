@@ -79,5 +79,10 @@ export const validateConfigAndGetCert = () => {
     .replace(/\n/g, '')
     .trim()
 
-  return { cert, config } as { cert: string; config: LocalSamlConfig }
+  const keyPath = `${process.cwd()}/saml.pem`
+  if (!fs.existsSync(keyPath)) {
+    throw new Error(`A saml.pem file for your IDP needs to be placed in ${keyPath}`)
+  }
+  const key = fs.readFileSync(keyPath, 'utf8')
+  return { cert, config, key } as { cert: string; config: LocalSamlConfig; key: string }
 }

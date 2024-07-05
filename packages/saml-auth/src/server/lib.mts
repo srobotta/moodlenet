@@ -1,4 +1,3 @@
-import type { WebUserRecord } from '@moodlenet/web-user/server'
 import {
   createWebUser,
   getProfileRecord,
@@ -6,6 +5,7 @@ import {
   sendWebUserTokenCookie,
   signWebUserJwtToken,
   verifyCurrentTokenCtx,
+  type WebUserRecord,
 } from '@moodlenet/web-user/server'
 import assert from 'assert'
 import { SamlUserCollection } from './init/arangodb.mjs'
@@ -135,7 +135,8 @@ export function extractAttributesFromSamlProfile(
 ) {
   const result: any = {}
   for (const [key, path] of Object.entries(attributeMap)) {
-    result[key] = getAttributeValueFromPath(profile, path as string)
+    result[key] =
+      path in profile ? profile[path] : getAttributeValueFromPath(profile, path as string)
   }
 
   return result as LocalSamlConfig['attributeMap']
