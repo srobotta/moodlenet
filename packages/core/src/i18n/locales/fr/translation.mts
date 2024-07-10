@@ -129,7 +129,10 @@ export const translations: Translations = {
   location: 'Lieu',
   log_in_desc: 'Se connecter ou créer un compte pour commencer à publier du contenu',
   login: 'S’identifier',
+  login_email: 'Email',
+  login_error_email_password: 'Email ou mot de passe incorrect',
   login_or_signup_to_send_messages: 'Se connecter ou s’nscrire pour envoyer des messages',
+  login_password: 'Mot de passe',
   logout: 'Déconnexion',
   max_learning_outcomes_reached: 'Nombre max d’objectifs atteint',
   message: 'Message',
@@ -172,6 +175,7 @@ export const translations: Translations = {
   publish_content: 'Publier du contenu',
   publish_resource: 'Publier une ressource',
   published: 'Publié',
+  recover_password: 'Récupérer le mot de passe',
   remove_learning_outcome: 'Supprimer l’objectif d’apprentissage',
   report: 'Report',
   report_comment_placeholder:

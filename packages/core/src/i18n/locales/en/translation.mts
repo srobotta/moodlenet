@@ -125,7 +125,10 @@ export const translations: Translations = {
   load_more: 'Load more',
   location: 'Location',
   login: 'Log in',
+  login_email: 'Email',
+  login_error_email_password: 'Incorrect username or password',
   login_or_signup_to_send_messages: 'Login or signup to send messages',
+  login_password: 'Password',
   logout: 'Log out',
   log_in_desc: 'Log in or create an account to start publishing content',
   max_learning_outcomes_reached: 'Max learning outcomes reached',
@@ -167,6 +170,7 @@ export const translations: Translations = {
   publish_content: 'Publish content',
   publish_resource: 'Publish resource',
   published: 'Published',
+  recover_password: 'Recover password',
   remove_learning_outcome: 'Remove learning outcome',
   report: 'Report',
   report_comment_placeholder:

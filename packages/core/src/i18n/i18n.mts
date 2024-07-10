@@ -34,14 +34,7 @@ async function loadTranslations(lang: string): Promise<void> {
  * Initialize the language handling. Determine the current language and load the translations.
  */
 const init = async function () {
-  const lang =
-    localStorage.getItem('mnet-i18n-lang') ?? navigator.language.toString().split('-')[0] ?? ''
-  if (getLanguagesIso().includes(lang)) {
-    currentLang = lang
-  } else {
-    currentLang = coreConfigs.languages?.default || 'en'
-  }
-  await loadTranslations(currentLang)
+  await loadTranslations(getCurrentLang())
 }
 
 /**
@@ -132,6 +125,17 @@ export const typeLabel = function (type: string): string {
  */
 export const getLanguagesIso = function (): string[] {
   return coreConfigs.languages?.available || ['en']
+}
+
+export const getCurrentLang = function (): string {
+  const lang =
+    localStorage.getItem('mnet-i18n-lang') ?? navigator.language.toString().split('-')[0] ?? ''
+  if (getLanguagesIso().includes(lang)) {
+    currentLang = lang
+  } else {
+    currentLang = coreConfigs.languages?.default || 'en'
+  }
+  return currentLang
 }
 
 /**

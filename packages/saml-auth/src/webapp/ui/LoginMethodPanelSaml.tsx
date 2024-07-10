@@ -1,9 +1,10 @@
 import { PrimaryButton } from '@moodlenet/component-library'
+import { getCurrentLang } from '@moodlenet/core/i18n'
 import { useRef, useState } from 'react'
 import type { LocalSamlConfig } from '../../server/types.mjs'
 import { shell } from '../shell.mjs'
 export const LoginButton = () => {
-  return <PrimaryButton color="blue">Using Saml</PrimaryButton>
+  return <PrimaryButton color="blue">{LoginMethodPanelSaml()}</PrimaryButton>
 }
 
 export const LoginMethodPanelSaml = () => {
@@ -20,6 +21,7 @@ export const LoginMethodPanelSaml = () => {
   }
 
   requestAndApplyConfig()
+  const lang = getCurrentLang()
 
   return (
     <div>
@@ -27,7 +29,9 @@ export const LoginMethodPanelSaml = () => {
         <div>Loading</div>
       ) : (
         <div>
-          <a href="/.pkg/@citricity/saml-auth/login">{config.linkText}</a>
+          <a href="/.pkg/@citricity/saml-auth/login">
+            {config.linkText[lang] ?? 'Log in using Saml!'}
+          </a>
         </div>
       )}
     </div>

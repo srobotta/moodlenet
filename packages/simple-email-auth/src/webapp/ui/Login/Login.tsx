@@ -1,4 +1,5 @@
 import { InputTextField, PrimaryButton, TertiaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { Href } from '@moodlenet/react-app/common'
 import { Link } from '@moodlenet/react-app/ui'
 import type { useFormik } from 'formik'
@@ -37,7 +38,7 @@ export const LoginPanel: FC<LoginProps> = ({ wrongCreds, form, recoverPasswordHr
       <form onSubmit={form.handleSubmit}>
         <InputTextField
           className="email"
-          placeholder={`Email`}
+          placeholder={t('email')}
           type="email"
           name="email"
           edit
@@ -47,7 +48,7 @@ export const LoginPanel: FC<LoginProps> = ({ wrongCreds, form, recoverPasswordHr
         />
         <InputTextField
           className="password"
-          placeholder={`Password`}
+          placeholder={t('password')}
           type="password"
           name="password"
           edit
@@ -55,15 +56,17 @@ export const LoginPanel: FC<LoginProps> = ({ wrongCreds, form, recoverPasswordHr
           onChange={form.handleChange}
           error={shouldShowErrors && form.errors.password}
         />
-        {wrongCreds && <div className="error">Incorrect username or password</div>}
+        {wrongCreds && <div className="error">{t('login_error_email_password')}</div>}
         <button type="submit" style={{ display: 'none' }} />
       </form>
       <div className="bottom">
         <div className="content">
           <div className="left">
-            <PrimaryButton onClick={canSubmit ? form.submitForm : undefined}>Log in</PrimaryButton>
+            <PrimaryButton onClick={canSubmit ? form.submitForm : undefined}>
+              {t('login')}
+            </PrimaryButton>
             <Link href={recoverPasswordHref}>
-              <TertiaryButton>or recover password</TertiaryButton>
+              <TertiaryButton>{t('recover_password')}</TertiaryButton>
             </Link>
           </div>
           {/* <div className="right" hidden>
