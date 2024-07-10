@@ -1,9 +1,10 @@
 import type { Href } from '@moodlenet/component-library'
 import { Card } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { MainFooterProps, MinimalisticHeaderProps } from '@moodlenet/react-app/ui'
 import { Link, SimpleLayout } from '@moodlenet/react-app/ui'
 import { CallMade as CallMadeIcon } from '@mui/icons-material'
-import type { ComponentType, CSSProperties, FC } from 'react'
+import type { CSSProperties, ComponentType, FC } from 'react'
 import { useEffect, useState } from 'react'
 // import { Link } from '../../../../elements/link'
 import './Login.scss'
@@ -34,7 +35,7 @@ export const LoginPage: FC<LoginProps> = ({ loginItems, headerProps, footerProps
         <div className="content">
           <Card className="login-card">
             <div className="content">
-              <div className="title">Log in</div>
+              <div className="title">{t('login')}</div>
               {currLoginEntry ? (
                 <currLoginEntry.Panel key={currLoginEntry.key} />
               ) : (
@@ -66,7 +67,7 @@ export const LoginPage: FC<LoginProps> = ({ loginItems, headerProps, footerProps
           </Card>
           <Card hover={true}>
             <Link href={signupHref}>
-              Sign up
+              {t('signup')}
               <CallMadeIcon />
             </Link>
           </Card>
