@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import type { LocalSamlConfig } from '../../server/types.mjs'
 import { shell } from '../shell.mjs'
 export const LoginButton = () => {
-  return <PrimaryButton color="blue">{LoginMethodPanelSaml()}</PrimaryButton>
+  return <PrimaryButton color="blue">Login Switch edu-ID</PrimaryButton>
 }
 
 export const LoginMethodPanelSaml = () => {
@@ -29,9 +29,11 @@ export const LoginMethodPanelSaml = () => {
         <div>Loading</div>
       ) : (
         <div>
-          <a href="/.pkg/@citricity/saml-auth/login">
-            {config.linkText[lang] ?? 'Log in using Saml!'}
-          </a>
+          <PrimaryButton color="blue">
+            <a href="/.pkg/@citricity/saml-auth/login">
+              {config.linkText[lang] ?? 'Log in using Saml!'}
+            </a>
+          </PrimaryButton>
         </div>
       )}
     </div>

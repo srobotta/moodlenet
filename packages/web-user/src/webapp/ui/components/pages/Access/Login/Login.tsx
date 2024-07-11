@@ -21,7 +21,7 @@ export type LoginProps = {
 export const LoginPage: FC<LoginProps> = ({ loginItems, headerProps, footerProps, signupHref }) => {
   // const shouldShowErrors = !!form.submitCount && (wrongCreds || !form.isValid)
   // const defaultLoginEntry = loginRegs.entries[0]
-  const defaultLoginEntry = loginItems[0]
+  const defaultLoginEntry = loginItems[1]
   const [currLoginEntry, chooseLoginEntry] = useState(defaultLoginEntry)
   useEffect(() => chooseLoginEntry(defaultLoginEntry), [defaultLoginEntry])
   return (
