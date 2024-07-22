@@ -30,13 +30,10 @@ shell.call(mountApp)({
     // Add optional saml config options if available.
     if (config.privateKey) {
       samlConfig.privateKey = key
-      //samlConfig.privateKey = config.privateKey.split(String.raw`\n`).join('\n');
     }
     if (config.decryptionPvk) {
       samlConfig.decryptionPvk = key
-      //samlConfig.decryptionPvk = config.decryptionPvk.split(String.raw`\n`).join('\n');
     }
-    samlConfig.wantAssertionsSigned = false
 
     const samlStrategy = new SamlStrategy(samlConfig, (profile: any, done: any) => {
       return done(null, profile)
