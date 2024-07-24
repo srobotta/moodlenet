@@ -2,10 +2,11 @@ import { writeFile } from 'fs/promises'
 
 import { resolve } from 'path'
 import type { PackageJson } from 'type-fest'
+import LanguageConfig from '../i18n/config.mjs'
 import {
+  MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES as _MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES,
   getCoreConfigs,
   getIgnites,
-  MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES as _MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES,
 } from '../ignite.mjs'
 
 export const MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES = _MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES
@@ -13,6 +14,10 @@ export const MOODLENET_CORE_DEV_LOCAL_FOLDER_PACKAGES = _MOODLENET_CORE_DEV_LOCA
 export const ignites = getIgnites()
 
 export const coreConfigs = getCoreConfigs()
+
+if (coreConfigs.languages) {
+  LanguageConfig.getInstance().setConfig({ languages: coreConfigs.languages })
+}
 
 export async function writeWdPackageJson(pkgJson: PackageJson): Promise<void> {
   const wdPackageJsonStr = JSON.stringify(pkgJson, null, 2)

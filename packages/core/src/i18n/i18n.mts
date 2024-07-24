@@ -1,8 +1,5 @@
+import LanguageConfig from './config.mjs'
 import type { Translations } from './types.mjs'
-//import { coreConfigs } from '../main/env.mjs'
-import { getLanguageConfig } from './config.mjs'
-const coreConfigs = getLanguageConfig()
-//const coreConfigs = { languages: { default: 'en', available: ['de', 'en', 'fr'] } }
 
 /**
  * The current language that is used at the moment.
@@ -124,7 +121,7 @@ export const typeLabel = function (type: string): string {
  * @returns array of language iso codes
  */
 export const getLanguagesIso = function (): string[] {
-  return coreConfigs.languages?.available || ['en']
+  return LanguageConfig.getInstance().getAvailable()
 }
 
 export const getCurrentLang = function (): string {
@@ -133,7 +130,7 @@ export const getCurrentLang = function (): string {
   if (getLanguagesIso().includes(lang)) {
     currentLang = lang
   } else {
-    currentLang = coreConfigs.languages?.default || 'en'
+    currentLang = LanguageConfig.getInstance().getDefault()
   }
   return currentLang
 }
