@@ -13,5 +13,6 @@ export const LoginButtonContainer: FC = () => {
   return <LoginHeaderButton loginHref={href(useLoginPageRoutePathRedirectToCurrent())} />
 }
 export const SignupButtonContainer: FC = () => {
-  return <SignupHeaderButton signupHref={href(SIGNUP_PAGE_ROUTE_BASE_PATH)} />
+  const signUp = false
+  return signUp ? <SignupHeaderButton signupHref={href(SIGNUP_PAGE_ROUTE_BASE_PATH)} /> : ''
 }
