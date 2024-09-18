@@ -4,6 +4,7 @@ import type { SignupReq } from '../server/types.mjs'
 // import type { GetMySettingsDataRpc } from './types.mjs'
 export type SimpleEmailAuthExposeType = PkgExposeDef<{
   rpc: {
+    registrationIsDisabled(): Promise<boolean>
     login(body: {
       email: string
       password: string

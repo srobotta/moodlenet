@@ -20,6 +20,12 @@ import { shell } from './shell.mjs'
 
 export const expose = await shell.expose<SimpleEmailAuthExposeType>({
   rpc: {
+    'registrationIsDisabled': {
+      guard: () => void 0,
+      async fn() {
+        return !!shell.config.disableRegistration
+      },
+    },
     'login': {
       guard: _ => loginValidationSchema.isValid(_),
       async fn({ email, password }) {

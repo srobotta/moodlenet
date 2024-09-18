@@ -101,6 +101,7 @@ async function defaultConfigJson() {
       },
       '@moodlenet/simple-email-auth': {
         newUserNotPublisher: false,
+        disableRegistration: false,
       },
       '@moodlenet/email-service': {
         nodemailerTransport: {
