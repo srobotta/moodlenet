@@ -6,4 +6,7 @@ import {
 } from '../../../ui/components/molecules/AccessButtons/AccessButtons.js'
 
 export const LoginButtonContainer: FC = () => <LoginHeaderButton loginHref={href('/login')} />
-export const SignupButtonContainer: FC = () => <SignupHeaderButton signupHref={href('/signup')} />
+export const SignupButtonContainer: FC = () => {
+  const signUp = false
+  return signUp ? <SignupHeaderButton signupHref={href('/signup')} /> : ''
+}

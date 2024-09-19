@@ -19,6 +19,7 @@ export type LoginProps = {
 // Record<string, unknown>
 
 export const LoginPage: FC<LoginProps> = ({ loginItems, headerProps, footerProps, signupHref }) => {
+  const signUp = false
   // const shouldShowErrors = !!form.submitCount && (wrongCreds || !form.isValid)
   // const defaultLoginEntry = loginRegs.entries[0]
   const defaultLoginEntry = loginItems[1]
@@ -65,12 +66,14 @@ export const LoginPage: FC<LoginProps> = ({ loginItems, headerProps, footerProps
               )}
             </div>
           </Card>
-          <Card hover={true}>
-            <Link href={signupHref}>
-              {t('signup')}
-              <CallMadeIcon />
-            </Link>
-          </Card>
+          {signUp && (
+            <Card hover={true}>
+              <Link href={signupHref}>
+                {t('signup')}
+                <CallMadeIcon />
+              </Link>
+            </Card>
+          )}
         </div>
       </div>
     </SimpleLayout>
