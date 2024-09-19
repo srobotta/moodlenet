@@ -15,7 +15,7 @@ const Hello = React.memo(({ a }: { a: string }) => {
 export type LoginFormValues = { email: string; password: string }
 
 export const LoginIcon: FC = () => {
-  return <PrimaryButton color="blue">Using email</PrimaryButton>
+  return <PrimaryButton color="blue">{t('login_using_email')}</PrimaryButton>
 }
 
 export type LoginProps = {

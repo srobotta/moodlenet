@@ -1,4 +1,5 @@
 import { PrimaryButton, type AddonItem } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { Href } from '@moodlenet/react-app/common'
 import { LoginButtonMini, SignupButtonMini } from './MinimalisticAccessButtons.js'
 
@@ -13,7 +14,7 @@ export function getMiniAccessButtonsHeaderItems({
     <SignupButtonMini key="SignupButtonMini" signupHref={signupHref} />,
     <LoginButtonMini key="LoginButtonMini" loginHref={loginHref} />,
     <a href="https://moodle.org/mod/forum/view.php?id=8806" target="__blank" key="Learn more">
-      <PrimaryButton color="grey">Learn more</PrimaryButton>
+      <PrimaryButton color="grey">{t('learn_more')}</PrimaryButton>
     </a>,
   ]
   const miniAccessButtonsAddon: AddonItem = {
