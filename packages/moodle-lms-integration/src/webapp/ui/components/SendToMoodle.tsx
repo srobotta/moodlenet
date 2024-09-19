@@ -82,7 +82,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
   const showSendSuccess = () => {
     addSnackbar(
       <Snackbar type="success" position="bottom" autoHideDuration={3000} showCloseButton={false}>
-        Resource sent to {form.values.site}
+        {t('lms_resource_sent', [form.values.site])}
       </Snackbar>,
     )
   }
