@@ -4,7 +4,7 @@ class LanguageConfig {
   private static instance: LanguageConfig
   private config: langSetting | undefined
   private constructor() {
-    this.config = { languages: { default: 'en', available: ['en'] } }
+    this.config = { languages: { default: 'de', available: ['de', 'en', 'fr'] } }
   }
 
   public static getInstance(): LanguageConfig {
@@ -16,11 +16,11 @@ class LanguageConfig {
   }
 
   public getDefault(): string {
-    return this.config?.languages.default || 'en'
+    return this.config?.languages.default || 'de'
   }
 
   public getAvailable(): string[] {
-    return this.config?.languages.available || ['en']
+    return this.config?.languages.available || ['de', 'en', 'fr']
   }
 
   public setConfig(config: langSetting) {
