@@ -47,7 +47,7 @@ LoginProps => {
       MinimalisticAccessButtonsStories.getMinimalisticAccessHeaderItems({
         loginHref: href('Pages/Access/Login/Default'),
         signupHref: href('Pages/Access/SignUp/Default'),
-        showLearnMoreButton: true,
+        showLearnMoreButton: false,
         showLoginButton: false,
         showSignupButton: true,
       }),
