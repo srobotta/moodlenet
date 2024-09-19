@@ -145,6 +145,7 @@ export const translations: Translations = {
   login_error_email_password: 'Email ou mot de passe incorrect',
   login_or_signup_to_send_messages: 'Se connecter ou s’nscrire pour envoyer des messages',
   login_password: 'Mot de passe',
+  login_using_email: 'Utiliser Email',
   logout: 'Déconnexion',
   max_learning_outcomes_reached: 'Nombre max d’objectifs atteint',
   message: 'Message',

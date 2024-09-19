@@ -140,6 +140,7 @@ export const translations: Translations = {
   login_error_email_password: 'Incorrect username or password',
   login_or_signup_to_send_messages: 'Login or signup to send messages',
   login_password: 'Password',
+  login_using_email: 'Using email',
   logout: 'Log out',
   log_in_desc: 'Log in or create an account to start publishing content',
   max_learning_outcomes_reached: 'Max learning outcomes reached',

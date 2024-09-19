@@ -143,6 +143,7 @@ export const translations: Translations = {
   login_email: 'E-Mail',
   login_error_email_password: 'Ungültige E-Mail oder Passwort',
   login_password: 'Passwort',
+  login_using_email: 'Anmeldung mit E-Mail',
   login_or_signup_to_send_messages: 'Einloggen oder registieren um Nachrichten zu senden',
   logout: 'Ausloggen',
   log_in_desc: 'Einloggen oder registieren um Inhalt zu veröffentlichen',
