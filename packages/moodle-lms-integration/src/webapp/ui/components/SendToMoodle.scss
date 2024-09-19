@@ -4,6 +4,10 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      > .lms-url-div {
+        display: flex;
+        font-size: 14px;
+      }
       > .user-id-div {
         display: flex;
         align-items: center;
