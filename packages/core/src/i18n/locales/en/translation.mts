@@ -128,6 +128,8 @@ export const translations: Translations = {
   lms_resource_sent: 'Resource sent to {1}.',
   lms_site_error: "Couldn't send to your Moodle LMS",
   lms_site_placeholder: 'https://your-moodle.com',
+  lms_site_url_invalid: 'This must be a valid URL.',
+  lms_site_url_required: 'An URL is required.',
   lms_user_id_btn: 'User ID',
   lms_user_id_copy: 'Click to copy your ID to the clipboard',
   lms_user_id_copied: 'User ID copied to the clipboard, use it to connect with Moodle LMS',
