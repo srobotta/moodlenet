@@ -131,6 +131,8 @@ export const translations: Translations = {
   lms_resource_sent: 'La ressource a été envoyée à {1}.',
   lms_site_error: 'Impossible d’envoyer vers votre Moodle',
   lms_site_placeholder: 'https://vous-moodle.com',
+  lms_site_url_invalid: 'URL invalide.',
+  lms_site_url_required: 'URL du site Moodle requise.',
   lms_user_id_btn: 'Identifiant utilisateur',
   lms_user_id_copy: 'Cliquez pour copier l’identifiant utilisateur',
   lms_user_id_copied:
