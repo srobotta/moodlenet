@@ -134,7 +134,7 @@ export const translations: Translations = {
   lms_user_id_copy: 'Click to copy your ID to the clipboard',
   lms_user_id_copied: 'User ID copied to the clipboard, use it to connect with Moodle LMS',
   lms_user_id_login: 'You might need to login with your Switch edu-ID.',
-  lms_user_id_request: 'You might need your',
+  lms_user_id_required: 'You might need your',
   load_more: 'Load more',
   location: 'Location',
   login: 'Log in',
