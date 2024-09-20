@@ -24,7 +24,7 @@ export type SendToMoodleProps = {
 }
 
 export const lmsValidationSchema: SchemaOf<SendToMoodleForm> = object({
-  site: string().url().required(),
+  site: string().url(t('lms_site_url_invalid')).required(t('lms_site_url_required')),
 })
 
 export const SendToMoodle: FC<SendToMoodleProps> = ({
