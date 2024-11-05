@@ -96,6 +96,7 @@ export const translations: Translations = {
   get_a_point_interests:
     'Obtenez un point lorsque vous définissez vos centres d’intérêt dans votre page de configuration.',
   goto_settings: 'Accéder aux réglages',
+  help: 'Aide',
   i_follow: 'Suivi•e',
   image_too_big: 'Image trop grande, réduisez la taille ou utilisez une autre image.',
   interest_description:
