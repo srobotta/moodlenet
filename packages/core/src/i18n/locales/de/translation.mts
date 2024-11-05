@@ -97,6 +97,7 @@ export const translations: Translations = {
   get_a_point_interests:
     'Erhalte einen Punkt, wenn du deine Interessen in deinen Einstellungen festlegst',
   goto_settings: 'Gehe zu den Einstellungen',
+  help: 'Hilfe',
   i_follow: 'Folge ich',
   interest_description: 'Wähle deine Interessen aus, um das Beste aus MoodleNet herauszuholen.',
   interest_title: 'Verbessere deine Erfahrung!',
