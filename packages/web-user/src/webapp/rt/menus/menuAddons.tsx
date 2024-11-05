@@ -5,6 +5,7 @@ import { LoginButtonContainer, SignupButtonContainer } from '../page/access/Acce
 import { AdminUsersContainer, AdminUsersMenu } from '../page/admin/AdminUsersContainer.js'
 import { AddMenuContainer } from './AddMenuContainer.js'
 import { AvatarMenuContainer } from './AvatarMenuContainer.js'
+import { HelpMenuContainer } from './HelpMenuContainer.js'
 import { LanguageMenuContainer } from './LanguageMenuContainer.js'
 
 export const menuHeaderButtonsItems = {
@@ -13,12 +14,14 @@ export const menuHeaderButtonsItems = {
   avatarMenu: { Item: AvatarMenuContainer },
   addMenu: { Item: AddMenuContainer },
   languageMenu: { Item: LanguageMenuContainer },
+  helpButton: { Item: HelpMenuContainer },
 }
-const { loginButton, signupButton, avatarMenu, addMenu, languageMenu } = menuHeaderButtonsItems
+const { loginButton, signupButton, avatarMenu, addMenu, languageMenu, helpButton } =
+  menuHeaderButtonsItems
 export const menuHeaderButtonsAuthAddons: AddonsByUserRule<AddonItemNoKey> = {
-  guest: { languageMenu, loginButton, signupButton },
-  auth: { languageMenu, addMenu, avatarMenu },
-  root: { addMenu: undefined, avatarMenu },
+  guest: { languageMenu, loginButton, signupButton, helpButton },
+  auth: { languageMenu, addMenu, avatarMenu, helpButton },
+  root: { addMenu: undefined, avatarMenu, helpButton },
 }
 
 export const menuAddonsDefaultSetting = {
