@@ -94,6 +94,7 @@ export const translations: Translations = {
     'Get a point for each detail filled, profile and background images, location, website, description',
   get_a_point_interests: 'Get a point when setting the interests type in your settings page',
   goto_settings: 'Go to settings',
+  help: 'Help',
   i_follow: 'Following',
   interest_description: 'Select your interests to get the most out of MoodleNet',
   interest_title: 'Enhance your experience!',
