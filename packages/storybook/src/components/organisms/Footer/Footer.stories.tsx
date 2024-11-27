@@ -49,7 +49,7 @@ export const FooterStoryProps: MainFooterProps = {
             }}
           />{' '}
           {t('you_can_suggest')}{' '}
-          <a href="https://moodle.org/mod/forum/view.php?id=8726" target="_blank" rel="noreferrer">
+          <a href="https://moodle.org/mod/forum/view.php?id=8806" target="_blank" rel="noreferrer">
             {t('moodlenet_community')}
           </a>
           .

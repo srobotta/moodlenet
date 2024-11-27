@@ -38,6 +38,7 @@ import { MainResourceCard } from '../../organisms/MainResourceCard/MainResourceC
 import './Resource.scss'
 
 export type ResourceProps = {
+  isCreating: boolean
   saveState: SaveState
   mainLayoutProps: MainLayoutProps
   mainResourceCardSlots: MainResourceCardSlots
@@ -62,6 +63,7 @@ export type ResourceProps = {
 }
 
 export const Resource: FC<ResourceProps> = ({
+  isCreating,
   mainLayoutProps,
   resourceContributorCardProps,
 
@@ -257,7 +259,7 @@ export const Resource: FC<ResourceProps> = ({
     uploadProgress !== undefined ||
     (autofillState !== undefined && autofillState !== 'ai-completed')
 
-  const contributorCard = isPublished && (
+  const contributorCard = !isCreating && (
     <ResourceContributorCard {...resourceContributorCardProps} key="contributor-card" />
   )
 

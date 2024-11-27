@@ -17,7 +17,7 @@ import { entityDocument2Aql, pkgMetaOf2Aql } from './aql-lib/by-proc-values.mjs'
 import { userInfoAqlProvider } from './aql-lib/userInfo.mjs'
 import type { EntityInfo, EntityInfoProviderItem } from './entity-info.mjs'
 import { ENTITY_INFO_PROVIDERS } from './entity-info.mjs'
-import { db, SearchAliasView, SEARCH_VIEW_NAME } from './init/arangodb.mjs'
+import { SEARCH_VIEW_NAME, SearchAliasView, db } from './init/arangodb.mjs'
 import { env } from './init/env.mjs'
 import { getEntityCollection } from './pkg-db-names.mjs'
 import { shell } from './shell.mjs'
@@ -338,7 +338,8 @@ export async function queryEntities<
   Project extends AccessEntitiesCustomProject<any>,
   ProjectAccess extends EntityAccess,
 >(entityClass: EntityClass<EntityDataType>, opts?: QueryEntitiesOpts<Project, ProjectAccess>) {
-  const _reqLimit = opts?.limit ?? DEFAULT_QUERY_LIMIT
+  const _reqLimit =
+    opts?.limit && opts.limit > 0 && opts.limit < 1000 ? opts.limit : DEFAULT_QUERY_LIMIT
   const limit = _reqLimit > DEFAULT_MAX_QUERY_LIMIT ? DEFAULT_MAX_QUERY_LIMIT : _reqLimit
   const skip = Math.floor(opts?.skip ?? 0)
   const sort = opts?.sort ? `SORT ${opts.sort}` : ''
