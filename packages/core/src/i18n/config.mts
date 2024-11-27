@@ -1,15 +1,30 @@
-import type { LanguageConfig } from './types.mjs'
-//import { languages as configLang } from "../exports.mjs"
-//const configLang = { default: 'en', available: ['de', 'en', 'fr'] }
-//import { shell } from './shell.mjs'
-//import { env } from './init.mjs'
-//import { coreConfigs } from "../main/env.mjs"
+import type { LanguageConfig as langSetting } from './types.mjs'
 
-export const getLanguageConfig = () => {
-  //export function getLanguageConfig(): LanguageConfig {
-  //const { config }: { config: LanguageConfig | any } = env
-  const config = { languages: { default: 'en', available: ['de', 'fr', 'en'] } }
-  return {
-    languages: config.languages ? config.languages : { default: 'en', available: ['en'] },
-  } as LanguageConfig
+class LanguageConfig {
+  private static instance: LanguageConfig
+  private config: langSetting | undefined
+  private constructor() {
+    this.config = { languages: { default: 'de', available: ['de', 'fr', 'en'] } }
+  }
+
+  public static getInstance(): LanguageConfig {
+    if (!LanguageConfig.instance) {
+      console.log('Creating new instance of LanguageConfig')
+      LanguageConfig.instance = new LanguageConfig()
+    }
+    return LanguageConfig.instance
+  }
+
+  public getDefault(): string {
+    return this.config?.languages.default || 'de'
+  }
+
+  public getAvailable(): string[] {
+    return this.config?.languages.available || ['de', 'fr', 'en']
+  }
+
+  public setConfig(config: langSetting) {
+    console.log('Setting language config', config)
+    this.config = config
+  }
 }
