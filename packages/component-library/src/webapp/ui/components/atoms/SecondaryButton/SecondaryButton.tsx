@@ -29,9 +29,9 @@ export const SecondaryButton: FC<SecondaryButtonProps> = ({
 }) => {
   return (
     <abbr
-      className={`secondary-button button ${className} ${color} hover-${onHoverColor} ${
-        disabled ? 'disabled' : ''
-      }`}
+      className={`secondary-button button ${className} ${color} hover-${
+        onHoverColor ? onHoverColor : color
+      } ${disabled ? 'disabled' : ''}`}
       ref={innerRef}
       title={abbr}
       tabIndex={!disabled ? 0 : undefined}

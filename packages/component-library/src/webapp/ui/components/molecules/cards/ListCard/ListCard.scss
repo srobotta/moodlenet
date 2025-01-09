@@ -1,7 +1,6 @@
 .list-card {
   width: 100%;
   background-color: #fff;
-  border-radius: 16px;
   box-shadow: 0 0 6px #dedede;
   padding: 24px;
   display: flex;
@@ -10,14 +9,13 @@
   overflow: hidden;
 
   @media (max-width: 450px) {
-    box-shadow: none;
     border-radius: 0;
     margin-top: 0;
   }
 
   > .list-card-header {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     width: 100%;
     .card-header {
       display: flex;
@@ -26,7 +24,7 @@
       .title {
         font-size: 24px;
         margin-right: 16px;
-        color: #194866;
+        color: #000000;
       }
       .secondary-button {
         height: 26px;

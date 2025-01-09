@@ -1,6 +1,8 @@
 .browser-collection-list.list-card {
   padding: 24px 24px 66px 24px;
   position: relative;
+  box-shadow: none;
+  border: 2px solid #eff1f3;
 
   &.show-all:not(.load-more) {
     padding: 24px;

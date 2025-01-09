@@ -210,6 +210,10 @@ export function getWp(
           ],
         },
         {
+          test: /\.(eot|otf|ttf|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          type: 'asset/resource',
+        },
+        {
           test: /\.svg$/,
           use: [
             {
