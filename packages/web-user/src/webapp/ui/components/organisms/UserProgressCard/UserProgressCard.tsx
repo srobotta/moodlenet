@@ -101,7 +101,8 @@ export const UserProgressCard: FC<UserProgressCardProps> = ({
               <span className="points">{action.points.toLocaleString()}</span>
               <LeafIcon />
             </div>
-          ))}
+          </div>
+        ))}
         </div>
       </div>
     </Modal>
