@@ -28,3 +28,4 @@ class LanguageConfig {
     this.config = config
   }
 }
+export default LanguageConfig
