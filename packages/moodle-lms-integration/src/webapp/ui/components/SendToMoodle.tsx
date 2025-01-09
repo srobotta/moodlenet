@@ -6,6 +6,7 @@ import {
   TertiaryButton,
   useSnackbar,
 } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import { useFormik } from 'formik'
 import type { FC } from 'react'
 import { useState } from 'react'
@@ -23,7 +24,7 @@ export type SendToMoodleProps = {
 }
 
 export const lmsValidationSchema: SchemaOf<SendToMoodleForm> = object({
-  site: string().url().required(),
+  site: string().url(t('lms_site_url_invalid')).required(t('lms_site_url_required')),
 })
 
 export const SendToMoodle: FC<SendToMoodleProps> = ({
@@ -44,7 +45,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
       try {
         await sendToMoodle(site)
       } catch (e) {
-        setErrors({ site: `Couldn't send to your MoodleLMS` })
+        setErrors({ site: t('lms_site_error') })
       }
     },
   })
@@ -64,16 +65,16 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
       navigator.clipboard.writeText(userId)
       addSnackbar(
         <Snackbar type="success" position="bottom" autoHideDuration={5000} showCloseButton={false}>
-          User ID copied to the clipboard, use it to connect with Moodle LMS
+          {t('lms_user_id_copied')}
         </Snackbar>,
       )
     }
   }
 
   const copyIdButton = (
-    <abbr className={`user-id`} title={`Click to copy your ID to the clipboard`}>
+    <abbr className={`user-id`} title={t('lms_user_id_copy')}>
       <TertiaryButton className="copy-id" onClick={copyId}>
-        User ID
+        {t('lms_user_id_btn')}
       </TertiaryButton>
     </abbr>
   )
@@ -81,7 +82,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
   const showSendSuccess = () => {
     addSnackbar(
       <Snackbar type="success" position="bottom" autoHideDuration={3000} showCloseButton={false}>
-        Resource sent to {form.values.site}
+        {t('lms_resource_sent', [form.values.site])}
       </Snackbar>,
     )
   }
@@ -89,7 +90,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
   const modal = isAddingToMoodleLms && (
     <Modal
       className="send-to-moodle-modal"
-      title={`Your Moodle LMS Site`}
+      title={t('lms_modal_title')}
       actions={
         <PrimaryButton
           onClick={() => {
@@ -97,7 +98,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
             showSendSuccess()
           }}
         >
-          Send
+          {t('lms_btn_send')}
         </PrimaryButton>
       }
       onPressEnter={() => {
@@ -110,8 +111,9 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
       }}
       style={{ maxWidth: '350px', width: '100%' }}
     >
+      <div className="lms-url-div">{t('lms_modal_desc')}</div>
       <InputTextField
-        placeholder="http://your-moodle-lms-site.com"
+        placeholder={t('lms_site_placeholder')}
         value={form.values.site}
         name="site"
         edit
@@ -121,11 +123,9 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
       />
       <div className="user-id-div">
         {userId ? (
-          <>You might need your {copyIdButton}</>
+          <>{t('lms_user_id_required')} {copyIdButton}</>
         ) : (
-          <>
-            You might need a <b>User ID</b>, please sign up to get one
-          </>
+          <>{t('lms_user_id_login')}</>
         )}
       </div>
     </Modal>
@@ -138,7 +138,6 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
         onClick={() => canSendToMoodle && setIsAddingToMoodleLms(true)}
         disabled={!canSendToMoodle}
       >
-        Send to Moodle
       </PrimaryButton>
     </>
   )

@@ -1,5 +1,6 @@
 // import { AuthCtx } from '@moodlenet/web-user/webapp'
 import type { AddonItemNoKey } from '@moodlenet/component-library'
+import { tm } from '@moodlenet/core/i18n'
 import type { AddOnMap } from '@moodlenet/core/lib'
 import { href } from '@moodlenet/react-app/common'
 import { createPlugin } from '@moodlenet/react-app/webapp'
@@ -28,7 +29,7 @@ export const useSubjectCardProps = (subjectKey: string): SubjectCardProps | null
     const subjectCardProps: SubjectCardProps = {
       overallItems: plugins.getKeyedAddons('overallItems'),
       mainColumnItems: plugins.getKeyedAddons('mainColumnItems'),
-      title: subjectData.title,
+      title: tm('subject', subjectKey),
       subjectHomeHref: href(
         getSubjectHomePageRoutePath({ _key: subjectKey, title: subjectData.title }),
       ),

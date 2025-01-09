@@ -1,4 +1,5 @@
 import { InputTextField, PrimaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { useFormik } from 'formik'
 import type { FC, PropsWithChildren } from 'react'
 import './Signup.scss'
@@ -29,7 +30,7 @@ export const SignupPanel: FC<PropsWithChildren<SignupProps>> = ({
           <form onSubmit={canSubmit ? form.handleSubmit : undefined}>
             <InputTextField
               className="display-name"
-              placeholder={`Display name`}
+              placeholder={t('display_name')}
               name="displayName"
               edit
               value={form.values.displayName}
@@ -39,7 +40,7 @@ export const SignupPanel: FC<PropsWithChildren<SignupProps>> = ({
             <InputTextField
               className="email"
               type="email"
-              placeholder={`Email`}
+              placeholder={t('email')}
               name="email"
               edit
               value={form.values.email}
@@ -49,7 +50,7 @@ export const SignupPanel: FC<PropsWithChildren<SignupProps>> = ({
             <InputTextField
               className="password"
               type="password"
-              placeholder={`Password`}
+              placeholder={t('password')}
               name="password"
               edit
               value={form.values.password}
@@ -64,7 +65,7 @@ export const SignupPanel: FC<PropsWithChildren<SignupProps>> = ({
                 canSubmit ? () => form.handleSubmit() : undefined
               } /* onClick={canSubmit ? form.submitForm : undefined} */
             >
-              Sign up
+              {t('signup')}
             </PrimaryButton>
             {children}
           </div>
@@ -77,8 +78,8 @@ export const SignupPanel: FC<PropsWithChildren<SignupProps>> = ({
         <div className="email-sent">
           {/* <MailOutline className="icon" /> */}
           <div className="emoji">📨</div>
-          <div className="title">Email sent!</div>
-          <div className="subtitle">Check out your inbox to activate your account</div>
+          <div className="title">{t('signup_email_send')}</div>
+          <div className="subtitle">{t('signup_check_mail')}</div>
         </div>
       )}
     </>

@@ -5,6 +5,7 @@ import {
   RoundButton,
   SimpleTextOption,
 } from '@moodlenet/component-library'
+import { t, tm } from '@moodlenet/core/i18n'
 import { Circle, HelpOutline } from '@mui/icons-material'
 import type { RefObject } from 'react'
 import { createRef, useEffect, useState, type FC } from 'react'
@@ -58,7 +59,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             className="learning-outcome"
             key={`${code}-${verb}-${i}`}
             name="content"
-            placeholder={`the necessary facts...`}
+            placeholder={t('the_necessary_facts')}
             edit
             disabled={disabled}
             value={sentence}
@@ -75,7 +76,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             leftSlot={
               <abbr
                 className={`verb-pill ${bloomUIClassName}`}
-                title={`${learningOutcomeName} Bloom's category`}
+                title={t('blooms_category', [learningOutcomeName])}
               >
                 {verb}
               </abbr>
@@ -85,7 +86,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
                 onClick={() => deleteOutcome(i)}
                 tabIndex={0}
                 disabled={disabled}
-                abbrTitle={'Remove learning outcome'}
+                abbrTitle={t('remove_learning_outcome')}
                 onKeyUp={e => e.key === 'enter' && deleteOutcome(i)}
               />
             }
@@ -101,7 +102,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
               <Circle />
               <abbr
                 className={`verb ${bloomUIClassName}`}
-                title={`${learningOutcomeName} Bloom's category`}
+                title={t('blooms_category', [learningOutcomeName])}
               >
                 {verb}
               </abbr>{' '}
@@ -127,6 +128,7 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
         )
         const dropdownRef = learningOutcomeCategoriesRefs && learningOutcomeCategoriesRefs[i]
         const maxLearningOutcomesReached = learningOutcomes.length > MAX_LEARNING_OUTCOME_ITEMS
+        console.log('maxLearningOutcomesReached', learningOutcomeOption)
         return (
           <Dropdown
             key={learningOutcomeOption.code}
@@ -138,9 +140,11 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             pills={false}
             disabled={maxLearningOutcomesReached || disabled}
             abbr={
-              maxLearningOutcomesReached ? 'Max learning outcomes reached' : 'Add learning outcome'
+              maxLearningOutcomesReached
+                ? t('max_learning_outcomes_reached')
+                : t('add_learning_outcome')
             }
-            placeholder={learningOutcomeOption.name}
+            placeholder={tm('bloom_taxonomy_category', learningOutcomeOption.name.toLowerCase())}
             searchByText={setSearchText}
             onChange={changeEvent => {
               edit([
@@ -157,7 +161,12 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
             {learningOutcomeOption.verbs
               .filter(verb => verb.toUpperCase().includes(searchText.toUpperCase()))
               .map(verb => {
-                return <SimpleTextOption key={verb} value={verb} />
+                return (
+                  <SimpleTextOption
+                    key={verb}
+                    value={tm('bloom_taxonomy_verb', verb.toLowerCase().replace(/ /g, '_'))}
+                  />
+                )
               })}
           </Dropdown>
         )
@@ -173,12 +182,8 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
   }, [learningOutcomeCategoriesRefs])
 
   const findOutMore = (
-    <abbr className="find-out-more" title="Find out more">
-      <a
-        href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <abbr className="find-out-more" title={t('find_out_more')}>
+      <a href={t('wikipedia_blooms_taxonomy')} target="_blank" rel="noopener noreferrer">
         <HelpOutline />
       </a>
     </abbr>
@@ -186,16 +191,14 @@ export const LearningOutcomes: FC<LearningOutcomesProps> = ({
 
   const title = (
     <div className="title">
-      Learning outcomes
+      {t('learning_outcomes')}
       {findOutMore}
     </div>
   )
 
   const subtitle = (
     <div className="subtitle">
-      {isEditing
-        ? 'Write 1 to 5 learning outcomes, selecting the right category and action verb:'
-        : 'By reviewing this resource, learners will be able to:'}
+      {isEditing ? t('learning_outcomes_sub_line1') : t('learning_outcomes_sub_line2')}
     </div>
   )
 

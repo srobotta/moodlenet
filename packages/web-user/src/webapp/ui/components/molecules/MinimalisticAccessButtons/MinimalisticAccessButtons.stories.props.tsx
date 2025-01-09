@@ -1,5 +1,6 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { PrimaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { Href } from '@moodlenet/react-app/common'
 
 import type { ReactElement } from 'react'
@@ -29,7 +30,7 @@ export const getMinimalisticAccessHeaderItems = (
     showLoginButton ? <LoginButtonMini loginHref={loginHref} /> : null,
     showLearnMoreButton ? (
       <a href="https://moodle.org/mod/forum/view.php?id=8806" target="__blank">
-        <PrimaryButton color="grey">Learn more</PrimaryButton>
+        <PrimaryButton color="grey">{t('learn_more')}</PrimaryButton>
       </a>
     ) : null,
   ].filter((item): item is ReactElement => !!item)

@@ -1,4 +1,5 @@
 import { overrideDeep } from '@moodlenet/component-library/common'
+import { t } from '@moodlenet/core/i18n'
 import type { MainSubjectCardSlots, SubjectOverallProps, SubjectProps } from '@moodlenet/ed-meta/ui'
 import { Subject } from '@moodlenet/ed-meta/ui'
 import type { SimpleResourceListProps } from '@moodlenet/ed-resource/ui'
@@ -84,7 +85,7 @@ export const useSubjectStoryProps = (
 
   const overallItems: SubjectOverallProps[] = [
     {
-      name: 'Followers',
+      name: t('followers'),
       value: 13,
       key: 'followers',
     },
@@ -94,14 +95,14 @@ export const useSubjectStoryProps = (
     //   key: 'collections',
     // },
     {
-      name: 'Resources',
+      name: t('resources'),
       value: 92,
       key: 'resources',
     },
   ]
 
   const resourceList: SimpleResourceListProps = {
-    title: 'Resources',
+    title: t('resources'),
     resourceCardPropsList: getResourceCardsStoryProps(6, {
       access: {},
       orientation: 'horizontal',
@@ -120,6 +121,7 @@ export const useSubjectStoryProps = (
       ],
 
       title: 'Engineering, manufacturing and construction',
+      value: 'F07',
       overallItems: overallItems,
       isIsced: true,
       iscedUrl:

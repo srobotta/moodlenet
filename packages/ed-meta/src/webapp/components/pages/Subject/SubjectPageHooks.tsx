@@ -36,6 +36,7 @@ export const useSubjectPageProps = ({ subjectKey }: SubjectPageHookArg) => {
       iscedUrl: subjectData.iscedUrl,
       isIsced: subjectData.isIsced,
       title: subjectData.title,
+      value: subjectKey,
       mainColumnItems: plugins.getKeyedAddons('mainColumnItems'),
       overallItems: plugins.getKeyedAddons('overallItems'),
       mainSubjectCardSlots: {
@@ -45,5 +46,5 @@ export const useSubjectPageProps = ({ subjectKey }: SubjectPageHookArg) => {
       },
     }
     return subjectProps
-  }, [subjectData, mainLayoutProps, plugins])
+  }, [subjectData, subjectKey, mainLayoutProps, plugins])
 }

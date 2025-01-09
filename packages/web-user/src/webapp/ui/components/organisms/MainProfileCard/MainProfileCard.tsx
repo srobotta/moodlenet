@@ -13,6 +13,7 @@ import {
 import { Edit, Flag, Save } from '@mui/icons-material'
 import { useFormik } from 'formik'
 
+import { t } from '@moodlenet/core/i18n'
 import { Share } from '@mui/icons-material'
 import type { FC } from 'react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
@@ -227,7 +228,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
   const title = isEditing ? (
     <InputTextField
       className="display-name underline"
-      placeholder={`Display name`}
+      placeholder={t('display_name')}
       value={form.values.displayName}
       onChange={form.handleChange}
       name="displayName"
@@ -252,7 +253,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       textAreaAutoSize
       noBorder
       edit={isEditing}
-      placeholder={`What should others know about you?`}
+      placeholder={t('what_should_others_know_about_you')}
       value={form.values.aboutMe}
       error={isEditing && shouldShowErrors && form.errors.aboutMe}
     />
@@ -292,7 +293,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
     <span key="edit-location">
       <InputTextField
         className="underline"
-        placeholder="Location"
+        placeholder={t('location')}
         value={form.values.location ?? undefined}
         onChange={form.handleChange}
         noBorder
@@ -313,7 +314,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
         value={form.values.siteUrl ?? undefined}
         onChange={form.handleChange}
         noBorder
-        placeholder="Website"
+        placeholder={t('website')}
         name="siteUrl"
         edit={isEditing}
         error={isEditing && shouldShowErrors && form.errors.siteUrl}
@@ -358,7 +359,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
     <RoundButton
       className="change-avatar-button"
       type="edit"
-      abbrTitle={`Edit profile picture`}
+      abbrTitle={t('edit_profile_picture')}
       onClick={selectAvatar}
       key="edit-avatar-btn"
     />,
@@ -376,7 +377,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
     <RoundButton
       className="change-background-button"
       type="edit"
-      abbrTitle={`Edit background`}
+      abbrTitle={t('edit_background')}
       key="edit-background-btn"
       onClick={selectBackground}
     />,
@@ -423,7 +424,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
           style={{ maxWidth: '90%', maxHeight: '90%' }}
           key="background-modal"
         >
-          <img src={backgroundImageUrl} alt="Background" />
+          <img src={backgroundImageUrl} alt="{t('background')}" />
         </Modal>
       )}
       {isShowingAvatar && avatarImageUrl && (
@@ -434,13 +435,13 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
           style={{ maxWidth: '90%', maxHeight: '90%' }}
           key="avatar-modal"
         >
-          <img src={avatarImageUrl} alt="Avatar" />
+          <img src={avatarImageUrl} alt={t('avatar')} />
         </Modal>
       )}
       {isSendingMessage && (
         <Modal
-          title={`${`Send a message to`} ${form.values.displayName}`}
-          actions={<PrimaryButton onClick={checkAndSendMessage}>Send</PrimaryButton>}
+          title={t('send_a_message_to', [form.values.displayName])}
+          actions={<PrimaryButton onClick={checkAndSendMessage}>{t('send')}</PrimaryButton>}
           onClose={() => {
             setIsSendingMessage(false)
             setShouldShowMessageErrors(false)
@@ -479,7 +480,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
             showCloseButton={false}
             onClose={() => setShowUrlCopiedAlert(false)}
           >
-            Link copied to clipoard
+            {t('copied_to_clipboard')}
           </Snackbar>
         ) : null,
         showMessageSentAlert ? (
@@ -490,7 +491,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
             showCloseButton={false}
             onClose={() => setShowMessageSentAlert(false)}
           >
-            Message sent
+            {t('message_sent')}
           </Snackbar>
         ) : null,
         avatarForm.errors.image ? (
@@ -535,9 +536,9 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       className={`message`}
       disabled={!isAuthenticated}
       onClick={() => setIsSendingMessage(true)}
-      abbr={!isAuthenticated ? 'Login or signup to send messages' : 'Send a message'}
+      abbr={!isAuthenticated ? t('login_or_signup_to_send_messages') : t('send_a_message')}
     >
-      Message
+      {t('message')}
     </SecondaryButton>
     // <TertiaryButton
     //   className={`message ${isAuthenticated ? '' : 'font-disabled'}`}
@@ -555,7 +556,7 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
           Element: (
             <div key="share-button" tabIndex={0} onClick={copyUrl}>
               <Share />
-              Share
+              {t('share')}
             </div>
           ),
         },
@@ -581,12 +582,12 @@ export const MainProfileCard: FC<MainProfileCardProps> = ({
       ]}
       hoverElement={
         isShowingSmallCard ? (
-          <SecondaryButton color="grey" className={`more small`} abbr="More actions">
+          <SecondaryButton color="grey" className={`more small`} abbr={t('more_actions')}>
             <div className="three-dots">...</div>
           </SecondaryButton>
         ) : (
-          <SecondaryButton color="grey" className={`more big`} abbr="More actions">
-            <div className="text">More</div>
+          <SecondaryButton color="grey" className={`more big`} abbr={t('more_actions')}>
+            <div className="text">{t('more_actions')}</div>
           </SecondaryButton>
         )
       }

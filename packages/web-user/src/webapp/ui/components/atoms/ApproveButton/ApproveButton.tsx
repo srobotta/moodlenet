@@ -1,4 +1,5 @@
 import { PrimaryButton, SecondaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import type { ProfileAccess, ProfileActions, ProfileState } from '../../../../../common/types.mjs'
 import { ReactComponent as ApprovedIcon } from '../../../assets/icons/approved.svg'
@@ -17,13 +18,13 @@ export const ApprovalButton: FC<ApprovalButtonProps> = ({ access, state, actions
 
   const approveButton = (
     <PrimaryButton className="approve-button" onClick={approveUser} color="green">
-      Approve
+      {t('approve')}
     </PrimaryButton>
   )
 
   const unapproveButton = (
     <SecondaryButton className="unapprove-button" onClick={unapproveUser} color="red">
-      Unapprove
+      {t('unapprove')}
     </SecondaryButton>
   )
 
@@ -51,7 +52,7 @@ export const ApprovalBadge: FC<ApprovalBadgeProps> = ({
   showAccountApprovedSuccessAlert,
 }) => {
   return !isEditing && canEdit && isPublisher ? (
-    <abbr className={`approved-badge`} title={`Approved, your published content is visible to all`}>
+    <abbr className={`approved-badge`} title={t('approved_badge')}>
       <ApprovedIcon
         className={`approved-icon ${
           showAccountApprovedSuccessAlert ? 'zooom-in-enter-animation' : ''

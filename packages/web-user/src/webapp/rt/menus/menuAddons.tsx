@@ -9,17 +9,19 @@ import {
 import { AdminUsersContainer, AdminUsersMenu } from '../page/admin/AdminUsersContainer.js'
 import { AddMenuContainer } from './AddMenuContainer.js'
 import { AvatarMenuContainer } from './AvatarMenuContainer.js'
+import { LanguageMenuContainer } from './LanguageMenuContainer.js'
 
 export const menuHeaderButtonsItems = {
   loginButton: { Item: LoginButtonContainer },
   signupButton: { Item: SignupButtonContainer },
   avatarMenu: { Item: AvatarMenuContainer },
   addMenu: { Item: AddMenuContainer },
+  languageMenu: { Item: LanguageMenuContainer },
 }
-const { loginButton, signupButton, avatarMenu, addMenu } = menuHeaderButtonsItems
+const { loginButton, signupButton, avatarMenu, addMenu, languageMenu } = menuHeaderButtonsItems
 export const menuHeaderButtonsAuthAddons: AddonsByUserRule<AddonItemNoKey> = {
-  guest: { loginButton, signupButton },
-  auth: { addMenu, avatarMenu },
+  guest: { languageMenu, loginButton, signupButton },
+  auth: { languageMenu, addMenu, avatarMenu },
   root: { addMenu: undefined, avatarMenu },
 }
 
