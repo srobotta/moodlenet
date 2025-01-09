@@ -23,6 +23,10 @@ import type { ChangePasswordEmailPayload, ConfirmEmailPayload, SignupReq } from 
 
 const myBaseRpcHttpUrl = await shell.call(getMyRpcBaseUrl)()
 
+export async function registrationIsDisabled() {
+  return env.disableRegistration
+}
+
 export async function login({ email, password }: { email: string; password: string }) {
   const user = await store.getByEmail(email)
   if (!user) {
@@ -47,6 +51,9 @@ export async function login({ email, password }: { email: string; password: stri
 }
 
 export async function signup(req: SignupReq) {
+  if (env.disableRegistration) {
+    return { success: false, msg: 'Registration is disabled' } as const
+  }
   const mUser = await store.getByEmail(req.email)
 
   if (mUser) {
