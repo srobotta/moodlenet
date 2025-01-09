@@ -2,7 +2,9 @@ export type LocalSamlConfig = {
   entryPoint: string
   issuer: string
   sessionSecret: string
-  linkText: string
+  linkText: {
+    [key: string]: string
+  }
   privateKey?: string
   decryptionPvk?: string
   attributeMap: {

@@ -13,7 +13,7 @@ shell.call(mountApp)({
   getApp: function getHttpApp(express) {
     const app = express()
 
-    const { config, cert } = validateConfigAndGetCert()
+    const { config, cert, key } = validateConfigAndGetCert()
     const { entryPoint, issuer, sessionSecret } = config
 
     const coreConfigs = getCoreConfigs()
@@ -29,10 +29,10 @@ shell.call(mountApp)({
 
     // Add optional saml config options if available.
     if (config.privateKey) {
-      samlConfig.privateKey = config.privateKey
+      samlConfig.privateKey = key
     }
     if (config.decryptionPvk) {
-      samlConfig.decryptionPvk = config.decryptionPvk
+      samlConfig.decryptionPvk = key
     }
 
     const samlStrategy = new SamlStrategy(samlConfig, (profile: any, done: any) => {
@@ -59,7 +59,7 @@ shell.call(mountApp)({
     })
 
     app.get('/login-failed', (req, res) => {
-      shell.log('debug', 'Saml login failed for request', req)
+      console.log('Saml login failed for request: ', req)
       res.send('Saml login failed')
     })
 
