@@ -138,6 +138,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
         onClick={() => canSendToMoodle && setIsAddingToMoodleLms(true)}
         disabled={!canSendToMoodle}
       >
+        {t('send_to_moodle')}
       </PrimaryButton>
     </>
   )
