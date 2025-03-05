@@ -126,7 +126,9 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
       />
       <div className="user-id-div">
         {userId ? (
-          <>{t('lms_user_id_required')} {copyIdButton}</>
+          <>
+            {t('lms_user_id_required')} {copyIdButton}
+          </>
         ) : (
           <>{t('lms_user_id_login')}</>
         )}
@@ -141,6 +143,7 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
         onClick={() => canSendToMoodle && setIsAddingToMoodleLms(true)}
         disabled={!canSendToMoodle}
       >
+        {t('send_to_moodle')}
       </PrimaryButton>
     </>
   )
