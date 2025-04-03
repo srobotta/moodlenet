@@ -65,7 +65,7 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
     const userSettingsLinkAvatarMenuItem: FloatingMenuContentItem | null =
       userSettingsMenuProps && {
         Element: (
-          <UserSettingsLinkAvatarMenuComponent key="admin-settings" {...userSettingsMenuProps} />
+          <UserSettingsLinkAvatarMenuComponent key="user-settings" {...userSettingsMenuProps} />
         ),
       }
 
