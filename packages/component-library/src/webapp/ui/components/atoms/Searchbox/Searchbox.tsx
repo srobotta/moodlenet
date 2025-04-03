@@ -50,9 +50,12 @@ export const Searchbox: FC<SearchboxProps> = ({
         document.removeEventListener('scroll', setElementFullyInViewPort, true)
     }
   }, [setElementFullyInViewPort, setIsSearchboxInViewport])
+  if (showSearchButton !== false) {
+    showSearchButton = true
+  }
 
   return (
-    <div className={`searchbox size-${size}`} ref={searchboxRef}>
+    <div className={`searchbox size-${size ?? 'small'}`} ref={searchboxRef}>
       <SearchIcon />
       <label htmlFor="search-text" className="sr-only" hidden>
         {searchLabel}
@@ -78,11 +81,6 @@ export const Searchbox: FC<SearchboxProps> = ({
       )}
     </div>
   )
-}
-
-Searchbox.defaultProps = {
-  size: 'small',
-  showSearchButton: true,
 }
 
 Searchbox.displayName = 'Searchbox'

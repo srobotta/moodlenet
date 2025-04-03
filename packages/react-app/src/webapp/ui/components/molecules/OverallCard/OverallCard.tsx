@@ -67,7 +67,3 @@ export const OverallCard: FC<OverallCardProps> = ({
     </Card>
   )
 }
-
-OverallCard.defaultProps = {
-  showIcons: false,
-}

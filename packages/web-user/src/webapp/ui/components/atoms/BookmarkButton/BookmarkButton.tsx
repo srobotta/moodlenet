@@ -22,7 +22,7 @@ export const BookmarkButton: FC<BookmarkButtonProps> = ({
 }) => {
   return (
     <TertiaryButton
-      className={`bookmark-button ${bookmarked ? 'bookmarked' : ''} ${color}`}
+      className={`bookmark-button ${bookmarked ? 'bookmarked' : ''} ${color ?? 'grey'}`}
       disabled={!canBookmark || !isAuthenticated}
       onClick={canBookmark ? toggleBookmark : () => undefined}
       abbr={
@@ -37,8 +37,4 @@ export const BookmarkButton: FC<BookmarkButtonProps> = ({
       {bookmarked ? <Bookmark /> : <BookmarkBorder />}
     </TertiaryButton>
   )
-}
-
-BookmarkButton.defaultProps = {
-  color: 'grey',
 }

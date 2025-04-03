@@ -69,5 +69,4 @@ export const MainLayout: FC<PropsWithChildren<MainLayoutProps & MainLayoutUIProp
   )
 }
 
-MainLayout.defaultProps = {}
 export default MainLayout

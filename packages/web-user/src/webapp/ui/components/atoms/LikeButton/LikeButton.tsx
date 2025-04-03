@@ -30,7 +30,7 @@ export const LikeButton: FC<LikeButtonProps> = ({
 }) => {
   return (
     <TertiaryButton
-      className={`like-button ${liked ? 'liked' : ''} ${color}`}
+      className={`like-button ${liked ? 'liked' : ''} ${color ?? 'gray'}`}
       disabled={!canLike || !isAuthenticated || isCreator}
       onClick={canLike ? toggleLike : () => undefined}
       abbr={
@@ -48,8 +48,4 @@ export const LikeButton: FC<LikeButtonProps> = ({
       <span>{numLikes}</span>
     </TertiaryButton>
   )
-}
-
-LikeButton.defaultProps = {
-  color: 'grey',
 }

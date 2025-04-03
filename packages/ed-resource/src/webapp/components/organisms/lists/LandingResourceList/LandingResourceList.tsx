@@ -59,6 +59,4 @@ export const LandingResourceList: FC<LandingResourceListProps> = ({
   )
 }
 
-LandingResourceList.defaultProps = {}
-
 export default LandingResourceList

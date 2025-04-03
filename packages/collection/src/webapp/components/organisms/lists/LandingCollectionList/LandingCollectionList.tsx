@@ -57,6 +57,4 @@ export const LandingCollectionList: FC<LandingCollectionListProps> = ({
   )
 }
 
-LandingCollectionList.defaultProps = {}
-
 export default LandingCollectionList

@@ -61,5 +61,3 @@ export const Leaderboard: FC<LeaderboardProps> = ({ contributors }) => {
     </div>
   )
 }
-
-Leaderboard.defaultProps = {}

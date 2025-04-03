@@ -24,5 +24,4 @@ export const LayoutContainer: FC<LayoutContainerProps> = ({ style, children }) =
   )
 }
 
-LayoutContainer.defaultProps = {}
 export default LayoutContainer

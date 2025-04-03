@@ -56,6 +56,4 @@ export const LandingProfileList: FC<LandingProfileListProps> = ({
   )
 }
 
-LandingProfileList.defaultProps = {}
-
 export default LandingProfileList
