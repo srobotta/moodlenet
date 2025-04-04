@@ -1,12 +1,13 @@
-import type { RpcFile } from '@moodlenet/core'
+import type { LanguageConfig, RpcFile } from '@moodlenet/core'
 import { assertRpcFileReadable, readableRpcFile } from '@moodlenet/core'
+import { defaultLanguageConfig } from '@moodlenet/core/i18n'
 import assert from 'assert'
 import sharp from 'sharp'
 import type {
   AppearanceData,
+  WebPkgDeps,
   WebappPluginDef,
   WebappPluginItem,
-  WebPkgDeps,
 } from '../common/types.mjs'
 import { httpApp } from './init/http-server.mjs'
 import { kvStore } from './init/kvStore.mjs'
@@ -31,6 +32,23 @@ export async function webImageResizer(original: RpcFile, imageKind: ImageKind): 
   originalReadable.pipe(imagePipeline)
   const resizedRpc = readableRpcFile({ ...original, size: NaN }, () => imagePipeline)
   return resizedRpc
+}
+
+export async function setLanguage({ language }: { language: LanguageConfig }) {
+  await kvStore.set('language', '', language)
+  return { valid: true }
+}
+
+export async function getLanguage() {
+  let data = defaultLanguageConfig
+  await kvStore.get('language', '').then(v => {
+    data = v.value ?? defaultLanguageConfig
+  })
+  const rawData = {
+    available: data.languages.available.join(', '),
+    default: data.languages.default.trim(),
+  }
+  return { rawData: rawData, data: data }
 }
 
 export async function setAppearance({ appearanceData }: { appearanceData: AppearanceData }) {

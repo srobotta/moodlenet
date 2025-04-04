@@ -8,3 +8,7 @@ export type LanguageConfig = {
     available: Array<string>
   }
 }
+export type FormLanguageData = {
+  default: string
+  available: string
+}

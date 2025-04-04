@@ -1,6 +1,7 @@
 export type { now, setNow } from './async-context/lib.mjs'
 export * from './async-context/types.mjs'
 export type { EventPayload, mainEmitter, pkgEmitter } from './events/main-event-emitter.mjs'
+export type { FormLanguageData, LanguageConfig } from './i18n/types.mjs'
 export { PHASE, pkgDepGraph } from './ignite.mjs'
 export {
   RpcNext,
@@ -25,4 +26,4 @@ export * from './pkg-shell/shell.mjs'
 export * from './pkg-shell/types.mjs'
 export * from './types.mjs'
 import { coreConfigs } from './main/env.mjs'
-export const { instanceDomain, npmRegistry, languages } = coreConfigs
+export const { instanceDomain, npmRegistry } = coreConfigs

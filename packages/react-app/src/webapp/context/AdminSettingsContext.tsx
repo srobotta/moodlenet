@@ -1,3 +1,4 @@
+import type { FormLanguageData, LanguageConfig } from '@moodlenet/core'
 import { createContext } from 'react'
 import type { AppearanceData } from '../../common/types.mjs'
 // import lib from '../../../../main-lib'
@@ -5,6 +6,8 @@ import type { AppearanceData } from '../../common/types.mjs'
 export type AdminSettingsCtxT = {
   saveAppearanceData(data: AppearanceData): Promise<void>
   appearanceData: AppearanceData
+  language: { rawData: FormLanguageData; data: LanguageConfig }
+  saveLanguageData(data: FormLanguageData): Promise<void>
   devMode: boolean
   toggleDevMode(): void
   // updateAllPackages(): Promise<void>

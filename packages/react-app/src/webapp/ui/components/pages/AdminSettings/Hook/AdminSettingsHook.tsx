@@ -7,6 +7,7 @@ import { useMainLayoutProps } from '../../../layout/MainLayout/MainLayoutHooks.m
 import type { AdminSettingsItem, AdminSettingsProps } from '../AdminSettings.js'
 import { AppearanceContainer } from '../Appearance/AppearanceContainer.js'
 import { GeneralContainer } from '../General/GeneralContainer.js'
+import { LanguageContainer } from '../Language/LanguageContainer.js'
 
 export type AdminSettingsSectionItem = Omit<AdminSettingsItem, 'key'>
 const localAdminSettingsItems: AdminSettingsItem[] = [
@@ -19,6 +20,11 @@ const localAdminSettingsItems: AdminSettingsItem[] = [
     key: `@moodlenet/react-app/appearance-admin-settings`,
     Content: AppearanceContainer,
     Menu: () => <span>Appearance</span>,
+  },
+  {
+    key: `@moodlenet/react-app/language-admin-settings`,
+    Content: LanguageContainer,
+    Menu: () => <span>Language</span>,
   },
   // {
   //   key: `@moodlenet/react-app/advanced-admin-settings`,

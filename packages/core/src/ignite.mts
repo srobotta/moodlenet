@@ -55,7 +55,6 @@ export function getCoreConfigs(): CoreConfigs {
     npmRegistry: coreConfigs.npmRegistry,
     instanceDomain: coreConfigs.instanceDomain,
     mainLogger: coreConfigs.mainLogger,
-    languages: coreConfigs.languages,
   }
 }
 

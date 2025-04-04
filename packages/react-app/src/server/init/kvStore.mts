@@ -1,3 +1,4 @@
+import type { LanguageConfig } from '@moodlenet/core'
 import kvStoreFactory from '@moodlenet/key-value-store/server'
 import type { AppearanceData } from '../../common/types.mjs'
 import { shell } from '../shell.mjs'
@@ -16,6 +17,7 @@ export type WebappBuildInfo =
 export type KeyValueData = {
   'persistence-version': { v: number }
   'appearanceData': AppearanceData
+  'language': LanguageConfig
   'configs': {
     webImageSize: [number, number]
     webIconSize: [number, number]

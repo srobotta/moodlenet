@@ -1,3 +1,5 @@
+import type { FormLanguageData, LanguageConfig } from '@moodlenet/core'
+import { defaultLanguageConfig, defaultLanguageData } from '@moodlenet/core/i18n'
 import type { OrganizationData } from '@moodlenet/organization/common'
 import type { AppearanceData } from '@moodlenet/react-app/common'
 import { defaultAppearanceData } from '@moodlenet/react-app/common'
@@ -17,6 +19,20 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
     setAppareanceData(newAppearanceData)
   }, [])
 
+  const [language, setLanguageData] = useState<{ rawData: FormLanguageData; data: LanguageConfig }>(
+    { rawData: defaultLanguageData, data: defaultLanguageConfig },
+  )
+  const saveLanguageData = useCallback(async (data: FormLanguageData) => {
+    const dataToSave = {
+      languages: {
+        available: data.available.split(',').map(e => e.trim()),
+        default: data.default.trim(),
+      },
+    }
+    await shell.rpc.me('webapp/admin/language/set-language')({ language: dataToSave })
+    setLanguageData({ rawData: data, data: dataToSave })
+  }, [])
+
   const [devMode, toggleDevMode] = useReducer(prev => !prev, false)
 
   // const updateAllPackages = useCallback(async () => {
@@ -26,17 +42,34 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
     shell.rpc
       .me('webapp/react-app/get-appearance')()
       .then(({ data: appearanceData }) => setAppareanceData(appearanceData))
+    shell.rpc
+      .me('webapp/react-app/get-language')()
+      .then(v => {
+        const rawData = {
+          available: v.data.languages.available.join(', '),
+          default: v.data.languages.default.trim(),
+        }
+        setLanguageData({ rawData: rawData, data: v.data })
+      })
   }, [])
 
   const ctx = useMemo<AdminSettingsCtxT>(() => {
     return {
       saveAppearanceData,
       appearanceData,
+      language,
+      saveLanguageData,
       devMode,
       toggleDevMode,
       // updateAllPackages,
     }
-  }, [/* updateAllPackages, */ saveAppearanceData, appearanceData, devMode])
+  }, [
+    /* updateAllPackages, */ saveAppearanceData,
+    appearanceData,
+    language,
+    saveLanguageData,
+    devMode,
+  ])
 
   return <AdminSettingsCtx.Provider value={ctx}>{children}</AdminSettingsCtx.Provider>
 }

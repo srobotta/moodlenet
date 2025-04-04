@@ -1,4 +1,4 @@
-import type { PkgExposeDef, RpcFile } from '@moodlenet/core'
+import type { LanguageConfig, PkgExposeDef, RpcFile } from '@moodlenet/core'
 import type { OrganizationData } from '@moodlenet/organization/common'
 import type { AppearanceData } from '@moodlenet/react-app/common'
 import type {
@@ -130,6 +130,10 @@ export type WebUserExposeType = PkgExposeDef<{
     'webapp/react-app/get-appearance'(): Promise<{ data: AppearanceData }>
     'webapp/admin/general/set-appearance'(body: {
       appearanceData: AppearanceData
+    }): Promise<{ valid: boolean }>
+    'webapp/react-app/get-language'(): Promise<{ data: LanguageConfig }>
+    'webapp/admin/language/set-language'(body: {
+      language: LanguageConfig
     }): Promise<{ valid: boolean }>
     // 'webapp/admin/packages/update-all-pkgs'(): Promise<{ updatePkgs: Record<string, string> }>
     'webapp/admin/roles/searchUsers'(body: {

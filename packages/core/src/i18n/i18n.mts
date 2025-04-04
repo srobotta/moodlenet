@@ -1,5 +1,16 @@
 import LanguageConfig from './config.mjs'
-import type { Translations } from './types.mjs'
+import type { FormLanguageData, Translations, LanguageConfig as langSetting } from './types.mjs'
+
+export const defaultLanguageConfig: langSetting = {
+  languages: {
+    default: 'en',
+    available: ['en'],
+  },
+}
+export const defaultLanguageData: FormLanguageData = {
+  default: 'en',
+  available: 'en',
+}
 
 /**
  * The current language that is used at the moment.
@@ -125,8 +136,13 @@ export const getLanguagesIso = function (): string[] {
 }
 
 export const getCurrentLang = function (): string {
-  const lang =
-    localStorage.getItem('mnet-i18n-lang') ?? navigator.language.toString().split('-')[0] ?? ''
+  let lang = ''
+  if (typeof localStorage !== 'undefined') {
+    lang = localStorage.getItem('mnet-i18n-lang') ?? ''
+  }
+  if (lang === '' && typeof navigator !== 'undefined') {
+    lang = navigator.language.toString().split('-')[0] ?? ''
+  }
   if (getLanguagesIso().includes(lang)) {
     currentLang = lang
   } else {
