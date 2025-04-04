@@ -1,8 +1,8 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { SecondaryButton, SimpleDropdown, sortAddonItems } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
 import type { ComponentType, FC } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { t } from '../../../../../common/i18n/i18n.mjs'
 import './Browser.scss'
 
 export type BrowserMainColumnItemBase = {

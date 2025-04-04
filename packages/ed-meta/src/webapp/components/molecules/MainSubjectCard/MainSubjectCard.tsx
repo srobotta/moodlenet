@@ -1,6 +1,6 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, PrimaryButton } from '@moodlenet/component-library'
-import { tm } from '@moodlenet/core/i18n'
+import { tm } from '@moodlenet/react-app/common'
 import type { FC } from 'react'
 import type { SubjectOverallProps } from '../../pages/Subject/Subject.js'
 

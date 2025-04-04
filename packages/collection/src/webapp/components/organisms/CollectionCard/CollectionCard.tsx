@@ -1,6 +1,6 @@
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, isEllipsisActive, TertiaryButton } from '@moodlenet/component-library'
-import { t, tn } from '@moodlenet/core/i18n'
+import { t, tn } from '@moodlenet/react-app/common'
 import { getBackupImage, Link, withProxy } from '@moodlenet/react-app/ui'
 import { FilterNone, Public, PublicOff } from '@mui/icons-material'
 import { useEffect, useRef, useState } from 'react'

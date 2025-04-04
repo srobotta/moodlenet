@@ -1,5 +1,5 @@
-import type { LanguageConfig } from '@moodlenet/core'
 import kvStoreFactory from '@moodlenet/key-value-store/server'
+import type { LanguageConfig } from '../../common/i18n/types.mjs'
 import type { AppearanceData } from '../../common/types.mjs'
 import { shell } from '../shell.mjs'
 

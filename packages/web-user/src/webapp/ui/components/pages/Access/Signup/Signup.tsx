@@ -1,10 +1,10 @@
 import type { Href } from '@moodlenet/component-library'
 import { Card, TertiaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import type { MainFooterProps, MinimalisticHeaderProps } from '@moodlenet/react-app/ui'
 import { Link, SimpleLayout } from '@moodlenet/react-app/ui'
 import { CallMade as CallMadeIcon } from '@mui/icons-material'
-import type { ComponentType, CSSProperties, FC, PropsWithChildren } from 'react'
+import type { CSSProperties, ComponentType, FC, PropsWithChildren } from 'react'
 import { useEffect, useState } from 'react'
 import './Signup.scss'
 

@@ -1,8 +1,9 @@
-import type { LanguageConfig, RpcFile } from '@moodlenet/core'
+import type { RpcFile } from '@moodlenet/core'
 import { assertRpcFileReadable, readableRpcFile } from '@moodlenet/core'
-import { defaultLanguageConfig } from '@moodlenet/core/i18n'
 import assert from 'assert'
 import sharp from 'sharp'
+import { defaultLanguageConfig } from '../common/i18n/i18n.mjs'
+import type { LanguageConfig } from '../common/i18n/types.mjs'
 import type {
   AppearanceData,
   WebPkgDeps,

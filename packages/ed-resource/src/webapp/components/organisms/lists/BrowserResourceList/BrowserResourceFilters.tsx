@@ -1,7 +1,7 @@
 import type { TextOptionProps } from '@moodlenet/component-library'
 import { SecondaryButton } from '@moodlenet/component-library'
-import { t, tm } from '@moodlenet/core/i18n'
 import { DropdownFilterField } from '@moodlenet/ed-meta/ui'
+import { t, tm } from '@moodlenet/react-app/common'
 import type { SortType } from '@moodlenet/react-app/ui'
 import { SortBy } from '@moodlenet/react-app/ui'
 import { FilterAltOff } from '@mui/icons-material'

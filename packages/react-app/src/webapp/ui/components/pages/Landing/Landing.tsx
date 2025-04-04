@@ -1,7 +1,7 @@
 import { SnackbarStack, sortAddonItems, type AddonItem } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
 import { useContext } from 'react'
+import { t } from '../../../../../common/i18n/i18n.mjs'
 import { MainHeaderContext } from '../../../../exports/ui.mjs'
 import defaultBackground from '../../../assets/img/default-landing-background.png'
 import { MainSearchBox } from '../../atoms/MainSearchBox/MainSearchBox.js'

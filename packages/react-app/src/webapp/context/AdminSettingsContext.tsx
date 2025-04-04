@@ -1,5 +1,5 @@
-import type { FormLanguageData, LanguageConfig } from '@moodlenet/core'
 import { createContext } from 'react'
+import type { FormLanguageData, LanguageConfig } from '../../common/i18n/types.mjs'
 import type { AppearanceData } from '../../common/types.mjs'
 // import lib from '../../../../main-lib'
 

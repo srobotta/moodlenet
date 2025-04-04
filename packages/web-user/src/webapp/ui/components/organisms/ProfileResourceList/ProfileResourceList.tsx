@@ -1,7 +1,7 @@
 import { ListCard, PrimaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
 import type { ResourceCardProps } from '@moodlenet/ed-resource/ui'
 import { ResourceCard } from '@moodlenet/ed-resource/ui'
+import { t } from '@moodlenet/react-app/common'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
 import { NoteAdd } from '@mui/icons-material'
 import type { FC } from 'react'

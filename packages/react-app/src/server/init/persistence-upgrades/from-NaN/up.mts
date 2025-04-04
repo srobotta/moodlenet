@@ -1,5 +1,5 @@
-import { defaultLanguageConfig } from '@moodlenet/core/i18n'
 import { defaultAppearanceData } from '../../../../common/exports.mjs'
+import { defaultLanguageConfig } from '../../../../common/i18n/i18n.mjs'
 import { kvStore } from '../../kvStore.mjs'
 
 await kvStore.set('configs', '', {

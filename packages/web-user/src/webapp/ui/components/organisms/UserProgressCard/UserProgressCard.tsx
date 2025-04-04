@@ -3,7 +3,7 @@ import { Card, Modal } from '@moodlenet/component-library'
 // import { Card } from '@moodlenet/react-app'
 import { useEffect, useRef, useState, type FC } from 'react'
 // import { Href, Link } from '../../../../elements/link'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { InfoOutlined } from '@mui/icons-material'
 import {
   actionsAndPointsObtained,

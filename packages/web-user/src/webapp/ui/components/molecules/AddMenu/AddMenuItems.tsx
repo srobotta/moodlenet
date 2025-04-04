@@ -1,4 +1,4 @@
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { LibraryAdd, NoteAdd } from '@mui/icons-material'
 import type { FC } from 'react'
 

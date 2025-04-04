@@ -8,8 +8,8 @@ import {
   useSnackbar,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
-import { t, tl } from '@moodlenet/core/i18n'
 import { DateField, DropdownField, LicenseField } from '@moodlenet/ed-meta/ui'
+import { t, tl } from '@moodlenet/react-app/common'
 import type { MainLayoutProps } from '@moodlenet/react-app/ui'
 import { MainLayout, useViewport } from '@moodlenet/react-app/ui'
 import { InsertDriveFile, Link } from '@mui/icons-material'

@@ -6,7 +6,7 @@ import {
   TertiaryButton,
   useSnackbar,
 } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { useFormik } from 'formik'
 import type { FC } from 'react'
 import { useState } from 'react'
@@ -123,7 +123,9 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
       />
       <div className="user-id-div">
         {userId ? (
-          <>{t('lms_user_id_required')} {copyIdButton}</>
+          <>
+            {t('lms_user_id_required')} {copyIdButton}
+          </>
         ) : (
           <>{t('lms_user_id_login')}</>
         )}

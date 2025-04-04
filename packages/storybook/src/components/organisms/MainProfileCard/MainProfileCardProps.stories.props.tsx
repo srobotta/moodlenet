@@ -1,7 +1,6 @@
 // import { t } from '@lingui/macro'
 import { overrideDeep } from '@moodlenet/component-library/common'
-import { t } from '@moodlenet/core/i18n'
-import { href } from '@moodlenet/react-app/common'
+import { href, t } from '@moodlenet/react-app/common'
 import { fileExceedsMaxUploadSize, randomIntFromInterval } from '@moodlenet/react-app/ui'
 import { getValidationSchemas, type ProfileFormValues } from '@moodlenet/web-user/common'
 import type { MainProfileCardProps } from '@moodlenet/web-user/ui'

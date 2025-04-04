@@ -1,4 +1,4 @@
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import type { BrowserPropsData, MainLayoutProps } from '@moodlenet/react-app/ui'
 import { Browser, MainLayout } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'

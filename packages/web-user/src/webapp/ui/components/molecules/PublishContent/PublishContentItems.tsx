@@ -1,6 +1,6 @@
 import type { Href } from '@moodlenet/component-library'
 import { PrimaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { Link } from '@moodlenet/react-app/ui'
 import { ArrowForward, LibraryAdd, NoteAdd, StreamOutlined } from '@mui/icons-material'
 import type { FC } from 'react'

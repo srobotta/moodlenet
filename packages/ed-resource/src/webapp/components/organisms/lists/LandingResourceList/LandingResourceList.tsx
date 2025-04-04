@@ -1,6 +1,6 @@
 import type { Href } from '@moodlenet/component-library'
 import { ListCard } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
 import type { FC } from 'react'
 import { useMemo } from 'react'

@@ -1,6 +1,6 @@
-import type { LanguageConfig, PkgExposeDef, RpcFile } from '@moodlenet/core'
+import type { PkgExposeDef, RpcFile } from '@moodlenet/core'
 import type { OrganizationData } from '@moodlenet/organization/common'
-import type { AppearanceData } from '@moodlenet/react-app/common'
+import type { AppearanceData, LanguageConfig } from '@moodlenet/react-app/common'
 import type {
   ClientSessionDataRpc,
   KnownEntityFeature,

@@ -1,4 +1,4 @@
-import { getLanguagesIso, setLang } from '@moodlenet/core/i18n'
+import { getLanguagesIso, setLang } from '@moodlenet/react-app/common'
 import { useMemo } from 'react'
 import type { LanguageSelectorItem, LanguageSelectorProps } from '../../ui/exports/ui.mjs'
 

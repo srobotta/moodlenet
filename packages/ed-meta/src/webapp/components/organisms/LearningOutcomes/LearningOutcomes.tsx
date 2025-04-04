@@ -5,7 +5,7 @@ import {
   RoundButton,
   SimpleTextOption,
 } from '@moodlenet/component-library'
-import { t, tm } from '@moodlenet/core/i18n'
+import { t, tm } from '@moodlenet/react-app/common'
 import { Circle, HelpOutline } from '@mui/icons-material'
 import type { RefObject } from 'react'
 import { createRef, useEffect, useState, type FC } from 'react'

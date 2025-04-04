@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Card, InputTextField, PrimaryButton, Snackbar } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { useFormik } from 'formik'
 import type { FC } from 'react'
 

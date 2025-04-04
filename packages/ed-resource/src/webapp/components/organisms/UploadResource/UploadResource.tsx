@@ -20,7 +20,7 @@ import type {
   ResourceStateProps,
 } from '../../../../common/types.mjs'
 //import { ReactComponent as ExtractInfoIcon } from '../../../assets/icons/extract-info.svg'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { ReactComponent as UploadFileIcon } from '../../../assets/icons/upload-file.svg'
 import { ReactComponent as UploadImageIcon } from '../../../assets/icons/upload-image.svg'
 import autofillingImg from '../../../assets/img/autofilling.png'

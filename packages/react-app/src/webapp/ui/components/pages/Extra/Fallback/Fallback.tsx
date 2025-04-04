@@ -1,5 +1,5 @@
-import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
+import { t } from '../../../../../../common/i18n/i18n.mjs'
 import { ReactComponent as HatLogo } from '../../../../assets/icons/hat-moodle.svg'
 import type { MainLayoutProps } from '../../../layout/MainLayout/MainLayout.js'
 import MainLayout from '../../../layout/MainLayout/MainLayout.js'

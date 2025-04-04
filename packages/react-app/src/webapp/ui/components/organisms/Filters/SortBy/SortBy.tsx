@@ -1,6 +1,6 @@
 import { SimpleDropdown } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
 import type { FC } from 'react'
+import { t } from '../../../../../../common/i18n/i18n.mjs'
 export type SortType = 'Relevant' | 'Popular' | 'Recent'
 export type SortByProps = {
   selected: SortType

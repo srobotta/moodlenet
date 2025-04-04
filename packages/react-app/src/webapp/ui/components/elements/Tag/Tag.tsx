@@ -1,6 +1,6 @@
 import type { FollowTag } from '@moodlenet/component-library'
-import { tm } from '@moodlenet/core/i18n'
 import type { CSSProperties, FC } from 'react'
+import { tm } from '../../../../../common/i18n/i18n.mjs'
 import { Link } from '../link.js'
 import './Tag.scss'
 

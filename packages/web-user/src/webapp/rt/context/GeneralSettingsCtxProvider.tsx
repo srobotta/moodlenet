@@ -1,8 +1,10 @@
-import type { FormLanguageData, LanguageConfig } from '@moodlenet/core'
-import { defaultLanguageConfig, defaultLanguageData } from '@moodlenet/core/i18n'
 import type { OrganizationData } from '@moodlenet/organization/common'
-import type { AppearanceData } from '@moodlenet/react-app/common'
-import { defaultAppearanceData } from '@moodlenet/react-app/common'
+import type { AppearanceData, FormLanguageData, LanguageConfig } from '@moodlenet/react-app/common'
+import {
+  defaultAppearanceData,
+  defaultLanguageConfig,
+  defaultLanguageData,
+} from '@moodlenet/react-app/common'
 import type { AdminSettingsCtxT, TOrganizationCtx } from '@moodlenet/react-app/webapp'
 import { AdminSettingsCtx, OrganizationCtx } from '@moodlenet/react-app/webapp'
 import type { FC, PropsWithChildren } from 'react'

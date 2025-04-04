@@ -1,7 +1,6 @@
 export type { now, setNow } from './async-context/lib.mjs'
 export * from './async-context/types.mjs'
 export type { EventPayload, mainEmitter, pkgEmitter } from './events/main-event-emitter.mjs'
-export type { FormLanguageData, LanguageConfig } from './i18n/types.mjs'
 export { PHASE, pkgDepGraph } from './ignite.mjs'
 export {
   RpcNext,

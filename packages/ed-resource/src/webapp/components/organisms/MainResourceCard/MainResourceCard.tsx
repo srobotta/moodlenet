@@ -12,9 +12,9 @@ import {
   useWindowDimensions,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
-import { t, typeLabel } from '@moodlenet/core/i18n'
 import type { LearningOutcomeOption } from '@moodlenet/ed-meta/common'
 import { LearningOutcomes } from '@moodlenet/ed-meta/ui'
+import { t, typeLabel } from '@moodlenet/react-app/common'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { downloadOrOpenURL, getTagList } from '@moodlenet/react-app/ui'
 import {

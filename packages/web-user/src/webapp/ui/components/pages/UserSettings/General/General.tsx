@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, MultipeSelectDropdown, PrimaryButton, Switch } from '@moodlenet/component-library'
-import { t, tl } from '@moodlenet/core/i18n'
 import type { EdMetaOptionsProps } from '@moodlenet/ed-resource/common'
+import { t, tl } from '@moodlenet/react-app/common'
 import { useFormik } from 'formik'
 import { /* useState, */ type FC } from 'react'
 import type { UserInterests } from '../../../../../../common/types.mjs'

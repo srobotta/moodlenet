@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Card, InputTextField, PrimaryButton } from '@moodlenet/component-library'
-import type { FormLanguageData } from '@moodlenet/core'
 import type { useFormik } from 'formik'
 import type { FC } from 'react'
+import type { FormLanguageData } from '../../../../../../common/i18n/types.mjs'
 //import { getLanguage } from '../../../../../../server/lib.mjs'
 
 export type LanguageProps = {

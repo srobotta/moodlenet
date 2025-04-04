@@ -1,6 +1,6 @@
-import type { FormLanguageData } from '@moodlenet/core'
 import { useFormik } from 'formik'
 import { useContext, useMemo } from 'react'
+import type { FormLanguageData } from '../../../../../../common/i18n/types.mjs'
 import { AdminSettingsCtx } from '../../../../../context/AdminSettingsContext.js'
 import type { LanguageProps } from './Language.js'
 //import { getLanguage } from '../../../../../../server/lib.mjs'

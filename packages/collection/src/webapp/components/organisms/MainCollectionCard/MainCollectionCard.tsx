@@ -10,7 +10,7 @@ import {
   TertiaryButton,
 } from '@moodlenet/component-library'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import type { FormikHandle } from '@moodlenet/react-app/ui'
 import { Check, Delete, Edit, MoreVert, Public, PublicOff, Save, Share } from '@mui/icons-material'
 import type { FC } from 'react'

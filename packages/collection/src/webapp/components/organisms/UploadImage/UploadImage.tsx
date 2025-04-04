@@ -18,7 +18,7 @@ import { ReactComponent as UploadImageIcon } from '../../../assets/icons/upload-
 // import { useNewCollectionPageCtx } from '../NewCollection'
 // import { NewCollectionFormValues } from '../types'
 import type { AssetInfoForm } from '@moodlenet/component-library/common'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import './UploadImage.scss'
 
 // type SubStep = 'AddFileOrLink' | 'AddImage'

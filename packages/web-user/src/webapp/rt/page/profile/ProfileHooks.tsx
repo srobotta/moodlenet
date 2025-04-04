@@ -1,10 +1,9 @@
 import { CollectionContext, useCollectionCardProps } from '@moodlenet/collection/webapp'
 import type { AddonItemNoKey } from '@moodlenet/component-library'
 import { useImageUrl } from '@moodlenet/component-library'
-import { t, tn } from '@moodlenet/core/i18n'
 import type { AddOnMap } from '@moodlenet/core/lib'
 import { ResourceContext, useResourceCardProps } from '@moodlenet/ed-resource/webapp'
-import { href } from '@moodlenet/react-app/common'
+import { href, t, tn } from '@moodlenet/react-app/common'
 import type { OverallCardItem } from '@moodlenet/react-app/ui'
 import { proxyWith } from '@moodlenet/react-app/ui'
 import {

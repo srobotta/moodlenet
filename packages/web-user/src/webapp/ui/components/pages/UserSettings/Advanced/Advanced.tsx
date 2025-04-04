@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import type { AddonItem } from '@moodlenet/component-library'
 import { Card, Modal, PrimaryButton, SecondaryButton, Snackbar } from '@moodlenet/component-library'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { useState, type FC } from 'react'
 import './Advanced.scss'
 

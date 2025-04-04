@@ -1,4 +1,4 @@
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import { pointSystem as P } from '../../common/gamification/point-system.mjs'
 import level1Avatar from '../ui/assets/img/userLevelAvatar/level-1.png'
 import level10Avatar from '../ui/assets/img/userLevelAvatar/level-10.png'

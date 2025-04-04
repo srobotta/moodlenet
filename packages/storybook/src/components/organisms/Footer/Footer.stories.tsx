@@ -1,6 +1,6 @@
 import type { Meta as ComponentMeta, StoryFn as ComponentStory } from '@storybook/react'
 // import { href } from '../../../../elements/link'
-import { t } from '@moodlenet/core/i18n'
+import { t } from '@moodlenet/react-app/common'
 import type { MainFooterProps } from '@moodlenet/react-app/ui'
 import { MainFooter } from '@moodlenet/react-app/ui'
 import { Favorite } from '@mui/icons-material'
