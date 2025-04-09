@@ -1,7 +1,6 @@
-import LanguageConfig from './config.mjs'
-import type { FormLanguageData, Translations, LanguageConfig as langSetting } from './types.mjs'
+import type { FormLanguageData, LanguageConfig, Translations } from './types.mjs'
 
-export const defaultLanguageConfig: langSetting = {
+export const defaultLanguageConfig: LanguageConfig = {
   languages: {
     default: 'en',
     available: ['en'],
@@ -11,6 +10,12 @@ export const defaultLanguageData: FormLanguageData = {
   default: 'en',
   available: 'en',
 }
+export const installedLanguages: Array<string> = ['en', 'fr', 'de']
+
+/**
+ * The configuration of the languages, fetched from the datastore.
+ */
+let config: LanguageConfig
 
 /**
  * The current language that is used at the moment.
@@ -41,8 +46,11 @@ async function loadTranslations(lang: string): Promise<void> {
 /**
  * Initialize the language handling. Determine the current language and load the translations.
  */
-const init = async function () {
-  await loadTranslations(getCurrentLang())
+export const init = async function (cfg: LanguageConfig) {
+  if (!config) {
+    config = cfg
+    await loadTranslations(getCurrentLang())
+  }
 }
 
 /**
@@ -128,13 +136,9 @@ export const typeLabel = function (type: string): string {
 }
 
 /**
- * List of supported language codes.
- * @returns array of language iso codes
+ * Get current language that is set by th user.
+ * @returns string
  */
-export const getLanguagesIso = function (): string[] {
-  return LanguageConfig.getInstance().getAvailable()
-}
-
 export const getCurrentLang = function (): string {
   let lang = ''
   if (typeof localStorage !== 'undefined') {
@@ -143,10 +147,10 @@ export const getCurrentLang = function (): string {
   if (lang === '' && typeof navigator !== 'undefined') {
     lang = navigator.language.toString().split('-')[0] ?? ''
   }
-  if (getLanguagesIso().includes(lang)) {
+  if (config.languages.available.includes(lang)) {
     currentLang = lang
   } else {
-    currentLang = LanguageConfig.getInstance().getDefault()
+    currentLang = config.languages.default
   }
   return currentLang
 }
@@ -156,9 +160,8 @@ export const getCurrentLang = function (): string {
  * @param lang
  */
 export const setLang = function (lang: string): void {
-  currentLang = lang
-  localStorage.setItem('mnet-i18n-lang', lang)
+  if (config.languages.available.includes(lang)) {
+    currentLang = lang
+    localStorage.setItem('mnet-i18n-lang', lang)
+  }
 }
-
-// Run the init function to asynchronuously load the specific language files with the translations.
-await init()

@@ -35,8 +35,6 @@ export const ProvideMainSearchBoxCtx: FC<PropsWithChildren<MainSearchBoxCtxValue
   return <MainSearchBoxCtx.Provider value={ctxValue}>{children}</MainSearchBoxCtx.Provider>
 }
 
-const defaultPlaceholder = t('search_placeholder')
-const searchLabel = t('search')
 export type MainSearchBoxCtxValueDeps = {
   search(text: string, defaultQuery: Record<string, string | undefined>): void
   initSearchText: string
@@ -57,7 +55,7 @@ export function useMainSearchBoxCtxValue({
   const nav = useNavigate()
   const mainSearchBoxCtxT = useMemo<MainSearchBoxCtxT>(() => {
     const ctx: MainSearchBoxCtxT = {
-      placeholder: defaultPlaceholder,
+      placeholder: t('search_placeholder'),
       search(text: string) {
         setQText(text)
         return search(text, defaultQuery)
@@ -69,7 +67,7 @@ export function useMainSearchBoxCtxValue({
       setSearchText,
       qText,
       setDefaultQuery,
-      searchLabel: searchLabel,
+      searchLabel: t('search'),
     }
     return ctx
   }, [qText, search, searchText, defaultQuery, setDefaultQuery, defaultSearchHref.url, nav])

@@ -3,18 +3,11 @@ import { Card, InputTextField, PrimaryButton } from '@moodlenet/component-librar
 import type { useFormik } from 'formik'
 import type { FC } from 'react'
 import type { FormLanguageData } from '../../../../../../common/i18n/types.mjs'
-//import { getLanguage } from '../../../../../../server/lib.mjs'
 
 export type LanguageProps = {
   form: ReturnType<typeof useFormik<FormLanguageData>>
 }
-/*
-const v = await getLanguage()
-const lang = {
-  available: v.data.languages.available.join(', ') ?? 'en',
-  default: v.data.languages?.default ?? 'en'
-}
-*/
+
 export const LanguageMenu = () => <abbr title="Language">Languages</abbr>
 
 export const Language: FC<LanguageProps> = ({ form }) => {

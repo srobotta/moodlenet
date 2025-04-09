@@ -1,9 +1,11 @@
-import { getLanguagesIso, setLang } from '@moodlenet/react-app/common'
-import { useMemo } from 'react'
+import { setLang } from '@moodlenet/react-app/common'
+import { LanguageCtx } from '@moodlenet/react-app/webapp'
+import { useContext, useMemo } from 'react'
 import type { LanguageSelectorItem, LanguageSelectorProps } from '../../ui/exports/ui.mjs'
 
 export function useLanguageSelectorProps(): LanguageSelectorProps {
-  const menuItems = getLanguagesIso().map((lang): LanguageSelectorItem => {
+  const { language } = useContext(LanguageCtx)
+  const menuItems = language.languages.available.map((lang): LanguageSelectorItem => {
     const onClick = () => {
       setLang(lang)
       window.location.reload()

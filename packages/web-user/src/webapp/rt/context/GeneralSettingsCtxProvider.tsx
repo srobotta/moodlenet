@@ -31,6 +31,16 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
         default: data.default.trim(),
       },
     }
+    /*
+    // Validate the language object.
+    dataToSave.languages.available = dataToSave.languages.available.filter(v => installedLanguages.includes(v))
+    if (dataToSave.languages.available.length == 0) {
+      throw Error('Invalid or empty list of langages')
+    }
+    if (!dataToSave.languages.available.includes(dataToSave.languages.default)) {
+      dataToSave.languages.default = dataToSave.languages.available[0] ?? 'en'
+    }
+    */
     await shell.rpc.me('webapp/admin/language/set-language')({ language: dataToSave })
     setLanguageData({ rawData: data, data: dataToSave })
   }, [])
