@@ -3,7 +3,7 @@ import * as crypto from '@moodlenet/crypto/server'
 import { send } from '@moodlenet/email-service/server'
 import { getMyRpcBaseUrl } from '@moodlenet/http-server/server'
 import { getOrgData } from '@moodlenet/organization/server'
-import { getWebappUrl } from '@moodlenet/react-app/server'
+import { getUserCfg, getWebappUrl } from '@moodlenet/react-app/server'
 import {
   createWebUser,
   sendWebUserTokenCookie,
@@ -47,6 +47,11 @@ export async function login({ email, password }: { email: string; password: stri
 }
 
 export async function signup(req: SignupReq) {
+  const userCfg = await getUserCfg()
+  if (!userCfg.data.registerEnabled) {
+    return { success: false, msg: 'Registration is disabled' } as const
+  }
+
   const mUser = await store.getByEmail(req.email)
 
   if (mUser) {

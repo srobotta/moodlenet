@@ -1,6 +1,6 @@
 import type { OrganizationData } from '@moodlenet/organization/common'
-import type { AppearanceData } from '@moodlenet/react-app/common'
-import { defaultAppearanceData } from '@moodlenet/react-app/common'
+import type { AppearanceData, UserData } from '@moodlenet/react-app/common'
+import { defaultAppearanceData, defaultUserCfg } from '@moodlenet/react-app/common'
 import type { AdminSettingsCtxT, TOrganizationCtx } from '@moodlenet/react-app/webapp'
 import { AdminSettingsCtx, OrganizationCtx } from '@moodlenet/react-app/webapp'
 import type { FC, PropsWithChildren } from 'react'
@@ -17,6 +17,13 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
     setAppareanceData(newAppearanceData)
   }, [])
 
+  const [userCfg, setUserCfg] = useState<UserData>(defaultUserCfg)
+
+  const saveUserCfg = useCallback(async (newUserData: UserData) => {
+    await shell.rpc.me('webapp/admin/general/set-user-cfg')({ userCfg: newUserData })
+    setUserCfg(newUserData)
+  }, [])
+
   const [devMode, toggleDevMode] = useReducer(prev => !prev, false)
 
   // const updateAllPackages = useCallback(async () => {
@@ -26,17 +33,22 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
     shell.rpc
       .me('webapp/react-app/get-appearance')()
       .then(({ data: appearanceData }) => setAppareanceData(appearanceData))
+    shell.rpc
+      .me('webapp/react-app/get-user-cfg')()
+      .then(({ data: userCfg }) => setUserCfg(userCfg))
   }, [])
 
   const ctx = useMemo<AdminSettingsCtxT>(() => {
     return {
       saveAppearanceData,
       appearanceData,
+      userCfg,
+      saveUserCfg,
       devMode,
       toggleDevMode,
       // updateAllPackages,
     }
-  }, [/* updateAllPackages, */ saveAppearanceData, appearanceData, devMode])
+  }, [/* updateAllPackages, */ saveAppearanceData, appearanceData, userCfg, saveUserCfg, devMode])
 
   return <AdminSettingsCtx.Provider value={ctx}>{children}</AdminSettingsCtx.Provider>
 }

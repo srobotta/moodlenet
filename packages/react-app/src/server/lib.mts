@@ -4,9 +4,10 @@ import assert from 'assert'
 import sharp from 'sharp'
 import type {
   AppearanceData,
+  UserData,
+  WebPkgDeps,
   WebappPluginDef,
   WebappPluginItem,
-  WebPkgDeps,
 } from '../common/types.mjs'
 import { httpApp } from './init/http-server.mjs'
 import { kvStore } from './init/kvStore.mjs'
@@ -41,6 +42,17 @@ export async function setAppearance({ appearanceData }: { appearanceData: Appear
 export async function getAppearance() {
   const data = await kvStore.get('appearanceData', '')
   assert(data.value, 'Appearance should be valued')
+  return { data: data.value }
+}
+
+export async function setUserCfg({ userCfg }: { userCfg: UserData }) {
+  await kvStore.set('userCfg', '', userCfg)
+  return { valid: true }
+}
+
+export async function getUserCfg() {
+  const data = await kvStore.get('userCfg', '')
+  assert(data.value, 'User config should be validated')
   return { data: data.value }
 }
 

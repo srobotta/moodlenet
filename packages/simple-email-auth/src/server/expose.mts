@@ -1,3 +1,4 @@
+import { getUserCfg } from '@moodlenet/react-app/server'
 import type { SimpleEmailAuthExposeType } from '../common/expose-def.mjs'
 import {
   changePasswordUsingTokenSchema,
@@ -79,6 +80,13 @@ export const expose = await shell.expose<SimpleEmailAuthExposeType>({
       guard: _ => requestPasswordChangeByEmailLinkSchema.isValid(_),
       async fn({ email }) {
         sendChangePasswordRequestEmail({ email })
+      },
+    },
+    'webapp/register-enabled': {
+      guard: _ => void _,
+      async fn() {
+        const userCfg = await getUserCfg()
+        return userCfg.data.registerEnabled
       },
     },
   },
