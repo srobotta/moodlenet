@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import type { Profile } from '../../../common/exports.mjs'
 import {
   SESSION_CHANGE_REDIRECT_Q_NAME,
+  USER_AGREEMENTS_PAGE_PATH,
   WEB_USER_SESSION_TOKEN_COOKIE_NAME,
   useLoginPageRoutePathRedirectToCurrent,
 } from '../../../common/exports.mjs'
@@ -20,11 +21,13 @@ export type ClientSessionData = {
   | {
       isAdmin: true
       isRoot: true
+      isConfirmed?: false
       myProfile?: undefined
     }
   | {
       isAdmin: boolean
       isRoot: false
+      isConfirmed: boolean
       myProfile: Profile & { publisher: boolean; webUserKey: string }
     }
 )
@@ -103,6 +106,7 @@ export function useAuthCtxValue() {
         const rootClientSessionData: ClientSessionData = {
           isAdmin: true,
           isRoot: true,
+          isConfirmed: false,
           userDisplay: { name: 'ROOT-USER', avatarUrl: rootAvatarUrl },
         }
         return rootClientSessionData
@@ -111,6 +115,7 @@ export function useAuthCtxValue() {
       const webUserClientSessionData: ClientSessionData = {
         isAdmin: sessionDataRpc.isAdmin,
         isRoot: false,
+        isConfirmed: sessionDataRpc.isConfirmed ?? false,
         userDisplay: {
           name: sessionDataRpc.myProfile.displayName,
           avatarUrl: sessionDataRpc.myProfile.avatarUrl ?? defaultAvatarUrl,
@@ -132,6 +137,17 @@ export function useAuthCtxValue() {
       })
     }
   }, [fetchClientSessionDataRpc, loc.search, loc.state, nav])
+
+  useEffect(() => {
+    if (
+      clientSessionData &&
+      clientSessionData.isRoot === false &&
+      !clientSessionData.isConfirmed &&
+      !window.location.pathname.includes(USER_AGREEMENTS_PAGE_PATH)
+    ) {
+      nav(USER_AGREEMENTS_PAGE_PATH)
+    }
+  }, [clientSessionData, nav])
 
   const ctx = useMemo<AuthCtxT | null>(() => {
     if (clientSessionData === null) {

@@ -115,6 +115,8 @@ export type WebUserDataType = {
   profileKey: string
   deleting?: boolean
   deleted?: boolean
+  confirmedOn?: string
+  confirmedTerms?: string
   moderation: {
     reports: {
       items: ReportItem[]

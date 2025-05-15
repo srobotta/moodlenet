@@ -34,6 +34,7 @@ export type WebUserExposeType = PkgExposeDef<{
   rpc: {
     'webapp/get-configs'(): Promise<WebappConfigsRpc>
     'getCurrentClientSessionDataRpc'(): Promise<ClientSessionDataRpc | undefined>
+    'webapp/confirmUser'(body: { terms: string }): Promise<boolean>
     'loginAsRoot'(body: { rootPassword: string }): Promise<boolean>
     'webapp/profile/:_key/edit'(
       body: { editData: EditProfileDataRpc },

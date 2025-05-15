@@ -64,6 +64,7 @@ import {
   setProfileBackgroundImage,
 } from './srv/profile.mjs'
 import {
+  confirmWebUser,
   currentWebUserDeletionAccountRequest,
   getCurrentProfileIds,
   getCurrentWebUserIds,
@@ -85,6 +86,28 @@ export const expose = await shell.expose<WebUserExposeType & ServiceRpc>({
       guard: () => void 0,
       async fn() {
         return { validations: validationsConfig }
+      },
+    },
+    'webapp/confirmUser': {
+      guard: () => void 0,
+      async fn({ terms }) {
+        const verifiedCtx = await verifyCurrentTokenCtx()
+        if (!verifiedCtx) {
+          sendWebUserTokenCookie(undefined)
+          return false
+        }
+        if (verifiedCtx.payload.isRoot) {
+          return true
+        }
+        const webUser = await getWebUser({ _key: verifiedCtx.payload.webUser._key })
+        if (!webUser) {
+          sendWebUserTokenCookie(undefined)
+          return false
+        }
+        webUser.confirmedOn = new Date().toISOString()
+        webUser.confirmedTerms = terms
+        await confirmWebUser({ webuser: webUser })
+        return true
       },
     },
     'getCurrentClientSessionDataRpc': {
@@ -130,6 +153,7 @@ export const expose = await shell.expose<WebUserExposeType & ServiceRpc>({
         const clientSessionDataRpc: ClientSessionDataRpc = {
           isAdmin: webUser.isAdmin,
           isRoot: false,
+          isConfirmed: webUser.confirmedOn !== undefined && webUser.confirmedOn.trim() !== '',
           myProfile: { ...myProfile, webUserKey: webUser._key },
         }
         const jwtToken = await signWebUserJwt({

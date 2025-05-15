@@ -342,6 +342,32 @@ export async function patchWebUser(
   )
 }
 
+export async function confirmWebUser({ webuser }: { webuser: WebUserRecord }) {
+  const key = webuser._key
+  const terms = webuser.confirmedTerms
+  const confirmTime = webuser.confirmedOn
+
+  const patchedCursor = await db.query(
+    `
+      FOR user in @@WebUserCollection
+        FILTER user._key == @key
+        LIMIT 1
+        FILTER !user.deleted && !user.deleting && !user.confirmedOn
+        UPDATE user
+        WITH { confirmedTerms: @terms, confirmedOn: @confirmTime }
+        INTO @@WebUserCollection
+      RETURN NEW
+    `,
+    { key, '@WebUserCollection': WebUserCollection.name, terms, confirmTime },
+    {
+      retryOnConflict: 5,
+    },
+  )
+
+  const [patchedUser] = await patchedCursor.all()
+  return patchedUser
+}
+
 export async function setWebUserIsAdmin(
   req: { isAdmin: boolean } & ({ profileKey: string } | { userKey: string }),
 ) {

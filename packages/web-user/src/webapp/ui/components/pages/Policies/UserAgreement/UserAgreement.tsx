@@ -1,6 +1,13 @@
+import { Card, PrimaryButton, Switch } from '@moodlenet/component-library'
 import type { MainFooterProps, MinimalisticHeaderProps } from '@moodlenet/react-app/ui'
 import { SimpleLayout } from '@moodlenet/react-app/ui'
+import { useFormik } from 'formik'
 import type { FC } from 'react'
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { getProfileHomePageRoutePath } from '../../../../../../common/webapp-routes.mjs'
+import { AuthCtx } from '../../../../../rt/exports.mjs'
+import { shell } from '../../../../../rt/shell.mjs'
 import './UserAgreement.scss'
 
 export type UserAgreementProps = {
@@ -9,6 +16,33 @@ export type UserAgreementProps = {
 }
 
 export const UserAgreement: FC<UserAgreementProps> = ({ footerProps, headerProps }) => {
+  const navigate = useNavigate()
+  const authCtx = useContext(AuthCtx)
+  const form = useFormik<{ confirmTerms: boolean }>({
+    initialValues: { confirmTerms: false },
+    enableReinitialize: true,
+    onSubmit: values => {
+      if (!values.confirmTerms) {
+        form.setFieldError('confirmTerms', 'Confirmation needed')
+        return
+      }
+      const terms = document.querySelector('.user-agreement')?.innerHTML ?? ''
+      shell.rpc
+        .me('webapp/confirmUser')({ terms: terms })
+        .then(() => {
+          let redirectTo = '/'
+          const hasProfile = authCtx.clientSessionData?.myProfile
+          if (hasProfile) {
+            redirectTo = getProfileHomePageRoutePath({
+              _key: hasProfile._key,
+              displayName: hasProfile.displayName,
+            })
+            authCtx.clientSessionData!.isConfirmed = true
+          }
+          navigate(redirectTo)
+        })
+    },
+  })
   return (
     <SimpleLayout footerProps={footerProps} headerProps={headerProps}>
       {/* <MainPageWrapper onKeyDown={handleKeyDown}> */}
@@ -254,6 +288,25 @@ export const UserAgreement: FC<UserAgreementProps> = ({ footerProps, headerProps
             Privacy Notice
           </a>
         </h3>
+      </div>
+      <div className="user-agreement-form">
+        <Card className="column">
+          <div className="parameter">
+            <div className="name">User Agreement Confirmation</div>
+            <Switch
+              enabled={form.values.confirmTerms}
+              toggleSwitch={() => form.setFieldValue('confirmTerms', !form.values.confirmTerms)}
+            />
+          </div>
+          <PrimaryButton
+            disabled={!form.dirty}
+            onClick={() => {
+              form.submitForm()
+            }}
+          >
+            Confirm
+          </PrimaryButton>
+        </Card>
       </div>
     </SimpleLayout>
   )
