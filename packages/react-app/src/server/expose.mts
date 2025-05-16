@@ -18,17 +18,6 @@ const reactAppExposeImpl: PkgExposeImpl<ReactAppExposeType> = {
         return data
       },
     },
-    'webapp/get-userconfig': {
-      guard() {
-        return true
-      },
-      async fn() {
-        await kvStore.get('userCfg', '').then(v => {
-          return v.value ?? { registerEnabled: true }
-        })
-        return true
-      },
-    },
   },
 }
 
