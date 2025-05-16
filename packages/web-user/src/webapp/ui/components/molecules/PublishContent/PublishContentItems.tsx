@@ -54,7 +54,7 @@ export const SignUpPublishContentItem: FC<SignUpPublishContentItemProps> = ({ si
     <PrimaryButton className="" color="card">
       <StreamOutlined />
       <div className="content">
-        <div className="title">{t('join_noe')}</div>
+        <div className="title">{t('join_now')}</div>
         <div className="subtitle">{t('create_account')}</div>
       </div>
     </PrimaryButton>
