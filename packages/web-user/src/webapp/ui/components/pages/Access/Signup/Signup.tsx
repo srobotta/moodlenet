@@ -1,11 +1,12 @@
 import type { Href } from '@moodlenet/component-library'
 import { Card, TertiaryButton } from '@moodlenet/component-library'
-import { t } from '@moodlenet/react-app/common'
+import { defaultUserCfg, t } from '@moodlenet/react-app/common'
 import type { MainFooterProps, MinimalisticHeaderProps } from '@moodlenet/react-app/ui'
 import { Link, SimpleLayout } from '@moodlenet/react-app/ui'
 import { CallMade as CallMadeIcon } from '@mui/icons-material'
 import type { CSSProperties, ComponentType, FC, PropsWithChildren } from 'react'
 import { useEffect, useState } from 'react'
+import { shell } from '../../../../../rt/shell.mjs'
 import './Signup.scss'
 
 export type SignupFormValues = { name: string; email: string; password: string }
@@ -22,6 +23,11 @@ export type SignupProps = {
   userAgreementHref: Href
 }
 
+let registerEnabled = defaultUserCfg.registerEnabled
+shell.rpc
+  .me('webapp/react-app/get-user-cfg')()
+  .then(({ data: userCfg }) => (registerEnabled = userCfg.registerEnabled))
+
 export const Signup: FC<SignupProps> = ({
   headerProps,
   signupItems,
@@ -35,9 +41,14 @@ export const Signup: FC<SignupProps> = ({
   // const { registry: signupRegs } = registries.signupItems.useRegistry()
 
   // const defaultSignupEntry = signupRegs.entries[0]
+
   const defaultSignupEntry = signupItems[0]
   const [currSignupEntry, chooseSignupEntry] = useState(defaultSignupEntry)
   useEffect(() => chooseSignupEntry(defaultSignupEntry), [defaultSignupEntry])
+
+  if (!registerEnabled) {
+    return <></>
+  }
 
   return (
     <SimpleLayout

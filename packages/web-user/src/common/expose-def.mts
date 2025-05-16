@@ -1,6 +1,6 @@
 import type { PkgExposeDef, RpcFile } from '@moodlenet/core'
 import type { OrganizationData } from '@moodlenet/organization/common'
-import type { AppearanceData, LanguageConfig } from '@moodlenet/react-app/common'
+import type { AppearanceData, LanguageConfig, UserData } from '@moodlenet/react-app/common'
 import type {
   ClientSessionDataRpc,
   KnownEntityFeature,
@@ -128,6 +128,7 @@ export type WebUserExposeType = PkgExposeDef<{
       rawData: OrganizationData
     }>
     'webapp/react-app/get-appearance'(): Promise<{ data: AppearanceData }>
+    'webapp/react-app/get-user-cfg'(): Promise<{ data: UserData }>
     'webapp/admin/general/set-appearance'(body: {
       appearanceData: AppearanceData
     }): Promise<{ valid: boolean }>
@@ -135,6 +136,7 @@ export type WebUserExposeType = PkgExposeDef<{
     'webapp/admin/language/set-language'(body: {
       language: LanguageConfig
     }): Promise<{ valid: boolean }>
+    'webapp/admin/general/set-user-cfg'(body: { userCfg: UserData }): Promise<{ valid: boolean }>
     // 'webapp/admin/packages/update-all-pkgs'(): Promise<{ updatePkgs: Record<string, string> }>
     'webapp/admin/roles/searchUsers'(body: {
       search: string

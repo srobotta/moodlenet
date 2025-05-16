@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 import type { FormLanguageData, LanguageConfig } from '../../common/i18n/types.mjs'
-import type { AppearanceData } from '../../common/types.mjs'
+import type { AppearanceData, UserData } from '../../common/types.mjs'
 // import lib from '../../../../main-lib'
 
 export type AdminSettingsCtxT = {
@@ -8,6 +8,8 @@ export type AdminSettingsCtxT = {
   appearanceData: AppearanceData
   language: { rawData: FormLanguageData; data: LanguageConfig }
   saveLanguageData(data: FormLanguageData): Promise<void>
+  userCfg: UserData
+  saveUserCfg(data: UserData): Promise<void>
   devMode: boolean
   toggleDevMode(): void
   // updateAllPackages(): Promise<void>

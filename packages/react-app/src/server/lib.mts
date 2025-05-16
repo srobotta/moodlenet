@@ -6,6 +6,7 @@ import { defaultLanguageConfig } from '../common/i18n/i18n.mjs'
 import type { LanguageConfig } from '../common/i18n/types.mjs'
 import type {
   AppearanceData,
+  UserData,
   WebPkgDeps,
   WebappPluginDef,
   WebappPluginItem,
@@ -60,6 +61,17 @@ export async function setAppearance({ appearanceData }: { appearanceData: Appear
 export async function getAppearance() {
   const data = await kvStore.get('appearanceData', '')
   assert(data.value, 'Appearance should be valued')
+  return { data: data.value }
+}
+
+export async function setUserCfg({ userCfg }: { userCfg: UserData }) {
+  await kvStore.set('userCfg', '', userCfg)
+  return { valid: true }
+}
+
+export async function getUserCfg() {
+  const data = await kvStore.get('userCfg', '')
+  assert(data.value, 'User config should be validated')
   return { data: data.value }
 }
 

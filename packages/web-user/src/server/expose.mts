@@ -7,9 +7,11 @@ import {
   defaultImageUploadMaxSize,
   getAppearance,
   getLanguage,
+  getUserCfg,
   getWebappUrl,
   setAppearance,
   setLanguage,
+  setUserCfg,
 } from '@moodlenet/react-app/server'
 import type { EntityDocument, EntityFullDocument } from '@moodlenet/system-entities/server'
 import assert from 'assert'
@@ -558,6 +560,10 @@ export const expose = await shell.expose<WebUserExposeType & ServiceRpc>({
       guard: () => void 0,
       fn: getLanguage,
     },
+    'webapp/react-app/get-user-cfg': {
+      guard: () => void 0,
+      fn: getUserCfg,
+    },
     'webapp/admin/*': {
       guard: () => void 0,
       fn: async () => {
@@ -668,6 +674,10 @@ export const expose = await shell.expose<WebUserExposeType & ServiceRpc>({
     'webapp/admin/language/set-language': {
       guard: () => void 0,
       fn: setLanguage,
+    },
+    'webapp/admin/general/set-user-cfg': {
+      guard: () => void 0,
+      fn: setUserCfg,
     },
     'webapp/admin/moderation/___delete-user/:webUserKey': {
       guard: () => void 0,

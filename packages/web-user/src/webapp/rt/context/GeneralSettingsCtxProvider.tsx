@@ -1,9 +1,15 @@
 import type { OrganizationData } from '@moodlenet/organization/common'
-import type { AppearanceData, FormLanguageData, LanguageConfig } from '@moodlenet/react-app/common'
+import type {
+  AppearanceData,
+  FormLanguageData,
+  LanguageConfig,
+  UserData,
+} from '@moodlenet/react-app/common'
 import {
   defaultAppearanceData,
   defaultLanguageConfig,
   defaultLanguageData,
+  defaultUserCfg,
 } from '@moodlenet/react-app/common'
 import type { AdminSettingsCtxT, TOrganizationCtx } from '@moodlenet/react-app/webapp'
 import { AdminSettingsCtx, OrganizationCtx } from '@moodlenet/react-app/webapp'
@@ -45,6 +51,13 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
     setLanguageData({ rawData: data, data: dataToSave })
   }, [])
 
+  const [userCfg, setUserCfg] = useState<UserData>(defaultUserCfg)
+
+  const saveUserCfg = useCallback(async (newUserData: UserData) => {
+    await shell.rpc.me('webapp/admin/general/set-user-cfg')({ userCfg: newUserData })
+    setUserCfg(newUserData)
+  }, [])
+
   const [devMode, toggleDevMode] = useReducer(prev => !prev, false)
 
   // const updateAllPackages = useCallback(async () => {
@@ -63,6 +76,9 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
         }
         setLanguageData({ rawData: rawData, data: v.data })
       })
+    shell.rpc
+      .me('webapp/react-app/get-user-cfg')()
+      .then(({ data: userCfg }) => setUserCfg(userCfg))
   }, [])
 
   const ctx = useMemo<AdminSettingsCtxT>(() => {
@@ -71,15 +87,18 @@ const ProvideAdminSettingsContext: FC<PropsWithChildren<unknown>> = ({ children 
       appearanceData,
       language,
       saveLanguageData,
+      userCfg,
+      saveUserCfg,
       devMode,
       toggleDevMode,
-      // updateAllPackages,
     }
   }, [
-    /* updateAllPackages, */ saveAppearanceData,
+    saveAppearanceData,
     appearanceData,
     language,
     saveLanguageData,
+    userCfg,
+    saveUserCfg,
     devMode,
   ])
 

@@ -1,6 +1,6 @@
 import kvStoreFactory from '@moodlenet/key-value-store/server'
 import type { LanguageConfig } from '../../common/i18n/types.mjs'
-import type { AppearanceData } from '../../common/types.mjs'
+import type { AppearanceData, UserData } from '../../common/types.mjs'
 import { shell } from '../shell.mjs'
 
 export type WebappBuildInfo =
@@ -22,6 +22,7 @@ export type KeyValueData = {
     webImageSize: [number, number]
     webIconSize: [number, number]
   }
+  'userCfg': UserData
   'build-info': WebappBuildInfo
 }
 export const kvStore = await kvStoreFactory<KeyValueData>(shell)

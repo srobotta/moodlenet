@@ -19,5 +19,6 @@ export type SimpleEmailAuthExposeType = PkgExposeDef<{
     }): Promise<{ success: boolean }>
     // 'webapp/get-my-settings-data'(): Promise<GetMySettingsDataRpc | null>
     'webapp/set-password'(body: { password: string }): Promise<boolean>
+    'webapp/register-enabled'(): Promise<boolean>
   }
 }>
