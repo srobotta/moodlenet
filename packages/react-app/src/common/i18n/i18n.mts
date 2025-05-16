@@ -41,6 +41,24 @@ async function loadTranslations(lang: string): Promise<void> {
   listMap = m.edMetaOptions
   const t = await import(`./locales/${lang}/translation.mjs`)
   trans = t.translations
+
+  /*
+  if (typeof window === 'undefined') {
+    const fs = require('fs');
+    const path = require('path')
+    // Read the package directories and look for a folder 
+    const directoryPath = '../../../../';
+    const filesAndFolders = fs.readdirSync(directoryPath);
+    filesAndFolders.forEach((item: string) => {
+      console.log(item)
+      const trFile = path.join(directoryPath, item, 'locale', lang, 'translation.mjs');
+      const stats = fs.statSync(trFile);
+      if (stats.isFile()) {
+        import(trFile).then(tl => trans = { ...tl, ...trans })
+      }
+    })
+  }
+    */
 }
 
 /**
