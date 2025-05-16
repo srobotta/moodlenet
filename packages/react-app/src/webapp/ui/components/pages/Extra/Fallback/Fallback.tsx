@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import { t } from '../../../../../../common/i18n/i18n.mjs'
 import { ReactComponent as HatLogo } from '../../../../assets/icons/hat-moodle.svg'
 import type { MainLayoutProps } from '../../../layout/MainLayout/MainLayout.js'
 import MainLayout from '../../../layout/MainLayout/MainLayout.js'
@@ -12,7 +13,7 @@ export const Fallback: FC<FallbackProps> = ({ mainLayoutProps }) => {
   return (
     <MainLayout {...mainLayoutProps}>
       <div className="fallback-page">
-        <div className="content">Page not found or access not allowed</div>
+        <div className="content">{t('page_not_found_or_access_not_allowed')}</div>
         <div className="hat-logo">
           <HatLogo />
         </div>

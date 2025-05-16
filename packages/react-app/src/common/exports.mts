@@ -1,5 +1,7 @@
 export * from './appearance/colorUtilities.mjs'
 export * from './appearance/data.mjs'
+export * from './i18n/i18n.mjs'
+export type * from './i18n/types.mjs'
 export * from './lib.mjs'
 export * from './my-webapp/types.mjs'
 export * from './rpc.mjs'

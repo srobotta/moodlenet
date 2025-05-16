@@ -1,4 +1,5 @@
 import { defaultAppearanceData } from '../../../../common/exports.mjs'
+import { defaultLanguageConfig } from '../../../../common/i18n/i18n.mjs'
 import { kvStore } from '../../kvStore.mjs'
 
 await kvStore.set('configs', '', {
@@ -7,5 +8,6 @@ await kvStore.set('configs', '', {
 })
 
 await kvStore.set('appearanceData', '', defaultAppearanceData)
+await kvStore.set('language', '', defaultLanguageConfig)
 
 export default 1

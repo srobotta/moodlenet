@@ -1,4 +1,5 @@
 import { TertiaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/react-app/common'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { FC } from 'react'
 import './LikeButton.scss'
@@ -29,17 +30,17 @@ export const LikeButton: FC<LikeButtonProps> = ({
 }) => {
   return (
     <TertiaryButton
-      className={`like-button ${liked ? 'liked' : ''} ${color}`}
+      className={`like-button ${liked ? 'liked' : ''} ${color ?? 'gray'}`}
       disabled={!canLike || !isAuthenticated || isCreator}
       onClick={canLike ? toggleLike : () => undefined}
       abbr={
         isCreator
-          ? 'Creators cannot like their own content'
+          ? t('like_own_content')
           : !isAuthenticated
-          ? 'Login or signup to like'
+          ? t('like_needs_login')
           : liked
-          ? 'Remove like'
-          : 'Like'
+          ? t('like_remove')
+          : t('like')
       }
       key="like-button"
     >
@@ -47,8 +48,4 @@ export const LikeButton: FC<LikeButtonProps> = ({
       <span>{numLikes}</span>
     </TertiaryButton>
   )
-}
-
-LikeButton.defaultProps = {
-  color: 'grey',
 }

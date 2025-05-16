@@ -62,6 +62,9 @@ export const ListCard: FC<ListCardProps> = ({
       newMaxHeight && (newMaxHeight === maxHeight ? undefined : newMaxHeight)
     newMaxHeightToSet && setMaxHeight(newMaxHeightToSet)
   }, [maxHeight, maxRows])
+  if (!direction) {
+    direction = 'vertical'
+  }
   return (
     <div className={`list-card ${className} ${noCard ? 'no-card' : ''}`}>
       {header && <div className="list-card-header">{header}</div>}
@@ -94,11 +97,6 @@ export const ListCard: FC<ListCardProps> = ({
       {footer && <div className="list-card-footer">{footer}</div>}
     </div>
   )
-}
-
-ListCard.defaultProps = {
-  noCard: false,
-  direction: 'vertical',
 }
 
 export default ListCard

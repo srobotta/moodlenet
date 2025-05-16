@@ -3,14 +3,14 @@ export * from './async-context/types.mjs'
 export type { EventPayload, mainEmitter, pkgEmitter } from './events/main-event-emitter.mjs'
 export { PHASE, pkgDepGraph } from './ignite.mjs'
 export {
+  RpcNext,
+  RpcStatus,
   assertRpcFileReadable,
   getCurrentRpcStatusCode,
   getMaybeRpcFileReadable,
   isRpcNext,
   isRpcStatusType,
   readableRpcFile,
-  RpcNext,
-  RpcStatus,
   setRpcStatusCode,
 } from './pkg-expose/lib.mjs'
 export type { getExposedByPkgIdentifier, getExposedByPkgName } from './pkg-expose/lib.mjs'

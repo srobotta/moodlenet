@@ -1,4 +1,5 @@
 import { TertiaryButton } from '@moodlenet/component-library'
+import { t } from '@moodlenet/react-app/common'
 import { Bookmark, BookmarkBorder } from '@mui/icons-material'
 import type { FC } from 'react'
 import './BookmarkButton.scss'
@@ -21,23 +22,19 @@ export const BookmarkButton: FC<BookmarkButtonProps> = ({
 }) => {
   return (
     <TertiaryButton
-      className={`bookmark-button ${bookmarked ? 'bookmarked' : ''} ${color}`}
+      className={`bookmark-button ${bookmarked ? 'bookmarked' : ''} ${color ?? 'grey'}`}
       disabled={!canBookmark || !isAuthenticated}
       onClick={canBookmark ? toggleBookmark : () => undefined}
       abbr={
         !isAuthenticated
-          ? 'Login or signup to bookmark'
+          ? t('bookmark_needs_login')
           : bookmarked
-          ? 'Remove bookmark'
-          : 'Bookmark'
+          ? t('bookmark_remove')
+          : t('bookmark')
       }
       key="bookmark-button"
     >
       {bookmarked ? <Bookmark /> : <BookmarkBorder />}
     </TertiaryButton>
   )
-}
-
-BookmarkButton.defaultProps = {
-  color: 'grey',
 }

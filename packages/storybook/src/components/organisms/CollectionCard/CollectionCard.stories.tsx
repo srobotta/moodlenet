@@ -9,7 +9,7 @@ import { CollectionCard } from '@moodlenet/collection/ui'
 import { ContentBackupImages } from '@moodlenet/component-library'
 import type { AssetInfo } from '@moodlenet/component-library/common'
 import { overrideDeep } from '@moodlenet/component-library/common'
-import { href } from '@moodlenet/react-app/common'
+import { href, t } from '@moodlenet/react-app/common'
 import type { BookmarkButtonProps, SmallFollowButtonProps } from '@moodlenet/web-user/ui'
 import { BookmarkButton, SmallFollowButton } from '@moodlenet/web-user/ui'
 import { action } from '@storybook/addon-actions'
@@ -55,7 +55,7 @@ export const getCollectionCardStoryProps = (
 ): CollectionCardProps => {
   const data: CollectionCardData = {
     id: `id-${Math.floor(Math.random() * ContentBackupImages.length)}`,
-    title: 'Such a great collection',
+    title: t('such_great_collection'),
     image: { location: 'https://picsum.photos/300/200', credits: null },
     ...overrides?.data,
     collectionHref: href('Pages/Collection/Logged In'),

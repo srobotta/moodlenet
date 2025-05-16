@@ -14,6 +14,7 @@ export type SearchboxProps = {
   size?: 'small' | 'big'
   marginTop?: number
   showSearchButton?: boolean
+  searchLabel?: string
 }
 
 export const Searchbox: FC<SearchboxProps> = ({
@@ -25,6 +26,7 @@ export const Searchbox: FC<SearchboxProps> = ({
   search,
   setSearchText,
   setIsSearchboxInViewport,
+  searchLabel,
 }) => {
   const setSearchTextCB = useCallback<ChangeEventHandler<HTMLInputElement>>(
     ev => setSearchText(ev.currentTarget.value),
@@ -48,12 +50,15 @@ export const Searchbox: FC<SearchboxProps> = ({
         document.removeEventListener('scroll', setElementFullyInViewPort, true)
     }
   }, [setElementFullyInViewPort, setIsSearchboxInViewport])
+  if (showSearchButton !== false) {
+    showSearchButton = true
+  }
 
   return (
-    <div className={`searchbox size-${size}`} ref={searchboxRef}>
+    <div className={`searchbox size-${size ?? 'small'}`} ref={searchboxRef}>
       <SearchIcon />
       <label htmlFor="search-text" className="sr-only" hidden>
-        Search
+        {searchLabel}
       </label>
       <input
         className="search-text"
@@ -70,17 +75,12 @@ export const Searchbox: FC<SearchboxProps> = ({
           onClick={() => search(searchText)}
           // {...(size === 'small' ? { color: 'blue' } : {})}
         >
-          <span>Search</span>
+          <span>{searchLabel}</span>
           <SearchIcon />
         </PrimaryButton>
       )}
     </div>
   )
-}
-
-Searchbox.defaultProps = {
-  size: 'small',
-  showSearchButton: true,
 }
 
 Searchbox.displayName = 'Searchbox'

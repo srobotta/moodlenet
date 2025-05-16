@@ -3,7 +3,7 @@ import type { AddonItemNoKey } from '@moodlenet/component-library'
 import { useImageUrl } from '@moodlenet/component-library'
 import type { AddOnMap } from '@moodlenet/core/lib'
 import { ResourceContext, useResourceCardProps } from '@moodlenet/ed-resource/webapp'
-import { href } from '@moodlenet/react-app/common'
+import { href, t, tn } from '@moodlenet/react-app/common'
 import type { OverallCardItem } from '@moodlenet/react-app/ui'
 import { proxyWith } from '@moodlenet/react-app/ui'
 import {
@@ -304,7 +304,7 @@ export const useProfileProps = ({
       overallCardItems: [
         {
           Icon: PermIdentity,
-          name: 'Followers',
+          name: tn('follows_me', 'follow_me', profileGetRpc.numFollowers),
           className: 'followers',
           value: profileGetRpc.numFollowers,
           href: href(
@@ -316,7 +316,7 @@ export const useProfileProps = ({
         },
         {
           Icon: Grade,
-          name: 'Following',
+          name: t('i_follow'),
           className: 'following',
           value: profileGetRpc.numFollowing,
           href: href(
@@ -328,7 +328,7 @@ export const useProfileProps = ({
         },
         {
           Icon: FilterNone,
-          name: 'Resources',
+          name: tn('resource', 'resources', profileGetRpc.ownKnownEntities.resources.length),
           className: 'resources',
           value: profileGetRpc.publishedContributions.resources,
         },

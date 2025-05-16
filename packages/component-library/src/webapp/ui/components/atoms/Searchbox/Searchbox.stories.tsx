@@ -13,9 +13,9 @@ const meta: ComponentMeta<typeof Searchbox> = {
 }
 
 export const SearchboxStoryProps: SearchboxProps = {
-  placeholder: 'Start type to search',
+  placeholder: 'Start typing to search',
   searchText: '',
-  setSearchText: action('Search Text'),
+  setSearchText: action('Search text'),
   search: action('Search'),
 }
 

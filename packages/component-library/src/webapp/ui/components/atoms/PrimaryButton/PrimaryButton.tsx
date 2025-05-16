@@ -46,9 +46,4 @@ export const PrimaryButton: FC<PrimaryButtonProps> = ({
   )
 }
 
-PrimaryButton.defaultProps = {
-  color: '',
-  onHoverColor: '',
-}
-
 export default PrimaryButton

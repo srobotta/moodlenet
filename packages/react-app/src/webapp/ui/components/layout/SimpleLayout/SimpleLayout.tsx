@@ -52,5 +52,4 @@ export const SimpleLayout: FC<SimpleLayoutProps> = ({
   )
 }
 
-SimpleLayout.defaultProps = {}
 export default SimpleLayout

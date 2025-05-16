@@ -1,5 +1,8 @@
 import type { PkgExposeDef } from '@moodlenet/core'
+import type { LanguageConfig } from './exports.mjs'
 
 export type ReactAppExposeType = PkgExposeDef<{
-  rpc: Record<never, never>
+  rpc: {
+    'webapp/get-language'(): Promise<LanguageConfig>
+  }
 }>

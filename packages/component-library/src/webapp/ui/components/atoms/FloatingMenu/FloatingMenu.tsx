@@ -156,7 +156,4 @@ export const FloatingMenu: FC<FloatingMenuProps> = ({
   )
 }
 
-FloatingMenu.defaultProps = {
-  hover: false,
-}
 export default FloatingMenu

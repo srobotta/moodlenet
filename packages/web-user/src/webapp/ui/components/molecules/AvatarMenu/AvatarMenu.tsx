@@ -1,5 +1,6 @@
 import type { FloatingMenuContentItem } from '@moodlenet/component-library'
 import { FloatingMenu } from '@moodlenet/component-library'
+import { t } from '@moodlenet/react-app/common'
 import type { ComponentType, FC } from 'react'
 import { useMemo } from 'react'
 import defaultAvatar from '../../../assets/img/default-avatar.svg'
@@ -64,7 +65,7 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
     const userSettingsLinkAvatarMenuItem: FloatingMenuContentItem | null =
       userSettingsMenuProps && {
         Element: (
-          <UserSettingsLinkAvatarMenuComponent key="admin-settings" {...userSettingsMenuProps} />
+          <UserSettingsLinkAvatarMenuComponent key="user-settings" {...userSettingsMenuProps} />
         ),
       }
 
@@ -124,7 +125,7 @@ export const AvatarMenu: FC<AvatarMenuProps> = ({
     <FloatingMenu
       className="avatar-menu"
       key="avatar-menu"
-      abbr="User menu"
+      abbr={t('user_menu')}
       menuContent={floatingMenuContentItems}
       hoverElement={<div style={avatarStyle} className="avatar" />}
     />

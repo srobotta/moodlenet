@@ -29,7 +29,7 @@ export const SecondaryButton: FC<SecondaryButtonProps> = ({
 }) => {
   return (
     <abbr
-      className={`secondary-button button ${className} ${color} hover-${onHoverColor} ${
+      className={`secondary-button button ${className} ${color ?? 'black'} hover-${onHoverColor} ${
         disabled ? 'disabled' : ''
       }`}
       ref={innerRef}
@@ -44,10 +44,6 @@ export const SecondaryButton: FC<SecondaryButtonProps> = ({
       {hiddenText && <span className="visually-hidden">{hiddenText}</span>}
     </abbr>
   )
-}
-
-SecondaryButton.defaultProps = {
-  color: 'black',
 }
 
 export default SecondaryButton

@@ -1,6 +1,7 @@
 import { SnackbarStack, sortAddonItems, type AddonItem } from '@moodlenet/component-library'
 import type { FC } from 'react'
 import { useContext } from 'react'
+import { t } from '../../../../../common/i18n/i18n.mjs'
 import { MainHeaderContext } from '../../../../exports/ui.mjs'
 import defaultBackground from '../../../assets/img/default-landing-background.png'
 import { MainSearchBox } from '../../atoms/MainSearchBox/MainSearchBox.js'
@@ -25,8 +26,10 @@ export const Landing: FC<LandingProps> = ({
   mainLayoutProps,
   mainColumnItems,
   headerCardItems,
+  /*
   title,
   subtitle,
+  */
 }) => {
   const background = {
     backgroundImage: 'url("' + defaultBackground + '")',
@@ -35,8 +38,8 @@ export const Landing: FC<LandingProps> = ({
 
   const landingTitle = (
     <div className="landing-title">
-      <div className="title">{title}</div>
-      <div className="subtitle">{subtitle}</div>
+      <div className="title">{t('override_title')}</div>
+      <div className="subtitle">{t('override_subtitle')}</div>
     </div>
   )
 

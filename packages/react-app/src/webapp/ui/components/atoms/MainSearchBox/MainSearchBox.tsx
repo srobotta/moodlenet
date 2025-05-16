@@ -3,6 +3,7 @@ import { Searchbox } from '@moodlenet/component-library'
 import type { FC, PropsWithChildren } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { t } from '../../../../../common/i18n/i18n.mjs'
 import { href } from '../../../../../common/lib.mjs'
 import { searchPagePath } from '../../../../../common/webapp-paths.mjs'
 
@@ -19,6 +20,7 @@ export type MainSearchBoxCtxT = {
   qText: string
   setDefaultQuery: React.Dispatch<React.SetStateAction<Record<string, string | undefined>>>
   resetFilters(): void
+  searchLabel: string
 } & Pick<SearchboxProps, 'search' | 'placeholder' | 'searchText' | 'setSearchText'>
 
 export const MainSearchBoxCtx = createContext<MainSearchBoxCtxT>(null as any)
@@ -33,7 +35,6 @@ export const ProvideMainSearchBoxCtx: FC<PropsWithChildren<MainSearchBoxCtxValue
   return <MainSearchBoxCtx.Provider value={ctxValue}>{children}</MainSearchBoxCtx.Provider>
 }
 
-const defaultPlaceholder = 'Search for open education content'
 export type MainSearchBoxCtxValueDeps = {
   search(text: string, defaultQuery: Record<string, string | undefined>): void
   initSearchText: string
@@ -54,7 +55,7 @@ export function useMainSearchBoxCtxValue({
   const nav = useNavigate()
   const mainSearchBoxCtxT = useMemo<MainSearchBoxCtxT>(() => {
     const ctx: MainSearchBoxCtxT = {
-      placeholder: defaultPlaceholder,
+      placeholder: t('search_placeholder'),
       search(text: string) {
         setQText(text)
         return search(text, defaultQuery)
@@ -66,6 +67,7 @@ export function useMainSearchBoxCtxValue({
       setSearchText,
       qText,
       setDefaultQuery,
+      searchLabel: t('search'),
     }
     return ctx
   }, [qText, search, searchText, defaultQuery, setDefaultQuery, defaultSearchHref.url, nav])

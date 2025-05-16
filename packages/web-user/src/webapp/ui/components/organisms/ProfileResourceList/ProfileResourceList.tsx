@@ -1,6 +1,7 @@
 import { ListCard, PrimaryButton } from '@moodlenet/component-library'
 import type { ResourceCardProps } from '@moodlenet/ed-resource/ui'
 import { ResourceCard } from '@moodlenet/ed-resource/ui'
+import { t } from '@moodlenet/react-app/common'
 import type { ProxyProps } from '@moodlenet/react-app/ui'
 import { NoteAdd } from '@mui/icons-material'
 import type { FC } from 'react'
@@ -28,14 +29,14 @@ export const ProfileResourceList: FC<ProfileResourceListProps> = ({
           }),
         [resourceCardPropsList],
       )}
-      header={`Latest resources`}
+      header={t('latest_resources')}
       actions={
         canEdit
           ? {
               element: (
                 <PrimaryButton className="action" onClick={createResource}>
                   <NoteAdd />
-                  New resource
+                  {t('new_resource')}
                 </PrimaryButton>
               ),
               position: 'end',

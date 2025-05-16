@@ -7,12 +7,14 @@ import './FileUploader.scss'
 export type FileUploaderProps = {
   type?: 'file' | 'image'
   className?: string
-  onClick?(arg0: unknown): unknown | any
+  uploadLabel?: string
+  onClick?(arg0: unknown): unknown
 }
 
 export const FileUploader: FC<FileUploaderProps> = ({
   type,
   className,
+  uploadLabel,
   // onClick,
 }) => {
   return (
@@ -47,10 +49,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
           />
           <UploadFileIcon />
           <span>
-            <span>
-              Drop or click to upload a file!
-              {/* <Trans>Drop or click to upload a file!</Trans> */}
-            </span>
+            <span>{uploadLabel}</span>
             <br />
             {/* {fileMaxSize && (
       <span style={{ fontSize: '12px' }}>
@@ -78,10 +77,7 @@ export const FileUploader: FC<FileUploaderProps> = ({
             hidden
           />
           <UploadImageIcon />
-          <span>
-            Drop or click to upload an image!
-            {/* <Trans>Drop or click to upload an image!</Trans> */}
-          </span>
+          <span>{uploadLabel}</span>
         </div>
       )}
     </div>

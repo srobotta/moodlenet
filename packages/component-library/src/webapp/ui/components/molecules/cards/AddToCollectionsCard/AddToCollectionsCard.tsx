@@ -8,6 +8,7 @@ import './AddToCollectionsCard.scss'
 export type AddToCollectionsCardProps = {
   header?: boolean
   noCard?: boolean
+  headerTitle?: string
 } & Pick<SelectorProps & { multiple: true }, 'value' | 'onItemSelect' | 'onItemDeselect'>
 export type OptionItemProp = { value: string; label: ReactNode }
 export const OptionItem: FC<OptionItemProp> = ({ label, value }) => {
@@ -27,7 +28,7 @@ export const OptionItem: FC<OptionItemProp> = ({ label, value }) => {
 }
 
 export const AddToCollectionsCard: FC<PropsWithChildren<AddToCollectionsCardProps>> = props => {
-  const { header, noCard, children, ...selectProps } = props
+  const { header, noCard, headerTitle, children, ...selectProps } = props
 
   return (
     <Selector {...selectProps} multiple>
@@ -36,7 +37,7 @@ export const AddToCollectionsCard: FC<PropsWithChildren<AddToCollectionsCardProp
           <Card noCard={noCard}>
             {header && (
               <div className="collections-header">
-                Select collections
+                {headerTitle}
                 {/*<Searchbox setSearchText={setSearchText} searchText="" placeholder={t`Find more collections`} />*/}
               </div>
             )}
