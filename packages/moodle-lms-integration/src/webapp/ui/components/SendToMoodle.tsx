@@ -51,10 +51,15 @@ export const SendToMoodle: FC<SendToMoodleProps> = ({
   })
 
   const handleOnSendToMoodleClick = () => {
+    const site = form.values.site
+    if (site?.trim() !== '' && site?.substring(0, 4).toLowerCase() !== 'http') {
+      form.setFieldValue('site', `https://${site}`)
+    }
     if (form.isValid) {
       form.submitForm()
       setIsAddingToMoodleLms(false)
       setShouldShowSendToMoodleLmsError(false)
+      showSendSuccess()
     } else {
       setShouldShowSendToMoodleLmsError(true)
     }
