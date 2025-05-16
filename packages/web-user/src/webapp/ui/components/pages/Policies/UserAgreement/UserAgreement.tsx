@@ -30,14 +30,16 @@ export const UserAgreement: FC<UserAgreementProps> = ({ footerProps, headerProps
       shell.rpc
         .me('webapp/confirmUser')({ terms: terms })
         .then(() => {
+          let redirectTo = '/'
           const hasProfile = authCtx.clientSessionData?.myProfile
-          const myProfileHref = hasProfile
-            ? getProfileHomePageRoutePath({
-                _key: hasProfile._key,
-                displayName: hasProfile.displayName,
-              })
-            : '/'
-          navigate(myProfileHref)
+          if (hasProfile) {
+            redirectTo = getProfileHomePageRoutePath({
+              _key: hasProfile._key,
+              displayName: hasProfile.displayName,
+            })
+            authCtx.clientSessionData!.isConfirmed = true
+          }
+          navigate(redirectTo)
         })
     },
   })
