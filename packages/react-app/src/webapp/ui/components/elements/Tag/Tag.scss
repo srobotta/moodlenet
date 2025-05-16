@@ -8,7 +8,7 @@
   color: #636363;
   align-items: center;
   background-color: #e3e5ef;
-  border-radius: 15px;
+  border-radius: var(--border-radius-button);
   font-family: 'Open Sans';
 
   &.small {

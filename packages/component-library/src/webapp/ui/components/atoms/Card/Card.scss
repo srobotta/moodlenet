@@ -7,12 +7,11 @@ import .card {
   background-color: #fff;
   // overflow: hidden;
   // box-shadow: 0 0 6px #dedede;
-  border-radius: 16px;
-  box-shadow: 0 0 6px #e1dedb;
+  border-radius: 0;
+  border: 2px solid #eff1f3;
 
   @media (max-width: 450px) {
     &.hide-border {
-      box-shadow: none;
       background-color: transparent;
     }
     &.remove-padding {

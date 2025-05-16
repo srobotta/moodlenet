@@ -1,8 +1,8 @@
-import { adjustColor, randomColor, setOpacity } from './utilities'
+import { adjustColor, randomColor } from './utilities'
 
-export const baseMoodleColor = '#F88012'
+export const baseMoodleColor = '#4B647D'
 export const primaryColor = 'var(--base-moodle-color)'
-export const primaryBackgroundColor = '#feefe2'
+export const primaryBackgroundColor = '#eff1f3'
 export const primaryColorHover = '#e2750f'
 export const primaryColorActive = '#d46d0d'
 export const headerBackgroundColor = 'white'
@@ -18,7 +18,7 @@ export type BaseStyleType = {
 export const baseStyle = () => {
   return {
     '--primary-color': baseMoodleColor,
-    '--primary-background-color': setOpacity(baseMoodleColor, 0.12),
+    '--primary-background-color': primaryBackgroundColor,
     '--primary-color-hover': primaryColorHover,
     '--primary-color-active': primaryColorActive,
     '--header-background': headerBackgroundColor,

@@ -1,9 +1,9 @@
 .searchbox {
   width: 100%;
   max-width: 350px;
-  border: 1px solid #dbdbdb;
+  border: 1.65px solid #c1c9d1;
   background-color: white;
-  border-radius: 16px;
+  border-radius: 0.4rem;
   height: 40px;
   display: flex;
   justify-content: flex-start;
@@ -50,7 +50,7 @@
     > .primary-button {
       margin-right: -16px;
       padding: 6px 9px;
-      border-radius: 14px;
+      border-radius: var(--border-radius-button);
       > span {
         display: none;
       }
@@ -69,11 +69,12 @@
 
   &.size-big {
     padding: 0 18px;
-    border-radius: 45px;
+    border-radius: var(--border-radius-input);
     height: 46px;
     width: 100%;
     max-width: 670px;
     background-color: white;
+    border: 1.65px solid #c1c9d1;
     > .search-text {
       font-size: 17px;
       width: 100%;
