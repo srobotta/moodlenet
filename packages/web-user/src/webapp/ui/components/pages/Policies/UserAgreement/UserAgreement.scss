@@ -1,6 +1,6 @@
 // @import '../../../../styles/main.scss';
 
-.user-agreement {
+.user-agreement, .user-agreement-form {
   height: fit-content;
   min-height: 100%;
   width: 100%;
@@ -83,6 +83,21 @@
 
         > :nth-child(2) {
           width: 160px;
+        }
+      }
+    }
+  }
+  > .card {
+    padding: 24px;
+    > .parameter {
+      margin-bottom: 20px;
+      > .set-as-default-filters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        > .title {
+          font-size: 14px;
         }
       }
     }
