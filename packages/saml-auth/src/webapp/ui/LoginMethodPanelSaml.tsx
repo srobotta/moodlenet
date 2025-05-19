@@ -1,7 +1,7 @@
 import { PrimaryButton } from '@moodlenet/component-library'
 import type { FC } from 'react'
 
-const label = 'Log in using Saml!'
+const label = 'Log in via Switch EDU-ID!'
 
 export const LoginButton: FC = () => {
   return <PrimaryButton color="blue">{label}</PrimaryButton>
