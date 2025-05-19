@@ -1,4 +1,5 @@
 import type { FormLanguageData, LanguageConfig, Translations } from './types.mjs'
+//import { shell } from './shell.mjs'
 
 export const defaultLanguageConfig: LanguageConfig = {
   languages: {
@@ -43,21 +44,21 @@ async function loadTranslations(lang: string): Promise<void> {
   trans = t.translations
 
   /*
-  if (typeof window === 'undefined') {
-    const fs = require('fs');
-    const path = require('path')
-    // Read the package directories and look for a folder 
-    const directoryPath = '../../../../';
-    const filesAndFolders = fs.readdirSync(directoryPath);
-    filesAndFolders.forEach((item: string) => {
-      console.log(item)
-      const trFile = path.join(directoryPath, item, 'locale', lang, 'translation.mjs');
-      const stats = fs.statSync(trFile);
-      if (stats.isFile()) {
-        import(trFile).then(tl => trans = { ...tl, ...trans })
-      }
+  const pkgs = await shell.rpc.me('pkgList')()
+  
+  pkgs.forEach((item) => {
+    console.log(item)
+    if (item.pkgId.name.startsWith('@moodlenet/')) {
+      return
+    }
+    const languageFile =  `${item.pkgInfo.pkgRootDir}/dist/locales/${lang}/translation.mjs`
+    import(languageFile).then((tl) => {
+      console.log('jsjs')
+      trans = { ...tl, ...trans }
+    }).catch(() => {
+      console.log(`Could not load custom translations: ${languageFile}`)
     })
-  }
+  })
     */
 }
 
